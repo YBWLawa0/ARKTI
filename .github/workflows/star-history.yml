@@ -1,0 +1,36 @@
+name: Update Star History Chart
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # UTC 2:00 / 14:00 每天 (北京 10:00 / 22:00)
+    - cron: '0 2 * * *'
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Star History SVG
+        run: |
+          mkdir -p assets
+          CACHEBUST=$(date +%Y%m%d%H%M)
+          curl -fsSL \
+            "https://api.star-history.com/svg?repos=YBWLawa0/ARKTI&type=Date&t=${CACHEBUST}" \
+            -o assets/star-history.svg
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/star-history.svg
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "chore: update star-history chart"
+          git push

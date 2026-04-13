@@ -1,0 +1,434 @@
+[
+  {
+    "id": "q1",
+    "prompt": "你在贴吧看到一个帖子：“XX 就是垃圾，懂的都懂”。你的第一反应是？",
+    "scene": "贴吧对线",
+    "dimension": "T_F",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "进去甩数据、截图，理性打脸", "tone": "数据战神", "weights": { "strategist": 2, "ruler": 1, "hero": 0 } },
+      { "id": "b", "label": "回复“典急孝”，然后划走", "tone": "抽象乐子", "weights": { "trickster": 2, "berserker": 1, "lonewolf": 1 } },
+      { "id": "c", "label": "举报+屏蔽，净化首页", "tone": "秩序警察", "weights": { "guardian": 2, "ruler": 2, "healer": 0 } }
+    ]
+  },
+  {
+    "id": "q2",
+    "prompt": "追新番时，弹幕突然刷满“战力崩了”“作画崩了”，你会？",
+    "scene": "弹幕文化",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "关弹幕保智商，自己静静看", "tone": "自闭模式", "weights": { "lonewolf": 2, "strategist": 1, "guardian": 0 } },
+      { "id": "b", "label": "跟着刷“确实崩了”，加入狂欢", "tone": "跟风乐子", "weights": { "trickster": 2, "berserker": 1, "healer": 0 } },
+      { "id": "c", "label": "发长弹幕分析哪里没崩，逆风输出", "tone": "护番战士", "weights": { "hero": 2, "guardian": 2, "ruler": 1 } }
+    ]
+  },
+  {
+    "id": "q3",
+    "prompt": "你最喜欢的 V 圈主播突然宣布毕业，你第一时间？",
+    "scene": "V圈地震",
+    "dimension": "T_F",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "发小作文感慨青春结束，然后取关", "tone": "emo 怪", "weights": { "healer": 2, "lonewolf": 1, "trickster": 0 } },
+      { "id": "b", "label": "切其他主播的录播，无缝转移", "tone": "无情单推", "weights": { "berserker": 2, "strategist": 1, "ruler": 1 } },
+      { "id": "c", "label": "跑去官号下面刷“还钱”", "tone": "缺德乐子", "weights": { "trickster": 3, "berserker": 1, "hero": 0 } }
+    ]
+  },
+  {
+    "id": "q4",
+    "prompt": "你抽卡沉船，十连全是保底，你会？",
+    "scene": "抽卡破防",
+    "dimension": "J_P",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "计算概率，理性分析下次井要多少石头", "tone": "规划党", "weights": { "strategist": 2, "ruler": 2, "guardian": 0 } },
+      { "id": "b", "label": "卸载游戏，三天后下回来", "tone": "反复横跳", "weights": { "trickster": 2, "berserker": 1, "lonewolf": 1 } },
+      { "id": "c", "label": "直接氪穿，直到出为止", "tone": "氪金母猪", "weights": { "berserker": 2, "hero": 1, "ruler": 1 } }
+    ]
+  },
+  {
+    "id": "q5",
+    "prompt": "你在漫展上看到一个 coser 出了你完全不认识的角色，你会？",
+    "scene": "漫展现场",
+    "dimension": "E_I",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "直接上去问“你 cos 的谁？”", "tone": "社牛探头", "weights": { "hero": 2, "trickster": 1, "ruler": 0 } },
+      { "id": "b", "label": "偷偷拍照发群里问“这是哪个角色”", "tone": "暗中求助", "weights": { "lonewolf": 2, "strategist": 1, "healer": 0 } },
+      { "id": "c", "label": "不管认不认识，先夸“好看”", "tone": "体面人", "weights": { "guardian": 2, "healer": 2, "trickster": 0 } }
+    ]
+  },
+  {
+    "id": "q6",
+    "prompt": "你喜欢的作品出了“真人版”，你通常？",
+    "scene": "真人化恐惧",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "开播前就骂，看都不看", "tone": "原著党", "weights": { "ruler": 2, "guardian": 1, "lonewolf": 1 } },
+      { "id": "b", "label": "边看边截图当搞笑素材", "tone": "乐子人", "weights": { "trickster": 3, "berserker": 1, "healer": 0 } },
+      { "id": "c", "label": "试着接受，万一真香呢", "tone": "佛系观众", "weights": { "healer": 2, "guardian": 1, "strategist": 0 } }
+    ]
+  },
+  {
+    "id": "q7",
+    "prompt": "你在论坛发了个安利帖，结果下面全是“这也能吹？”，你会？",
+    "scene": "安利翻车",
+    "dimension": "T_F",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "逐条反驳，码字三千", "tone": "逆风输出", "weights": { "strategist": 2, "hero": 1, "ruler": 1 } },
+      { "id": "b", "label": "自删帖子，假装没发生过", "tone": "鸵鸟战术", "weights": { "lonewolf": 2, "guardian": 1, "healer": 1 } },
+      { "id": "c", "label": "回复“你说得对”，然后继续顶帖", "tone": "阴阳大师", "weights": { "trickster": 2, "berserker": 1, "ruler": 0 } }
+    ]
+  },
+  {
+    "id": "q8",
+    "prompt": "你如何看待“二创比原作更精彩”这句话？",
+    "scene": "二创态度",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "确实，很多二创神中神", "tone": "二创人", "weights": { "trickster": 2, "berserker": 1, "healer": 1 } },
+      { "id": "b", "label": "胡说，原作才是爹", "tone": "原作党", "weights": { "ruler": 2, "guardian": 1, "strategist": 1 } },
+      { "id": "c", "label": "无所谓，好看就行", "tone": "佛系观众", "weights": { "healer": 1, "lonewolf": 1, "trickster": 1 } }
+    ]
+  },
+  {
+    "id": "q9",
+    "prompt": "你刷到一个“90%的人都答错的二次元冷知识”，你会？",
+    "scene": "标题党挑战",
+    "dimension": "E_I",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "立刻点进去做题，证明自己", "tone": "好胜心", "weights": { "hero": 2, "ruler": 1, "strategist": 1 } },
+      { "id": "b", "label": "看评论有没有人说出答案", "tone": "抄作业", "weights": { "trickster": 2, "lonewolf": 1, "healer": 0 } },
+      { "id": "c", "label": "无视，标题党见多了", "tone": "免疫", "weights": { "lonewolf": 2, "guardian": 1, "berserker": 0 } }
+    ]
+  },
+  {
+    "id": "q10",
+    "prompt": "你的游戏好友突然把装备/账号全删了退坑，你会？",
+    "scene": "游戏离别",
+    "dimension": "T_F",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "私聊问原因，尝试挽留", "tone": "感性挽留", "weights": { "healer": 2, "guardian": 2, "hero": 0 } },
+      { "id": "b", "label": "默默删好友，继续玩自己的", "tone": "理性断舍离", "weights": { "strategist": 2, "lonewolf": 1, "ruler": 1 } },
+      { "id": "c", "label": "把他的装备拿来自己用", "tone": "捡漏王", "weights": { "trickster": 2, "berserker": 1, "hero": 0 } }
+    ]
+  },
+  {
+    "id": "q11",
+    "prompt": "你如何看待“动漫婆罗门”这种自称？",
+    "scene": "圈内身份",
+    "dimension": "E_I",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "我也喜欢考据，但不会自称", "tone": "低调考据", "weights": { "strategist": 2, "lonewolf": 1, "ruler": 0 } },
+      { "id": "b", "label": "鄙视这种行为，看个番还分高低", "tone": "平等主义", "weights": { "healer": 2, "guardian": 1, "trickster": 1 } },
+      { "id": "c", "label": "我就是，老番冷门番才是精髓", "tone": "高傲老人", "weights": { "ruler": 2, "lonewolf": 2, "strategist": 1 } }
+    ]
+  },
+  {
+    "id": "q12",
+    "prompt": "你在群里发了个表情包，没人理你。你会？",
+    "scene": "冷场时刻",
+    "dimension": "E_I",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "连续再发三个不同的，直到有人回", "tone": "刷屏怪", "weights": { "berserker": 2, "trickster": 1, "hero": 0 } },
+      { "id": "b", "label": "默默撤回，假装没发过", "tone": "社死瞬间", "weights": { "lonewolf": 2, "guardian": 1, "healer": 1 } },
+      { "id": "c", "label": "@全体成员 问“没人理我？”", "tone": "究极社牛", "weights": { "hero": 2, "ruler": 1, "trickster": 1 } }
+    ]
+  },
+  {
+    "id": "q13",
+    "prompt": "你追的番突然停更一周，你的反应是？",
+    "scene": "停更焦虑",
+    "dimension": "J_P",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "去翻原作漫画/小说，提前看完", "tone": "剧透狂魔", "weights": { "strategist": 2, "ruler": 1, "berserker": 1 } },
+      { "id": "b", "label": "重刷之前的集数，抠细节", "tone": "考据党", "weights": { "lonewolf": 2, "strategist": 2, "guardian": 0 } },
+      { "id": "c", "label": "换一部新番，无缝衔接", "tone": "无情追番机", "weights": { "trickster": 2, "hero": 1, "healer": 0 } }
+    ]
+  },
+  {
+    "id": "q14",
+    "prompt": "你在评论区看到有人剧透，你会？",
+    "scene": "剧透警察",
+    "dimension": "T_F",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "举报+拉黑，维护正义", "tone": "秩序警察", "weights": { "guardian": 2, "ruler": 2, "healer": 0 } },
+      { "id": "b", "label": "阴阳怪气回复“谢谢你啊，我知道了”", "tone": "反串乐子", "weights": { "trickster": 2, "berserker": 1, "lonewolf": 1 } },
+      { "id": "c", "label": "默默划走，假装没看到", "tone": "佛系", "weights": { "healer": 1, "lonewolf": 1, "strategist": 1 } }
+    ]
+  },
+  {
+    "id": "q15",
+    "prompt": "你更倾向于哪种“虚拟主播”类型？",
+    "scene": "V圈偏好",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "杂谈/歌势，温暖治愈", "tone": "单推人", "weights": { "healer": 2, "guardian": 2, "trickster": 0 } },
+      { "id": "b", "label": "整活/逆天/下头操作，越抽象越好", "tone": "乐子人", "weights": { "trickster": 3, "berserker": 1, "lonewolf": 0 } },
+      { "id": "c", "label": "不看V，没兴趣", "tone": "圈外人", "weights": { "lonewolf": 1, "strategist": 1, "ruler": 1 } }
+    ]
+  },
+  {
+    "id": "q16",
+    "prompt": "你如何评价“电子阳痿”（买了游戏不想玩）？",
+    "scene": "游戏状态",
+    "dimension": "J_P",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "深有体会，库里几百个游戏没碰过", "tone": "收藏家", "weights": { "lonewolf": 2, "trickster": 1, "guardian": 0 } },
+      { "id": "b", "label": "从不这样，每个游戏都要打通关", "tone": "强迫症玩家", "weights": { "ruler": 2, "strategist": 1, "hero": 1 } },
+      { "id": "c", "label": "只玩一两个网游，没这烦恼", "tone": "专一型", "weights": { "guardian": 2, "berserker": 1, "healer": 1 } }
+    ]
+  },
+  {
+    "id": "q17",
+    "prompt": "你在 B 站看到一个 up 主用“三句话让男人为我花了 18 万”这类标题，你会？",
+    "scene": "标题党",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "直接划走，厌恶这种", "tone": "清高党", "weights": { "ruler": 1, "strategist": 1, "lonewolf": 2 } },
+      { "id": "b", "label": "点进去看评论区的乐子", "tone": "乐子人", "weights": { "trickster": 3, "berserker": 1, "healer": 0 } },
+      { "id": "c", "label": "真的相信并看完，然后被尬住", "tone": "纯真观众", "weights": { "healer": 1, "guardian": 1, "hero": 1 } }
+    ]
+  },
+  {
+    "id": "q18",
+    "prompt": "玩单机游戏遇到打不过的 boss，你通常？",
+    "scene": "游戏挫败",
+    "dimension": "J_P",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "查攻略/看视频，学习套路", "tone": "攻略党", "weights": { "strategist": 2, "ruler": 1, "guardian": 0 } },
+      { "id": "b", "label": "硬刚几十次，直到肌肉记忆", "tone": "抖M战士", "weights": { "berserker": 2, "hero": 2, "lonewolf": 1 } },
+      { "id": "c", "label": "开修改器/风灵月影，一刀秒", "tone": "科技玩家", "weights": { "trickster": 2, "lonewolf": 1, "strategist": 1 } }
+    ]
+  },
+  {
+    "id": "q19",
+    "prompt": "你如何看待“中二病”？",
+    "scene": "自我认知",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "谁没年轻过，但现在看有点尴尬", "tone": "过来人", "weights": { "strategist": 1, "ruler": 1, "guardian": 1 } },
+      { "id": "b", "label": "现在也偷偷在内心用，不影响现实", "tone": "隐藏中二", "weights": { "trickster": 2, "lonewolf": 2, "berserker": 1 } },
+      { "id": "c", "label": "中二就是浪漫！是创作力源泉", "tone": "永远中二", "weights": { "hero": 2, "berserker": 1, "trickster": 2 } }
+    ]
+  },
+  {
+    "id": "q20",
+    "prompt": "你在网络上的发言风格更像？",
+    "scene": "表达方式",
+    "dimension": "E_I",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "长篇大论，喜欢带数据和链接", "tone": "论文模式", "weights": { "strategist": 2, "ruler": 2, "guardian": 0 } },
+      { "id": "b", "label": "短平快，表情包和梗图为主", "tone": "梗王模式", "weights": { "trickster": 3, "berserker": 1, "healer": 0 } },
+      { "id": "c", "label": "基本不发言，只点赞/收藏", "tone": "幽灵模式", "weights": { "lonewolf": 2, "healer": 1, "guardian": 1 } }
+    ]
+  },
+  {
+    "id": "q21",
+    "prompt": "你理想中的“退休生活”是？",
+    "scene": "终极向往",
+    "dimension": "J_P",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "有规划地环游世界/学新技能", "tone": "活力老年", "weights": { "hero": 2, "strategist": 1, "ruler": 1 } },
+      { "id": "b", "label": "宅家打游戏/看番/撸猫", "tone": "快乐废宅", "weights": { "lonewolf": 2, "trickster": 2, "healer": 1 } },
+      { "id": "c", "label": "开个小店/做点手工，与世无争", "tone": "佛系经营", "weights": { "guardian": 2, "healer": 2, "lonewolf": 1 } }
+    ]
+  },
+  {
+    "id": "q22",
+    "prompt": "你在同人展上看到一本很贵但很想要的本子，你会？",
+    "scene": "同人展剁手",
+    "dimension": "T_F",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "咬牙买下，事后吃土一个月", "tone": "冲动消费", "weights": { "berserker": 2, "hero": 1, "trickster": 1 } },
+      { "id": "b", "label": "拍照存手机，回去找电子版", "tone": "白嫖党", "weights": { "trickster": 2, "lonewolf": 1, "strategist": 1 } },
+      { "id": "c", "label": "跟摊主砍价，用社交技能压价", "tone": "砍价王", "weights": { "ruler": 2, "strategist": 1, "guardian": 0 } }
+    ]
+  },
+  {
+    "id": "q23",
+    "prompt": "你如何看待“戒社”（戒色吧）文化？",
+    "scene": "贴吧文化",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "纯乐子，每天去观光", "tone": "乐子人", "weights": { "trickster": 3, "berserker": 1, "lonewolf": 0 } },
+      { "id": "b", "label": "尊重，但与自己无关", "tone": "佛系", "weights": { "healer": 1, "guardian": 1, "lonewolf": 1 } },
+      { "id": "c", "label": "认真研究里面的方法论", "tone": "学术党", "weights": { "strategist": 2, "ruler": 1, "hero": 0 } }
+    ]
+  },
+  {
+    "id": "q24",
+    "prompt": "你发现自己的“推”（角色/主播）有黑料，你会？",
+    "scene": "人设崩塌",
+    "dimension": "T_F",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "立刻脱粉回踩，发小作文", "tone": "激进粉", "weights": { "berserker": 2, "trickster": 1, "ruler": 0 } },
+      { "id": "b", "label": "装作没看见，继续支持", "tone": "鸵鸟粉", "weights": { "guardian": 2, "healer": 2, "lonewolf": 0 } },
+      { "id": "c", "label": "理性分析，看黑料真假再决定", "tone": "冷静思考", "weights": { "strategist": 2, "ruler": 1, "hero": 0 } }
+    ]
+  },
+  {
+    "id": "q25",
+    "prompt": "你在群里跟人吵起来了，你会选择？",
+    "scene": "群内对线",
+    "dimension": "T_F",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "拉到小群继续吵，不污染大群", "tone": "体面对线", "weights": { "ruler": 2, "strategist": 1, "guardian": 1 } },
+      { "id": "b", "label": "直接退群，眼不见为净", "tone": "自闭退场", "weights": { "lonewolf": 2, "healer": 1, "trickster": 0 } },
+      { "id": "c", "label": "发红包，用钱解决", "tone": "钞能力", "weights": { "trickster": 2, "berserker": 1, "hero": 1 } }
+    ]
+  },
+  {
+    "id": "q26",
+    "prompt": "你如何看待“原神，启动！”这个梗？",
+    "scene": "梗文化",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "每天都说，已经成为生活仪式", "tone": "梗小鬼", "weights": { "trickster": 2, "berserker": 1, "hero": 1 } },
+      { "id": "b", "label": "偶尔用，看场合", "tone": "适度玩梗", "weights": { "healer": 1, "guardian": 1, "strategist": 1 } },
+      { "id": "c", "label": "觉得烦，屏蔽关键词", "tone": "厌梗党", "weights": { "ruler": 2, "lonewolf": 1, "guardian": 0 } }
+    ]
+  },
+  {
+    "id": "q27",
+    "prompt": "你刷到一个“教你如何用心理学让所有人都喜欢你”的视频，你会？",
+    "scene": "成功学",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "认真看完并记笔记", "tone": "实用主义", "weights": { "strategist": 2, "ruler": 1, "hero": 1 } },
+      { "id": "b", "label": "评论区刷“已学废”", "tone": "乐子人", "weights": { "trickster": 2, "berserker": 1, "lonewolf": 0 } },
+      { "id": "c", "label": "直接划走，不信这套", "tone": "清醒党", "weights": { "lonewolf": 2, "guardian": 1, "healer": 0 } }
+    ]
+  },
+  {
+    "id": "q28",
+    "prompt": "你在游戏里被队友喷“菜”，你会？",
+    "scene": "游戏甩锅",
+    "dimension": "T_F",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "回喷“你才菜”，然后互拉黑", "tone": "对线战士", "weights": { "berserker": 2, "trickster": 1, "hero": 1 } },
+      { "id": "b", "label": "默默练习，下次carry", "tone": "隐忍变强", "weights": { "strategist": 2, "lonewolf": 1, "guardian": 0 } },
+      { "id": "c", "label": "发“对不起”，然后继续送", "tone": "厚脸皮", "weights": { "trickster": 2, "healer": 1, "berserker": 1 } }
+    ]
+  },
+  {
+    "id": "q29",
+    "prompt": "你如何看待“二次元结婚证”这种虚拟结婚？",
+    "scene": "虚拟婚恋",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "浪漫！我也想要", "tone": "浪漫主义", "weights": { "healer": 2, "hero": 1, "trickster": 1 } },
+      { "id": "b", "label": "幼稚，不如现实相亲", "tone": "现实派", "weights": { "ruler": 2, "strategist": 1, "guardian": 1 } },
+      { "id": "c", "label": "纯乐子，看别人发", "tone": "乐子人", "weights": { "trickster": 2, "lonewolf": 1, "berserker": 0 } }
+    ]
+  },
+  {
+    "id": "q30",
+    "prompt": "你在漫展上被陌生人拍了肩，你会？",
+    "scene": "漫展社交",
+    "dimension": "E_I",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "回头微笑，问“需要帮忙吗？”", "tone": "社牛", "weights": { "hero": 2, "guardian": 1, "trickster": 1 } },
+      { "id": "b", "label": "假装没感觉到，快步走开", "tone": "社恐", "weights": { "lonewolf": 2, "healer": 1, "berserker": 0 } },
+      { "id": "c", "label": "回头瞪一眼，吓退对方", "tone": "生人勿近", "weights": { "berserker": 2, "ruler": 1, "lonewolf": 1 } }
+    ]
+  },
+  {
+    "id": "q31",
+    "prompt": "你如何看待“V圈动物园”（比如阿梓、嘉然等）？",
+    "scene": "V圈文化",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "每天看，已经融入血液", "tone": "重度观众", "weights": { "trickster": 2, "healer": 1, "berserker": 1 } },
+      { "id": "b", "label": "偶尔看切片，当背景音", "tone": "路人粉", "weights": { "guardian": 1, "lonewolf": 1, "strategist": 1 } },
+      { "id": "c", "label": "完全不懂，也不感兴趣", "tone": "圈外人", "weights": { "ruler": 1, "lonewolf": 2, "healer": 0 } }
+    ]
+  },
+  {
+    "id": "q32",
+    "prompt": "你追的动画结局喂屎（烂尾），你会？",
+    "scene": "烂尾创伤",
+    "dimension": "T_F",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "写万字长文分析哪里出了问题", "tone": "复盘大师", "weights": { "strategist": 2, "ruler": 1, "lonewolf": 1 } },
+      { "id": "b", "label": "去豆瓣/ BGM 打一星差评", "tone": "报复行动", "weights": { "berserker": 2, "guardian": 1, "trickster": 1 } },
+      { "id": "c", "label": "自己写同人结局，精神胜利", "tone": "二创疗伤", "weights": { "healer": 2, "trickster": 2, "hero": 1 } }
+    ]
+  },
+  {
+    "id": "q33",
+    "prompt": "你在群里发了一个很冷的梗，没人接，你会？",
+    "scene": "冷场2",
+    "dimension": "E_I",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "自嘲“好吧，我冷场了”", "tone": "自黑", "weights": { "trickster": 2, "healer": 1, "berserker": 0 } },
+      { "id": "b", "label": "连续刷屏，直到有人理", "tone": "刷屏怪", "weights": { "berserker": 2, "hero": 1, "ruler": 1 } },
+      { "id": "c", "label": "默默消失，三天不发言", "tone": "自闭", "weights": { "lonewolf": 2, "guardian": 1, "strategist": 1 } }
+    ]
+  },
+  {
+    "id": "q34",
+    "prompt": "你如何看待“赛博丁真”这种称呼？",
+    "scene": "网络梗",
+    "dimension": "S_N",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "觉得好笑，常用", "tone": "玩梗高手", "weights": { "trickster": 2, "berserker": 1, "hero": 0 } },
+      { "id": "b", "label": "有点冒犯，不太合适", "tone": "道德警察", "weights": { "guardian": 2, "healer": 1, "ruler": 1 } },
+      { "id": "c", "label": "第一次听说，不懂", "tone": "2G网", "weights": { "lonewolf": 1, "strategist": 1, "guardian": 1 } }
+    ]
+  },
+  {
+    "id": "q35",
+    "prompt": "你在游戏里是哪种类型的玩家？",
+    "scene": "游戏风格",
+    "dimension": "J_P",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "收集党，全成就全图鉴", "tone": "强迫症", "weights": { "ruler": 2, "strategist": 2, "guardian": 0 } },
+      { "id": "b", "label": "剧情党，只看故事", "tone": "沉浸派", "weights": { "healer": 2, "lonewolf": 1, "trickster": 0 } },
+      { "id": "c", "label": "社交党，游戏是聊天室", "tone": "聊天怪", "weights": { "hero": 2, "trickster": 2, "berserker": 1 } }
+    ]
+  },
+  {
+    "id": "q36",
+    "prompt": "你觉得自己在 ACG 圈子里更像什么？",
+    "scene": "自我定位",
+    "dimension": "E_I",
+    "sign": 1,
+    "options": [
+      { "id": "a", "label": "默默产出/考据的大佬", "tone": "幕后高人", "weights": { "strategist": 2, "lonewolf": 2, "ruler": 1 } },
+      { "id": "b", "label": "到处扩列的社牛", "tone": "交际花", "weights": { "hero": 2, "trickster": 2, "guardian": 1 } },
+      { "id": "c", "label": "只潜水不说话的透明人", "tone": "幽灵", "weights": { "lonewolf": 2, "healer": 1, "berserker": 0 } }
+    ]
+  }
+]

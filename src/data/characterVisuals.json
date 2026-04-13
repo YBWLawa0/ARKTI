@@ -1,0 +1,289 @@
+{
+  "amiya": {
+    "image": "/images/characters/阿米娅.png",
+    "accent": "#4f72d7",
+    "smallCharacterVideo": "/images/small_characters/阿米娅-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_阿米娅(近卫)_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 50,
+    "backgroundPositionY": 30
+  },
+  "theresa": {
+    "image": "/images/characters/特蕾西娅.png",
+    "accent": "#a774d6",
+    "smallCharacterVideo": "/images/small_characters/魔王-追悼-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_魔王_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 20,
+    "backgroundPositionY": 45
+  },
+  "lemuen": {
+    "image": "/images/characters/蕾缪安.png",
+    "accent": "#e7a44a",
+    "smallCharacterVideo": "/images/small_characters/蕾缪安-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_蕾缪安_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -50,
+    "backgroundPositionY": 40
+  },
+  "nearl": {
+    "image": "/images/characters/临光.png",
+    "accent": "#d3a84f",
+    "smallCharacterVideo": "/images/small_characters/耀骑士临光-复现荣光-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_耀骑士临光_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 20,
+    "backgroundPositionY": 45
+  },
+  "rosmontis": {
+    "image": "/images/characters/迷迭香.png",
+    "accent": "#8aa0d8",
+    "smallCharacterVideo": "/images/small_characters/迷迭香-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_迷迭香_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 0,
+    "backgroundPositionY": 50
+  },
+  "mudrock": {
+    "image": "/images/characters/泥岩.png",
+    "accent": "#6f7689",
+    "smallCharacterVideo": "/images/small_characters/泥岩-黑曜石-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_泥岩_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 0,
+    "backgroundPositionY": 15
+  },
+  "muelsyse": {
+    "image": "/images/characters/缪尔赛斯.png",
+    "accent": "#5db7a5",
+    "smallCharacterVideo": "/images/small_characters/缪尔赛思-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_缪尔赛思_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -50,
+    "backgroundPositionY": 0
+  },
+  "kaltsit": {
+    "image": "/images/characters/凯尔希.png",
+    "accent": "#4f8f7a",
+    "smallCharacterVideo": "/images/small_characters/凯尔希-时遗-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_凯尔希_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -30,
+    "backgroundPositionY": 40
+  },
+  "pepe": {
+    "image": "/images/characters/佩佩.png",
+    "accent": "#e85d8a",
+    "smallCharacterVideo": "/images/small_characters/佩佩-星移-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_佩佩_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 0,
+    "backgroundPositionY": 45
+  },
+  "ulpius": {
+    "image": "/images/characters/乌尔比安.png",
+    "accent": "#2a4a6b",
+    "smallCharacterVideo": "/images/small_characters/乌尔比安-注目深渊-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_乌尔比安_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 70
+  },
+  "mostima": {
+    "image": "/images/characters/莫斯提马.png",
+    "accent": "#3d4a8c",
+    "smallCharacterVideo": "/images/small_characters/莫斯提马-除魅-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_莫斯提马_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -25,
+    "backgroundPositionY": 35
+  },
+  "logos": {
+    "image": "/images/characters/逻各斯.png",
+    "accent": "#5c4d7a",
+    "smallCharacterVideo": "/images/small_characters/逻各斯-辉煌的静谧-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_逻各斯_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -25,
+    "backgroundPositionY": 55
+  },
+  "silverash": {
+    "image": "/images/characters/银灰.png",
+    "accent": "#5a7a9e",
+    "smallCharacterVideo": "/images/small_characters/银灰-不融冰-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_银灰_skin3.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -35,
+    "backgroundPositionY": 60
+  },
+  "zima": {
+    "image": "/images/characters/凛冬.png",
+    "accent": "#8b5a2b",
+    "smallCharacterVideo": "/images/small_characters/凛冬-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_凛冬_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -10,
+    "backgroundPositionY": 40
+  },
+  "nian": {
+    "image": "/images/characters/年.png",
+    "accent": "#c9a227",
+    "smallCharacterVideo": "/images/small_characters/年-霹雳导演-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_年_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -15,
+    "backgroundPositionY": 30
+  },
+  "mlynar": {
+    "image": "/images/characters/玛恩纳.png",
+    "accent": "#b8a060",
+    "smallCharacterVideo": "/images/small_characters/玛恩纳-远路-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_玛恩纳_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 42
+  },
+  "saria": {
+    "image": "/images/characters/塞雷娅.png",
+    "accent": "#6b8f9e",
+    "smallCharacterVideo": "/images/small_characters/塞雷娅-铁律-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_塞雷娅_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -65,
+    "backgroundPositionY": 65
+  },
+  "shu": {
+    "image": "/images/characters/黍.png",
+    "accent": "#7cb87a",
+    "smallCharacterVideo": "/images/small_characters/黍-春日宴-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_黍_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -35,
+    "backgroundPositionY": 55
+  },
+  "eyjafjalla": {
+    "image": "/images/characters/艾雅法拉.png",
+    "accent": "#c45c5c",
+    "smallCharacterVideo": "/images/small_characters/艾雅法拉-绵绒小魔女-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_艾雅法拉_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 0,
+    "backgroundPositionY": 42
+  },
+  "chen": {
+    "image": "/images/characters/陈.png",
+    "accent": "#3d6b9e",
+    "smallCharacterVideo": "/images/small_characters/陈-初晴-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_陈_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 40
+  },
+  "arc": {
+    "image": "/images/characters/电弧.png",
+    "accent": "#6a9ec9",
+    "smallCharacterVideo": "/images/small_characters/电弧-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_电弧_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -40,
+    "backgroundPositionY": 48
+  },
+  "yu": {
+    "image": "/images/characters/余.png",
+    "accent": "#d4a574",
+    "smallCharacterVideo": "/images/small_characters/余-愿清晓-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_余_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -35,
+    "backgroundPositionY": 50
+  },
+  "thorns": {
+    "image": "/images/characters/棘刺.png",
+    "accent": "#4a7a6e",
+    "smallCharacterVideo": "/images/small_characters/棘刺-锋潮-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_棘刺_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 40
+  },
+  "crownslayer": {
+    "image": "/images/characters/弑君者.png",
+    "accent": "#8b4d5c",
+    "smallCharacterVideo": "/images/small_characters/弑君者-夜之终局-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_弑君者_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -70,
+    "backgroundPositionY": 55
+  },
+  "skadi": {
+    "image": "/images/characters/斯卡蒂.png",
+    "accent": "#5a7aa8",
+    "smallCharacterVideo": "/images/small_characters/斯卡蒂-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_浊心斯卡蒂_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -10,
+    "backgroundPositionY": 55
+  },
+  "ling": {
+    "image": "/images/characters/令.png",
+    "accent": "#6b8fa3",
+    "smallCharacterVideo": "/images/small_characters/令-方遒卷-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_令_skin3.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -15,
+    "backgroundPositionY": 50
+  },
+  "yao": {
+    "image": "/images/characters/遥.png",
+    "accent": "#c97b9e",
+    "smallCharacterVideo": "/images/small_characters/遥-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_遥_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -30,
+    "backgroundPositionY": 32
+  },
+  "exusiai": {
+    "image": "/images/characters/能天使.png",
+    "accent": "#d4a84f",
+    "smallCharacterVideo": "/images/small_characters/新约能天使-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_新约能天使_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 45
+  },
+  "wang": {
+    "image": "/images/characters/望.png",
+    "accent": "#7a6b8e",
+    "smallCharacterVideo": "/images/small_characters/望-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_望_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -30,
+    "backgroundPositionY": 42
+  },
+  "shmang": {
+    "image": "/images/characters/死芒.png",
+    "accent": "#8b3d4a",
+    "smallCharacterVideo": "/images/small_characters/死芒-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_死芒_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -35,
+    "backgroundPositionY": 60
+  },
+  "w": {
+    "image": "/images/characters/维什戴尔.png",
+    "accent": "#a83d45",
+    "smallCharacterVideo": "/images/small_characters/维什戴尔-绝对主角-正面-Skill_Down_3_Loop-x1.webm",
+    "backgroundImage": "/images/background/立绘_维什戴尔_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -25,
+    "backgroundPositionY": 50
+  },
+  "hypergryph": {
+    "image": "/images/characters/海猫.png",
+    "accent": "#5c6b8a",
+    "backgroundImage": "/images/background/海猫络合物.png",
+    "backgroundShadow": false,
+    "backgroundPositionX": 50,
+    "backgroundPositionY": 40
+  }
+}

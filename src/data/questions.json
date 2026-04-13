@@ -1,0 +1,665 @@
+[
+  {
+    "id": "q1",
+    "text": "在公开招募或卡池讨论中，我更倾向主动分享自己的结果或建议。",
+    "scene": "社区互动",
+    "dimension": "E_I",
+    "sign": 1,
+    "weights": {
+      "hero": 1,
+      "trickster": 2,
+      "ruler": 1,
+      "lonewolf": -2,
+      "guardian": -1,
+      "strategist": 0,
+      "healer": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q2",
+    "text": "在刷素材或日常关卡时，我更习惯独自完成而不是与人讨论效率。",
+    "scene": "日常刷图",
+    "dimension": "E_I",
+    "sign": -1,
+    "weights": {
+      "lonewolf": 2,
+      "strategist": 1,
+      "guardian": 1,
+      "hero": -1,
+      "trickster": -1,
+      "ruler": 0,
+      "healer": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q3",
+    "text": "看到整活或极限打法视频时，我会想参与讨论甚至分享自己的看法。",
+    "scene": "社区互动",
+    "dimension": "E_I",
+    "sign": 1,
+    "weights": {
+      "trickster": 2,
+      "hero": 1,
+      "berserker": 1,
+      "lonewolf": -1,
+      "guardian": -1,
+      "strategist": 0,
+      "ruler": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q4",
+    "text": "面对争议角色或强度讨论，我通常不会参与评论，更愿意自己判断。",
+    "scene": "社区争议",
+    "dimension": "E_I",
+    "sign": -1,
+    "weights": {
+      "lonewolf": 2,
+      "guardian": 1,
+      "healer": 1,
+      "trickster": -1,
+      "berserker": -1,
+      "hero": 0,
+      "strategist": 0,
+      "ruler": 0
+    }
+  },
+  {
+    "id": "q5",
+    "text": "当活动上线时，我会第一时间查看攻略或讨论区的评价。",
+    "scene": "活动体验",
+    "dimension": "E_I",
+    "sign": 1,
+    "weights": {
+      "strategist": 2,
+      "hero": 1,
+      "ruler": 1,
+      "lonewolf": -1,
+      "guardian": -1,
+      "trickster": 0,
+      "healer": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q6",
+    "text": "我更享受一个人慢慢摸索关卡机制，而不是依赖他人经验。",
+    "scene": "战斗探索",
+    "dimension": "E_I",
+    "sign": -1,
+    "weights": {
+      "lonewolf": 2,
+      "strategist": 2,
+      "hero": 1,
+      "healer": -1,
+      "guardian": -1,
+      "trickster": 0,
+      "ruler": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q7",
+    "text": "在公会或玩家群里，我会主动参与讨论活动打法或养成建议。",
+    "scene": "社交场合",
+    "dimension": "E_I",
+    "sign": 1,
+    "weights": {
+      "hero": 2,
+      "ruler": 1,
+      "guardian": 1,
+      "lonewolf": -2,
+      "strategist": 0,
+      "trickster": 0,
+      "healer": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q8",
+    "text": "我很少在社区发言，更多只是浏览内容获取信息。",
+    "scene": "社区浏览",
+    "dimension": "E_I",
+    "sign": -1,
+    "weights": {
+      "lonewolf": 2,
+      "strategist": 1,
+      "guardian": 1,
+      "hero": -1,
+      "trickster": -1,
+      "ruler": 0,
+      "healer": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q9",
+    "text": "遇到复杂机制关卡时，我会通过交流或查资料来加快理解。",
+    "scene": "关卡理解",
+    "dimension": "E_I",
+    "sign": 1,
+    "weights": {
+      "strategist": 2,
+      "hero": 1,
+      "ruler": 1,
+      "lonewolf": -1,
+      "guardian": -1,
+      "trickster": 0,
+      "healer": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q10",
+    "text": "我更关注干员技能数值与机制细节，而不是整体氛围或设定。",
+    "scene": "角色理解",
+    "dimension": "S_N",
+    "sign": 1,
+    "weights": {
+      "strategist": 2,
+      "ruler": 1,
+      "guardian": 1,
+      "healer": -2,
+      "trickster": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q11",
+    "text": "剧情中隐藏的信息或伏笔，比明确给出的设定更让我感兴趣。",
+    "scene": "剧情体验",
+    "dimension": "S_N",
+    "sign": -1,
+    "weights": {
+      "strategist": 2,
+      "lonewolf": 1,
+      "healer": 1,
+      "berserker": -1,
+      "trickster": -1,
+      "hero": 0,
+      "guardian": 0,
+      "ruler": 0
+    }
+  },
+  {
+    "id": "q12",
+    "text": "在编队时，我更依赖具体数值与测试结果来做决定。",
+    "scene": "阵容构建",
+    "dimension": "S_N",
+    "sign": 1,
+    "weights": {
+      "strategist": 2,
+      "ruler": 2,
+      "guardian": 1,
+      "healer": -1,
+      "trickster": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q13",
+    "text": "我更喜欢根据直觉或整体感觉来判断阵容是否可行。",
+    "scene": "阵容构建",
+    "dimension": "S_N",
+    "sign": -1,
+    "weights": {
+      "healer": 2,
+      "hero": 1,
+      "trickster": 1,
+      "strategist": -2,
+      "ruler": -1,
+      "guardian": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q14",
+    "text": "面对新机制时，我会优先通过实际操作来理解，而不是理论分析。",
+    "scene": "玩法学习",
+    "dimension": "S_N",
+    "sign": 1,
+    "weights": {
+      "strategist": 1,
+      "hero": 1,
+      "guardian": 1,
+      "trickster": -1,
+      "healer": -1,
+      "ruler": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q15",
+    "text": "我会反复推敲剧情设定之间的逻辑关系与世界观结构。",
+    "scene": "世界观理解",
+    "dimension": "S_N",
+    "sign": -1,
+    "weights": {
+      "strategist": 2,
+      "lonewolf": 1,
+      "healer": 1,
+      "berserker": -1,
+      "trickster": -1,
+      "hero": 0,
+      "guardian": 0,
+      "ruler": 0
+    }
+  },
+  {
+    "id": "q16",
+    "text": "我更关注当前关卡能否通关，而不是它背后的设计思路。",
+    "scene": "战斗体验",
+    "dimension": "S_N",
+    "sign": 1,
+    "weights": {
+      "guardian": 2,
+      "hero": 1,
+      "ruler": 1,
+      "strategist": -1,
+      "healer": -1,
+      "trickster": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q17",
+    "text": "我更容易被角色设定、台词和情绪表达打动。",
+    "scene": "剧情体验",
+    "dimension": "S_N",
+    "sign": -1,
+    "weights": {
+      "healer": 2,
+      "hero": 1,
+      "guardian": 1,
+      "strategist": -2,
+      "ruler": -1,
+      "trickster": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q18",
+    "text": "我会记录或记住关键数值与机制细节，以便后续使用。",
+    "scene": "策略准备",
+    "dimension": "S_N",
+    "sign": 1,
+    "weights": {
+      "strategist": 2,
+      "ruler": 2,
+      "guardian": 1,
+      "healer": -1,
+      "trickster": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q19",
+    "text": "在培养干员时，我更优先考虑强度与功能性。",
+    "scene": "角色养成",
+    "dimension": "T_F",
+    "sign": 1,
+    "weights": {
+      "strategist": 2,
+      "ruler": 2,
+      "guardian": 1,
+      "healer": -2,
+      "hero": -1,
+      "trickster": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q20",
+    "text": "即使强度一般，只要喜欢角色设定，我也会优先投入资源培养。",
+    "scene": "角色养成",
+    "dimension": "T_F",
+    "sign": -1,
+    "weights": {
+      "healer": 2,
+      "hero": 1,
+      "guardian": 1,
+      "strategist": -2,
+      "ruler": -1,
+      "trickster": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q21",
+    "text": "面对资源分配时，我会理性计算收益而不是凭感觉决定。",
+    "scene": "资源管理",
+    "dimension": "T_F",
+    "sign": 1,
+    "weights": {
+      "strategist": 2,
+      "ruler": 2,
+      "guardian": 1,
+      "healer": -1,
+      "trickster": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q22",
+    "text": "我会因为剧情中的情感冲击而改变对某个角色的看法或投入。",
+    "scene": "剧情影响",
+    "dimension": "T_F",
+    "sign": -1,
+    "weights": {
+      "healer": 2,
+      "hero": 1,
+      "guardian": 1,
+      "strategist": -1,
+      "ruler": -1,
+      "trickster": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q23",
+    "text": "在讨论干员强度时，我更关注数据和实战表现。",
+    "scene": "社区讨论",
+    "dimension": "T_F",
+    "sign": 1,
+    "weights": {
+      "strategist": 2,
+      "ruler": 1,
+      "guardian": 1,
+      "healer": -2,
+      "trickster": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q24",
+    "text": "我更容易被角色之间的关系与情感故事吸引。",
+    "scene": "剧情体验",
+    "dimension": "T_F",
+    "sign": -1,
+    "weights": {
+      "healer": 2,
+      "hero": 1,
+      "guardian": 1,
+      "strategist": -2,
+      "ruler": -1,
+      "trickster": 0,
+      "lonewolf": 0,
+      "berserker": 0
+    }
+  },
+  {
+    "id": "q25",
+    "text": "在高难关卡中，我更倾向选择稳定可靠的解法。",
+    "scene": "高难挑战",
+    "dimension": "T_F",
+    "sign": 1,
+    "weights": {
+      "guardian": 2,
+      "strategist": 2,
+      "ruler": 1,
+      "berserker": -2,
+      "trickster": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q26",
+    "text": "即使失败多次，我也愿意尝试更有趣或更极限的打法。",
+    "scene": "高难挑战",
+    "dimension": "T_F",
+    "sign": -1,
+    "weights": {
+      "berserker": 2,
+      "trickster": 2,
+      "hero": 1,
+      "guardian": -2,
+      "ruler": -1,
+      "strategist": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q27",
+    "text": "我在选择干员时，会优先考虑团队整体协同效果。",
+    "scene": "阵容构建",
+    "dimension": "T_F",
+    "sign": 1,
+    "weights": {
+      "ruler": 2,
+      "guardian": 2,
+      "strategist": 1,
+      "berserker": -2,
+      "trickster": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q28",
+    "text": "在开荒新活动时，我会提前规划体力与资源使用。",
+    "scene": "活动规划",
+    "dimension": "J_P",
+    "sign": 1,
+    "weights": {
+      "ruler": 2,
+      "strategist": 2,
+      "guardian": 1,
+      "trickster": -2,
+      "berserker": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q29",
+    "text": "我更倾向随玩随决定，而不是提前制定详细计划。",
+    "scene": "游戏节奏",
+    "dimension": "J_P",
+    "sign": -1,
+    "weights": {
+      "trickster": 2,
+      "berserker": 1,
+      "hero": 1,
+      "ruler": -2,
+      "guardian": -1,
+      "strategist": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q30",
+    "text": "我会为未来卡池或活动提前储备资源并制定抽卡计划。",
+    "scene": "抽卡规划",
+    "dimension": "J_P",
+    "sign": 1,
+    "weights": {
+      "ruler": 2,
+      "strategist": 2,
+      "guardian": 1,
+      "berserker": -2,
+      "trickster": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q31",
+    "text": "遇到喜欢的角色时，我容易临时改变计划直接抽卡。",
+    "scene": "抽卡决策",
+    "dimension": "J_P",
+    "sign": -1,
+    "weights": {
+      "berserker": 2,
+      "trickster": 1,
+      "hero": 1,
+      "ruler": -2,
+      "guardian": -1,
+      "strategist": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q32",
+    "text": "我会固定时间处理基建与日常任务，保持稳定节奏。",
+    "scene": "日常管理",
+    "dimension": "J_P",
+    "sign": 1,
+    "weights": {
+      "guardian": 2,
+      "ruler": 2,
+      "strategist": 1,
+      "trickster": -2,
+      "berserker": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q33",
+    "text": "我更喜欢根据心情随时调整游戏内容，而不是按固定流程执行。",
+    "scene": "游戏节奏",
+    "dimension": "J_P",
+    "sign": -1,
+    "weights": {
+      "trickster": 2,
+      "hero": 1,
+      "berserker": 1,
+      "ruler": -2,
+      "guardian": -1,
+      "strategist": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q34",
+    "text": "在高难模式前，我会提前准备多个备选方案以应对变化。",
+    "scene": "战斗策略",
+    "dimension": "J_P",
+    "sign": 1,
+    "weights": {
+      "strategist": 2,
+      "ruler": 1,
+      "guardian": 1,
+      "trickster": -2,
+      "berserker": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q35",
+    "text": "我更愿意在失败中临场调整，而不是依赖预先制定的方案。",
+    "scene": "战斗策略",
+    "dimension": "J_P",
+    "sign": -1,
+    "weights": {
+      "trickster": 2,
+      "berserker": 1,
+      "hero": 1,
+      "strategist": -2,
+      "ruler": -1,
+      "guardian": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q36",
+    "text": "我会按照长期目标逐步培养干员，而不是随意分配资源。",
+    "scene": "养成规划",
+    "dimension": "J_P",
+    "sign": 1,
+    "weights": {
+      "ruler": 2,
+      "strategist": 2,
+      "guardian": 1,
+      "berserker": -2,
+      "trickster": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q37",
+    "text": "我经常临时改变培养方向，尝试不同角色或玩法。",
+    "scene": "养成尝试",
+    "dimension": "J_P",
+    "sign": -1,
+    "weights": {
+      "trickster": 2,
+      "berserker": 1,
+      "hero": 1,
+      "ruler": -2,
+      "guardian": -1,
+      "strategist": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q38",
+    "text": "面对复杂活动，我会先整体规划再逐步推进。",
+    "scene": "活动推进",
+    "dimension": "J_P",
+    "sign": 1,
+    "weights": {
+      "strategist": 2,
+      "ruler": 2,
+      "guardian": 1,
+      "trickster": -2,
+      "berserker": -1,
+      "hero": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  },
+  {
+    "id": "q39",
+    "text": "我更享受随机应变带来的变化，而不是按计划推进游戏。",
+    "scene": "游戏节奏",
+    "dimension": "J_P",
+    "sign": -1,
+    "weights": {
+      "trickster": 2,
+      "berserker": 2,
+      "hero": 1,
+      "ruler": -2,
+      "guardian": -1,
+      "strategist": 0,
+      "lonewolf": 0,
+      "healer": 0
+    }
+  }
+]
