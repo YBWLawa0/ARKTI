@@ -12,18 +12,25 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    # 减轻 actions/* 在 Node 20 上的弃用提示（runner 默认将迁移到 Node 24）
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     permissions:
       contents: write
 
     steps:
       - uses: actions/checkout@v4
 
+      # Star History 后端在 Cloudflare 后；机房出口 + curl 默认 UA 易触发 403，需显式 UA 并规范仓库名为小写（与 API 301 一致）
       - name: Fetch Star History SVG
         run: |
           mkdir -p assets
           CACHEBUST=$(date +%Y%m%d%H%M)
           curl -fsSL \
-            "https://api.star-history.com/svg?repos=YBWLawa0/ARKTI&type=Date&t=${CACHEBUST}" \
+            --retry 3 --retry-delay 8 \
+            -A 'Mozilla/5.0 (compatible; ARKTI-StarHistory-Fetch/1.0; +https://github.com/YBWLawa0/ARKTI)' \
+            -H 'Accept: image/svg+xml,*/*' \
+            "https://api.star-history.com/svg?repos=ybwlawa0/arkti&type=Date&t=${CACHEBUST}" \
             -o assets/star-history.svg
 
       - name: Commit if changed
