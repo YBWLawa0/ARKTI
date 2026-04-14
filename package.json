@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "html-to-image": "^1.11.13",
+    "pinyin-pro": "^3.28.1",
     "vue": "^3.5.32",
     "vue-router": "^4.6.2"
   },

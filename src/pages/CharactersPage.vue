@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue'
+import { pinyin } from 'pinyin-pro'
 import { useQuiz } from '../composables/useQuiz'
 import { useI18n } from '../i18n'
 import { getLocalizedCharacterName, getLocalizedCharacterSeries } from '../i18n/characters'
@@ -6,6 +8,55 @@ import type { CharacterMatch } from '../types/quiz'
 
 const { characters } = useQuiz()
 const { locale, t } = useI18n()
+const searchQuery = ref('')
+
+const characterList = computed(() => characters ?? [])
+
+function buildPinyinText(source: string) {
+  if (!source.trim()) {
+    return ''
+  }
+
+  const pinyinArray = pinyin(source, { toneType: 'none', type: 'array' }).map((item) => item.toLocaleLowerCase())
+  const pinyinVariants = [pinyinArray]
+  const sourceChars = Array.from(source)
+
+  // 为常见多音字补充检索别名（例如：重岳 => chongyue）。
+  if (sourceChars.length === pinyinArray.length) {
+    sourceChars.forEach((char, index) => {
+      if (char === '重') {
+        const aliasVariant = [...pinyinArray]
+        aliasVariant[index] = 'chong'
+        pinyinVariants.push(aliasVariant)
+      }
+    })
+  }
+
+  const pinyinTokens = pinyinVariants.map((variant) => {
+    const joined = variant.join('')
+    const spaced = variant.join(' ')
+    const initials = variant.map((item) => item[0] ?? '').join('')
+    return `${joined} ${spaced} ${initials}`.trim()
+  })
+
+  return pinyinTokens.join(' ')
+}
+
+const filteredCharacterList = computed(() => {
+  const keyword = searchQuery.value.trim().toLocaleLowerCase()
+  if (!keyword) {
+    return characterList.value
+  }
+
+  return characterList.value.filter((character) => {
+    const localizedName = getLocalizedCharacterName(character, locale.value)
+    const localizedTitle = t(`characters.${character.id}.title`, undefined, character.title)
+    const namePinyin = buildPinyinText(localizedName)
+    const titlePinyin = buildPinyinText(localizedTitle)
+    const searchableText = `${localizedName} ${localizedTitle} ${namePinyin} ${titlePinyin}`.toLocaleLowerCase()
+    return searchableText.includes(keyword)
+  })
+})
 
 function buildCardStyle(character: CharacterMatch) {
   return {
@@ -22,11 +73,21 @@ function buildCardStyle(character: CharacterMatch) {
       <p class="eyebrow">{{ t('characters.eyebrow') }}</p>
       <h1 class="display-title">{{ t('characters.title') }}</h1>
       <p class="lead">{{ t('characters.lead') }}</p>
+      <p class="collection-bar">{{ t('characters.countBar', { count: filteredCharacterList.length }) }}</p>
+      <div class="search-wrap">
+        <input
+          v-model="searchQuery"
+          type="search"
+          class="character-search"
+          :placeholder="t('characters.searchPlaceholder', undefined, '搜索角色名或Title')"
+          :aria-label="t('characters.searchPlaceholder', undefined, '搜索角色名或Title')"
+        />
+      </div>
     </section>
 
     <section class="characters-grid">
       <RouterLink
-        v-for="character in characters"
+        v-for="character in filteredCharacterList"
         :key="character.id"
         :to="{ path: '/result', query: { character: character.id } }"
         class="character-card"
@@ -53,6 +114,43 @@ function buildCardStyle(character: CharacterMatch) {
 </template>
 
 <style scoped>
+.search-wrap {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.character-search {
+  width: min(740px, calc(100% - 10rem));
+  height: 2.25rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid #cde1d6;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2d4638;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.character-search:focus {
+  border-color: #6fb894;
+  box-shadow: 0 0 0 3px rgba(111, 184, 148, 0.2);
+}
+
+.collection-bar {
+  margin-top: 0.9rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #2f6650;
+  background: linear-gradient(90deg, #ecfff2 0%, #f3fbff 100%);
+  border: 1px solid #cdebd9;
+  box-shadow: 0 6px 18px rgba(47, 102, 80, 0.08);
+}
+
 .characters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -185,6 +283,15 @@ function buildCardStyle(character: CharacterMatch) {
 }
 
 @media (max-width: 600px) {
+  .search-wrap {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .character-search {
+    width: 100%;
+  }
+
   .characters-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;

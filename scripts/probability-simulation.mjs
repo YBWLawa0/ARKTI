@@ -10,6 +10,7 @@ import characters from '../src/data/characters.json' with { type: 'json' }
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, '..')
 const probabilityOut = path.join(root, 'src/data/characterProbabilities.json')
+const seed = 20260411
 
 function createRng(seed) {
   let state = seed >>> 0
@@ -22,10 +23,15 @@ function createRng(seed) {
 
 const answerScale = [-3, -2, -1, 0, 1, 2, 3]
 /** 与 src/constants/quizSession.ts 中 QUIZ_SESSION_QUESTION_COUNT 保持一致 */
-const QUIZ_SESSION_QUESTION_COUNT = 20
-const rng = createRng(20260411)
+const QUIZ_SESSION_QUESTION_COUNT = 30
+const rng = createRng(seed)
 const runs = 200000
 const winnerCounts = new Map(characters.map((character) => [character.id, 0]))
+
+function toProbabilityPercent(count) {
+  const percent = Number(((count / runs) * 100).toFixed(2))
+  return Math.max(0.01, percent)
+}
 
 function shufflePickSession(source, count) {
   const n = Math.min(count, source.length)
@@ -57,18 +63,18 @@ const entries = [...winnerCounts.entries()]
   .map(([id, count]) => ({
     id,
     count,
-    probability: Number(((count / runs) * 100).toFixed(2)),
+    probability: toProbabilityPercent(count),
   }))
 
 const probabilities = Object.fromEntries(
   characters.map((character) => {
     const count = winnerCounts.get(character.id) ?? 0
-    return [character.id, Number(((count / runs) * 100).toFixed(2))]
+    return [character.id, toProbabilityPercent(count)]
   }),
 )
 
 const payload = {
-  seed: 20260411,
+  seed,
   runs,
   probabilities,
 }
@@ -77,7 +83,7 @@ fs.writeFileSync(probabilityOut, `${JSON.stringify(payload, null, 2)}\n`, 'utf8'
 console.log(`Wrote ${path.relative(root, probabilityOut)}`)
 
 console.log(JSON.stringify({
-  seed: 20260411,
+  seed,
   runs,
   entries,
 }, null, 2))

@@ -1,8 +1,8 @@
 [
   {
     "id": "q1",
-    "text": "在一个陌生的据点、车站或临时营地里，只要话题是我熟悉的，我通常会主动加入交谈。",
-    "scene": "社交场合",
+    "text": "在避难点排队领物资时，我常会主动和身边陌生人搭话，确认彼此接下来怎么走。",
+    "scene": "切城避难点·临时同路人",
     "dimension": "E_I",
     "sign": 1,
     "weights": {
@@ -18,8 +18,8 @@
   },
   {
     "id": "q2",
-    "text": "比起和许多人结伴同行，我更喜欢一个人安静地观察四周、整理思路。",
-    "scene": "行动方式",
+    "text": "天灾预警响起后，我更想一个人上屋顶看风向和云层，而不是待在人群里等消息。",
+    "scene": "天灾前夜·屋顶观测",
     "dimension": "E_I",
     "sign": -1,
     "weights": {
@@ -35,25 +35,25 @@
   },
   {
     "id": "q3",
-    "text": "若队伍一时没有人出声，我往往会先开口，把局面撑起来。",
-    "scene": "团队推进",
+    "text": "候诊区气氛发紧、没人说话时，我会先说点假话把大家情绪稳下来。",
+    "scene": "地下诊所·候诊人群",
     "dimension": "E_I",
     "sign": 1,
     "weights": {
-      "hero": 2,
-      "strategist": 0,
+      "hero": 0,
+      "strategist": 1,
       "guardian": -1,
       "lonewolf": -2,
-      "healer": 0,
-      "berserker": 1,
-      "trickster": 1,
-      "ruler": 2
+      "healer": -1,
+      "berserker": 0,
+      "trickster": 2,
+      "ruler": 0
     }
   },
   {
     "id": "q4",
-    "text": "就算我心里已经有了判断，我也更习惯先自己想清楚，而不是立刻说出来。",
-    "scene": "表达习惯",
+    "text": "跑完一整天线路回到驻点，我通常先自己安静一会儿，再和别人聊见闻。",
+    "scene": "信使驻点·回程夜路",
     "dimension": "E_I",
     "sign": -1,
     "weights": {
@@ -62,225 +62,344 @@
       "guardian": 1,
       "lonewolf": 2,
       "healer": 0,
-      "berserker": 0,
+      "berserker": -1,
       "trickster": -1,
       "ruler": 0
     }
   },
   {
     "id": "q5",
-    "text": "如果一件事关系到很多人，我会愿意站到前面，让大家知道该往哪里走。",
-    "scene": "责任承担",
+    "text": "登车口开始拥挤时，我会下意识站到前面维持秩序，避免踩踏和争抢。",
+    "scene": "移动城邦停靠·登车口",
     "dimension": "E_I",
     "sign": 1,
     "weights": {
       "hero": 2,
-      "strategist": 0,
-      "guardian": 0,
+      "strategist": -1,
+      "guardian": -1,
       "lonewolf": -2,
       "healer": 1,
       "berserker": 0,
-      "trickster": 1,
-      "ruler": 2
+      "trickster": 2,
+      "ruler": 1
     }
   },
   {
     "id": "q6",
-    "text": "听到一段历史、传闻或只言片语时，我会忍不住去想它背后还藏着什么没有说出口的东西。",
-    "scene": "信息理解",
-    "dimension": "S_N",
-    "sign": 1,
-    "weights": {
-      "hero": 0,
-      "strategist": 2,
-      "guardian": -1,
-      "lonewolf": 1,
-      "healer": 1,
-      "berserker": 0,
-      "trickster": 2,
-      "ruler": -1
-    }
-  },
-  {
-    "id": "q7",
-    "text": "比起揣测隐喻与象征，我更在意眼前的局势、资源和能立刻确认的事实。",
-    "scene": "判断依据",
-    "dimension": "S_N",
+    "text": "翻旧报纸和口述记录时，我更喜欢独自整理线索，不急着马上讨论结论。",
+    "scene": "档案库·旧报纸角落",
+    "dimension": "E_I",
     "sign": -1,
     "weights": {
-      "hero": 0,
-      "strategist": -2,
-      "guardian": 2,
-      "lonewolf": 0,
-      "healer": 1,
-      "berserker": 0,
-      "trickster": -1,
-      "ruler": 2
-    }
-  },
-  {
-    "id": "q8",
-    "text": "遇到一个特别的人或一件特别的事时，我会下意识去想：它在这片大地上究竟意味着什么。",
-    "scene": "世界观感知",
-    "dimension": "S_N",
-    "sign": 1,
-    "weights": {
-      "hero": 1,
+      "hero": -1,
       "strategist": 2,
-      "guardian": -1,
-      "lonewolf": 0,
-      "healer": 0,
-      "berserker": 0,
-      "trickster": 2,
-      "ruler": -1
-    }
-  },
-  {
-    "id": "q9",
-    "text": "与其把精力花在猜测未来走向，我更愿意先把手上的补给、路线和安排处理妥当。",
-    "scene": "生存取向",
-    "dimension": "S_N",
-    "sign": -1,
-    "weights": {
-      "hero": 0,
-      "strategist": -1,
-      "guardian": 2,
-      "lonewolf": 0,
-      "healer": 1,
-      "berserker": -1,
-      "trickster": -1,
-      "ruler": 2
-    }
-  },
-  {
-    "id": "q10",
-    "text": "一句台词、一个眼神，甚至一段残缺的记录，都可能让我联想到许多未被明说的故事。",
-    "scene": "联想能力",
-    "dimension": "S_N",
-    "sign": 1,
-    "weights": {
-      "hero": 1,
-      "strategist": 2,
-      "guardian": -1,
-      "lonewolf": 0,
-      "healer": 1,
-      "berserker": 0,
-      "trickster": 2,
-      "ruler": -1
-    }
-  },
-  {
-    "id": "q11",
-    "text": "面对争议时，我通常会先判断这件事是否合理，而不是先在意它是否让人难受。",
-    "scene": "价值判断",
-    "dimension": "T_F",
-    "sign": 1,
-    "weights": {
-      "hero": 0,
-      "strategist": 2,
-      "guardian": -1,
-      "lonewolf": 2,
-      "healer": -2,
-      "berserker": 1,
-      "trickster": 0,
-      "ruler": 1
-    }
-  },
-  {
-    "id": "q12",
-    "text": "哪怕从结果看是更优解，我也很难接受为了大局而轻易舍弃具体的某个人。",
-    "scene": "道德抉择",
-    "dimension": "T_F",
-    "sign": -1,
-    "weights": {
-      "hero": 1,
-      "strategist": -2,
-      "guardian": 2,
-      "lonewolf": -1,
-      "healer": 2,
-      "berserker": -1,
-      "trickster": 0,
-      "ruler": -1
-    }
-  },
-  {
-    "id": "q13",
-    "text": "听到一个决定时，我会本能地去拆它的逻辑、代价与后果，而不是只看表面的立场。",
-    "scene": "分析倾向",
-    "dimension": "T_F",
-    "sign": 1,
-    "weights": {
-      "hero": 0,
-      "strategist": 2,
-      "guardian": -1,
-      "lonewolf": 2,
-      "healer": -2,
-      "berserker": 0,
-      "trickster": 1,
-      "ruler": 1
-    }
-  },
-  {
-    "id": "q14",
-    "text": "我很容易被人与人之间的情感牵连打动，哪怕那并不改变整件事的走向。",
-    "scene": "情感共鸣",
-    "dimension": "T_F",
-    "sign": -1,
-    "weights": {
-      "hero": 1,
-      "strategist": -1,
       "guardian": 1,
-      "lonewolf": -1,
-      "healer": 2,
+      "lonewolf": 2,
+      "healer": 0,
       "berserker": -1,
-      "trickster": 0,
+      "trickster": -1,
       "ruler": 0
     }
   },
   {
-    "id": "q15",
-    "text": "在关键分歧面前，我宁可把话说得直接一点，也不愿为了气氛而模糊重点。",
-    "scene": "冲突处理",
-    "dimension": "T_F",
+    "id": "q7",
+    "text": "和陌生街区的人临时协作（借仓、借车、借人手）时，我愿意先开口把关系搭起来。",
+    "scene": "龙门街区·店主互助",
+    "dimension": "E_I",
     "sign": 1,
     "weights": {
-      "hero": 0,
+      "hero": 2,
+      "strategist": -1,
+      "guardian": -1,
+      "lonewolf": -2,
+      "healer": 1,
+      "berserker": 0,
+      "trickster": 2,
+      "ruler": 1
+    }
+  },
+  {
+    "id": "q8",
+    "text": "长途同行时，我会主动留一点个人空间，不想被持续社交拖慢判断。",
+    "scene": "荒原驿路·长途搭车",
+    "dimension": "E_I",
+    "sign": -1,
+    "weights": {
+      "hero": -1,
+      "strategist": 2,
+      "guardian": 1,
+      "lonewolf": 2,
+      "healer": 0,
+      "berserker": -1,
+      "trickster": -1,
+      "ruler": 0
+    }
+  },
+  {
+    "id": "q9",
+    "text": "听到一段残缺旧闻时，我会忍不住想：被刻意省掉的那部分到底是什么。",
+    "scene": "卡兹戴尔旧闻·口耳相传",
+    "dimension": "S_N",
+    "sign": 1,
+    "weights": {
+      "hero": 1,
       "strategist": 2,
       "guardian": -1,
-      "lonewolf": 1,
-      "healer": -2,
-      "berserker": 1,
-      "trickster": 0,
+      "lonewolf": 0,
+      "healer": 1,
+      "berserker": 0,
+      "trickster": 2,
+      "ruler": -1
+    }
+  },
+  {
+    "id": "q10",
+    "text": "比起讨论“大势”，我更在意药片还剩多少、燃料够不够、明天能不能按时开工。",
+    "scene": "矿区日常·补给清点",
+    "dimension": "S_N",
+    "sign": -1,
+    "weights": {
+      "hero": 0,
+      "strategist": -1,
+      "guardian": 2,
+      "lonewolf": 0,
+      "healer": 1,
+      "berserker": -1,
+      "trickster": -1,
       "ruler": 2
     }
   },
   {
-    "id": "q16",
-    "text": "只要决定启程，我会希望路线、职责和先后顺序都尽量明确。",
-    "scene": "执行风格",
-    "dimension": "J_P",
+    "id": "q11",
+    "text": "提到“天灾安全带”或“移动城邦”时，我会自然联想到这片大地更长的历史变化。",
+    "scene": "泰拉常识·天灾安全带",
+    "dimension": "S_N",
     "sign": 1,
     "weights": {
-      "hero": 0,
-      "strategist": 1,
-      "guardian": 1,
+      "hero": 1,
+      "strategist": 2,
+      "guardian": -1,
       "lonewolf": 0,
-      "healer": 0,
+      "healer": 1,
+      "berserker": 0,
+      "trickster": 2,
+      "ruler": -1
+    }
+  },
+  {
+    "id": "q12",
+    "text": "真正出事时，我更倾向先处理眼前能落地的问题，而不是先谈大道理。",
+    "scene": "汐斯塔季风·现场处置",
+    "dimension": "S_N",
+    "sign": -1,
+    "weights": {
+      "hero": 0,
+      "strategist": -1,
+      "guardian": 2,
+      "lonewolf": 0,
+      "healer": 1,
       "berserker": -1,
-      "trickster": -2,
+      "trickster": -1,
+      "ruler": 2
+    }
+  },
+  {
+    "id": "q13",
+    "text": "别人一句看似随口的话、一个停顿，我常会感觉到背后另有真实动机。",
+    "scene": "酒馆闲谈·话外之音",
+    "dimension": "S_N",
+    "sign": 1,
+    "weights": {
+      "hero": 1,
+      "strategist": 2,
+      "guardian": -1,
+      "lonewolf": 0,
+      "healer": 1,
+      "berserker": 0,
+      "trickster": 2,
+      "ruler": -1
+    }
+  },
+  {
+    "id": "q14",
+    "text": "我更信实测数据和亲眼确认，不太会仅凭“感觉不对”就下判断。",
+    "scene": "边境哨站·风险判断",
+    "dimension": "S_N",
+    "sign": -1,
+    "weights": {
+      "hero": 0,
+      "strategist": -1,
+      "guardian": 2,
+      "lonewolf": 0,
+      "healer": 1,
+      "berserker": -1,
+      "trickster": -1,
+      "ruler": 2
+    }
+  },
+  {
+    "id": "q15",
+    "text": "面对彼此矛盾的多方消息时，我会主动把碎片拼起来，找出能自洽的全貌。",
+    "scene": "维多利亚街报·多线消息",
+    "dimension": "S_N",
+    "sign": 1,
+    "weights": {
+      "hero": 1,
+      "strategist": 2,
+      "guardian": -1,
+      "lonewolf": 0,
+      "healer": 1,
+      "berserker": 0,
+      "trickster": 2,
+      "ruler": -1
+    }
+  },
+  {
+    "id": "q16",
+    "text": "资源紧绷时，我会先守住眼前可控的生活细节，不让日子先垮掉。",
+    "scene": "灾后集市·紧缺配给",
+    "dimension": "S_N",
+    "sign": -1,
+    "weights": {
+      "hero": 0,
+      "strategist": -1,
+      "guardian": 2,
+      "lonewolf": 0,
+      "healer": 1,
+      "berserker": -1,
+      "trickster": -1,
       "ruler": 2
     }
   },
   {
     "id": "q17",
-    "text": "就算局势在变，我也更安心于守住原定计划，而不是频繁临场改主意。",
-    "scene": "计划稳定",
+    "text": "遇到两难局面时，我会先算清每个选择的代价与后果，再看情感上能否接受。",
+    "scene": "封锁区抉择·两难当下",
+    "dimension": "T_F",
+    "sign": 1,
+    "weights": {
+      "hero": 0,
+      "strategist": 2,
+      "guardian": -1,
+      "lonewolf": 2,
+      "healer": -2,
+      "berserker": 1,
+      "trickster": 0,
+      "ruler": 1
+    }
+  },
+  {
+    "id": "q18",
+    "text": "就算“整体更划算”，我也很难接受把具体某个人当成可被牺牲的数字。",
+    "scene": "感染者站台·名单筛选",
+    "dimension": "T_F",
+    "sign": -1,
+    "weights": {
+      "hero": 1,
+      "strategist": -2,
+      "guardian": 2,
+      "lonewolf": -1,
+      "healer": 2,
+      "berserker": -1,
+      "trickster": 0,
+      "ruler": -1
+    }
+  },
+  {
+    "id": "q19",
+    "text": "听方案时，我会优先找逻辑漏洞和执行风险，而不是先看提出者是谁。",
+    "scene": "公听会现场·方案争执",
+    "dimension": "T_F",
+    "sign": 1,
+    "weights": {
+      "hero": 0,
+      "strategist": 2,
+      "guardian": -1,
+      "lonewolf": 2,
+      "healer": -2,
+      "berserker": 1,
+      "trickster": 0,
+      "ruler": 1
+    }
+  },
+  {
+    "id": "q20",
+    "text": "看到病房里真实的痛苦时，我通常会先被情绪击中，再去谈原则。",
+    "scene": "矿石病病房·陪护时刻",
+    "dimension": "T_F",
+    "sign": -1,
+    "weights": {
+      "hero": 1,
+      "strategist": -2,
+      "guardian": 2,
+      "lonewolf": -1,
+      "healer": 2,
+      "berserker": -1,
+      "trickster": 0,
+      "ruler": -1
+    }
+  },
+  {
+    "id": "q21",
+    "text": "局面快失控时，我宁愿把关键话讲直，也不想为了体面把重点糊过去。",
+    "scene": "街区协商·冲突升级前",
+    "dimension": "T_F",
+    "sign": 1,
+    "weights": {
+      "hero": 0,
+      "strategist": 2,
+      "guardian": -1,
+      "lonewolf": 2,
+      "healer": -2,
+      "berserker": 1,
+      "trickster": 0,
+      "ruler": 1
+    }
+  },
+  {
+    "id": "q22",
+    "text": "同伴之间闹僵时，我会先想办法把关系修复，再谈谁对谁错。",
+    "scene": "同伴摩擦·夜间和解",
+    "dimension": "T_F",
+    "sign": -1,
+    "weights": {
+      "hero": 1,
+      "strategist": -2,
+      "guardian": 2,
+      "lonewolf": -1,
+      "healer": 2,
+      "berserker": -1,
+      "trickster": 0,
+      "ruler": -1
+    }
+  },
+  {
+    "id": "q23",
+    "text": "即使短时间不被理解，只要我确认逻辑站得住，就不会轻易改口。",
+    "scene": "传言风暴·独立判断",
+    "dimension": "T_F",
+    "sign": 1,
+    "weights": {
+      "hero": 0,
+      "strategist": 2,
+      "guardian": -1,
+      "lonewolf": 2,
+      "healer": -2,
+      "berserker": 1,
+      "trickster": 0,
+      "ruler": 1
+    }
+  },
+  {
+    "id": "q24",
+    "text": "出发前我会把路线、补给、替换衣物和应急药先准备好，心里才踏实。",
+    "scene": "远行前夜·背包与路线",
     "dimension": "J_P",
     "sign": 1,
     "weights": {
       "hero": 0,
       "strategist": 1,
-      "guardian": 2,
+      "guardian": 1,
       "lonewolf": 0,
       "healer": 0,
       "berserker": -1,
@@ -289,26 +408,9 @@
     }
   },
   {
-    "id": "q18",
-    "text": "即使手头没有完整把握，我也倾向于先把决定落下，再边走边修正。",
-    "scene": "决断方式",
-    "dimension": "J_P",
-    "sign": 1,
-    "weights": {
-      "hero": 1,
-      "strategist": 1,
-      "guardian": 0,
-      "lonewolf": 0,
-      "healer": 0,
-      "berserker": 0,
-      "trickster": -1,
-      "ruler": 2
-    }
-  },
-  {
-    "id": "q19",
-    "text": "比起照着既定路线走完，我更享受途中因为新发现而随时转向的感觉。",
-    "scene": "临场应变",
+    "id": "q25",
+    "text": "途中冒出新线索或新风险时，我愿意立刻改线，不会死守原计划。",
+    "scene": "荒野搭车·突发改线",
     "dimension": "J_P",
     "sign": -1,
     "weights": {
@@ -323,9 +425,77 @@
     }
   },
   {
-    "id": "q20",
-    "text": "面对一件重要的事，我不太喜欢一直把它悬着；我会希望它尽快有个明确的结论。",
-    "scene": "收束倾向",
+    "id": "q26",
+    "text": "重要的事长期悬着会让我焦躁，我更希望它尽快有个明确结果。",
+    "scene": "债务与工期·事项收束",
+    "dimension": "J_P",
+    "sign": 1,
+    "weights": {
+      "hero": 0,
+      "strategist": 1,
+      "guardian": 1,
+      "lonewolf": 0,
+      "healer": 0,
+      "berserker": -1,
+      "trickster": -2,
+      "ruler": 2
+    }
+  },
+  {
+    "id": "q27",
+    "text": "比起严格按时刻表走，我更享受边走边看、再临时调整方向。",
+    "scene": "自由行脚·边走边看",
+    "dimension": "J_P",
+    "sign": -1,
+    "weights": {
+      "hero": 1,
+      "strategist": -1,
+      "guardian": -1,
+      "lonewolf": 0,
+      "healer": 0,
+      "berserker": 2,
+      "trickster": 2,
+      "ruler": -2
+    }
+  },
+  {
+    "id": "q28",
+    "text": "信息还不完整时，我也会先定一个可执行框架，再边走边补。",
+    "scene": "小队拼车·先定规矩",
+    "dimension": "J_P",
+    "sign": 1,
+    "weights": {
+      "hero": 0,
+      "strategist": 1,
+      "guardian": 1,
+      "lonewolf": 0,
+      "healer": 0,
+      "berserker": -1,
+      "trickster": -2,
+      "ruler": 2
+    }
+  },
+  {
+    "id": "q29",
+    "text": "突发状况反而会让我更专注，我常能在混乱里迅速拼出临时解法。",
+    "scene": "突发天候·即时反应",
+    "dimension": "J_P",
+    "sign": -1,
+    "weights": {
+      "hero": 1,
+      "strategist": -1,
+      "guardian": -1,
+      "lonewolf": 0,
+      "healer": 0,
+      "berserker": 2,
+      "trickster": 2,
+      "ruler": -2
+    }
+  },
+  {
+    "id": "q30",
+    "text": "一天结束后，我会回想哪里做得好、哪里失误，避免同样的问题再次发生。",
+    "scene": "归站之后·记账与回想",
     "dimension": "J_P",
     "sign": 1,
     "weights": {

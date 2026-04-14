@@ -8,7 +8,7 @@
 
 回答情境式问题 → 获得唯一命中的干员代码 → 与同好对照你的叙事站位（粉丝向娱乐，非官方）
 
-[在线体验](https://arkti.pages.dev/quiz) · [开始贡献](#贡献) · [阅读文档](#工作原理)
+[在线体验](https://arkti.ybwlawa0.com/#/quiz) · [开始贡献](#贡献) · [阅读文档](#工作原理)
 
 > ⚠️ 本工具仅作娱乐用途，不作为心理诊断、医学评估或现实人格结论。本站非《明日方舟》官方内容，与鹰角网络无关联。
 
@@ -37,7 +37,7 @@
 
 ## 在线体验
 
-**[https://arkti.pages.dev/quiz](https://arkti.pages.dev/quiz)**
+**[https://arkti.ybwlawa0.com/#/quiz](https://arkti.ybwlawa0.com/#/quiz)**
 
 部署于 Cloudflare Pages，全球 CDN 加速。
 
@@ -172,21 +172,13 @@ git push origin v0.1.0
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=YBWLawa0%2FARKTI&type=date&legend=top-left">
-  <picture>
-    <source
-      media="(prefers-color-scheme: dark)"
-      srcset="https://api.star-history.com/chart?repos=YBWLawa0/ARKTI&type=date&theme=dark&legend=top-left"
-    />
-    <source
-      media="(prefers-color-scheme: light)"
-      srcset="https://api.star-history.com/chart?repos=YBWLawa0/ARKTI&type=date&legend=top-left"
-    />
-    <img
-      alt="Star History Chart"
-      src="https://api.star-history.com/chart?repos=YBWLawa0/ARKTI&type=date&legend=top-left"
-    />
-  </picture>
+[![GitHub Stars](https://img.shields.io/github/stars/YBWLawa0/ARKTI?style=flat-square)](https://github.com/YBWLawa0/ARKTI/stargazers)
+
+<a href="https://star-history.com/#YBWLawa0/ARKTI&Date">
+  <img
+    alt="Star History Chart"
+    src="https://api.star-history.com/svg?repos=ybwlawa0/arkti&type=Date"
+  />
 </a>
 
 <div align="center">

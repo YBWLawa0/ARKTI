@@ -278,6 +278,312 @@
     "backgroundPositionX": -25,
     "backgroundPositionY": 50
   },
+  "gnosis": {
+    "image": "/images/characters/灵知.png",
+    "accent": "#4a78a8",
+    "smallCharacterVideo": "/images/small_characters/灵知-先驱-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_灵知_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -25,
+    "backgroundPositionY": 50
+  },
+  "ptilopsis": {
+    "image": "/images/characters/白面鸮.png",
+    "accent": "#7d8ca3",
+    "smallCharacterVideo": "/images/small_characters/白面鸮-抚云间-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_白面鸮_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 0,
+    "backgroundPositionY": 48
+  },
+  "ines": {
+    "image": "/images/characters/伊内斯.png",
+    "accent": "#8f4f5f",
+    "smallCharacterVideo": "/images/small_characters/伊内丝-燃烧天穹下-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_伊内丝_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -32,
+    "backgroundPositionY": 43
+  },
+  "wintergreen": {
+    "image": "/images/characters/忍冬.png",
+    "accent": "#6b8a7b",
+    "smallCharacterVideo": "/images/small_characters/忍冬-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_忍冬_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -35,
+    "backgroundPositionY": 62
+  },
+  "lin": {
+    "image": "/images/characters/林.png",
+    "accent": "#4f77a8",
+    "smallCharacterVideo": "/images/small_characters/林-列瑶台-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_林_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -26,
+    "backgroundPositionY": 42
+  },
+  "hoolheyak": {
+    "image": "/images/characters/霍尔海雅.png",
+    "accent": "#7d5fa8",
+    "smallCharacterVideo": "/images/small_characters/霍尔海雅-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_霍尔海雅_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -60,
+    "backgroundPositionY": 30
+  },
+  "dorothy": {
+    "image": "/images/characters/多萝西.png",
+    "accent": "#c28f56",
+    "smallCharacterVideo": "/images/small_characters/多萝西-命运主宰-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_多萝西_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -25,
+    "backgroundPositionY": 48
+  },
+  "hoederer": {
+    "image": "/images/characters/赫德雷.png",
+    "accent": "#6f7a86",
+    "smallCharacterVideo": "/images/small_characters/赫德雷-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_赫德雷_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -28,
+    "backgroundPositionY": 55
+  },
+  "saileach": {
+    "image": "/images/characters/琴柳.png",
+    "accent": "#7bb7d9",
+    "smallCharacterVideo": "/images/small_characters/琴柳-夏卉 FA317-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_琴柳_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -28,
+    "backgroundPositionY": 56
+  },
+  "viviana": {
+    "image": "/images/characters/薇薇安娜.png",
+    "accent": "#a67bb6",
+    "smallCharacterVideo": "/images/small_characters/薇薇安娜-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_薇薇安娜_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -42,
+    "backgroundPositionY": 43
+  },
+  "dusk": {
+    "image": "/images/characters/夕.png",
+    "accent": "#5d6fa8",
+    "smallCharacterVideo": "/images/small_characters/夕-青玉砚-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_夕_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -50,
+    "backgroundPositionY": 46
+  },
+  "arturia": {
+    "image": "/images/characters/塑心.png",
+    "accent": "#c2749e",
+    "smallCharacterVideo": "/images/small_characters/塑心-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_塑心_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 14,
+    "backgroundPositionY": 70
+  },
+  "lai": {
+    "image": "/images/characters/莱伊.png",
+    "accent": "#7a8892",
+    "smallCharacterVideo": "/images/small_characters/莱伊-梦幻高空-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_莱伊_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 6,
+    "backgroundPositionY": 48
+  },
+  "hellagur": {
+    "image": "/images/characters/赫拉格.png",
+    "accent": "#6c7f68",
+    "smallCharacterVideo": "/images/small_characters/赫拉格-歧路幻影-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_赫拉格_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -24,
+    "backgroundPositionY": 44
+  },
+  "neve": {
+    "image": "/images/characters/妮芙.png",
+    "accent": "#d58aa3",
+    "smallCharacterVideo": "/images/small_characters/妮芙-甜美配方-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_妮芙_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -32,
+    "backgroundPositionY": 44
+  },
+  "passenger": {
+    "image": "/images/characters/异客.png",
+    "accent": "#6f6aa8",
+    "smallCharacterVideo": "/images/small_characters/异客-今昔须臾之梦-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_异客_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 15,
+    "backgroundPositionY": 60
+  },
+  "fia": {
+    "image": "/images/characters/菲亚梅塔.png",
+    "accent": "#c35c4a",
+    "smallCharacterVideo": "/images/small_characters/菲亚梅塔-至圣誓言-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_菲亚梅塔_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -25,
+    "backgroundPositionY": 45
+  },
+  "leizi": {
+    "image": "/images/characters/惊蛰.png",
+    "accent": "#7d5f88",
+    "smallCharacterVideo": "/images/small_characters/司霆惊蛰-血翼蔷薇-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_司霆惊蛰_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -24,
+    "backgroundPositionY": 40
+  },
+  "faith-mixer": {
+    "image": "/images/characters/信仰搅拌机.png",
+    "accent": "#7fa0c7",
+    "smallCharacterVideo": "/images/small_characters/信仰搅拌机-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_信仰搅拌机_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -22,
+    "backgroundPositionY": 48
+  },
+  "indrech": {
+    "image": "/images/characters/隐德来希.png",
+    "accent": "#6ea2b8",
+    "smallCharacterVideo": "/images/small_characters/隐德来希-耀目之蓝-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_隐德来希_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -54,
+    "backgroundPositionY": 47
+  },
+  "askar": {
+    "image": "/images/characters/阿斯卡纶.png",
+    "accent": "#5f7080",
+    "smallCharacterVideo": "/images/small_characters/阿斯卡纶-趋光之暗-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_阿斯卡纶_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -28,
+    "backgroundPositionY": 42
+  },
+  "texas": {
+    "image": "/images/characters/德克萨斯.png",
+    "accent": "#5d7aa8",
+    "smallCharacterVideo": "/images/small_characters/缄默德克萨斯-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_缄默德克萨斯_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -25,
+    "backgroundPositionY": 52
+  },
+  "mizuki": {
+    "image": "/images/characters/水月.png",
+    "accent": "#6b8fb5",
+    "smallCharacterVideo": "/images/small_characters/水月-夏日餮宴-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_水月_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 48
+  },
+  "surtr": {
+    "image": "/images/characters/史尔特尔.png",
+    "accent": "#c14f5f",
+    "smallCharacterVideo": "/images/small_characters/史尔特尔-超然序曲-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_史尔特尔_skin3.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -24,
+    "backgroundPositionY": 50
+  },
+  "specter": {
+    "image": "/images/characters/幽灵鲨.png",
+    "accent": "#7b5f8f",
+    "smallCharacterVideo": "/images/small_characters/归溟幽灵鲨-生而为一-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_归溟幽灵鲨_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -22,
+    "backgroundPositionY": 40
+  },
+  "mon3tr": {
+    "image": "/images/characters/Mon3tr.png",
+    "accent": "#6a7f7f",
+    "smallCharacterVideo": "/images/small_characters/Mon3tr-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_Mon3tr_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -18,
+    "backgroundPositionY": 46
+  },
+  "typhon": {
+    "image": "/images/characters/提丰.png",
+    "accent": "#7aa0b4",
+    "smallCharacterVideo": "/images/small_characters/提丰-北地引路人-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_提丰_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -24,
+    "backgroundPositionY": 45
+  },
+  "chongyue": {
+    "image": "/images/characters/重岳.png",
+    "accent": "#b88a54",
+    "smallCharacterVideo": "/images/small_characters/重岳-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_重岳_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -26,
+    "backgroundPositionY": 48
+  },
+  "jian": {
+    "image": "/images/characters/锏.png",
+    "accent": "#6f6f7f",
+    "smallCharacterVideo": "/images/small_characters/锏-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_锏_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -14,
+    "backgroundPositionY": 48
+  },
+  "lappland": {
+    "image": "/images/characters/拉普兰德.png",
+    "accent": "#7b6c92",
+    "smallCharacterVideo": "/images/small_characters/荒芜拉普兰德-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_荒芜拉普兰德_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -22,
+    "backgroundPositionY": 46
+  },
+  "kannoth": {
+    "image": "/images/characters/坎诺特.png",
+    "accent": "#8b7d63",
+    "smallCharacterVideo": "/images/small_characters/坎诺特-默认-战斗-Move-x1.webm",
+    "backgroundImage": "/images/background/坎诺特-背景.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 40,
+    "backgroundPositionY": 26
+  },
+  "talulah": {
+    "image": "/images/characters/塔露拉.png",
+    "accent": "#b65a5a",
+    "smallCharacterVideo": "/images/small_characters/塔露拉-默认-战斗-Move-x1.webm",
+    "backgroundImage": "/images/background/塔露拉-背景.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 60,
+    "backgroundPositionY": 42
+  },
+  "kristen": {
+    "image": "/images/characters/克丽斯腾.png",
+    "accent": "#6f7da8",
+    "smallCharacterVideo": "/images/small_characters/克丽斯腾-默认-战斗-Move_A-x1.webm",
+    "backgroundImage": "/images/background/克丽斯腾-背景.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 18,
+    "backgroundPositionY": 44
+  },
+  "frostnova": {
+    "image": "/images/characters/霜星.png",
+    "accent": "#7c9fc9",
+    "smallCharacterVideo": "/images/small_characters/霜星-默认-战斗-Move-x1.webm",
+    "backgroundImage": "/images/background/霜星-背景.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 48
+  },
   "hypergryph": {
     "image": "/images/characters/海猫.png",
     "accent": "#5c6b8a",

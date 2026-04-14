@@ -14,5 +14,10 @@ export function getCharacterPopulationProbability(characterId: string | null | u
     return 0
   }
 
-  return probabilityDataset.probabilities[characterId] ?? 0
+  const hasProbability = Object.prototype.hasOwnProperty.call(probabilityDataset.probabilities, characterId)
+  if (!hasProbability) {
+    return 0
+  }
+
+  return Math.max(0.01, probabilityDataset.probabilities[characterId] ?? 0)
 }
