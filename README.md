@@ -153,7 +153,7 @@ git push origin v0.1.0
 |:-----|:-----|
 | `src/data/questions.json` | 39 道情境式题目 — 维度、原型权重、场景标签 |
 | `src/data/archetypes.json` | 8 个角色原型 — 名称、描述、亮点、短板 |
-| `src/data/characters.json` | 35 个角色条目 — 角色代码、MBTI 映射、标签、六维向量 |
+| `src/data/characters.json` | 32 个角色条目 — 角色代码、MBTI 映射、标签、六维向量 |
 | `src/data/characterVisuals.json` | 角色视觉配置 — 立绘、色彩、主题 |
 | `src/data/characterProbabilities.json` | 角色命中概率 — 基于人群统计的先验分布 |
 

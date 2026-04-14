@@ -3,12 +3,13 @@ import { computed, reactive, readonly } from 'vue'
 import archetypesData from '../data/archetypes.json'
 import charactersData from '../data/characters.json'
 import questionsData from '../data/questions.json'
+import { QUIZ_SESSION_QUESTION_COUNT } from '../constants/quizSession'
 import type { Archetype, CharacterMatch, Question, QuizRecord, QuizResult } from '../types/quiz'
 import { hydrateCharacterVisual, hydrateQuizRecord } from '../utils/characterVisuals'
 import { calculateQuizResult, createDebugQuizResult } from '../utils/quizEngine'
 import { clearLastRecord, loadLastRecord, saveLastRecord } from '../utils/storage'
 
-const questions = questionsData as Question[]
+const allQuestions = questionsData as Question[]
 const archetypes = archetypesData as Archetype[]
 const characters = (charactersData as CharacterMatch[]).map((character) => hydrateCharacterVisual(character))
 
@@ -18,17 +19,45 @@ function isAnsweredValue(value: number) {
   return value >= -3 && value <= 3
 }
 
-const emptyAnswers = () => Array.from({ length: questions.length }, () => UNANSWERED)
+function shufflePickQuestions(source: Question[], count: number): Question[] {
+  const n = Math.min(count, source.length)
+  const copy = [...source]
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[copy[i], copy[j]] = [copy[j], copy[i]]
+  }
+  return copy.slice(0, n)
+}
+
+function pickSessionQuestions(): Question[] {
+  return shufflePickQuestions(allQuestions, QUIZ_SESSION_QUESTION_COUNT)
+}
 
 const state = reactive({
   currentIndex: 0,
-  answers: emptyAnswers(),
+  answers: [] as number[],
+  sessionQuestions: [] as Question[],
   latestRecord: hydrateQuizRecord(loadLastRecord() as QuizRecord | null),
 })
 
-const currentQuestion = computed(() => questions[state.currentIndex] ?? null)
+function initSessionIfNeeded() {
+  if (state.sessionQuestions.length > 0) {
+    return
+  }
+  state.sessionQuestions = pickSessionQuestions()
+  state.answers = Array.from({ length: state.sessionQuestions.length }, () => UNANSWERED)
+  state.currentIndex = 0
+}
+
+initSessionIfNeeded()
+
+const questions = computed(() => state.sessionQuestions)
+
+const currentQuestion = computed(() => state.sessionQuestions[state.currentIndex] ?? null)
 const selectedOptionIndex = computed(() => state.answers[state.currentIndex] ?? UNANSWERED)
-const progress = computed(() => (state.currentIndex + 1) / questions.length)
+const progress = computed(() =>
+  state.sessionQuestions.length > 0 ? (state.currentIndex + 1) / state.sessionQuestions.length : 0,
+)
 const answeredCount = computed(() => state.answers.filter((answer) => isAnsweredValue(answer)).length)
 const firstUnansweredIndex = computed(() => state.answers.findIndex((answer) => !isAnsweredValue(answer)))
 const canGoNext = computed(() => isAnsweredValue(selectedOptionIndex.value))
@@ -43,12 +72,12 @@ function selectOption(optionIndex: number) {
 
 function selectOptionAt(questionIndex: number, optionValue: number) {
   if (!isAnsweredValue(optionValue)) return
-  if (questionIndex < 0 || questionIndex >= questions.length) return
+  if (questionIndex < 0 || questionIndex >= state.sessionQuestions.length) return
   state.answers[questionIndex] = optionValue
 }
 
 function goNext() {
-  if (canGoNext.value && state.currentIndex < questions.length - 1) {
+  if (canGoNext.value && state.currentIndex < state.sessionQuestions.length - 1) {
     state.currentIndex += 1
   }
 }
@@ -60,14 +89,15 @@ function goPrev() {
 }
 
 function jumpToQuestion(index: number) {
-  if (index >= 0 && index < questions.length) {
+  if (index >= 0 && index < state.sessionQuestions.length) {
     state.currentIndex = index
   }
 }
 
 function resetQuiz(clearHistory = false) {
+  state.sessionQuestions = pickSessionQuestions()
+  state.answers = Array.from({ length: state.sessionQuestions.length }, () => UNANSWERED)
   state.currentIndex = 0
-  state.answers = emptyAnswers()
 
   if (clearHistory) {
     state.latestRecord = null
@@ -82,13 +112,14 @@ function finalizeQuiz(): QuizResult | null {
 
   const result = calculateQuizResult({
     answers: state.answers,
-    questions,
+    questions: state.sessionQuestions,
     archetypes,
     characters,
   })
 
   const record: QuizRecord = {
     answers: [...state.answers],
+    questionIds: state.sessionQuestions.map((q) => q.id),
     createdAt: new Date().toISOString(),
     result,
   }
@@ -103,9 +134,16 @@ function resumeLastResult() {
   state.latestRecord = hydrateQuizRecord(loadLastRecord())
 }
 
+/** 题干在题库 JSON / i18n 数组中的下标，用于 quiz.questions.{index} */
+function questionMessageIndex(questionId: string) {
+  return allQuestions.findIndex((q) => q.id === questionId)
+}
+
 export function useQuiz() {
   return {
+    allQuestions,
     questions,
+    questionMessageIndex,
     archetypes,
     characters,
     state: readonly(state),

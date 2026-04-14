@@ -101,6 +101,8 @@ export interface DimensionScore {
 
 export interface QuizRecord {
   answers: number[]
+  /** 本次答卷对应的题目 id 顺序（与 answers 一一对应） */
+  questionIds?: string[]
   createdAt: string
   result: QuizResult
 }

@@ -1,8 +1,10 @@
 import type { AppLocale } from './types'
+import { QUIZ_SESSION_QUESTION_COUNT } from '../constants/quizSession'
 import questions from '../data/questions.json'
 import characters from '../data/characters.json'
 
-const QUESTION_COUNT = String(questions.length)
+const SESSION_QUESTION_COUNT = String(QUIZ_SESSION_QUESTION_COUNT)
+const QUESTION_BANK_COUNT = String(questions.length)
 const CHARACTER_COUNT = String(characters.length)
 
 export const localeLabels: Record<AppLocale, string> = {
@@ -47,7 +49,7 @@ export const messages = {
           localOnly: '测试结果仅保存在当前浏览器，不会上传到后端。',
           disclaimer: '本项目用于娱乐表达，不替代专业评估。',
           frontend: '纯前端静态站点',
-          stats: `${QUESTION_COUNT} 道题 / 4 维 MBTI`,
+          stats: `${SESSION_QUESTION_COUNT} 道题 / 4 维 MBTI`,
           library: `8 个原型 / ${CHARACTER_COUNT} 位角色`,
           likeIt: '喜欢这个测试？',
           star: '去 GitHub Star ✨',
@@ -75,7 +77,7 @@ export const messages = {
       relayButton: '复制测试链接',
       relayFeedback: '测试链接已复制，去发给朋友看看。',
       stats: [
-        { value: QUESTION_COUNT, label: '测试题数', color: '#4899a3' },
+        { value: SESSION_QUESTION_COUNT, label: '每次题数', color: '#4899a3' },
         { value: '16', label: 'MBTI 类型', color: '#e5b540' },
         { value: '8', label: '原型映射', color: '#5ca173' },
         { value: CHARACTER_COUNT, label: '当前角色库', color: '#9474a4' },
@@ -107,7 +109,7 @@ export const messages = {
     intro: {
       eyebrow: '测试说明',
       title: '这是角色原型测试，不是心理诊断。',
-      lead: `你会回答 ${QUESTION_COUNT} 道五级量表题；题干语境贴近博士的日常习惯。系统会先计算 MBTI 四个维度，再映射唯一命中的干员代码、对应原型，以及各维度倾向比例。`,
+      lead: `你会回答 ${SESSION_QUESTION_COUNT} 道五级量表题（从题库 ${QUESTION_BANK_COUNT} 道中随机抽取）；题干以行旅、据点与团队抉择为叙事背景。系统会先计算 MBTI 四个维度，再映射唯一命中的干员代码、对应原型，以及各维度倾向比例。`,
       start: '直接开始',
       relayTitle: '测之前，也可以先帮我们扩散一下',
       relayCopy: '如果你身边也有喜欢讨论剧情、强度、人设或 MBTI 的刀客塔，可以先把链接转出去——好的结果页，本来就更适合对照与传播。',
@@ -122,7 +124,7 @@ export const messages = {
       dimensions: ['外向 / 内向', '实感 / 直觉', '理性 / 情感', '判断 / 感知'],
     },
     quiz: {
-        questions: ["在公开招募或卡池讨论中，我更倾向主动分享自己的结果或建议。","在刷素材或日常关卡时，我更习惯独自完成而不是与人讨论效率。","看到整活或极限打法视频时，我会想参与讨论甚至分享自己的看法。","面对争议角色或强度讨论，我通常不会参与评论，更愿意自己判断。","当活动上线时，我会第一时间查看攻略或讨论区的评价。","我更享受一个人慢慢摸索关卡机制，而不是依赖他人经验。","在公会或玩家群里，我会主动参与讨论活动打法或养成建议。","我很少在社区发言，更多只是浏览内容获取信息。","遇到复杂机制关卡时，我会通过交流或查资料来加快理解。","我更关注干员技能数值与机制细节，而不是整体氛围或设定。","剧情中隐藏的信息或伏笔，比明确给出的设定更让我感兴趣。","在编队时，我更依赖具体数值与测试结果来做决定。","我更喜欢根据直觉或整体感觉来判断阵容是否可行。","面对新机制时，我会优先通过实际操作来理解，而不是理论分析。","我会反复推敲剧情设定之间的逻辑关系与世界观结构。","我更关注当前关卡能否通关，而不是它背后的设计思路。","我更容易被角色设定、台词和情绪表达打动。","我会记录或记住关键数值与机制细节，以便后续使用。","在培养干员时，我更优先考虑强度与功能性。","即使强度一般，只要喜欢角色设定，我也会优先投入资源培养。","面对资源分配时，我会理性计算收益而不是凭感觉决定。","我会因为剧情中的情感冲击而改变对某个角色的看法或投入。","在讨论干员强度时，我更关注数据和实战表现。","我更容易被角色之间的关系与情感故事吸引。","在高难关卡中，我更倾向选择稳定可靠的解法。","即使失败多次，我也愿意尝试更有趣或更极限的打法。","我在选择干员时，会优先考虑团队整体协同效果。","在开荒新活动时，我会提前规划体力与资源使用。","我更倾向随玩随决定，而不是提前制定详细计划。","我会为未来卡池或活动提前储备资源并制定抽卡计划。","遇到喜欢的角色时，我容易临时改变计划直接抽卡。","我会固定时间处理基建与日常任务，保持稳定节奏。","我更喜欢根据心情随时调整游戏内容，而不是按固定流程执行。","在高难模式前，我会提前准备多个备选方案以应对变化。","我更愿意在失败中临场调整，而不是依赖预先制定的方案。","我会按照长期目标逐步培养干员，而不是随意分配资源。","我经常临时改变培养方向，尝试不同角色或玩法。","面对复杂活动，我会先整体规划再逐步推进。","我更享受随机应变带来的变化，而不是按计划推进游戏。"],
+        questions: ["在一个陌生的据点、车站或临时营地里，只要话题是我熟悉的，我通常会主动加入交谈。","比起和许多人结伴同行，我更喜欢一个人安静地观察四周、整理思路。","若队伍一时没有人出声，我往往会先开口，把局面撑起来。","就算我心里已经有了判断，我也更习惯先自己想清楚，而不是立刻说出来。","如果一件事关系到很多人，我会愿意站到前面，让大家知道该往哪里走。","听到一段历史、传闻或只言片语时，我会忍不住去想它背后还藏着什么没有说出口的东西。","比起揣测隐喻与象征，我更在意眼前的局势、资源和能立刻确认的事实。","遇到一个特别的人或一件特别的事时，我会下意识去想：它在这片大地上究竟意味着什么。","与其把精力花在猜测未来走向，我更愿意先把手上的补给、路线和安排处理妥当。","一句台词、一个眼神，甚至一段残缺的记录，都可能让我联想到许多未被明说的故事。","面对争议时，我通常会先判断这件事是否合理，而不是先在意它是否让人难受。","哪怕从结果看是更优解，我也很难接受为了大局而轻易舍弃具体的某个人。","听到一个决定时，我会本能地去拆它的逻辑、代价与后果，而不是只看表面的立场。","我很容易被人与人之间的情感牵连打动，哪怕那并不改变整件事的走向。","在关键分歧面前，我宁可把话说得直接一点，也不愿为了气氛而模糊重点。","只要决定启程，我会希望路线、职责和先后顺序都尽量明确。","就算局势在变，我也更安心于守住原定计划，而不是频繁临场改主意。","即使手头没有完整把握，我也倾向于先把决定落下，再边走边修正。","比起照着既定路线走完，我更享受途中因为新发现而随时转向的感觉。","面对一件重要的事，我不太喜欢一直把它悬着；我会希望它尽快有个明确的结论。"],
       heroTitle: '免费性格测试',
       steps: [
         ['STEP 1', '完成测试', '做真实的自己并诚实回答，以发现你的性格类型。'],
@@ -258,7 +260,7 @@ export const messages = {
       ],
       shippedTitle: '这版实现了什么',
       shippedItems: [
-        ['内容层', `${QUESTION_COUNT} 道题、8 个原型、${CHARACTER_COUNT} 位已录入角色。`],
+        ['内容层', `题库 ${QUESTION_BANK_COUNT} 道，每次随机 ${SESSION_QUESTION_COUNT} 道；8 个原型、${CHARACTER_COUNT} 位已录入角色。`],
         ['规则层', '先计算 MBTI 四维得分，再做原型映射和唯一角色命中。'],
         ['表现层', '首页、说明页、测试页、结果页、关于页的完整闭环。'],
       ],
@@ -304,7 +306,7 @@ export const messages = {
           localOnly: '測試結果僅保存在目前瀏覽器，不會上傳到後端。',
           disclaimer: '本專案用於娛樂表達，不替代專業評估。',
           frontend: '純前端靜態站點',
-          stats: `${QUESTION_COUNT} 道題 / 4 維 MBTI`,
+          stats: `${SESSION_QUESTION_COUNT} 道題 / 4 維 MBTI`,
           library: `8 個原型 / ${CHARACTER_COUNT} 位角色`,
           likeIt: '喜歡這個測試？',
           star: '去 GitHub Star ✨',
@@ -324,7 +326,7 @@ export const messages = {
       relayButton: '複製測試連結',
       relayFeedback: '測試連結已複製，去發給朋友看看。',
       stats: [
-        { value: QUESTION_COUNT, label: '測試題數', color: '#4899a3' },
+        { value: SESSION_QUESTION_COUNT, label: '每次題數', color: '#4899a3' },
         { value: '16', label: 'MBTI 類型', color: '#e5b540' },
         { value: '8', label: '原型映射', color: '#5ca173' },
         { value: CHARACTER_COUNT, label: '目前角色庫', color: '#9474a4' },
@@ -356,7 +358,7 @@ export const messages = {
     intro: {
       eyebrow: '測試說明',
       title: '這是角色原型測試，不是心理診斷。',
-      lead: `你會回答 ${QUESTION_COUNT} 道五級量表題；題幹語境貼近博士的日常習慣。系統會先計算 MBTI 四個維度，再映射唯一命中的幹員代碼、對應原型，以及各維度傾向比例。`,
+      lead: `你會回答 ${SESSION_QUESTION_COUNT} 道五級量表題（從題庫 ${QUESTION_BANK_COUNT} 道中隨機抽取）；題幹語境貼近博士的日常習慣。系統會先計算 MBTI 四個維度，再映射唯一命中的幹員代碼、對應原型，以及各維度傾向比例。`,
       start: '直接開始',
       relayTitle: '測之前，也可以先幫我們擴散一下',
       relayCopy: '如果你身邊也有人喜歡討論劇情、強度、人設或 MBTI 的刀客塔，可以先把連結轉出去——好的結果頁，本來就更適合對照與傳播。',
@@ -371,7 +373,7 @@ export const messages = {
       dimensions: ['外向 / 內向', '實感 / 直覺', '理性 / 情感', '判斷 / 感知'],
     },
     quiz: {
-        questions: ["在公開招募或卡池討論中，我更傾向主動分享自己的結果或建議。","在刷素材或日常關卡時，我更習慣獨自完成而不是與人討論效率。","看到整活或極限打法影片時，我會想參與討論甚至分享自己的看法。","面對爭議角色或強度討論，我通常不會參與評論，更願意自己判斷。","當活動上線時，我會第一時間查看攻略或討論區的評價。","我更享受一個人慢慢摸索關卡機制，而不是依賴他人經驗。","在公會或玩家群裡，我會主動參與討論活動打法或養成建議。","我很少在社群發言，更多只是瀏覽內容取得資訊。","遇到複雜機制關卡時，我會透過交流或查資料來加快理解。","我更關注幹員技能數值與機制細節，而不是整體氛圍或設定。","劇情中隱藏的資訊或伏筆，比明確給出的設定更讓我感興趣。","在編隊時，我更依賴具體數值與測試結果來做決定。","我更喜歡根據直覺或整體感覺來判斷陣容是否可行。","面對新機制時，我會優先透過實際操作來理解，而不是理論分析。","我會反覆推敲劇情設定之間的邏輯關係與世界觀結構。","我更關注當前關卡能否通關，而不是它背後的設計思路。","我更容易被角色設定、台詞和情緒表達打動。","我會記錄或記住關鍵數值與機制細節，以便後續使用。","在培養幹員時，我更優先考慮強度與功能性。","即使強度一般，只要喜歡角色設定，我也會優先投入資源培養。","面對資源分配時，我會理性計算收益而不是憑感覺決定。","我會因為劇情中的情感衝擊而改變對某個角色的看法或投入。","在討論幹員強度時，我更關注數據與實戰表現。","我更容易被角色之間的關係與情感故事吸引。","在高難關卡中，我更傾向選擇穩定可靠的解法。","即使失敗多次，我也願意嘗試更有趣或更極限的打法。","我在選擇幹員時，會優先考慮團隊整體協同效果。","在開荒新活動時，我會提前規劃體力與資源使用。","我更傾向隨玩隨決定，而不是提前制定詳細計畫。","我會為未來卡池或活動提前儲備資源並制定抽卡計畫。","遇到喜歡的角色時，我容易臨時改變計畫直接抽卡。","我會固定時間處理基建與日常任務，保持穩定節奏。","我更喜歡根據心情隨時調整遊戲內容，而不是按固定流程執行。","在高難模式前，我會提前準備多個備選方案以應對變化。","我更願意在失敗中臨場調整，而不是依賴預先制定的方案。","我會按照長期目標逐步培養幹員，而不是隨意分配資源。","我經常臨時改變培養方向，嘗試不同角色或玩法。","面對複雜活動，我會先整體規劃再逐步推進。","我更享受隨機應變帶來的變化，而不是按計畫推進遊戲。"],
+        questions: ["在一個陌生的據點、車站或臨時營地裡，只要話題是我熟悉的，我通常會主動加入交談。","比起和許多人結伴同行，我更喜歡一個人安靜地觀察四周、整理思緒。","若隊伍一時沒有人出聲，我往往會先開口，把局面撐起來。","就算我心裡已經有了判斷，我也更習慣先自己想清楚，而不是立刻說出來。","如果一件事關係到很多人，我會願意站到前面，讓大家知道該往哪裡走。","聽到一段歷史、傳聞或隻言片語時，我會忍不住去想它背後還藏著什麼沒有說出口的東西。","比起揣測隱喻與象徵，我更在意眼前的局勢、資源和能立刻確認的事實。","遇到一個特別的人或一件特別的事時，我會下意識去想：它在這片大地上究竟意味著什麼。","與其把精力放在猜測未來走向，我更願意先把手上的補給、路線和安排處理妥當。","一句台詞、一個眼神，甚至一段殘缺的記錄，都可能讓我聯想到許多未被明說的故事。","面對爭議時，我通常會先判斷這件事是否合理，而不是先在意它是否讓人難受。","哪怕從結果看是更優解，我也很難接受為了大局而輕易捨棄具體的某個人。","聽到一個決定時，我會本能地去拆它的邏輯、代價與後果，而不是只看表面的立場。","我很容易被人與人之間的情感牽連打動，哪怕那並不改變整件事的走向。","在關鍵分歧面前，我寧可把話說得直接一點，也不願為了氣氛而模糊重點。","只要決定啟程，我會希望路線、職責和先後順序都儘量明確。","就算局勢在變，我也更安心於守住原定計畫，而不是頻繁臨場改主意。","即使手頭沒有完整把握，我也傾向於先把決定落下，再邊走邊修正。","比起照著既定路線走完，我更享受途中因為新發現而隨時轉向的感覺。","面對一件重要的事，我不太喜歡一直把它懸著；我會希望它儘快有個明確的結論。"],
       heroTitle: '免費性格測試',
       steps: [
         ['STEP 1', '完成測試', '做真實的自己並誠實回答，以發現你的性格類型。'],
@@ -507,7 +509,7 @@ export const messages = {
       ],
       shippedTitle: '這版實現了什麼',
       shippedItems: [
-        ['內容層', `${QUESTION_COUNT} 道題、8 個原型、${CHARACTER_COUNT} 位已錄入角色。`],
+        ['內容層', `題庫 ${QUESTION_BANK_COUNT} 道，每次隨機 ${SESSION_QUESTION_COUNT} 道；8 個原型、${CHARACTER_COUNT} 位已錄入角色。`],
         ['規則層', '先計算 MBTI 四維得分，再做原型映射和唯一角色命中。'],
         ['表現層', '首頁、說明頁、測試頁、結果頁、關於頁的完整閉環。'],
       ],
@@ -553,7 +555,7 @@ export const messages = {
           localOnly: 'Results stay in this browser only and are not uploaded.',
           disclaimer: 'This project is for entertainment, not professional assessment.',
           frontend: 'Static frontend only',
-          stats: `${QUESTION_COUNT} questions / 4 MBTI dimensions`,
+          stats: `${SESSION_QUESTION_COUNT} questions / 4 MBTI dimensions`,
           library: `8 archetypes / ${CHARACTER_COUNT} characters`,
           likeIt: 'Enjoyed the test?',
           star: 'Star on GitHub ✨',
@@ -573,7 +575,7 @@ export const messages = {
       relayButton: 'Copy quiz link',
       relayFeedback: 'Quiz link copied. Send it to someone.',
       stats: [
-        { value: QUESTION_COUNT, label: 'Questions', color: '#4899a3' },
+        { value: SESSION_QUESTION_COUNT, label: 'Per session', color: '#4899a3' },
         { value: '16', label: 'MBTI types', color: '#e5b540' },
         { value: '8', label: 'Archetypes', color: '#5ca173' },
         { value: CHARACTER_COUNT, label: 'Characters', color: '#9474a4' },
@@ -605,7 +607,7 @@ export const messages = {
     intro: {
       eyebrow: 'How It Works',
       title: 'This is a character archetype test, not a diagnosis.',
-      lead: `You will answer ${QUESTION_COUNT} five-point questions written in a Dokutah-shaped voice. The system scores the four MBTI dimensions first, then maps you to one operator-style code, one archetype, and four trait percentages.`,
+      lead: `You will answer ${SESSION_QUESTION_COUNT} five-point questions (${QUESTION_BANK_COUNT} in the bank, ${SESSION_QUESTION_COUNT} randomly drawn each time), written in a Dokutah-shaped voice. The system scores the four MBTI dimensions first, then maps you to one operator-style code, one archetype, and four trait percentages.`,
       start: 'Start now',
       relayTitle: 'You can help spread it before you even start',
       relayCopy: 'If you know Doctors who live in lore threads, meta spreadsheets, or MBTI rabbit holes, send the link first—this kind of result loves a side-by-side compare.',
@@ -620,7 +622,7 @@ export const messages = {
       dimensions: ['Extraversion / Introversion', 'Sensing / Intuition', 'Thinking / Feeling', 'Judging / Perceiving'],
     },
     quiz: {
-        questions: ["In public recruitment or banner discussions, I prefer to share my results or advice proactively.","When farming materials or daily stages, I prefer to finish alone rather than discuss efficiency with others.","When I see meme or extreme-clear videos, I want to join the discussion and share my take.","On controversial operators or meta debates, I usually don't comment and prefer to judge for myself.","When an event launches, I check guides or forum reactions first.","I enjoy figuring out stage mechanics alone more than relying on others' experience.","In guilds or player groups, I actively join discussions on event clears or leveling advice.","I rarely post in the community; I mostly browse for information.","On complex mechanic stages, I speed up understanding through chat or looking things up.","I care more about operator skill numbers and mechanics than overall vibe or lore.","Hidden story hints and foreshadowing interest me more than what is spelled out in the setting.","When building a squad, I rely on concrete numbers and test results to decide.","I prefer to judge whether a lineup works by intuition or overall feel.","Facing new mechanics, I learn by doing first rather than theory.","I puzzle over how story pieces fit together and how the world is structured.","I care more about clearing the stage now than the design philosophy behind it.","I'm more moved by character setup, lines, and emotional delivery.","I note key numbers and mechanics to use later.","When raising operators, I prioritize strength and utility first.","Even if they're weak, if I like the character I'll invest resources first.","For resource splits, I calculate payoff rationally instead of going by feel.","Story emotional beats can change how I see or invest in a character.","In meta talks about operators, I focus on data and real runs.","I'm drawn more to relationships and emotional arcs between characters.","On hard content, I prefer stable, reliable clears.","Even after many wipes, I'm willing to try more fun or extreme strats.","When picking operators, I think about team synergy first.","When a new event drops, I plan stamina and resources ahead.","I prefer to decide as I play rather than make a detailed plan in advance.","I stockpile and plan pulls for future banners or events.","When a favorite shows up, I may impulsively change plans and pull.","I handle base and dailies on a fixed schedule to stay steady.","I prefer to adjust what I play by mood rather than a fixed routine.","Before hard modes, I prepare several backup plans for different situations.","I'd rather adapt after a wipe than stick to a preset plan.","I raise operators toward long-term goals instead of spreading resources randomly.","I often pivot builds and try different characters or playstyles on a whim.","On complex events, I plan the big picture first then execute step by step.","I enjoy improvising more than pushing the game along a fixed plan."],
+        questions: ["In an unfamiliar outpost, station, or camp, if the topic is familiar I usually join the conversation.","Rather than moving with a crowd, I prefer to watch quietly and sort my thoughts alone.","If the team goes quiet, I am often the one who speaks first to keep things moving.","Even when I already have a take, I am used to thinking it through before saying it aloud.","When many people are involved, I am willing to step forward and point the way.","When I hear history, rumors, or fragments, I wonder what was left unsaid behind them.","Rather than decoding metaphors, I focus on the situation, resources, and facts I can verify now.","When someone or something stands out, I instinctively ask what it means on this land.","Rather than guessing the future, I would rather secure supplies, routes, and plans first.","A line, a glance, even a broken record can suggest many stories never spoken aloud.","In disputes I usually judge whether it is fair before I worry about hurt feelings.","Even if it is the better outcome, I struggle to sacrifice a specific person lightly for the greater good.","When I hear a decision, I pick apart its logic, cost, and consequences—not just the surface stance.","I am easily moved by emotional ties between people, even when the outcome does not change.","At sharp disagreements I would rather speak plainly than blur the point to keep the mood.","Once we set out, I want routes, roles, and order to be as clear as possible.","Even as things shift, I feel safer holding the original plan than changing my mind constantly.","Even without the full picture, I tend to decide first and fix things along the way.","Rather than finishing the planned route, I enjoy turning aside when something new appears.","With something important, I do not like leaving it open—I want a clear conclusion soon."],
       heroTitle: 'Free Personality Test',
       steps: [
         ['STEP 1', 'Take the test', 'Answer honestly as yourself to find your personality pattern.'],
@@ -756,7 +758,7 @@ export const messages = {
       ],
       shippedTitle: 'What this version ships',
       shippedItems: [
-        ['Content', `${QUESTION_COUNT} questions, 8 archetypes, and ${CHARACTER_COUNT} recorded characters.`],
+        ['Content', `${QUESTION_BANK_COUNT} questions in the bank, ${SESSION_QUESTION_COUNT} random per session; 8 archetypes, ${CHARACTER_COUNT} recorded characters.`],
         ['Logic', 'MBTI scoring first, then archetype mapping and one character hit.'],
         ['Pages', 'A full loop across home, intro, quiz, result, and about pages.'],
       ],
@@ -802,7 +804,7 @@ export const messages = {
           localOnly: '結果はこのブラウザにのみ保存され、外部には送信されません。',
           disclaimer: '本プロジェクトは娯楽目的であり、専門的評価の代替ではありません。',
           frontend: '静的フロントエンドのみ',
-          stats: `${QUESTION_COUNT} 問 / 4 つの MBTI 軸`,
+          stats: `${SESSION_QUESTION_COUNT} 問 / 4 つの MBTI 軸`,
           library: `8 原型 / ${CHARACTER_COUNT} キャラ`,
           likeIt: '気に入ったら？',
           star: 'GitHub で Star ✨',
@@ -822,7 +824,7 @@ export const messages = {
       relayButton: '診断リンクをコピー',
       relayFeedback: '診断リンクをコピーしました。すぐ共有できます。',
       stats: [
-        { value: QUESTION_COUNT, label: '質問数', color: '#4899a3' },
+        { value: SESSION_QUESTION_COUNT, label: '1 回あたり', color: '#4899a3' },
         { value: '16', label: 'MBTI タイプ', color: '#e5b540' },
         { value: '8', label: 'アーキタイプ', color: '#5ca173' },
         { value: CHARACTER_COUNT, label: 'キャラ数', color: '#9474a4' },
@@ -854,7 +856,7 @@ export const messages = {
     intro: {
       eyebrow: 'テスト概要',
       title: 'これはキャラ原型テストであって、診断ではありません。',
-      lead: `${QUESTION_COUNT} 問の 5 段階質問に答えます（ドクター目線の文脈）。まず MBTI の 4 軸を計算し、その後 1 つのキャラコード、1 つの原型、各軸の比率に変換されます。`,
+      lead: `題庫 ${QUESTION_BANK_COUNT} 問から毎回 ${SESSION_QUESTION_COUNT} 問をランダムに出題します。5 段階の質問（ドクター目線の文脈）に答え、まず MBTI の 4 軸を計算し、その後 1 つのキャラコード、1 つの原型、各軸の比率に変換されます。`,
       start: 'すぐ始める',
       relayTitle: '始める前に、先に広めても大丈夫です',
       relayCopy: 'シナリオ考察・強さ議論・キャラ解釈や MBTI が好きなドクターがいるなら、先にリンクを送ってください。比較が増えるほど ARKTI は合う人に届きます。',
@@ -869,7 +871,7 @@ export const messages = {
       dimensions: ['外向 / 内向', '感覚 / 直観', '思考 / 感情', '判断 / 知覚'],
     },
     quiz: {
-        questions: ["公開求人やガチャの話題では、自分の結果や提案を積極的に共有したいほうだ。","素材周回やデイリーでは、効率を人と話すより一人で片付けるのが好きだ。","ミームや極限クリア動画を見ると、議論に参加したり自分の考えを言いたくなる。","争点のあるオペレーターや強さ議論では、コメントせず自分で判断したい。","イベントが始まると、まず攻略や板の評価を見る。","人の経験より、ステージの仕組みを一人で試すのが好きだ。","ギルドやプレイヤー群では、イベント周回や育成の話に積極的に参加する。","コミュニティではほとんど書き込まず、情報を見るだけだ。","複雑なギミックのステージでは、交流や検索で理解を早める。","雰囲気や設定より、スキルの数値と仕組みの詳細を気にする。","明文化された設定より、伏線や隠れた情報のほうが興味を引く。","編成は具体的な数値と検証結果を頼りに決める。","直感や全体の雰囲気で編成が妥当か判断したい。","新しいギミックは、理論よりまず手を動かして覚える。","設定同士の論理関係や世界観の骨格を何度も考える。","設計思想より、今のステージをクリアできるかを重視する。","キャラ設定、台詞、感情表現に心を動かされやすい。","重要な数値と仕組みの詳細をメモして残す。","育成では性能と汎用性を優先する。","性能が弱くても、好きなら先に資源を注ぐ。","資源配分は感覚より合理的に効率を計算する。","ストーリーの感情描写で、キャラへの見方や投資が変わる。","強さの議論ではデータと実戦の結果を重視する。","キャラ同士の関係や感情の物語に惹かれやすい。","高難易では安定した攻略を選びたい。","何度失敗しても、より面白いや限界寄りの戦略を試したい。","オペレーター選択ではチーム全体のシナジーを優先する。","新イベントでは、体力と資源の使い方を事前に計画する。","事前の詳細計画より、プレイしながら決めたい。","将来のガチャやイベントに備えて資源を貯め、引く計画を立てる。","好きなキャラが出ると、計画を変えて即引きしてしまう。","基地とデイリーを決まった時間にこなして、ペースを保つ。","固定ルーティンより、気分でコンテンツを変えたい。","高難易の前に、状況に応じた複数の案を用意する。","事前の案より、失敗してから臨機応変に直したい。","長期目標に沿って育成し、資源を分散させない。","育成方針をよく変え、違うキャラや遊び方を試す。","複雑なイベントでは全体を先に計画してから進める。","計画通りに進めるより、即興の変化を楽しむ。"],
+        questions: ["見知らぬ拠点や駅、仮設キャンプでも、話題が馴染みなら自分から会話に加わることが多い。","大勢と同行するより、一人で静かに周りを観察し、考えを整理するほうが好きだ。","チームがしばらく沈黙すると、場を繋ぐために先に口を開くのは往々にして自分だ。","心の中で結論はあっても、すぐ言うよりまず自分の中で整理するほうだ。","多くの人のことなら、前に立って、どちらへ進むべきか示したい。","歴史や噂、断片的な言い回しを聞くと、言葉にされていない裏を考えずにはいられない。","比喩や象徴を読むより、目の前の情勢・資源・すぐ確かめられる事実を重視する。","特別な人や出来事に出会うと、無意識に「この大地でそれが何を意味するか」を考える。","先の展開を当てるより、手元の補給・ルート・段取りを整えるほうを選ぶ。","ひとことのせりふ、一瞥、欠けた記録でも、語られていない物語に思いを馳せる。","対立の場では、まず筋が通っているかを見て、相手が傷つくかは後回しになりがちだ。","結果的にそれが最善でも、大局のために特定の一人を軽く切り捨てるのは受け入れがたい。","決定を聞くと、表面の立場より論理・代価・帰結を本能的に分解して考える。","人と人の感情的なつながりに動かされやすく、全体の成り行きが変わらなくてもそうだ。","重大な食い違いでは、空気を濁さないために本質を曖昧にするより、はっきり言葉にしたい。","出発が決まれば、ルート・役割・順序はできるだけ明確にしたい。","状況が揺れても、都度考えを変えるより、当初の計画を守っているほうが安心だ。","全体像がまだなくても、まず決めてから歩きながら直す傾向がある。","予定路線を最後まで踏むより、道中の発見で方向を変える楽しさのほうが大きい。","大事なことは宙に浮かせたままにしたくなく、早く結論を得たい。"],
       heroTitle: '無料性格テスト',
       steps: [
         ['STEP 1', '質問に答える', '取り繕わず、普段の自分として答えてください。'],
@@ -1005,7 +1007,7 @@ export const messages = {
       ],
       shippedTitle: 'この版で入っているもの',
       shippedItems: [
-        ['内容', `${QUESTION_COUNT} 問、8 原型、${CHARACTER_COUNT} キャラ。`],
+        ['内容', `題庫 ${QUESTION_BANK_COUNT} 問・毎回 ${SESSION_QUESTION_COUNT} 問ランダム、8 原型、${CHARACTER_COUNT} キャラ。`],
         ['ロジック', 'MBTI 4 軸を先に計算し、その後に原型と 1 キャラへ割り当てます。'],
         ['画面', 'ホーム、説明、テスト、結果、概要ページまで一通りそろっています。'],
       ],

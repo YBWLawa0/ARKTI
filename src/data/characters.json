@@ -4,23 +4,25 @@
     "name": "阿米娅",
     "series": "明日方舟",
     "matchCode": "INFJ",
-    "matchCodeFlex": ["INFP"],
+    "matchCodeFlex": [
+      "INFP"
+    ],
     "code": "AMYA",
-    "title": "全员情绪兜底的未成年领导",
+    "title": "骡的岛CEO",
     "archetypeId": "moonlit-guardian",
     "tags": [
-      "全队心理医生",
-      "未成年CEO",
-      "情绪感知过载",
-      "强行长大"
+      "罗德岛精神核心",
+      "奇美拉体质",
+      "高共情负载",
+      "不只是术师..."
     ],
-    "note": "你以为她是吉祥物，其实是全罗德岛的情绪缓冲器——别人崩溃她接着，别人迷茫她引导，甚至敌人的痛苦她也一并感知。看起来温温柔柔，实际上每天都在硬扛全场负面情绪。属于那种「大家都可以倒下，但她不行」的典型。",
+    "note": "阿米娅从来不只是罗德岛吉祥物。她是那个永远站在最前面接住所有人情绪的人，也是把迷茫、痛苦和责任一并背起来的年轻领袖。她的共情不是温柔滤镜，而是近乎残酷的感知力——他人的悲伤、愤怒、动摇，她很多时候都是真切‘听见’、甚至‘承受’的。可即便这样，她还是会压住自己的疲惫，努力给同伴一个可以相信的方向。属于典型的那种：年纪最小，背的东西却最重；平时软软的，一到关键时刻比谁都清醒也比谁都能扛。",
     "vector": {
-      "expression": 0,
+      "expression": -1,
       "temperature": 3,
       "judgement": 2,
-      "order": 1,
-      "agency": 2,
+      "order": 3,
+      "agency": 1,
       "aura": 3
     },
     "signature": {
@@ -37,19 +39,19 @@
     "series": "明日方舟",
     "matchCode": "INFJ",
     "code": "THRS",
-    "title": "把理想写进历史的温柔暴君",
+    "title": "魔王",
     "archetypeId": "luminous-lead",
     "tags": [
-      "理想型统治者",
-      "精神号召力MAX",
-      "温柔但不可动摇",
-      "旧时代终结者"
+      "萨卡兹的理想投影",
+      "卡兹戴尔精神核心",
+      "温柔系掌局者",
+      "一眼就让人想追随"
     ],
-    "note": "你以为她温柔，其实她是在用温柔推动一整个时代改写。她不靠压迫，而是让人心甘情愿追随，但这并不代表她不强硬——一旦方向确定，谁挡路谁消失。属于那种「她看着你笑，但历史已经按她的想法走了」的级别。",
+    "note": "特蕾西娅最特别的地方，从来不是单纯的温柔，而是她真的能让人相信：萨卡兹也可以拥有不一样的未来。她不是靠恐惧维系权威的人，反而越是平静、越是温和，越能让人意识到她意志有多坚定。很多人会被她的柔和外表骗到，觉得她像理想本身；但真正在局里的人都明白，她从来不是会被时代裹挟着走的那类君主，而是少数能反过来给时代定方向的人。她的可怕，不在于锋芒外露，而在于她几乎不用提高声音，就能让无数人心甘情愿把命运押在她所相信的明天上",
     "vector": {
-      "expression": 1,
-      "temperature": 3,
-      "judgement": 2,
+      "expression": 3,
+      "temperature": 2,
+      "judgement": 1,
       "order": 2,
       "agency": 3,
       "aura": 3
@@ -68,22 +70,22 @@
     "series": "明日方舟",
     "matchCode": "ENFJ",
     "code": "LMAN",
-    "title": "把战场变成团队副本的指挥型社牛",
+    "title": "轮椅干员",
     "archetypeId": "oathbound-captain",
     "tags": [
-      "社交型指挥",
-      "团队增益器",
-      "气氛带动王",
-      "信念传播器"
+      "高互动领导力",
+      "擅长凝聚团队",
+      "鼓舞型人格",
+      "行动派协调者"
     ],
-    "note": "你属于那种能把一群各怀心思的人强行拧成一个团队的类型。你不只是自己强，而是会让周围的人都变得更敢、更稳、更能打。战场对你来说不只是打赢，更是“大家一起赢”。",
+    "note": "蕾缪安这种人，天然擅长在群体里建立连接，并把这种连接转化成行动力。你不是单纯靠能力压服别人，而是靠信任、互动和稳定的情绪输出，让团队逐渐进入同频状态。你擅长读气氛，也知道什么时候该鼓励、什么时候该接住别人，因此常常能在不知不觉间成为队伍的核心黏合剂。你享受的不是个人逞强，而是看见所有人都被调动起来，一起把事情做成。",
     "vector": {
       "expression": 3,
       "temperature": 2,
-      "judgement": 1,
-      "order": 1,
+      "judgement": 2,
+      "order": 3,
       "agency": 2,
-      "aura": 2
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -98,24 +100,26 @@
     "name": "临光",
     "series": "明日方舟",
     "matchCode": "ENFJ",
-    "matchCodeFlex": ["ESFJ"],
+    "matchCodeFlex": [
+      "ESFJ"
+    ],
     "code": "NRLG",
-    "title": "把骑士精神当KPI执行的人",
+    "title": "耀骑士",
     "archetypeId": "oathbound-captain",
     "tags": [
-      "信念洁癖",
-      "自我要求拉满",
-      "正义强迫症",
-      "团队核心"
+      "卡西米尔正道之光",
+      "骑士精神重度患者",
+      "自我要求高得离谱",
+      "站出来就能稳全场"
     ],
-    "note": "你不是“想做个好人”，你是把“正确”当成必须完成的任务。别人可以妥协，你不行；别人可以模糊，你不接受。你身上的压力大到离谱，但你自己还会继续往上加。属于那种“明明可以轻松活，但偏要活成标杆”的人。",
+    "note": "临光最像卡西米尔那种已经快被现实磨没了、却偏偏还没熄灭的骑士精神本身。她当然知道这个世界不会因为一个人坚持正道就突然变好，但她还是会去做，因为如果连她都不做，那很多东西就真的一点都不剩了。她不是天真，而是清醒之后依然选择相信；不是不懂妥协的代价，而是知道总得有人把底线留住。",
     "vector": {
-      "expression": 2,
-      "temperature": 2,
+      "expression": 0,
+      "temperature": 1,
       "judgement": 2,
       "order": 2,
       "agency": 3,
-      "aura": 3
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -131,20 +135,20 @@
     "series": "明日方舟",
     "matchCode": "INFP",
     "code": "RSMY",
-    "title": "情绪读取异常的低配人类接口",
+    "title": "小猫",
     "archetypeId": "gentle-healer",
     "tags": [
-      "情感延迟",
-      "认知偏差",
-      "脆弱但危险",
-      "被动共鸣体"
+      "记忆残缺",
+      "情感认知错位",
+      "安静而高危",
+      "需要被温柔对待"
     ],
-    "note": "你对世界的理解不是“正常人版本”的。你会感受到东西，但不一定能正确解释它们。别人说话你在解码，别人情绪你在同步，但系统经常报错。看起来很安静，但一旦失控，后果不是小打小闹级别。",
+    "note": "迷迭香不是单纯的沉默，她更像是在用一套与常人不同的方式理解世界。她能感受到很多东西，却不总能立刻把那些感受整理成准确的语言和判断；于是她看起来总带着一点慢半拍的疏离感，像永远在追赶自己失落的记忆。可也正因为如此，她的脆弱和危险总是并存——你会先想保护她，然后才意识到，她其实也是那个一旦越界就会让局面彻底失控的人。",
     "vector": {
       "expression": -2,
       "temperature": 2,
-      "judgement": 0,
-      "order": 0,
+      "judgement": 1,
+      "order": 1,
       "agency": 1,
       "aura": 3
     },
@@ -161,9 +165,11 @@
     "name": "泥岩",
     "series": "明日方舟",
     "matchCode": "INFP",
-    "matchCodeFlex": ["ISFP"],
+    "matchCodeFlex": [
+      "ISFP"
+    ],
     "code": "MDRK",
-    "title": "不说话但全队最有底线的人",
+    "title": "萨卡兹大姑娘",
     "archetypeId": "moonlit-guardian",
     "tags": [
       "沉默高防",
@@ -177,7 +183,7 @@
       "temperature": 1,
       "judgement": 2,
       "order": 1,
-      "agency": 2,
+      "agency": 1,
       "aura": 2
     },
     "signature": {
@@ -193,12 +199,14 @@
     "name": "缪尔赛斯",
     "series": "明日方舟",
     "matchCode": "ENFP",
-    "matchCodeFlex": ["ENTP"],
+    "matchCodeFlex": [
+      "ENTP"
+    ],
     "code": "MLSS",
-    "title": "用人格分裂当工具的情绪实验体",
+    "title": "缪缪",
     "archetypeId": "trickster-orbit",
     "tags": [
-      "多面人格",
+      "古灵精怪的精灵少女",
       "情绪不稳定但可控",
       "边界模糊",
       "自我解构"
@@ -207,10 +215,10 @@
     "vector": {
       "expression": 3,
       "temperature": 1,
-      "judgement": 0,
+      "judgement": 1,
       "order": -1,
       "agency": 2,
-      "aura": 2
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -226,7 +234,7 @@
     "series": "明日方舟",
     "matchCode": "INTJ",
     "code": "KLTS",
-    "title": "把人当变量写进长期计划的人",
+    "title": "亡妻......",
     "archetypeId": "shadow-strategist",
     "tags": [
       "极端理性",
@@ -236,7 +244,7 @@
     ],
     "note": "你看人不是看“这个人怎么样”，而是看“这个人在未来能起什么作用”。你不会因为情绪改变判断，也不会因为关系改变策略。很多人觉得你冷，但其实你只是站在一个他们够不到的时间尺度上。",
     "vector": {
-      "expression": -2,
+      "expression": -1,
       "temperature": -1,
       "judgement": 3,
       "order": 3,
@@ -257,13 +265,18 @@
     "series": "明日方舟",
     "matchCode": "ENFP",
     "code": "PEPE",
-    "title": "用热血把战场打成综艺现场的人",
+    "title": "佩佩可爱捏",
     "archetypeId": "chaos-spark",
-    "tags": ["高能量输出", "情绪爆发型", "冲就完了", "气氛点火器"],
+    "tags": [
+      "高能量输出",
+      "情绪爆发型",
+      "冲就完了",
+      "气氛点火器"
+    ],
     "note": "你不是冷静分析派，你是「先冲再说派」。局势越乱你越兴奋，甚至有点享受那种混乱里的存在感。别人还在评估风险，你已经把气氛带起来了。属于那种「计划赶不上你临场发挥」的典型。",
     "vector": {
       "expression": 3,
-      "temperature": 2,
+      "temperature": 1,
       "judgement": -1,
       "order": -2,
       "agency": 3,
@@ -282,17 +295,22 @@
     "series": "明日方舟",
     "matchCode": "INTJ",
     "code": "ULPI",
-    "title": "把自己当实验变量用的深海疯子",
+    "title": "52饼干",
     "archetypeId": "shadow-strategist",
-    "tags": ["深海猎人", "自我改造", "极端理性", "人性边界模糊"],
+    "tags": [
+      "深海猎人",
+      "自我改造",
+      "极端理性",
+      "人性边界模糊"
+    ],
     "note": "你不是单纯的理性，你是那种会把自己也纳入实验的理性。深海猎人的身份让你早就脱离了普通人的生存逻辑，你更关注「进化」和「适应」，而不是「活得像人」。属于那种「人还在，但已经不完全是人」的类型。",
     "vector": {
       "expression": -1,
-      "temperature": -2,
+      "temperature": -1,
       "judgement": 3,
       "order": 2,
       "agency": 3,
-      "aura": 2
+      "aura": 3
     },
     "signature": {
       "uniqueAxes": {
@@ -306,18 +324,25 @@
     "name": "莫斯提马",
     "series": "明日方舟",
     "matchCode": "INTP",
-    "matchCodeFlex": ["INTJ"],
+    "matchCodeFlex": [
+      "INTJ"
+    ],
     "code": "MSTM",
-    "title": "一边摆烂一边掌控时间的危险分子",
+    "title": "蓝莓味的小莫",
     "archetypeId": "icebound-observer",
-    "tags": ["时间系外挂", "表面摸鱼", "真实危险", "情绪抽离"],
+    "tags": [
+      "时间系外挂",
+      "表面摸鱼",
+      "真实危险",
+      "情绪抽离"
+    ],
     "note": "你看起来什么都不在乎，甚至有点懒，但那只是你对世界的态度。你掌握的力量和你表现出来的状态完全不匹配。别人以为你在摆，你其实是在决定「什么时候动手」。属于那种「越看不认真越不能惹」的人。",
     "vector": {
-      "expression": -1,
+      "expression": -2,
       "temperature": -2,
-      "judgement": 2,
+      "judgement": 3,
       "order": 0,
-      "agency": 2,
+      "agency": 1,
       "aura": 3
     },
     "signature": {
@@ -333,16 +358,21 @@
     "series": "明日方舟",
     "matchCode": "INTP",
     "code": "LOGS",
-    "title": "把天赋当日常操作的装逼型天才",
+    "title": "术师一哥",
     "archetypeId": "icebound-observer",
-    "tags": ["天才术师", "萨卡兹王庭", "高智商碾压", "优雅装逼"],
+    "tags": [
+      "天才术师",
+      "萨卡兹王庭",
+      "高智商碾压",
+      "优雅装逼"
+    ],
     "note": "你不是刻意高冷，你只是懒得和大多数人对齐思维。你的强不是靠努力堆出来的，而是天赋直接碾过去。你甚至能一边优雅一边解决问题，让人看着就觉得「这人太离谱」。",
     "vector": {
-      "expression": -1,
-      "temperature": 0,
+      "expression": -2,
+      "temperature": -2,
       "judgement": 3,
-      "order": 1,
-      "agency": 2,
+      "order": 2,
+      "agency": 1,
       "aura": 3
     },
     "signature": {
@@ -358,17 +388,22 @@
     "series": "明日方舟",
     "matchCode": "ENTJ",
     "code": "SVAS",
-    "title": "把家族、公司和战场当同一个棋盘的人",
+    "title": "银老板·盟友",
     "archetypeId": "oathbound-captain",
-    "tags": ["资本家骑士", "权力操盘手", "战略碾压", "全局控制"],
+    "tags": [
+      "资本家骑士",
+      "权力操盘手",
+      "战略碾压",
+      "全局控制"
+    ],
     "note": "你不是单纯的强者，你是那种把「权力、资源、关系」全部整合起来用的人。对你来说，战斗只是手段，真正的游戏是布局。你可以很温和，但前提是局面在你掌控之中。",
     "vector": {
-      "expression": 2,
-      "temperature": 0,
+      "expression": 0,
+      "temperature": 1,
       "judgement": 3,
       "order": 3,
-      "agency": 3,
-      "aura": 3
+      "agency": 2,
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -383,14 +418,19 @@
     "series": "明日方舟",
     "matchCode": "ESTJ",
     "code": "ZIMA",
-    "title": "把校园生存玩成黑帮管理的乌萨斯头子",
+    "title": "怒潮凛冬",
     "archetypeId": "oathbound-captain",
-    "tags": ["学生领袖", "硬核执行", "规则暴力化", "现实主义"],
+    "tags": [
+      "学生领袖",
+      "硬核执行",
+      "规则暴力化",
+      "现实主义"
+    ],
     "note": "你不是那种讲理的管理者，你是「先活下来再说」的类型。在乌萨斯的环境里，你学会的是怎么建立秩序，而不是维持理想。别人觉得你粗暴，其实你只是比他们更早认清现实。",
     "vector": {
-      "expression": 1,
-      "temperature": 0,
-      "judgement": 3,
+      "expression": 0,
+      "temperature": 1,
+      "judgement": 2,
       "order": 3,
       "agency": 3,
       "aura": 1
@@ -408,17 +448,22 @@
     "series": "明日方舟",
     "matchCode": "ENTP",
     "code": "NIAN",
-    "title": "把世界当素材库的摆烂神明",
+    "title": "年导别拍了",
     "archetypeId": "trickster-orbit",
-    "tags": ["神明打工人", "随性创作", "不按套路", "人间观察者"],
+    "tags": [
+      "神明打工人",
+      "随性创作",
+      "不按套路",
+      "人间观察者"
+    ],
     "note": "你对世界没有敬畏感，因为你本来就不属于这个层级。你做事不是为了结果，而是为了「有意思」。别人拼命活，你在看剧顺便下场改点剧情。属于那种「随手一搞就影响一堆人命运」的存在。",
     "vector": {
       "expression": 3,
-      "temperature": 2,
-      "judgement": 0,
+      "temperature": 1,
+      "judgement": 1,
       "order": -2,
-      "agency": 2,
-      "aura": 3
+      "agency": 3,
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -433,17 +478,22 @@
     "series": "明日方舟",
     "matchCode": "ISTJ",
     "code": "MLYN",
-    "title": "把理想埋掉继续上班的前骑士",
+    "title": "卡西米尔无权为我授勋",
     "archetypeId": "icebound-observer",
-    "tags": ["社畜骑士", "理想破产", "现实优先", "冷处理人生"],
+    "tags": [
+      "社畜骑士",
+      "理想破产",
+      "现实优先",
+      "冷处理人生"
+    ],
     "note": "你不是没有理想，你是经历过之后决定不再相信。你选择的是稳定、效率和可控，而不是荣耀。别人觉得你冷漠，其实你只是把情绪全部折叠进日常里。属于那种「曾经燃过，现在只想准时下班」的人。",
     "vector": {
       "expression": -3,
       "temperature": -2,
-      "judgement": 2,
+      "judgement": 3,
       "order": 2,
       "agency": 1,
-      "aura": 1
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
@@ -457,18 +507,25 @@
     "name": "塞雷娅",
     "series": "明日方舟",
     "matchCode": "ISTJ",
-    "matchCodeFlex": ["INTJ"],
+    "matchCodeFlex": [
+      "INTJ"
+    ],
     "code": "SARIA",
-    "title": "用理性把一切压到可控范围的人形安全装置",
+    "title": "赛爹",
     "archetypeId": "icebound-observer",
-    "tags": ["莱茵生命高管", "极端理性", "安全第一", "医疗与暴力并存"],
+    "tags": [
+      "莱茵生命高管",
+      "极端理性",
+      "安全第一",
+      "医疗与暴力并存"
+    ],
     "note": "你不是冷漠，你是把一切都纳入「风险控制」。实验要稳，队伍要稳，人也要稳——必要的时候甚至可以亲自上去把问题物理解决。别人讲感情，你讲流程；别人讲选择，你讲后果。属于那种「只要她在场，事情就不会失控」的类型。",
     "vector": {
       "expression": -2,
       "temperature": -2,
       "judgement": 3,
       "order": 3,
-      "agency": 2,
+      "agency": 1,
       "aura": 2
     },
     "signature": {
@@ -484,9 +541,14 @@
     "series": "明日方舟",
     "matchCode": "ISFJ",
     "code": "SHU",
-    "title": "把战场种成自家后院的农系神仙",
+    "title": "黍姐真强吧",
     "archetypeId": "gentle-healer",
-    "tags": ["种地流天花板", "持续恢复", "慢热稳定", "生态系辅助"],
+    "tags": [
+      "种地流天花板",
+      "持续恢复",
+      "慢热稳定",
+      "生态系辅助"
+    ],
     "note": "你不是那种爆发型选手，你是「慢慢把局面养起来」的人。别人拼输出，你在铺地；别人拼操作，你在控环境。看起来没什么存在感，但一旦进入你的节奏，对面基本就已经没法翻了。属于那种「越打越稳，越拖越赢」的类型。",
     "vector": {
       "expression": 1,
@@ -494,7 +556,7 @@
       "judgement": 1,
       "order": 2,
       "agency": 1,
-      "aura": 1
+      "aura": 0
     },
     "signature": {
       "uniqueAxes": {
@@ -508,19 +570,26 @@
     "name": "艾雅法拉",
     "series": "明日方舟",
     "matchCode": "ISFJ",
-    "matchCodeFlex": ["INFP"],
+    "matchCodeFlex": [
+      "INFP"
+    ],
     "code": "EYJA",
-    "title": "看起来软但输出像火山喷发的学者",
+    "title": "小羊",
     "archetypeId": "gentle-healer",
-    "tags": ["火山学家", "天灾信使", "温柔努力", "核爆级输出"],
+    "tags": [
+      "火山学家",
+      "天灾信使",
+      "温柔努力",
+      "核爆级输出"
+    ],
     "note": "你以为她是乖乖做研究的小学者，其实她一开口就是火山级别的输出。平时温温柔柔，说话轻声细语，但一旦进入工作状态，强度直接拉满。属于那种「越温柔越离谱」的典型。",
     "vector": {
-      "expression": 2,
+      "expression": 1,
       "temperature": 3,
       "judgement": 1,
       "order": 1,
       "agency": 2,
-      "aura": 2
+      "aura": 0
     },
     "signature": {
       "uniqueAxes": {
@@ -535,17 +604,22 @@
     "series": "明日方舟",
     "matchCode": "ESTJ",
     "code": "CHEN",
-    "title": "把纪律当底线的龙门暴躁执法者",
+    "title": "陈sir",
     "archetypeId": "oathbound-captain",
-    "tags": ["龙门近卫局", "高压执法", "情绪压制", "行动派"],
+    "tags": [
+      "龙门近卫局",
+      "高压执法",
+      "情绪压制",
+      "行动派"
+    ],
     "note": "你不是脾气不好，你只是对「该怎么做」有极高标准。你习惯直接处理问题，而不是讨论问题。很多人觉得你太冲，但关键时刻，第一个站出来的也一定是你。属于那种「骂归骂，但事绝对能办成」的人。",
     "vector": {
-      "expression": 2,
-      "temperature": -1,
+      "expression": 0,
+      "temperature": 1,
       "judgement": 3,
       "order": 3,
       "agency": 3,
-      "aura": 2
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -560,12 +634,17 @@
     "series": "明日方舟",
     "matchCode": "ESFJ",
     "code": "ARC",
-    "title": "把团队运转当本职工作的现场协调器",
+    "title": "我的天呐电弧大人",
     "archetypeId": "oathbound-captain",
-    "tags": ["团队维持", "现场协调", "高执行力", "人际连接点"],
+    "tags": [
+      "团队维持",
+      "现场协调",
+      "高执行力",
+      "人际连接点"
+    ],
     "note": "你不是最强的那一个，但你是让团队正常运转的关键节点。你会盯节奏、补漏洞、接情绪，甚至在混乱中强行把秩序拉回来。属于那种「少了你，整个队伍就开始散架」的类型。",
     "vector": {
-      "expression": 2,
+      "expression": 0,
       "temperature": 2,
       "judgement": 2,
       "order": 2,
@@ -584,19 +663,26 @@
     "name": "余",
     "series": "明日方舟",
     "matchCode": "ESFJ",
-    "matchCodeFlex": ["ENFJ"],
+    "matchCodeFlex": [
+      "ENFJ"
+    ],
     "code": "YU",
-    "title": "把辅助做到机制怪级别的全能型队友",
+    "title": "余妹(误)",
     "archetypeId": "luminous-lead",
-    "tags": ["机制怪", "全图支援", "团队增益", "功能性拉满"],
+    "tags": [
+      "机制怪",
+      "全图支援",
+      "团队增益",
+      "功能性拉满"
+    ],
     "note": "你不是单一定位，你是「哪里缺人往哪里补」。你能抗、能拉、能控、还能救场。别人是角色，你是系统组件。属于那种「看起来不显眼，但少了就直接崩盘」的存在。",
     "vector": {
       "expression": 3,
       "temperature": 2,
       "judgement": 1,
-      "order": 1,
+      "order": 0,
       "agency": 2,
-      "aura": 2
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -611,17 +697,22 @@
     "series": "明日方舟",
     "matchCode": "ISTP",
     "code": "THNS",
-    "title": "一旦启动就不再需要操作的自走型输出机",
+    "title": "棘~~刺~",
     "archetypeId": "icebound-observer",
-    "tags": ["挂机之王", "持续输出", "冷静理性", "低存在感高效率"],
+    "tags": [
+      "挂机之王",
+      "持续输出",
+      "冷静理性",
+      "低存在感高效率"
+    ],
     "note": "你不喜欢被打扰，也不喜欢被指挥。给你一个位置，你就能自己把事情做到最好。你不需要频繁操作，也不需要存在感，但输出一直在。属于那种「你不看他，但他一直在干活」的类型。",
     "vector": {
       "expression": -2,
       "temperature": -2,
-      "judgement": 2,
+      "judgement": 3,
       "order": 1,
-      "agency": 2,
-      "aura": 0
+      "agency": 1,
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
@@ -635,19 +726,26 @@
     "name": "弑君者",
     "series": "明日方舟",
     "matchCode": "ISFP",
-    "matchCodeFlex": ["ISTP"],
+    "matchCodeFlex": [
+      "ISTP"
+    ],
     "code": "CRWN",
-    "title": "在失败与挣扎中反复重开的潜行者",
+    "title": "泰拉传奇抗压王",
     "archetypeId": "shadow-strategist",
-    "tags": ["整合运动出身", "潜行暗杀", "执念未散", "成长线明显"],
+    "tags": [
+      "整合运动出身",
+      "潜行暗杀",
+      "执念未散",
+      "成长线明显"
+    ],
     "note": "你不是那种一开始就强的人，你是一路被打、一路重来、一路咬牙坚持过来的类型。你会失败，也会迷茫，但不会停。属于那种「可能不稳定，但绝对不会放弃」的人。",
     "vector": {
-      "expression": 0,
-      "temperature": 1,
+      "expression": -1,
+      "temperature": -1,
       "judgement": 2,
-      "order": 0,
+      "order": 2,
       "agency": 3,
-      "aura": 2
+      "aura": 3
     },
     "signature": {
       "uniqueAxes": {
@@ -661,18 +759,25 @@
     "name": "斯卡蒂",
     "series": "明日方舟",
     "matchCode": "ISFP",
-    "matchCodeFlex": ["ISTP"],
+    "matchCodeFlex": [
+      "ISTP"
+    ],
     "code": "SKDI",
-    "title": "在人群边缘独自打完深海副本的人",
+    "title": "我从08年就开始等这个...蒂蒂",
     "archetypeId": "moonlit-guardian",
-    "tags": ["深海猎人", "极端孤独", "情感低表达", "压抑型强者"],
+    "tags": [
+      "深海猎人",
+      "极端孤独",
+      "情感低表达",
+      "压抑型强者"
+    ],
     "note": "你不是不在乎别人，你是习惯一个人承担一切。深海的经历让你很难再和普通人处在同一频道，你也不打算解释。你会出手，但不会多说。属于那种「你以为她冷，其实她只是习惯自己扛完」的人。",
     "vector": {
       "expression": -2,
       "temperature": 1,
       "judgement": 2,
-      "order": 2,
-      "agency": 2,
+      "order": 3,
+      "agency": 1,
       "aura": 2
     },
     "signature": {
@@ -687,19 +792,26 @@
     "name": "令",
     "series": "明日方舟",
     "matchCode": "ESTP",
-    "matchCodeFlex": ["ENTP"],
+    "matchCodeFlex": [
+      "ENTP"
+    ],
     "code": "LING",
-    "title": "喝着酒顺手把局面控住的山水老摆子",
+    "title": "将进酒",
     "archetypeId": "trickster-orbit",
-    "tags": ["岁相成员", "随性但不失控", "边摆边赢", "场面掌控者"],
+    "tags": [
+      "岁相成员",
+      "随性但不失控",
+      "边摆边赢",
+      "场面掌控者"
+    ],
     "note": "你看起来在摆，其实一直在控节奏。你不急着做什么，但关键点你一定会动手，而且一动就是决定性。别人是认真赢，你是顺便赢。属于那种「看着最不靠谱，但最后全靠她」的人。",
     "vector": {
       "expression": 3,
-      "temperature": 2,
+      "temperature": 1,
       "judgement": 1,
       "order": -1,
       "agency": 3,
-      "aura": 2
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -714,13 +826,18 @@
     "series": "明日方舟",
     "matchCode": "ESFP",
     "code": "YAO",
-    "title": "把存在感当主输出打的情绪放大器",
+    "title": "羽生萌萌香",
     "archetypeId": "chaos-spark",
-    "tags": ["高存在感", "情绪驱动", "即时反馈", "舞台型人格"],
+    "tags": [
+      "高存在感",
+      "情绪驱动",
+      "即时反馈",
+      "舞台型人格"
+    ],
     "note": "你不是要赢，你是要「赢得好看」。你对当下的体验极度敏感，也会放大一切情绪。别人追求结果，你追求过程的爽感。属于那种「只要你在场，气氛就不会冷」的人。",
     "vector": {
       "expression": 3,
-      "temperature": 2,
+      "temperature": 1,
       "judgement": -1,
       "order": -2,
       "agency": 3,
@@ -738,19 +855,26 @@
     "name": "能天使",
     "series": "明日方舟",
     "matchCode": "ESFP",
-    "matchCodeFlex": ["ENFP"],
+    "matchCodeFlex": [
+      "ENFP"
+    ],
     "code": "EXUS",
-    "title": "一边快乐一边把输出打满的乐天派",
+    "title": "啊噗鲁派",
     "archetypeId": "luminous-lead",
-    "tags": ["企鹅物流", "快乐打工人", "高频输出", "情绪稳定"],
+    "tags": [
+      "企鹅物流",
+      "快乐打工人",
+      "高频输出",
+      "情绪稳定"
+    ],
     "note": "你不是那种会纠结的人，你的世界简单直接——有活就干，有架就打，有快乐就笑。你很少被负面情绪拖住节奏，甚至能在高压环境里保持轻松。属于那种「边笑边把事情全做完」的人。",
     "vector": {
       "expression": 3,
       "temperature": 2,
       "judgement": 1,
-      "order": 1,
+      "order": 0,
       "agency": 3,
-      "aura": 2
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -765,9 +889,14 @@
     "series": "明日方舟",
     "matchCode": "INTJ",
     "code": "WANG",
-    "title": "把棋局下在别人认知之外的幕后操盘手",
+    "title": "搞么子",
     "archetypeId": "shadow-strategist",
-    "tags": ["深度布局", "信息差碾压", "冷静判断", "低存在高影响"],
+    "tags": [
+      "深度布局",
+      "信息差碾压",
+      "冷静判断",
+      "低存在高影响"
+    ],
     "note": "你不参与表面的竞争，你直接决定规则。你习惯在更高一层看问题，把人、资源、时间全部当变量处理。别人以为局面是随机的，其实只是没看到你在背后动。",
     "vector": {
       "expression": -1,
@@ -790,17 +919,22 @@
     "series": "明日方舟",
     "matchCode": "ENTJ",
     "code": "SMNG",
-    "title": "把毁灭当执行方案的极端推进者",
+    "title": "香蕉姐",
     "archetypeId": "chaos-spark",
-    "tags": ["高压推进", "极端执行", "目标导向", "破坏式解决"],
+    "tags": [
+      "高压推进",
+      "极端执行",
+      "目标导向",
+      "破坏式解决"
+    ],
     "note": "你不是犹豫型选手，你是那种「既然决定了就直接推到底」的人。你不在意过程是否温和，只在意结果是否达成。别人还在讨论代价，你已经准备好承担并继续推进。",
     "vector": {
       "expression": 2,
-      "temperature": 0,
+      "temperature": 1,
       "judgement": 3,
-      "order": -1,
+      "order": -2,
       "agency": 3,
-      "aura": 3
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
@@ -814,19 +948,26 @@
     "name": "维什戴尔",
     "series": "明日方舟",
     "matchCode": "ESTP",
-    "matchCodeFlex": ["ENTP"],
+    "matchCodeFlex": [
+      "ENTP"
+    ],
     "code": "WISD",
-    "title": "把爆破写成战术语言的萨卡兹雇佣兵头子",
+    "title": "无需多言",
     "archetypeId": "trickster-orbit",
-    "tags": ["萨卡兹雇佣兵", "爆破与算计", "战场支配感", "疯劲里有章法"],
+    "tags": [
+      "萨卡兹雇佣兵",
+      "爆破与算计",
+      "战场支配感",
+      "疯劲里有章法"
+    ],
     "note": "你不是只会掀桌子的乐子人，你是把「爆炸」当标点、把混乱当工具的人。你笑得很危险，但下手往往带着目的——让别人猜不透你下一步，才是你的舒适区。属于那种「看着像疯子，其实每一步都在逼你接招」的类型。",
     "vector": {
       "expression": 3,
       "temperature": 1,
-      "judgement": 0,
+      "judgement": 1,
       "order": -2,
       "agency": 3,
-      "aura": 2
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -840,18 +981,26 @@
     "name": "海猫络合物",
     "series": "明日方舟",
     "matchCode": "ENTP",
-    "matchCodeFlex": ["INTJ", "ENFP"],
+    "matchCodeFlex": [
+      "INTJ",
+      "ENFP"
+    ],
     "code": "HG",
-    "title": "在幕后悄悄改写你命运概率的那只手",
+    "title": "法老·香艳的游戏制作人",
     "archetypeId": "trickster-orbit",
-    "tags": ["不做定义", "全局变量", "概率操控", "版本答案"],
-    "note": "你无法被分类，因为分类本身就是你写的。角色、机制、强度、剧情——一切都在你的控制之下。别人做选择，你决定选项。属于那种「不要试图理解，直接接受」的存在。",
+    "tags": [
+      "苦难陈述者",
+      "全局变量",
+      "创世主",
+      "版本答案"
+    ],
+    "note": "你无法被分类，因为分类本身就是你写的。角色、机制、强度、剧情——一切都在你的控制之下。别人做选择，你决定选项。",
     "vector": {
       "expression": 2,
       "temperature": 1,
       "judgement": 1,
       "order": -1,
-      "agency": 2,
+      "agency": 3,
       "aura": 3
     },
     "signature": {

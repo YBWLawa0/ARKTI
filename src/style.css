@@ -315,6 +315,112 @@ select {
   color: #fff;
 }
 
+.mobile-nav {
+  display: none;
+  position: relative;
+}
+
+.mobile-menu-button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #dbe2e7;
+  border-radius: 12px;
+  background: #fff;
+  color: #33424d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(320px, calc(100vw - 24px));
+  background: #fff;
+  border: 1px solid #dbe2e7;
+  border-radius: 16px;
+  box-shadow: 0 16px 34px rgba(38, 52, 63, 0.16);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 90;
+}
+
+.mobile-menu-item {
+  display: block;
+  border-radius: 999px;
+  border: 1px solid #edf1f4;
+  background: #f9fbfc;
+  color: #35424c;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  padding: 11px 14px;
+}
+
+.mobile-menu-item.router-link-active:not(.mobile-cta) {
+  background: #edf3f6;
+  color: #2d3b46;
+}
+
+.mobile-github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-lang-group {
+  border: 1px solid #edf1f4;
+  border-radius: 14px;
+  background: #fcfdfe;
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.mobile-lang-title {
+  margin: 0;
+  color: #7d8a93;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.mobile-lang-option {
+  width: 100%;
+  border: 1px solid #e2e8ec;
+  background: #fff;
+  color: #465661;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+.mobile-lang-option.active {
+  border-color: #3ba17c;
+  background: #ebf6f1;
+  color: #2f8a67;
+}
+
+.mobile-cta {
+  background: #9474a4;
+  border-color: #9474a4;
+  color: #fff;
+}
+
+.mobile-cta.router-link-active {
+  background: #7d5f91;
+  border-color: #7d5f91;
+}
+
 /* ============================================
    Main Content Area
    ============================================ */
@@ -794,20 +900,26 @@ select {
 
 @media (max-width: 768px) {
   .site-header {
-    position: static;
-    flex-direction: column;
-    gap: 10px;
-    padding: 14px 16px;
-    min-height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    gap: 8px;
+    padding: 12px;
+    min-height: 68px;
   }
 
   .site-nav {
-    flex-wrap: wrap;
-    justify-content: center;
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
   }
 
   .site-main {
-    padding-top: 0;
+    padding-top: 68px;
   }
 
   .hero-section {

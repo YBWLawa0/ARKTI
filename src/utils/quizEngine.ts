@@ -14,7 +14,7 @@ import { getCharacterPopulationProbability } from './characterProbability.ts'
 
 const DIMENSION_LETTERS: Record<DimensionPair, [MBTILetter, MBTILetter]> = {
   'E_I': ['E', 'I'],
-  'S_N': ['S', 'N'],
+  'S_N': ['N', 'S'],
   'T_F': ['T', 'F'],
   'J_P': ['J', 'P']
 }

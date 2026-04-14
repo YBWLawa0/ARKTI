@@ -31,7 +31,7 @@
           :ref="(el) => setQuestionRef(el, idx)"
           v-reveal
         >
-          <h2>{{ t('quiz.questions.' + idx, undefined, (question.text || question.prompt || t('quiz.missingQuestion'))) }}</h2>
+          <h2>{{ t('quiz.questions.' + bankIndexFor(question), undefined, (question.text || question.prompt || t('quiz.missingQuestion'))) }}</h2>
 
           <div class="question-scale">
             <span class="agree-label">{{ t('quiz.agree') }}</span>
@@ -115,6 +115,7 @@ interface ScaleOption {
 const router = useRouter()
 const {
   questions,
+  questionMessageIndex,
   state,
   answeredCount,
   isComplete,
@@ -123,6 +124,11 @@ const {
   selectOptionAt,
   finalizeQuiz,
 } = useQuiz()
+
+function bankIndexFor(question: { id: string }) {
+  const i = questionMessageIndex(question.id)
+  return i >= 0 ? i : 0
+}
 const { t, tm } = useI18n()
 
 const questionRefs = ref<HTMLElement[]>([])
