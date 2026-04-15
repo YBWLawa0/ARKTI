@@ -16,6 +16,10 @@
 
 ---
 
+## Fork 来源
+
+本项目 Fork 自 [tianxingleo/ACGTI](https://github.com/tianxingleo/ACGTI)，并在其 MBTI + 二次元测试框架基础上，改造成面向《明日方舟》语境的 ARKTI 分支版本。
+
 ## 截图预览
 
 <p align="center">
@@ -159,6 +163,7 @@ git push origin v0.1.0
 
 ## 致谢
 
+- **Fork 来源** — 感谢 [tianxingleo/ACGTI](https://github.com/tianxingleo/ACGTI) 提供开源基础与项目结构参考
 - **界面风格** — 参考自 [16personalities](https://www.16personalities.com/) 的扁平化设计与专业测评体验
 - **项目启发** — 受到开源项目 [UnluckyNinja/SBTI-test](https://github.com/UnluckyNinja/SBTI-test) 的启发
 - **视觉素材** — 项目中的角色立绘与背景图片由 **ChatGPT (DALL·E)** 生成
