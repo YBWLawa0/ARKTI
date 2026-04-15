@@ -168,6 +168,12 @@ git push origin v0.1.0
 - **项目启发** — 受到开源项目 [UnluckyNinja/SBTI-test](https://github.com/UnluckyNinja/SBTI-test) 的启发
 - **视觉素材** — 项目中的角色立绘与背景图片由 **ChatGPT (DALL·E)** 生成
 
+## 开源协议
+
+- 本项目采用 [MIT License](./LICENSE)
+- Copyright (c) 2026 Li Tianxing (original work)
+- Copyright (c) 2026 YBWLawa0 (modifications)
+
 ## 产品边界
 
 - 纯静态前端，无后端服务、无用户系统、无数据库
