@@ -581,7 +581,7 @@
     "smallCharacterVideo": "/images/small_characters/霜星-默认-战斗-Move-x1.webm",
     "backgroundImage": "/images/background/霜星-背景.png",
     "backgroundShadow": true,
-    "backgroundPositionX": -20,
+    "backgroundPositionX": 20,
     "backgroundPositionY": 48
   },
   "hypergryph": {

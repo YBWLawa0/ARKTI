@@ -37,6 +37,7 @@ const state = reactive({
   currentIndex: 0,
   answers: [] as number[],
   sessionQuestions: [] as Question[],
+  liveMetricsVisible: false,
   latestRecord: hydrateQuizRecord(loadLastRecord() as QuizRecord | null),
 })
 
@@ -98,6 +99,7 @@ function resetQuiz(clearHistory = false) {
   state.sessionQuestions = pickSessionQuestions()
   state.answers = Array.from({ length: state.sessionQuestions.length }, () => UNANSWERED)
   state.currentIndex = 0
+  state.liveMetricsVisible = false
 
   if (clearHistory) {
     state.latestRecord = null
@@ -134,6 +136,14 @@ function resumeLastResult() {
   state.latestRecord = hydrateQuizRecord(loadLastRecord())
 }
 
+function toggleLiveMetricsPanel() {
+  state.liveMetricsVisible = !state.liveMetricsVisible
+}
+
+function setLiveMetricsPanelVisible(visible: boolean) {
+  state.liveMetricsVisible = visible
+}
+
 /** 题干在题库 JSON / i18n 数组中的下标，用于 quiz.questions.{index} */
 function questionMessageIndex(questionId: string) {
   return allQuestions.findIndex((q) => q.id === questionId)
@@ -156,6 +166,7 @@ export function useQuiz() {
     canGoPrev,
     isComplete,
     latestResult,
+    liveMetricsVisible: computed(() => state.liveMetricsVisible),
     selectOption,
     selectOptionAt,
     goNext,
@@ -164,6 +175,8 @@ export function useQuiz() {
     resetQuiz,
     finalizeQuiz,
     resumeLastResult,
+    toggleLiveMetricsPanel,
+    setLiveMetricsPanelVisible,
     createDebugResult: (characterId: string): QuizResult | null =>
       createDebugQuizResult({
         characterId,

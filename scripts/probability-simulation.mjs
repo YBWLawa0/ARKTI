@@ -10,7 +10,7 @@ import characters from '../src/data/characters.json' with { type: 'json' }
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, '..')
 const probabilityOut = path.join(root, 'src/data/characterProbabilities.json')
-const seed = 20260411
+const seed = 20260416
 
 function createRng(seed) {
   let state = seed >>> 0
@@ -24,13 +24,38 @@ function createRng(seed) {
 const answerScale = [-3, -2, -1, 0, 1, 2, 3]
 /** 与 src/constants/quizSession.ts 中 QUIZ_SESSION_QUESTION_COUNT 保持一致 */
 const QUIZ_SESSION_QUESTION_COUNT = 30
+const LIMITED_CHARACTER_ID = 'muelsyse'
+const LIMITED_CHARACTER_FACTOR = 0.5
 const rng = createRng(seed)
 const runs = 200000
 const winnerCounts = new Map(characters.map((character) => [character.id, 0]))
 
 function toProbabilityPercent(count) {
-  const percent = Number(((count / runs) * 100).toFixed(2))
-  return Math.max(0.01, percent)
+  return Number(((count / runs) * 100).toFixed(2))
+}
+
+function rebalanceWithLimitedCharacter(probabilities, characterId, factor) {
+  const target = probabilities[characterId]
+  if (typeof target !== 'number' || target <= 0 || factor >= 1 || factor < 0) {
+    return probabilities
+  }
+
+  const reducedTarget = target * factor
+  const otherTotal = 100 - target
+  if (otherTotal <= 0) {
+    return probabilities
+  }
+
+  const scale = (100 - reducedTarget) / otherTotal
+
+  return Object.fromEntries(
+    Object.entries(probabilities).map(([id, value]) => {
+      if (id === characterId) {
+        return [id, Number(reducedTarget.toFixed(2))]
+      }
+      return [id, Number((value * scale).toFixed(2))]
+    }),
+  )
 }
 
 function shufflePickSession(source, count) {
@@ -58,20 +83,30 @@ for (let index = 0; index < runs; index += 1) {
   }
 }
 
-const entries = [...winnerCounts.entries()]
-  .sort((left, right) => right[1] - left[1])
-  .map(([id, count]) => ({
-    id,
-    count,
-    probability: toProbabilityPercent(count),
-  }))
-
-const probabilities = Object.fromEntries(
+const rawProbabilities = Object.fromEntries(
   characters.map((character) => {
     const count = winnerCounts.get(character.id) ?? 0
     return [character.id, toProbabilityPercent(count)]
   }),
 )
+
+const probabilities = rebalanceWithLimitedCharacter(
+  rawProbabilities,
+  LIMITED_CHARACTER_ID,
+  LIMITED_CHARACTER_FACTOR,
+)
+
+const entries = [...winnerCounts.entries()]
+  .sort((left, right) => {
+    const rightProbability = probabilities[right[0]] ?? 0
+    const leftProbability = probabilities[left[0]] ?? 0
+    return rightProbability - leftProbability
+  })
+  .map(([id, count]) => ({
+    id,
+    count,
+    probability: probabilities[id] ?? 0,
+  }))
 
 const payload = {
   seed,

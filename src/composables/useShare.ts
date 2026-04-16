@@ -5,10 +5,21 @@ import { getLocale, t } from '../i18n'
 import { getLocalizedCharacterName, getLocalizedCharacterSeries } from '../i18n/characters'
 
 let htmlToImageLoader: Promise<typeof import('html-to-image')> | null = null
+const SHARE_ARCHETYPE_LABELS: Record<string, string> = {
+  'luminous-lead': '引领者',
+  'icebound-observer': '观察者',
+  'oathbound-captain': '秩序引导者',
+  'trickster-orbit': '机变者',
+  'gentle-healer': '疗愈者',
+  'shadow-strategist': '策略者',
+  'chaos-spark': '破局者',
+  'moonlit-guardian': '守护者',
+}
 
 function createShareText(result: QuizResult) {
   const featured = result.characterMatches[0]
   const locale = getLocale()
+  const archetypeLabel = SHARE_ARCHETYPE_LABELS[result.archetype.id] ?? result.archetype.name
 
   return [
     t('app.common.shareCode', { code: result.code }),
@@ -20,7 +31,7 @@ function createShareText(result: QuizResult) {
       : t('app.common.shareUnknown'),
     t('app.common.shareProbability', { prob: result.matchProbability }),
     t('app.common.shareProbabilityDesc'),
-    t('app.common.shareArchetype', { name: result.archetype.name }),
+    t('app.common.shareArchetype', { name: archetypeLabel }),
     result.archetype.subtitle,
     t('app.common.shareRole', { role: result.archetype.narrativeRole }),
   ].join('\n')

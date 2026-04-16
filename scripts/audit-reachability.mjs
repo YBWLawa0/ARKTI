@@ -28,10 +28,17 @@ const DIMENSION_LETTERS = {
 }
 
 const VECTOR_AXES = ['expression', 'temperature', 'judgement', 'order', 'agency', 'aura']
-const MBTI_WEIGHT = 0.25
-const ARCHETYPE_WEIGHT = 0.35
-const VECTOR_WEIGHT = 0.3
+const MBTI_DIMENSION_WEIGHT = 0.125
+const MBTI_WEIGHT = MBTI_DIMENSION_WEIGHT * 4
+/** 与 src/utils/quizEngine.ts 一致 */
+const ARCHETYPE_WEIGHT = 0.22
+const VECTOR_WEIGHT = 0.18
 const CHARACTER_SPECIFIC_WEIGHT = 0.1
+const MBTI_MEAN_POWER = 0.56
+const ARCHETYPE_BLEND_NEUTRAL = 0.25
+const ARCHETYPE_BLEND_RELATIVE = 0.75
+const VECTOR_BLEND_NEUTRAL = 0.25
+const VECTOR_BLEND_RAW = 0.75
 
 function normalizeQuestionWeights(weights) {
   const completed = Object.keys(ROLE_TO_ARCHETYPE).reduce((acc, role) => {
@@ -101,19 +108,23 @@ function buildScores(answers) {
   return { scores, archetypeRaw, userVector, mbtiCode }
 }
 
-function scoreMbti(code, scores) {
+function scoreMbtiDimension(pair, scores, expectedLetter) {
+  const actual = scores[pair]
+  return (actual.dominant === expectedLetter ? actual.percentage : 100 - actual.percentage) / 100
+}
+
+function scoreMbtiMatchCode(code, scores) {
   if (!/^[EI][SN][TF][JP]$/.test(code)) {
     return 0
   }
 
   const pairs = ['E_I', 'S_N', 'T_F', 'J_P']
-  let total = 0
+  let contribution = 0
   for (let i = 0; i < pairs.length; i += 1) {
-    const pair = pairs[i]
-    const actual = scores[pair]
-    total += actual.dominant === code[i] ? actual.percentage : 100 - actual.percentage
+    contribution += MBTI_DIMENSION_WEIGHT * scoreMbtiDimension(pairs[i], scores, code[i])
   }
-  return total / 400
+  const meanRaw = contribution / MBTI_WEIGHT
+  return meanRaw ** MBTI_MEAN_POWER
 }
 
 function scoreArchetype(id, archetypeRaw) {
@@ -159,12 +170,19 @@ function scoreSpecific(userVector, character) {
   return weightTotal ? weightedScore / weightTotal : 0.5
 }
 
-function scoreCharacter(profile, character) {
-  const mbti = Math.max(scoreMbti(character.matchCode, profile.scores), ...((character.matchCodeFlex ?? []).map((code) => scoreMbti(code, profile.scores))))
-  const archetype = scoreArchetype(character.archetypeId, profile.archetypeRaw)
-  const vector = (cosine(profile.userVector, character.vector) + 1) / 2
+function scoreCharacter(answers, profile, character) {
+  const mbti = scoreMbtiMatchCode(character.matchCode, profile.scores)
+  const archetypeRel = scoreArchetype(character.archetypeId, profile.archetypeRaw)
+  const archetype = ARCHETYPE_BLEND_RELATIVE * archetypeRel + ARCHETYPE_BLEND_NEUTRAL
+  const vectorRaw = (cosine(profile.userVector, character.vector) + 1) / 2
+  const vector = VECTOR_BLEND_RAW * vectorRaw + VECTOR_BLEND_NEUTRAL
   const specific = scoreSpecific(profile.userVector, character)
-  return MBTI_WEIGHT * mbti + ARCHETYPE_WEIGHT * archetype + VECTOR_WEIGHT * vector + CHARACTER_SPECIFIC_WEIGHT * specific
+  return (
+    MBTI_WEIGHT * mbti +
+    ARCHETYPE_WEIGHT * archetype +
+    VECTOR_WEIGHT * vector +
+    CHARACTER_SPECIFIC_WEIGHT * specific
+  )
 }
 
 function randomAnswers() {
@@ -175,9 +193,10 @@ const iterations = Number(process.argv[2] ?? 20000)
 const counts = new Map(characters.map((character) => [character.id, 0]))
 
 for (let index = 0; index < iterations; index += 1) {
-  const profile = buildScores(randomAnswers())
+  const answers = randomAnswers()
+  const profile = buildScores(answers)
   const ranked = [...characters]
-    .map((character) => ({ id: character.id, score: scoreCharacter(profile, character) }))
+    .map((character) => ({ id: character.id, score: scoreCharacter(answers, profile, character) }))
     .sort((left, right) => right.score - left.score)
 
   counts.set(ranked[0].id, (counts.get(ranked[0].id) ?? 0) + 1)

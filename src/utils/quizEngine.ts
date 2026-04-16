@@ -14,7 +14,7 @@ import { getCharacterPopulationProbability } from './characterProbability.ts'
 
 const DIMENSION_LETTERS: Record<DimensionPair, [MBTILetter, MBTILetter]> = {
   'E_I': ['E', 'I'],
-  'S_N': ['N', 'S'],
+  'S_N': ['S', 'N'],
   'T_F': ['T', 'F'],
   'J_P': ['J', 'P']
 }
@@ -49,21 +49,50 @@ const ROLE_TO_ARCHETYPE: Record<QuestionArchetypeWeightId, ArchetypeId> = {
   ruler: 'oathbound-captain',
 }
 
+const QUESTION_ROLE_BALANCE: Record<QuestionArchetypeWeightId, number> = {
+  hero: 1,
+  strategist: 1,
+  guardian: 1,
+  lonewolf: 1,
+  healer: 1,
+  berserker: 1,
+  trickster: 1,
+  ruler: 1,
+}
+
 const QUESTION_WEIGHT_FALLBACKS: Record<DimensionPair, Partial<Record<QuestionArchetypeWeightId, number>>> = {
   'E_I': { hero: 2, trickster: 2, healer: 1, lonewolf: -2, strategist: -1 },
   'S_N': { strategist: 2, trickster: 2, healer: 1, ruler: -1, guardian: -1 },
   'T_F': { strategist: 2, ruler: 1, healer: -2, guardian: -1, berserker: 1 },
-  'J_P': { ruler: 2, guardian: 1, strategist: 1, trickster: -2, berserker: -1 },
+  'J_P': { ruler: 2, guardian: 1, strategist: 1, trickster: -2, berserker: 0 },
 }
 
 const VECTOR_AXES: DimensionId[] = ['expression', 'temperature', 'judgement', 'order', 'agency', 'aura']
 const ARCHETYPE_IDS = Object.values(ROLE_TO_ARCHETYPE)
+const VECTOR_PERCENT_BASE = 0.3
+const QUESTION_VECTOR_PERCENT_DENOMINATOR = 3
 
-const MBTI_WEIGHT = 0.25
-const ARCHETYPE_WEIGHT = 0.35
-const VECTOR_WEIGHT = 0.3
+/**
+ * 分项权重（合计 1.0）：MBTI 占最大头，其次原型，再次六维向量，专属题最后。
+ */
+const MBTI_DIMENSION_WEIGHT = 0.125
+const MBTI_WEIGHT = MBTI_DIMENSION_WEIGHT * 4
+const ARCHETYPE_WEIGHT = 0.22
+const VECTOR_WEIGHT = 0.18
 const CHARACTER_SPECIFIC_WEIGHT = 0.1
+
+/** 原型/向量分项向中性收缩，避免少数组合在随机答卷下长期碾压 */
+const ARCHETYPE_BLEND_NEUTRAL = 0.25
+const ARCHETYPE_BLEND_RELATIVE = 0.75
+const VECTOR_BLEND_NEUTRAL = 0.25
+const VECTOR_BLEND_RAW = 0.75
+
+/** 对 MBTI 四维均值做幂次压缩，缩小「极贴合 vs 一般贴合」的差距（0~1 内） */
+export const MBTI_MEAN_POWER = 0.56
+
 const CLOSE_MATCH_THRESHOLD = 0.025
+
+const MBTI_DIMENSION_PAIRS: DimensionPair[] = ['E_I', 'S_N', 'T_F', 'J_P']
 
 // 16personalities 风格的维度标签配置
 export const TRAIT_CONFIG = {
@@ -77,10 +106,10 @@ export const TRAIT_CONFIG = {
   },
   'S_N': {
     label: 'Mind',
-    leftLabel: 'Intuitive',
-    rightLabel: 'Observant',
-    leftCN: '直觉',
-    rightCN: '实感',
+    leftLabel: 'Observant',
+    rightLabel: 'Intuitive',
+    leftCN: '实感',
+    rightCN: '直觉',
     color: '#3498db'
   },
   'T_F': {
@@ -222,6 +251,7 @@ function buildAnswerProfile({
     }
 
     const normalizedWeights = normalizeQuestionWeights(question.weights ?? QUESTION_WEIGHT_FALLBACKS[dimension])
+    const questionAxisBase = createEmptyUserVector()
 
     for (const role of Object.keys(normalizedWeights) as QuestionArchetypeWeightId[]) {
       const value = normalizedWeights[role] ?? 0
@@ -235,8 +265,14 @@ function buildAnswerProfile({
       archetypeRaw[archetypeId] += weightedAnswer
 
       for (const axis of VECTOR_AXES) {
-        userVector[axis] += weightedAnswer * archetype.vector[axis]
+        questionAxisBase[axis] += value * archetype.vector[axis]
       }
+    }
+
+    for (const axis of VECTOR_AXES) {
+      const axisPercent = questionAxisBase[axis] / QUESTION_VECTOR_PERCENT_DENOMINATOR
+      const axisDelta = axisPercent * VECTOR_PERCENT_BASE * answer
+      userVector[axis] += axisDelta
     }
   })
 
@@ -301,7 +337,8 @@ function normalizeDimensionScore(
 function normalizeQuestionWeights(weights: Partial<Record<QuestionArchetypeWeightId, number>>) {
   const completed = Object.keys(ROLE_TO_ARCHETYPE).reduce((acc, role) => {
     const typedRole = role as QuestionArchetypeWeightId
-    acc[typedRole] = weights[typedRole] ?? 0
+    const base = weights[typedRole] ?? 0
+    acc[typedRole] = base * QUESTION_ROLE_BALANCE[typedRole]
     return acc
   }, {} as Record<QuestionArchetypeWeightId, number>)
 
@@ -375,12 +412,12 @@ function rankCharactersByProfile({
 }) {
   return [...characters]
     .map((character) => {
-      const mbti = scoreFlexibleMbti(character, scores)
+      const { mean: mbti, contribution: mbtiContribution } = scoreMbtiMatchCode(character.matchCode, scores)
       const archetype = scoreArchetype(character.archetypeId, archetypeRaw)
       const vector = scoreVector(userVector, character.vector)
       const specific = scoreCharacterSpecific(userVector, character, answers)
       const total =
-        MBTI_WEIGHT * mbti +
+        mbtiContribution +
         ARCHETYPE_WEIGHT * archetype +
         VECTOR_WEIGHT * vector +
         CHARACTER_SPECIFIC_WEIGHT * specific
@@ -419,46 +456,80 @@ function rankCharactersByProfile({
     })
 }
 
-function scoreMbti(
-  matchCode: string,
+/**
+ * 单维 MBTI 匹配分（0~1）：与 matchCode 对应字母一致取 percentage，否则取 100 - percentage，再除以 100。
+ */
+function scoreMbtiDimension(
+  pair: DimensionPair,
   scores: Record<DimensionPair, DimensionScore>,
+  expectedLetter: MBTILetter,
 ) {
-  if (!MBTI_PATTERN.test(matchCode.toUpperCase())) {
-    return 0
-  }
-
-  const pairs: DimensionPair[] = ['E_I', 'S_N', 'T_F', 'J_P']
-  let total = 0
-
-  for (let index = 0; index < pairs.length; index += 1) {
-    const pair = pairs[index]
-    const actual = scores[pair]
-    const expectedLetter = matchCode[index] as MBTILetter
-    total += actual.dominant === expectedLetter ? actual.percentage : 100 - actual.percentage
-  }
-
-  return total / 400
+  const actual = scores[pair]
+  return (actual.dominant === expectedLetter ? actual.percentage : 100 - actual.percentage) / 100
 }
 
-function scoreFlexibleMbti(
-  character: CharacterMatch,
-  scores: Record<DimensionPair, DimensionScore>,
-) {
-  const codes = [character.matchCode, ...(character.matchCodeFlex ?? [])]
-  return codes.reduce((best, code) => Math.max(best, scoreMbti(code, scores)), 0)
+/**
+ * 仅使用 `matchCode`：四维各 MBTI_DIMENSION_WEIGHT，加总为 MBTI_WEIGHT。
+ * `mean` 为四维均值（0~1），用于排序 tie-break。
+ */
+function scoreMbtiMatchCode(matchCode: string, scores: Record<DimensionPair, DimensionScore>) {
+  if (!MBTI_PATTERN.test(matchCode.toUpperCase())) {
+    return { mean: 0, contribution: 0 }
+  }
+
+  const normalized = matchCode.toUpperCase()
+  let contribution = 0
+
+  for (let index = 0; index < MBTI_DIMENSION_PAIRS.length; index += 1) {
+    const pair = MBTI_DIMENSION_PAIRS[index]
+    const expectedLetter = normalized[index] as MBTILetter
+    const dim = scoreMbtiDimension(pair, scores, expectedLetter)
+    contribution += MBTI_DIMENSION_WEIGHT * dim
+  }
+
+  const meanRaw = contribution / MBTI_WEIGHT
+  const mean = Math.pow(meanRaw, MBTI_MEAN_POWER)
+  const contributionAdjusted = MBTI_WEIGHT * mean
+  return { mean, contribution: contributionAdjusted }
+}
+
+/**
+ * 原型匹配分项（0~1）：按累计分全局排名，第 1/2/3 名分别占满 25% 权重中的 12%/8%/5%（即返回 12/25、8/25、5/25），其余为 0。
+ * 同分按 archetypeId 字典序打破平局。
+ * 仅用于「答题页原型条」等展示，与最终角色排序使用的 `scoreArchetypeRelative` 分离。
+ */
+export function scoreArchetypeByRank(archetypeId: ArchetypeId, archetypeRaw: ArchetypeAccumulator) {
+  const sorted = (Object.keys(archetypeRaw) as ArchetypeId[]).sort((a, b) => {
+    const d = archetypeRaw[b] - archetypeRaw[a]
+    if (d !== 0) return d
+    return a.localeCompare(b, 'en')
+  })
+  const rank = sorted.indexOf(archetypeId) + 1
+  if (rank === 1) return 12 / 25
+  if (rank === 2) return 8 / 25
+  if (rank === 3) return 5 / 25
+  return 0
+}
+
+/**
+ * 原型分项（0~1）：对本次答卷各原型 `archetypeRaw` 做 min-max 归一化。
+ * 使后五名原型仍获得非零分，减轻随机模拟下少数原型垄断冠军的问题。
+ */
+export function scoreArchetypeRelative(archetypeId: ArchetypeId, archetypeRaw: ArchetypeAccumulator) {
+  const ids = Object.keys(archetypeRaw) as ArchetypeId[]
+  const values = ids.map((id) => archetypeRaw[id])
+  const min = Math.min(...values)
+  const max = Math.max(...values)
+  const span = max - min
+  if (span <= 1e-9) {
+    return 0.5
+  }
+  return (archetypeRaw[archetypeId] - min) / span
 }
 
 function scoreArchetype(archetypeId: ArchetypeId, archetypeRaw: ArchetypeAccumulator) {
-  const values = Object.values(archetypeRaw)
-  const min = Math.min(...values)
-  const max = Math.max(...values)
-  const spread = max - min
-
-  if (spread <= 0.0001) {
-    return archetypeRaw[archetypeId] >= 0 ? 0.55 : 0.45
-  }
-
-  return (archetypeRaw[archetypeId] - min) / spread
+  const relative = scoreArchetypeRelative(archetypeId, archetypeRaw)
+  return ARCHETYPE_BLEND_RELATIVE * relative + ARCHETYPE_BLEND_NEUTRAL
 }
 
 function scoreVector(
@@ -466,7 +537,8 @@ function scoreVector(
   characterVector: CharacterMatch['vector'],
 ) {
   const cosine = cosineSimilarity(userVector, characterVector)
-  return (cosine + 1) / 2
+  const raw = (cosine + 1) / 2
+  return VECTOR_BLEND_RAW * raw + VECTOR_BLEND_NEUTRAL
 }
 
 function scoreCharacterSpecific(
@@ -477,13 +549,14 @@ function scoreCharacterSpecific(
   const uniqueAxes = character.signature?.uniqueAxes
   const questionAffinity = character.signature?.questionAffinity ?? []
 
+  // No explicit character-feature bonus config => no specific bonus.
+  if (!questionAffinity.length) {
+    return 0
+  }
+
   const axisScore = !uniqueAxes || !Object.keys(uniqueAxes).length
     ? scoreVector(userVector, character.vector)
     : scoreUniqueAxes(userVector, uniqueAxes)
-
-  if (!questionAffinity.length) {
-    return axisScore
-  }
 
   const affinityScore = scoreQuestionAffinity(questionAffinity, answers)
   return axisScore * 0.45 + affinityScore * 0.55
@@ -506,7 +579,7 @@ function scoreUniqueAxes(
     weightTotal += axisWeight
   }
 
-  return weightTotal ? weightedScore / weightTotal : 0.5
+  return weightTotal ? weightedScore / weightTotal : 0
 }
 
 function scoreQuestionAffinity(

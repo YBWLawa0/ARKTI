@@ -19,8 +19,8 @@ const slides = computed(() => [
     title: '人格原型',
     subtitle: `${props.result.archetype.name} (${props.result.mbtiCode})`,
     description: props.result.archetype.description,
-    learnMoreText: '查看类型说明',
-    to: '/intro'
+    learnMoreText: '继续测试',
+    to: '/quiz'
   },
   {
     id: 'role',

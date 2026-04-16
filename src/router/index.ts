@@ -4,7 +4,7 @@ const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', name: 'home', component: () => import('../pages/HomePage.vue') },
-    { path: '/intro', name: 'intro', component: () => import('../pages/IntroPage.vue') },
+    { path: '/intro', redirect: '/quiz' },
     { path: '/quiz', name: 'quiz', component: () => import('../pages/QuizPage.vue') },
     { path: '/result', name: 'result', component: () => import('../pages/ResultPage.vue') },
     { path: '/characters', name: 'characters', component: () => import('../pages/CharactersPage.vue') },

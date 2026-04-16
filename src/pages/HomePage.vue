@@ -17,6 +17,11 @@
           <button class="hero-relay-button" type="button" @click="copyQuizLink">{{ t('home.relayButton') }}</button>
           <p v-if="relayFeedback" class="hero-relay-feedback">{{ relayFeedback }}</p>
         </div>
+        <p class="hero-relay-credit">
+          本项目二创自
+          <a href="https://acgti.tianxingleo.top" target="_blank" rel="noopener noreferrer"> ACGTI </a>
+          欢迎大家访问
+        </p>
       </div>
 
       <div class="hero-wave"></div>
@@ -57,8 +62,8 @@
           <h2 class="feature-title">{{ t('home.featureA.title') }}</h2>
           <p class="feature-copy">{{ t('home.featureA.copy') }}</p>
           <div class="feature-actions">
-            <RouterLink to="/intro" class="btn btn-green">{{ t('home.featureA.button') }}</RouterLink>
-            <RouterLink to="/intro" class="link-green">{{ t('home.featureA.link') }}</RouterLink>
+            <RouterLink to="/quiz" class="btn btn-green">{{ t('home.featureA.button') }}</RouterLink>
+            <RouterLink to="/quiz" class="link-green">{{ t('home.featureA.link') }}</RouterLink>
           </div>
         </article>
         <aside class="feature-illustration office-1" aria-hidden="true">
@@ -84,7 +89,7 @@
           <p class="feature-tag tag-blue">Results</p>
           <h2 class="feature-title">{{ t('home.featureB.title') }}</h2>
           <p class="feature-copy">{{ t('home.featureB.copy') }}</p>
-          <RouterLink to="/intro" class="btn btn-blue">{{ t('home.featureB.button') }}</RouterLink>
+          <RouterLink to="/quiz" class="btn btn-blue">{{ t('home.featureB.button') }}</RouterLink>
         </article>
       </div>
     </section>
@@ -278,6 +283,26 @@ async function copyQuizLink() {
   font-size: 0.96rem;
   line-height: 1.7;
   opacity: 0.92;
+}
+
+.hero-relay-credit {
+  width: min(720px, 100%);
+  margin: 0.8rem auto 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  color: #ffffff;
+}
+
+.hero-relay-credit a {
+  color: #f5c451;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hero-relay-credit a:hover {
+  opacity: 0.88;
 }
 
 .hero-relay-button {

@@ -177,7 +177,7 @@ export const messages = {
     },
     archetypes: {
       'luminous-lead': {
-        name: '发光主角位',
+        name: '引领者',
         subtitle: '把场子点亮的人',
         oneLiner: '你不是安静的背景板，你会把剧情推向更明亮的地方。',
         description: '这是典型的高表达、高推进原型。你更容易成为把团队拉起来的人，适合站在故事前台，承担情绪发动机和关键发言位。',
@@ -185,7 +185,7 @@ export const messages = {
         weakness: '太容易把自己燃尽，也容易因为承担太多而失去节奏。',
       },
       'icebound-observer': {
-        name: '冰面观察者',
+        name: '观察者',
         subtitle: '安静但看得很清楚',
         oneLiner: '你像把情绪收进薄冰里的人，外界很难轻易读懂你。',
         description: '这是偏低表达、高判断的原型。你通常先看规则，再看人，再决定要不要介入。适合做观察者、分析者和冷场面修复者。',
@@ -193,7 +193,7 @@ export const messages = {
         weakness: '太习惯保持距离，容易错过本可以更热烈的连接。',
       },
       'oathbound-captain': {
-        name: '誓约队长',
+        name: '秩序引导者',
         subtitle: '把队伍扛在肩上的人',
         oneLiner: '你很难只是随便看看，你会天然把责任和秩序接过来。',
         description: '这是高秩序、高推进的支柱型原型。你在团队里像稳定结构，能顶住压力，也会在关键节点站出来承担后果。',
@@ -201,7 +201,7 @@ export const messages = {
         weakness: '太在意责任，容易把自己的需求放到最后。',
       },
       'trickster-orbit': {
-        name: '灵巧回旋者',
+        name: '机变者',
         subtitle: '总能把局面绕出新花样',
         oneLiner: '你不一定按常规出牌，但你总能把剧情转出新角度。',
         description: '这是高表达、高机动的原型。你对变化敏感，不爱被固定位置锁死，擅长用灵活的方式制造转机和看点。',
@@ -209,7 +209,7 @@ export const messages = {
         weakness: '太喜欢变化会让别人抓不住你，也可能让自己失去稳定感。',
       },
       'gentle-healer': {
-        name: '温柔修复者',
+        name: '疗愈者',
         subtitle: '把裂缝慢慢缝回去的人',
         oneLiner: '你不是最耀眼的，但你会让别人觉得自己被接住了。',
         description: '这是高温度、高支持的原型。你对关系中的脆弱很敏感，适合做抚平情绪、维持连结、帮助角色复原的存在。',
@@ -217,7 +217,7 @@ export const messages = {
         weakness: '容易过度共情，替别人承受了太多未必属于你的痛。',
       },
       'shadow-strategist': {
-        name: '影面策士',
+        name: '策略者',
         subtitle: '在暗处把棋盘铺好的人',
         oneLiner: '你会先考虑全局，再决定自己要站在什么位置。',
         description: '这是高判断、高气场原型。你擅长从复杂局势里提炼结构，不急着表态，但一旦出手就会直接影响战局。',
@@ -225,7 +225,7 @@ export const messages = {
         weakness: '太擅长预判会让你显得难以接近，也容易过度控制。',
       },
       'chaos-spark': {
-        name: '混沌火花',
+        name: '破局者',
         subtitle: '把剧情点炸的人',
         oneLiner: '你一出现，气氛就会开始变得不可预测。',
         description: '这是高推进、高失控感原型。你不喜欢平铺直叙，常常会把原本稳定的局面搅出新的火花，既危险又有戏。',
@@ -233,7 +233,7 @@ export const messages = {
         weakness: '过强的冲劲会让你把局势推向不可收拾的方向。',
       },
       'moonlit-guardian': {
-        name: '月下守护者',
+        name: '守护者',
         subtitle: '安静站在边界上的人',
         oneLiner: '你不是冲到前面最亮的那一个，但你会一直守着重要的人和事。',
         description: '这是低表达、高秩序、高稳定原型。你通常不抢戏，但会在需要的时候安静顶上，像月光一样持续存在。',
@@ -248,22 +248,36 @@ export const messages = {
       countBar: '当前已收录：{count} 位角色',
     },
     about: {
-      eyebrow: '关于 ARKTI',
-      title: '用 MBTI 丈量你在泰拉语境下的「指挥风格」与叙事气质',
-      leadA: 'ARKTI（Arknights Type Indicator）面向《明日方舟》玩家：故事发生在源石与天灾交织的泰拉，矿石病与感染者的处境、移动城邦间的政治博弈，以及社区里常聊的「这片大地」式抉择，共同构成了讨论语境。我们以 MBTI 四轴为底层框架，用贴近养成、开荒、剧情与社区讨论习惯的情境题，把结果映射到收录的干员与原型解读。本站为粉丝向娱乐内容，非官方，与鹰角网络及《明日方舟》无关联；纯静态前端，部署在 Cloudflare Pages。',
-      leadB: '项目完全开源，代码仓库：GitHub - YBWLawa0/ARKTI。欢迎 Star、欢迎 Fork、欢迎 PR。欢迎提交与干员、剧情或罗德岛日常相关的情境题；若你希望扩充角色库或调整映射，也非常期待你的参与。',
+      eyebrow: '项目主体介绍',
+      title: 'Arknights Type Indicator',
+      leadA: '面向《明日方舟》玩家的 MBTI 轻量测试：把明日方舟语境里常见的事件决策，落成干员气质与原型解读。当前版本为纯静态前端，部署在 Cloudflare Pages 上。在线体验：https://arkti.ybwlawa0.com/quiz。GitHub 仓库地址：https://github.com/YBWLawa0/ARKTI。',
+      leadB: '回答情境式问题 → 获得唯一命中的干员代码 → 与同好对照你的叙事站位（粉丝向娱乐，非官方）。本工具仅作娱乐用途，不作为心理诊断、医学评估或现实人格结论。本站非《明日方舟》官方内容，与鹰角网络无关。部署于 Cloudflare Pages，全球 CDN 加速。欢迎 Star · 欢迎 Fork · 欢迎 PR！当前项目仍处于早期阶段，题目数量和角色库都还不够丰富，期待你的参与。致谢：项目前端页面二创自 ACGTI，原作者 @天马行空，网站链接 acgti.tianxingleo.top。交流群群号：941585136，有问题欢迎反馈！',
       star: '去 GitHub 点亮 Star ⭐',
-      boundaryTitle: '当前边界',
+      boundaryTitle: '项目目前边界',
       boundaryItems: [
-        ['娱乐定位', '它是角色原型测试，不是专业心理评估，也不用于现实人格定型。'],
-        ['技术边界', '暂不引入账号、数据库、排行榜或后台，优先保证体验、内容和维护成本。'],
+        ['内容边界', '目前仍然急缺结合泰拉语境 / 玩家视角的题目。'],
+        ['娱乐定位', '项目主要以娱乐为主，非专业心理评估，也不用于现实人格定型。'],
         ['后续扩展', '后面可以继续扩题库、扩角色库、加隐藏结果、做分享海报或多主题模式。'],
       ],
-      shippedTitle: '这版实现了什么',
+      shippedTitle: '意见征集与联系渠道',
       shippedItems: [
-        ['内容层', `题库 ${QUESTION_BANK_COUNT} 道，每次随机 ${SESSION_QUESTION_COUNT} 道；8 个原型、${CHARACTER_COUNT} 位已录入角色。`],
-        ['规则层', '先计算 MBTI 四维得分，再做原型映射和唯一角色命中。'],
-        ['表现层', '首页、说明页、测试页、结果页、关于页的完整闭环。'],
+        ['优先征集', '你有想优先加入的角色 / 题目，或者有什么建议，欢迎大家踊跃提出。'],
+        ['反馈渠道', '可以通过 GitHub 仓库提 Issue、QQ 交流群 941585136，或各大社区视频 / 文章评论区（不一定能看到）联系。'],
+        ['素材建议', '如果能附带一些你想加入角色的立绘 / CG，会更有助于评估与落地。'],
+      ],
+      matchingTitle: '角色匹配机制',
+      matchingItems: [
+        ['第一块｜总分构成（核心权重）', '最终匹配总分由四部分组成：MBTI 50%（E/I、S/N、T/F、J/P 各占 12.5%）+ 原型匹配 22% + 六维向量 18% + 角色特殊加分 10%。'],
+        ['第二块｜原型匹配（8 类原型）', '系统将角色划分为 8 种原型：引领者（明面：先手推进；暗面：易过载）、观察者（明面：洞察拼图；暗面：情感距离）、秩序引导者（明面：稳住秩序；暗面：自我压抑）、机变者（明面：破局变通；暗面：稳定性不足）、疗愈者（明面：共情承接；暗面：过度代偿）、策略者（明面：全局布局；暗面：控制倾向）、破局者（明面：推动变化；暗面：冲劲过强）、守护者（明面：长期守护；暗面：需求被忽略）。每位角色仅归属 1 个原型。每次测评会先统计原型类型占比并换算相对分 relative，再计算原型贡献：0.22 * (0.75 * relative + 0.25)。'],
+        ['第三块｜六维向量（匹配细化）', '六维轴为 expression（表达）、temperature（温度）、judgement（判断）、order（秩序）、agency（行动性）、aura（气场）。测评会把答题信号映射到六维用户向量，与角色预设六维向量做相似度计算（余弦相似度），再按中性混合换算为向量贡献：0.18 * (0.75 * raw + 0.25)。'],
+        ['第四块｜角色特殊加分（预留机制）', '角色特殊加分权重固定为 10%，用于承接角色专属题或特殊事件触发。目前题库暂未启用该项，后续会在新增题目中逐步开放。'],
+        ['第五块｜概率与隐私补充说明', '结果页“匹配概率”来自独立随机脚本的总体分布估算：使用 200000 份随机样本测算，仅用于展示趋势，不代表你的实际测评命中率。本站为纯静态页面，不记录个人信息与填写状态；真实概率表现请以社区长期反馈为准。目前数据为大致填写，较为粗糙，如有问题欢迎指出。'],
+      ],
+      updateTitle: '版本更新记录',
+      updateItems: [
+        ['更新#3 (2026-4-16)', '本次更新重构了角色匹配机制，并为每道题增加了可视化评测数值显示与总体的实时状态评测数据表，便于用户查看匹配细则，这两个内容将在至少完成一次评测后解锁。\n还重制了大部分角色的属性，避免出现有的角色永远匹配不到的情况，增加了可玩性。'],
+        ['更新#2 (2026-4-15)', '本次更新增加了34位角色：灵知(INTJ)；白面鸮(INTP)；伊内斯(ENTJ)；忍冬(ENTJ)；林(ENTJ)；霍尔海雅(ENTP)；多萝西(INFJ)；赫德雷(INFJ)；琴柳(ENFJ)；薇薇安娜(INFP)；夕(INFP)；塑心(ENFP) ；莱伊(ISTJ)；赫拉格(ISTJ)；妮芙(ISFJ)；异客(ISFJ)；菲亚梅塔(ESTJ)；惊蛰(ESTJ)；信仰搅拌机(ESFJ) ；隐德来希(ESFJ) ；阿斯卡纶(ISTP)；德克萨斯(ISTP) ；水月(ISFP) ；史尔特尔(ESTP)；幽灵鲨(ESFP) ；Mon3tr(ESFP)；提丰(ISTP) ；重岳(ESFJ) ；锏（ISTP）；拉普兰德(ESTP) ；坎诺特(ENTP)；塔露拉(ENFJ) ；克丽斯腾(INTJ)；霜星(INFP)。\n将题目扩充到了30道。\n修复了一系列bug。'],
+        ['更新#1 (2026-4-14)', '本次更新初始化了项目。\n增加了20道初始题目。\n增加了32位角色：阿米娅；特雷西娅；蕾缪安；临光；迷迭香；泥岩；缪尔塞斯；凯尔希; 佩佩; 乌尔比安; 莫斯提马; 逻各斯; 银灰; 凛冬；年；玛恩纳；塞雷娅；黍；艾雅法拉；陈；电弧；余；棘刺；弑君者；斯卡蒂；令；遥；能天使；望；死芒；W；海猫。'],
       ],
     },
     share: {
@@ -427,7 +441,7 @@ export const messages = {
     },
     archetypes: {
       'luminous-lead': {
-        name: '發光主角位',
+        name: '引領者',
         subtitle: '把場子點亮的人',
         oneLiner: '你不是安靜的背景板，你會把劇情推向更明亮的地方。',
         description: '這是典型的高表達、高推進原型。你更容易成為把團隊拉起來的人，適合站在故事前台，承擔情緒發動機與關鍵發言位。',
@@ -435,7 +449,7 @@ export const messages = {
         weakness: '太容易把自己燃盡，也容易因為承擔太多而失去節奏。',
       },
       'icebound-observer': {
-        name: '冰面觀察者',
+        name: '觀察者',
         subtitle: '安靜但看得很清楚',
         oneLiner: '你像把情緒收進薄冰裡的人，外界很難輕易讀懂你。',
         description: '這是偏低表達、高判斷的原型。你通常先看規則，再看人，再決定要不要介入。適合做觀察者、分析者和冷場修復者。',
@@ -443,7 +457,7 @@ export const messages = {
         weakness: '太習慣保持距離，容易錯過本可以更熱烈的連結。',
       },
       'oathbound-captain': {
-        name: '誓約隊長',
+        name: '秩序引導者',
         subtitle: '把隊伍扛在肩上的人',
         oneLiner: '你很難只是隨便看看，你會天然把責任和秩序接過來。',
         description: '這是高秩序、高推進的支柱型原型。你在團隊裡像穩定結構，能頂住壓力，也會在關鍵節點站出來承擔後果。',
@@ -451,7 +465,7 @@ export const messages = {
         weakness: '太在意責任，容易把自己的需求放到最後。',
       },
       'trickster-orbit': {
-        name: '靈巧迴旋者',
+        name: '機變者',
         subtitle: '總能把局面繞出新花樣',
         oneLiner: '你不一定按常規出牌，但你總能把劇情轉出新角度。',
         description: '這是高表達、高機動的原型。你對變化敏感，不愛被固定位置鎖死，擅長用靈活的方式製造轉機和看點。',
@@ -459,7 +473,7 @@ export const messages = {
         weakness: '太喜歡變化會讓別人抓不住你，也可能讓自己失去穩定感。',
       },
       'gentle-healer': {
-        name: '溫柔修復者',
+        name: '療癒者',
         subtitle: '把裂縫慢慢縫回去的人',
         oneLiner: '你不是最耀眼的，但你會讓別人覺得自己被接住了。',
         description: '這是高溫度、高支持的原型。你對關係中的脆弱很敏感，適合做撫平情緒、維持連結、幫助角色復原的存在。',
@@ -467,7 +481,7 @@ export const messages = {
         weakness: '容易過度共情，替別人承受太多未必屬於你的痛。',
       },
       'shadow-strategist': {
-        name: '影面策士',
+        name: '策略者',
         subtitle: '在暗處把棋盤鋪好的人',
         oneLiner: '你會先考慮全局，再決定自己要站在什麼位置。',
         description: '這是高判斷、高氣場原型。你擅長從複雜局勢裡提煉結構，不急著表態，但一旦出手就會直接影響戰局。',
@@ -475,7 +489,7 @@ export const messages = {
         weakness: '太擅長預判會讓你顯得難以接近，也容易過度控制。',
       },
       'chaos-spark': {
-        name: '混沌火花',
+        name: '破局者',
         subtitle: '把劇情點炸的人',
         oneLiner: '你一出現，氣氛就會開始變得不可預測。',
         description: '這是高推進、高失控感原型。你不喜歡平鋪直敘，常常會把原本穩定的局面攪出新的火花，既危險又有戲。',
@@ -483,7 +497,7 @@ export const messages = {
         weakness: '過強的衝勁會讓你把局勢推向不可收拾的方向。',
       },
       'moonlit-guardian': {
-        name: '月下守護者',
+        name: '守護者',
         subtitle: '安靜站在邊界上的人',
         oneLiner: '你不是衝到前面最亮的那一個，但你會一直守著重要的人和事。',
         description: '這是低表達、高秩序、高穩定原型。你通常不搶戲，但會在需要的時候安靜頂上，像月光一樣持續存在。',
@@ -514,6 +528,18 @@ export const messages = {
         ['內容層', `題庫 ${QUESTION_BANK_COUNT} 道，每次隨機 ${SESSION_QUESTION_COUNT} 道；8 個原型、${CHARACTER_COUNT} 位已錄入角色。`],
         ['規則層', '先計算 MBTI 四維得分，再做原型映射和唯一角色命中。'],
         ['表現層', '首頁、說明頁、測試頁、結果頁、關於頁的完整閉環。'],
+      ],
+      matchingTitle: '角色匹配機制',
+      matchingItems: [
+        ['維度得分', '透過使用者的答題情況，計算出 E/I、S/N、T/F、J/P 四個維度的傾向得分。'],
+        ['角色映射', '每個收錄的角色都有預設的維度屬性值。系統會計算使用者得分與所有角色屬性之間的距離（相似度）。'],
+        ['結果輸出', '匹配距離最小（相似度最高）的角色將作為最終命中角色展示，並換算為匹配機率。'],
+      ],
+      updateTitle: '版本更新紀錄',
+      updateItems: [
+        ['更新#3 (2026-4-16)', '本次更新重構了角色匹配機制，並為每道題增加了視覺化評測數值顯示與總體的即時狀態評測數據表，便於用戶查看匹配細則，這兩個內容將在至少完成一次評測後解鎖。\n還重製了大部分角色的屬性，避免出現有的角色永遠匹配不到的情況，增加了可玩性。'],
+        ['更新#2 (2026-4-15)', '本次更新增加了34位角色：靈知(INTJ)；白面鴞(INTP)；伊內絲(ENTJ)；忍冬(ENTJ)；林(ENTJ)；霍爾海雅(ENTP)；多蘿西(INFJ)；赫德雷(INFJ)；琴柳(ENFJ)；薇薇安娜(INFP)；夕(INFP)；塑心(ENFP) ；萊伊(ISTJ)；赫拉格(ISTJ)；妮芙(ISFJ)；異客(ISFJ)；菲亞梅塔(ESTJ)；驚蟄(ESTJ)；信仰攪拌機(ESFJ) ；隱德來希(ESFJ) ；阿斯卡綸(ISTP)；德克薩斯(ISTP) ；水月(ISFP) ；史爾特爾(ESTP)；幽靈鯊(ESFP) ；Mon3tr(ESFP)；提豐(ISTP) ；重岳(ESFJ) ；鐧（ISTP）；拉普蘭德(ESTP) ；坎諾特(ENTP)；塔露拉(ENFJ) ；克麗斯騰(INTJ)；霜星(INFP)。\n將題目擴充到了30道。\n修復了一系列bug。'],
+        ['更新#1 (2026-4-14)', '本次更新初始化了專案。\n增加了20道初始題目。\n增加了32位角色：阿米婭；特蕾西婭；蕾繆安；臨光；迷迭香；泥岩；繆爾塞斯；凱爾希; 佩佩; 烏爾比安; 莫斯提馬; 邏各斯; 銀灰; 凜冬；年；瑪恩納；塞雷婭；黍；艾雅法拉；陳；電弧；餘；棘刺；弒君者；斯卡蒂；令；遙；能天使；望；死芒；W；海貓。'],
       ],
     },
     share: {
@@ -765,6 +791,18 @@ export const messages = {
         ['Logic', 'MBTI scoring first, then archetype mapping and one character hit.'],
         ['Pages', 'A full loop across home, intro, quiz, result, and about pages.'],
       ],
+      matchingTitle: 'Matching Mechanism',
+      matchingItems: [
+        ['Dimension Scoring', 'Calculates your tendency scores across the four MBTI dimensions (E/I, S/N, T/F, J/P) based on your answers.'],
+        ['Character Mapping', 'Each recorded character has preset dimension attributes. The system calculates the distance/similarity between your scores and character profiles.'],
+        ['Result Output', 'The character with the closest match is presented as your final result, along with a calculated match probability.'],
+      ],
+      updateTitle: 'Update Log',
+      updateItems: [
+        ['Update #3 (2026-4-16)', 'Refactored the character matching mechanism, added visual evaluation value display for each question and an overall real-time status evaluation data table, making it easier for users to view matching details. These two features will be unlocked after completing at least one evaluation.\nAlso reworked the attributes of most characters to avoid situations where some characters can never be matched, increasing playability.'],
+        ['Update #2 (2026-4-15)', 'Added 34 characters: Gnosis(INTJ); Ptilopsis(INTP); Ines(ENTJ); Puzzle(ENTJ); Lin(ENTJ); Ho\'olheyak(ENTP); Dorothy(INFJ); Hoederer(INFJ); Saileach(ENFJ); Viviana(INFP); Dusk(INFP); Arturia(ENFP); Ray(ISTJ); Hellagur(ISTJ); Nymph(ISFJ); Passenger(ISFJ); Fiammetta(ESTJ); Leizi(ESTJ); ...\nExpanded questions to 30.\nFixed a series of bugs.'],
+        ['Update #1 (2026-4-14)', 'Project initialized.\nAdded 20 initial questions.\nAdded 32 characters: Amiya; Theresa; Lemuen; Nearl; Rosmontis; Mudrock; Muelsyse; Kal\'tsit; Pepe; Ulpianus; Mostima; Logos; SilverAsh; Zima; Nian; Mlynar; Saria; Shu; Eyjafjalla; Ch\'en; ...'],
+      ],
     },
     share: {
       intro: 'My ARKTI character code is {code}',
@@ -1014,6 +1052,18 @@ export const messages = {
         ['内容', `題庫 ${QUESTION_BANK_COUNT} 問・毎回 ${SESSION_QUESTION_COUNT} 問ランダム、8 原型、${CHARACTER_COUNT} キャラ。`],
         ['ロジック', 'MBTI 4 軸を先に計算し、その後に原型と 1 キャラへ割り当てます。'],
         ['画面', 'ホーム、説明、テスト、結果、概要ページまで一通りそろっています。'],
+      ],
+      matchingTitle: 'キャラクターマッチングの仕組み',
+      matchingItems: [
+        ['次元スコア', '回答に基づいて、E/I、S/N、T/F、J/Pの4つのMBTI次元の傾向スコアを計算します。'],
+        ['キャラマッピング', '収録されている各キャラにはあらかじめ設定された次元属性があります。システムは、あなたのスコアと全キャラの属性との類似度（距離）を計算します。'],
+        ['結果の出力', '最も距離が近い（類似度が最も高い）キャラが最終的な結果として表示され、マッチング確率に換算されます。'],
+      ],
+      updateTitle: 'アップデート履歴',
+      updateItems: [
+        ['更新#3 (2026-4-16)', 'キャラマッチング機能をリファクタリングし、各質問の視覚的な評価値表示とリアルタイムの全体状態評価データ表を追加しました。これにより、マッチングの詳細を確認しやすくなります。これら2つの機能は、評価を少なくとも1回完了した後にアンロックされます。\nまた、永遠にマッチングしないキャラが出ないよう、ほとんどのキャラの属性を再調整し、プレイの幅を広げました。'],
+        ['更新#2 (2026-4-15)', '34人のキャラを追加：ノーシス(INTJ)、フィリオプシス(INTP)、イネス(ENTJ)、パズル(ENTJ)、リン(ENTJ)、ホルハイヤ(ENTP)、ドロシー(INFJ)、ヘドリー(INFJ)、サイラッハ(ENFJ)、ヴィヴィアナ(INFP)、シー(INFP)、アルトゥリア(ENFP)、レイ(ISTJ)、ヘラグ(ISTJ)、ニンフ(ISFJ)、パッセンジャー(ISFJ)、フィアメッタ(ESTJ)、レイズ(ESTJ)、...\n質問を30問に拡充。\n一連のバグを修正。'],
+        ['更新#1 (2026-4-14)', 'プロジェクトの初期化。\n20問の初期質問を追加。\n32人のキャラを追加：アーミヤ、テレジア、レミュアン、ニアール、ロスモンティス、マドロック、ミュルジス、ケルシー、ペペ、ウルピアヌス、モスティマ、ロゴス、シルバーアッシュ、ズィマー、ニェン、ムリナール、サリア、シュウ、エイヤフィヤトラ、チェン、...'],
       ],
     },
     share: {

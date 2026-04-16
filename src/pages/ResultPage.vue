@@ -212,6 +212,13 @@ const resultHeroImageLayerStyle = computed(() => {
     backgroundRepeat: 'no-repeat',
   }
 })
+const rarityDisplay = computed(() => {
+  const probability = result.value?.matchProbability ?? 0
+  if (probability < 0.01) {
+    return '＜0.01'
+  }
+  return probability.toFixed(2)
+})
 const strongestTrait = computed(() => {
   if (!result.value) {
     return null
@@ -249,6 +256,54 @@ onBeforeUnmount(() => {
 })
 
 type TraitDimension = 'E_I' | 'S_N' | 'T_F' | 'J_P'
+type VectorAxis = 'expression' | 'temperature' | 'judgement' | 'order' | 'agency' | 'aura'
+
+const ARCHETYPE_LABELS: Record<string, string> = {
+  'luminous-lead': '引领者',
+  'icebound-observer': '观察者',
+  'oathbound-captain': '秩序引导者',
+  'trickster-orbit': '机变者',
+  'gentle-healer': '疗愈者',
+  'shadow-strategist': '策略者',
+  'chaos-spark': '破局者',
+  'moonlit-guardian': '守护者',
+}
+
+const VECTOR_AXIS_LABELS: Record<VectorAxis, string> = {
+  expression: '表达度',
+  temperature: '情感温度',
+  judgement: '判断力',
+  order: '秩序性',
+  agency: '行动能动性',
+  aura: '气场',
+}
+
+const archetypeMeta = computed(() => {
+  const archetypeId = result.value?.archetype.id ?? ''
+  return {
+    id: archetypeId,
+    label: ARCHETYPE_LABELS[archetypeId] ?? '未定义原型',
+  }
+})
+
+const vectorAxisRows = computed(() => {
+  const vector = primaryCharacter.value?.vector
+  if (!vector) {
+    return [] as Array<{ axis: VectorAxis; label: string; value: number; width: number }>
+  }
+
+  const axes = Object.keys(VECTOR_AXIS_LABELS) as VectorAxis[]
+  const MAX_AXIS = 3
+  return axes.map((axis) => {
+    const value = vector[axis]
+    return {
+      axis,
+      label: VECTOR_AXIS_LABELS[axis],
+      value,
+      width: Math.min(100, Math.round((Math.abs(value) / MAX_AXIS) * 100)),
+    }
+  })
+})
 
 const traits = computed(() => {
   const tDims = tm<Record<string, string[]>>('result.dimensions');
@@ -296,7 +351,7 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
           <div class="hero-metrics">
             <div class="hero-metric">
               <span>{{ t('result.rarity') }}</span>
-              <strong>{{ result.matchProbability }}%</strong>
+              <strong>{{ rarityDisplay }}%</strong>
             </div>
             <div class="hero-metric">
               <span>{{ t('result.match') }}</span>
@@ -369,7 +424,7 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
           <div class="hero-metrics">
             <div class="hero-metric">
               <span>{{ t('result.rarity') }}</span>
-              <strong>{{ result.matchProbability }}%</strong>
+              <strong>{{ rarityDisplay }}%</strong>
             </div>
             <div class="hero-metric">
               <span>{{ t('result.match') }}</span>
@@ -491,6 +546,57 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
           </div>
         </section>
 
+        <section v-if="primaryCharacter" class="match-breakdown-block" v-reveal>
+          <h3>
+            <AppIcon name="character" />
+            角色匹配构成
+          </h3>
+          <div class="match-breakdown-grid">
+            <article class="match-breakdown-card">
+              <p class="breakdown-title">原型匹配（25%）</p>
+              <p class="archetype-id">{{ result.archetype.id }}</p>
+              <p class="archetype-label">{{ archetypeMeta.label }}</p>
+              <div
+                v-if="result.archetype.lightSide || result.archetype.darkSide"
+                class="archetype-duality"
+              >
+                <template v-if="result.archetype.lightSide">
+                  <p class="archetype-duality-label">光面</p>
+                  <p class="archetype-duality-text archetype-light">
+                    {{ t('archetypes.' + result.archetype.id + '.lightSide', undefined, result.archetype.lightSide) }}
+                  </p>
+                </template>
+                <template v-if="result.archetype.darkSide">
+                  <p class="archetype-duality-label">暗面</p>
+                  <p class="archetype-duality-text archetype-dark">
+                    {{ t('archetypes.' + result.archetype.id + '.darkSide', undefined, result.archetype.darkSide) }}
+                  </p>
+                </template>
+              </div>
+            </article>
+
+            <article class="match-breakdown-card">
+              <p class="breakdown-title">向量相似度（15%）</p>
+              <div class="vector-list">
+                <div v-for="axis in vectorAxisRows" :key="axis.axis" class="vector-row">
+                  <div class="vector-row-head">
+                    <span>{{ axis.label }}</span>
+                    <span>{{ axis.value > 0 ? '+' : '' }}{{ axis.value }}</span>
+                  </div>
+                  <div class="vector-track">
+                    <span class="vector-center"></span>
+                    <span class="vector-fill" :style="{
+                      left: axis.value < 0 ? `calc(50% - ${axis.width / 2}%)` : '50%',
+                      width: `${axis.width / 2}%`,
+                      background: axis.value < 0 ? '#88619A' : '#33A474'
+                    }"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
         <section class="analysis-grid" v-reveal>
           <article class="analysis-card good">
             <h3>
@@ -545,7 +651,7 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
           <p class="small-title">{{ t('result.hitCharacter') }}</p>
           <h3>{{ primaryCharacter ? getLocalizedCharacterName(primaryCharacter, locale) : t('archetypes.' + result.archetype.id + '.name', undefined, result.archetype.name) }}</h3>
           <p class="profile-code">{{ displayCode }}</p>
-          <p class="profile-probability">{{ t('result.matchProbability', { value: result.matchProbability }) }}</p>
+          <p class="profile-probability">{{ t('result.matchProbability', { value: rarityDisplay }) }}</p>
         </div>
 
         <div class="sidebar-actions">
@@ -557,6 +663,11 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
         </div>
 
         <div class="sidebar-card relay-card">
+          <p class="relay-credit">
+            本项目二创自
+            <a href="https://acgti.tianxingleo.top" target="_blank" rel="noopener noreferrer">ACGTI</a>
+            ，欢迎大家访问
+          </p>
           <p class="small-title">{{ t('result.relayTitle') }}</p>
           <p class="relay-copy">{{ t('result.relayCopy') }}</p>
           <p class="relay-hint">{{ t('result.relayHint') }}</p>
@@ -1025,6 +1136,128 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
   gap: 20px;
 }
 
+.match-breakdown-block {
+  margin-top: 24px;
+  padding: 0;
+}
+
+.match-breakdown-block h3 {
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+}
+
+.match-breakdown-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.match-breakdown-card {
+  border: 1px solid #e8ecef;
+  border-radius: 12px;
+  background: #fff;
+  padding: 14px;
+}
+
+.breakdown-title {
+  margin: 0;
+  font-size: 13px;
+  color: #6f7b87;
+  font-weight: 800;
+}
+
+.archetype-id {
+  margin: 8px 0 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #3e4b57;
+}
+
+.archetype-label {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #4d5a66;
+  font-weight: 700;
+}
+
+.archetype-duality {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eef2f5;
+  display: grid;
+  gap: 10px;
+}
+
+.archetype-duality-label {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #8a96a0;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.archetype-duality-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #3e4b57;
+  white-space: pre-line;
+}
+
+.archetype-light {
+  color: #2d6a4f;
+}
+
+.archetype-dark {
+  color: #5c3d6e;
+}
+
+.vector-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.vector-row-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  color: #4f5c68;
+  font-weight: 600;
+}
+
+.vector-track {
+  position: relative;
+  margin-top: 5px;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #edf1f4;
+  overflow: hidden;
+}
+
+.vector-center {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+
+.vector-fill {
+  position: absolute;
+  height: 100%;
+  border-radius: 999px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 .analysis-card {
   background: linear-gradient(180deg, #ffffff, #fbfdfb);
   border: 1px solid #e8ecef;
@@ -1232,6 +1465,24 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
   color: #4f5d67;
 }
 
+.relay-credit {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #5f6b75;
+}
+
+.relay-credit a {
+  color: #e4ae3a;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.relay-credit a:hover {
+  opacity: 0.88;
+}
+
 .relay-hint {
   margin: 10px 0 0;
   font-size: 12px;
@@ -1301,6 +1552,10 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
   }
 
   .analysis-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .match-breakdown-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1426,7 +1681,8 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
   }
 
   .analysis-card h3,
-  .tags-block h3 {
+  .tags-block h3,
+  .match-breakdown-block h3 {
     font-size: 18px;
   }
 
@@ -1537,7 +1793,8 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
   .analysis-card,
   .traits-list,
   .traits-highlight,
-  .tags-block {
+  .tags-block,
+  .match-breakdown-block {
     border-radius: 14px;
   }
 }

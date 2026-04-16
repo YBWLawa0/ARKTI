@@ -19,5 +19,5 @@ export function getCharacterPopulationProbability(characterId: string | null | u
     return 0
   }
 
-  return Math.max(0.01, probabilityDataset.probabilities[characterId] ?? 0)
+  return Math.max(0, probabilityDataset.probabilities[characterId] ?? 0)
 }

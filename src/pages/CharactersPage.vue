@@ -53,7 +53,17 @@ const filteredCharacterList = computed(() => {
     const localizedTitle = t(`characters.${character.id}.title`, undefined, character.title)
     const namePinyin = buildPinyinText(localizedName)
     const titlePinyin = buildPinyinText(localizedTitle)
-    const searchableText = `${localizedName} ${localizedTitle} ${namePinyin} ${titlePinyin}`.toLocaleLowerCase()
+    const searchableText = [
+      localizedName,
+      localizedTitle,
+      namePinyin,
+      titlePinyin,
+      character.matchCode,
+      character.id,
+      character.code,
+    ]
+      .join(' ')
+      .toLocaleLowerCase()
     return searchableText.includes(keyword)
   })
 })
@@ -79,8 +89,8 @@ function buildCardStyle(character: CharacterMatch) {
           v-model="searchQuery"
           type="search"
           class="character-search"
-          :placeholder="t('characters.searchPlaceholder', undefined, '搜索角色名或Title')"
-          :aria-label="t('characters.searchPlaceholder', undefined, '搜索角色名或Title')"
+          :placeholder="t('characters.searchPlaceholder', undefined, '搜索角色名、Title、MBTI 或角色ID')"
+          :aria-label="t('characters.searchPlaceholder', undefined, '搜索角色名、Title、MBTI 或角色ID')"
         />
       </div>
     </section>

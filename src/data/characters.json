@@ -4,9 +4,6 @@
     "name": "阿米娅",
     "series": "明日方舟",
     "matchCode": "INFJ",
-    "matchCodeFlex": [
-      "INFP"
-    ],
     "code": "AMYA",
     "title": "骡的岛CEO",
     "archetypeId": "moonlit-guardian",
@@ -18,17 +15,17 @@
     ],
     "note": "阿米娅在《明日方舟》里是罗德岛的精神中枢，年纪最轻却始终站在最前线背负理想与代价。你像阿米娅一样，从来不只是罗德岛吉祥物。她是那个永远站在最前面接住所有人情绪的人，也是把迷茫、痛苦和责任一并背起来的年轻领袖。她的共情不是温柔滤镜，而是近乎残酷的感知力——他人的悲伤、愤怒、动摇，她很多时候都是真切‘听见’、甚至‘承受’的。可即便这样，她还是会压住自己的疲惫，努力给同伴一个可以相信的方向。属于典型的那种：年纪最小，背的东西却最重；平时软软的，一到关键时刻比谁都清醒也比谁都能扛。",
     "vector": {
-      "expression": -1,
-      "temperature": 3,
-      "judgement": 2,
-      "order": 3,
+      "expression": 1,
+      "temperature": 1,
+      "judgement": 1,
+      "order": 2,
       "agency": 1,
-      "aura": 3
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
-        "temperature": 3,
-        "judgement": 2,
+        "order": 2,
+        "agency": 3,
         "aura": 3
       }
     }
@@ -49,16 +46,16 @@
     ],
     "note": "特蕾西娅在《明日方舟》里代表萨卡兹少见的温柔理想，她用平静姿态凝聚了巴别塔时代的信念。你像特蕾西娅一样，最特别的地方，从来不是单纯的温柔，而是她真的能让人相信：萨卡兹也可以拥有不一样的未来。她不是靠恐惧维系权威的人，反而越是平静、越是温和，越能让人意识到她意志有多坚定。很多人会被她的柔和外表骗到，觉得她像理想本身；但真正在局里的人都明白，她从来不是会被时代裹挟着走的那类君主，而是少数能反过来给时代定方向的人。她的可怕，不在于锋芒外露，而在于她几乎不用提高声音，就能让无数人心甘情愿把命运押在她所相信的明天上",
     "vector": {
-      "expression": 3,
-      "temperature": 2,
-      "judgement": 1,
-      "order": 2,
-      "agency": 3,
-      "aura": 3
+      "expression": 1,
+      "temperature": 1,
+      "judgement": -1,
+      "order": -1,
+      "agency": 1,
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
-        "order": 2,
+        "temperature": 3,
         "agency": 3,
         "aura": 3
       }
@@ -80,18 +77,18 @@
     ],
     "note": "蕾缪安在《明日方舟》里经历重伤与长期康复后，依旧保留了拉特兰人对同伴的温和牵引力。你像蕾缪安一样，这种人，天然擅长在群体里建立连接，并把这种连接转化成行动力。你不是单纯靠能力压服别人，而是靠信任、互动和稳定的情绪输出，让团队逐渐进入同频状态。你擅长读气氛，也知道什么时候该鼓励、什么时候该接住别人，因此常常能在不知不觉间成为队伍的核心黏合剂。你享受的不是个人逞强，而是看见所有人都被调动起来，一起把事情做成。",
     "vector": {
-      "expression": 3,
-      "temperature": 2,
-      "judgement": 2,
-      "order": 3,
-      "agency": 2,
-      "aura": 1
+      "expression": 1,
+      "temperature": 1,
+      "judgement": -1,
+      "order": 1,
+      "agency": 1,
+      "aura": -3
     },
     "signature": {
       "uniqueAxes": {
-        "expression": 3,
-        "temperature": 2,
-        "agency": 2
+        "expression": 1,
+        "order": 1,
+        "agency": 1
       }
     }
   },
@@ -100,12 +97,9 @@
     "name": "临光",
     "series": "明日方舟",
     "matchCode": "ENFJ",
-    "matchCodeFlex": [
-      "ESFJ"
-    ],
     "code": "NRLG",
     "title": "耀骑士",
-    "archetypeId": "oathbound-captain",
+    "archetypeId": "luminous-lead",
     "tags": [
       "卡西米尔正道之光",
       "骑士精神重度患者",
@@ -114,18 +108,18 @@
     ],
     "note": "临光在《明日方舟》里是卡西米尔骑士精神的火种，明知现实沉重也要把“正道”重新举起来。你像临光一样，最像卡西米尔那种已经快被现实磨没了、却偏偏还没熄灭的骑士精神本身。她当然知道这个世界不会因为一个人坚持正道就突然变好，但她还是会去做，因为如果连她都不做，那很多东西就真的一点都不剩了。她不是天真，而是清醒之后依然选择相信；不是不懂妥协的代价，而是知道总得有人把底线留住。",
     "vector": {
-      "expression": 0,
+      "expression": 1,
       "temperature": 1,
-      "judgement": 2,
-      "order": 2,
-      "agency": 3,
-      "aura": 1
+      "judgement": -1,
+      "order": 1,
+      "agency": 1,
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
-        "judgement": 2,
-        "order": 2,
-        "agency": 3
+        "expression": 1,
+        "agency": 1,
+        "aura": 2
       }
     }
   },
@@ -145,18 +139,17 @@
     ],
     "note": "迷迭香在《明日方舟》里背负着实验与战争留下的创伤，脆弱与高危力量始终并存。你像迷迭香一样，不是单纯的沉默，她更像是在用一套与常人不同的方式理解世界。她能感受到很多东西，却不总能立刻把那些感受整理成准确的语言和判断；于是她看起来总带着一点慢半拍的疏离感，像永远在追赶自己失落的记忆。可也正因为如此，她的脆弱和危险总是并存——你会先想保护她，然后才意识到，她其实也是那个一旦越界就会让局面彻底失控的人。",
     "vector": {
-      "expression": -2,
-      "temperature": 2,
-      "judgement": 1,
-      "order": 1,
+      "expression": -3,
+      "temperature": 3,
+      "judgement": -1,
+      "order": -1,
       "agency": 1,
-      "aura": 3
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
-        "expression": -2,
-        "temperature": 2,
-        "aura": 3
+        "expression": -3,
+        "judgement": -1
       }
     }
   },
@@ -165,9 +158,6 @@
     "name": "泥岩",
     "series": "明日方舟",
     "matchCode": "INFP",
-    "matchCodeFlex": [
-      "ISFP"
-    ],
     "code": "MDRK",
     "title": "萨卡兹大姑娘",
     "archetypeId": "moonlit-guardian",
@@ -181,16 +171,15 @@
     "vector": {
       "expression": -2,
       "temperature": 1,
-      "judgement": 2,
-      "order": 1,
-      "agency": 1,
-      "aura": 2
+      "judgement": -1,
+      "order": -1,
+      "agency": 0,
+      "aura": 3
     },
     "signature": {
       "uniqueAxes": {
-        "expression": -2,
-        "judgement": 2,
-        "order": 1
+        "order": -1,
+        "judgement": -1
       }
     }
   },
@@ -199,9 +188,6 @@
     "name": "缪尔赛斯",
     "series": "明日方舟",
     "matchCode": "ENFP",
-    "matchCodeFlex": [
-      "ENTP"
-    ],
     "code": "MLSS",
     "title": "缪缪",
     "archetypeId": "trickster-orbit",
@@ -213,18 +199,18 @@
     ],
     "note": "缪尔赛思在《明日方舟》里把精灵文明与莱茵生命的冲突背在身上，表面灵动却常在自我拉扯。你不是“多变”，你是根本没有固定版本。你可以是温柔的、疯狂的、理性的，甚至可以同时存在。你知道自己在变化，而且你在利用这种变化。属于那种“别人以为你不稳定，其实你在做实验”的类型。",
     "vector": {
-      "expression": 3,
+      "expression": 2,
       "temperature": 1,
-      "judgement": 1,
-      "order": -1,
-      "agency": 2,
-      "aura": 1
+      "judgement": -1,
+      "order": -3,
+      "agency": 1,
+      "aura": 0
     },
     "signature": {
       "uniqueAxes": {
-        "expression": 3,
-        "order": -1,
-        "agency": 2
+        "expression": 2,
+        "order": -3,
+        "agency": 1
       }
     }
   },
@@ -276,7 +262,7 @@
     "note": "佩佩在《明日方舟》里是典型的高能现场型角色，常用最直接的行动把队伍气势点燃。你不是冷静分析派，你是「先冲再说派」。局势越乱你越兴奋，甚至有点享受那种混乱里的存在感。别人还在评估风险，你已经把气氛带起来了。属于那种「计划赶不上你临场发挥」的典型。",
     "vector": {
       "expression": 3,
-      "temperature": 1,
+      "temperature": 2,
       "judgement": -1,
       "order": -2,
       "agency": 3,
@@ -285,6 +271,7 @@
     "signature": {
       "uniqueAxes": {
         "expression": 3,
+        "temperature": 2,
         "agency": 3
       }
     }
@@ -296,7 +283,7 @@
     "matchCode": "INTJ",
     "code": "ULPI",
     "title": "52饼干",
-    "archetypeId": "shadow-strategist",
+    "archetypeId": "moonlit-guardian",
     "tags": [
       "深海猎人",
       "自我改造",
@@ -305,17 +292,17 @@
     ],
     "note": "乌尔比安在《明日方舟》里带着深海猎人的沉重改造痕迹，理性与非人化边界始终模糊。你不是单纯的理性，你是那种会把自己也纳入实验的理性。深海猎人的身份让你早就脱离了普通人的生存逻辑，你更关注「进化」和「适应」，而不是「活得像人」。属于那种「人还在，但已经不完全是人」的类型。",
     "vector": {
-      "expression": -1,
+      "expression": -2,
       "temperature": -1,
-      "judgement": 3,
-      "order": 2,
-      "agency": 3,
-      "aura": 3
+      "judgement": 2,
+      "order": 1,
+      "agency": 0,
+      "aura": 0
     },
     "signature": {
       "uniqueAxes": {
-        "judgement": 3,
-        "agency": 3
+        "order": 1,
+        "judgement": 2
       }
     }
   },
@@ -324,12 +311,9 @@
     "name": "莫斯提马",
     "series": "明日方舟",
     "matchCode": "INTP",
-    "matchCodeFlex": [
-      "INTJ"
-    ],
     "code": "MSTM",
     "title": "蓝莓味的小莫",
-    "archetypeId": "icebound-observer",
+    "archetypeId": "trickster-orbit",
     "tags": [
       "时间系外挂",
       "表面摸鱼",
@@ -338,16 +322,16 @@
     ],
     "note": "莫斯提马在《明日方舟》里总以漫不经心示人，但她背着拉特兰旧案与时间系权能的危险重量。你看起来什么都不在乎，甚至有点懒，但那只是你对世界的态度。你掌握的力量和你表现出来的状态完全不匹配。别人以为你在摆，你其实是在决定「什么时候动手」。属于那种「越看不认真越不能惹」的人。",
     "vector": {
-      "expression": -2,
-      "temperature": -2,
-      "judgement": 3,
-      "order": 0,
-      "agency": 1,
+      "expression": 2,
+      "temperature": 1,
+      "judgement": 1,
+      "order": -1,
+      "agency": 3,
       "aura": 3
     },
     "signature": {
       "uniqueAxes": {
-        "order": 0,
+        "order": -1,
         "aura": 3
       }
     }
@@ -359,7 +343,7 @@
     "matchCode": "INTP",
     "code": "LOGS",
     "title": "术师一哥",
-    "archetypeId": "icebound-observer",
+    "archetypeId": "shadow-strategist",
     "tags": [
       "天才术师",
       "萨卡兹王庭",
@@ -368,17 +352,17 @@
     ],
     "note": "逻各斯在《明日方舟》里不只靠天赋压场，更以王庭术师的自律定义了力量的边界。你也有这种“标准很高、但不是为了炫耀”的特质，越是关键场面越能稳住判断，把实力和责任绑在一起用。",
     "vector": {
-      "expression": -2,
-      "temperature": -2,
+      "expression": -1,
+      "temperature": -1,
       "judgement": 3,
-      "order": 2,
-      "agency": 1,
+      "order": 3,
+      "agency": 2,
       "aura": 3
     },
     "signature": {
       "uniqueAxes": {
         "judgement": 3,
-        "aura": 3
+        "order": 3
       }
     }
   },
@@ -403,12 +387,13 @@
       "judgement": 3,
       "order": 3,
       "agency": 2,
-      "aura": 1
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
         "judgement": 3,
-        "order": 3
+        "order": 3,
+        "aura": 2
       }
     }
   },
@@ -459,16 +444,16 @@
     "note": "年在《明日方舟》里看似最会整活，却始终把“岁”一系的漫长孤独熬成了人间烟火。你也是那种外表随性、内里有重量的人，平时不爱说教，但在关键节点总能用自己的方式把气氛和局面重新点亮。",
     "vector": {
       "expression": 3,
-      "temperature": 1,
+      "temperature": 2,
       "judgement": 1,
-      "order": -2,
+      "order": -1,
       "agency": 3,
       "aura": 1
     },
     "signature": {
       "uniqueAxes": {
         "expression": 3,
-        "order": -2
+        "temperature": 2
       }
     }
   },
@@ -507,12 +492,9 @@
     "name": "塞雷娅",
     "series": "明日方舟",
     "matchCode": "ISTJ",
-    "matchCodeFlex": [
-      "INTJ"
-    ],
     "code": "SARIA",
     "title": "赛爹",
-    "archetypeId": "icebound-observer",
+    "archetypeId": "oathbound-captain",
     "tags": [
       "莱茵生命高管",
       "极端理性",
@@ -521,17 +503,17 @@
     ],
     "note": "塞雷娅在《明日方舟》里兼具莱茵生命管理者与战斗骨干身份，始终把风险控制放在第一位。你不是冷漠，你是把一切都纳入「风险控制」。实验要稳，队伍要稳，人也要稳——必要的时候甚至可以亲自上去把问题物理解决。别人讲感情，你讲流程；别人讲选择，你讲后果。属于那种「只要她在场，事情就不会失控」的类型。",
     "vector": {
-      "expression": -2,
-      "temperature": -2,
+      "expression": 0,
+      "temperature": 1,
       "judgement": 3,
       "order": 3,
-      "agency": 1,
-      "aura": 2
+      "agency": 2,
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
         "judgement": 3,
-        "order": 3
+        "agency": 2
       }
     }
   },
@@ -554,14 +536,14 @@
       "expression": 1,
       "temperature": 3,
       "judgement": 1,
-      "order": 2,
+      "order": 3,
       "agency": 1,
       "aura": 0
     },
     "signature": {
       "uniqueAxes": {
         "temperature": 3,
-        "order": 2
+        "order": 3
       }
     }
   },
@@ -570,12 +552,9 @@
     "name": "艾雅法拉",
     "series": "明日方舟",
     "matchCode": "ISFJ",
-    "matchCodeFlex": [
-      "INFP"
-    ],
     "code": "EYJA",
     "title": "小羊",
-    "archetypeId": "gentle-healer",
+    "archetypeId": "luminous-lead",
     "tags": [
       "火山学家",
       "天灾信使",
@@ -585,16 +564,16 @@
     "note": "艾雅法拉在《明日方舟》里是温柔学者与高强度术师并存的典型，天灾研究与战场输出同样惊人。你以为她是乖乖做研究的小学者，其实她一开口就是火山级别的输出。平时温温柔柔，说话轻声细语，但一旦进入工作状态，强度直接拉满。属于那种「越温柔越离谱」的典型。",
     "vector": {
       "expression": 1,
-      "temperature": 3,
-      "judgement": 1,
+      "temperature": 2,
+      "judgement": -1,
       "order": 1,
-      "agency": 2,
-      "aura": 0
+      "agency": 1,
+      "aura": -4
     },
     "signature": {
       "uniqueAxes": {
-        "temperature": 3,
-        "agency": 2
+        "temperature": 2,
+        "expression": 1
       }
     }
   },
@@ -605,7 +584,7 @@
     "matchCode": "ESTJ",
     "code": "CHEN",
     "title": "陈sir",
-    "archetypeId": "oathbound-captain",
+    "archetypeId": "luminous-lead",
     "tags": [
       "龙门近卫局",
       "高压执法",
@@ -614,16 +593,16 @@
     ],
     "note": "陈在《明日方舟》里从龙门近卫局到更广阔战场，始终保持高压执法者的直线行动风格。你不是脾气不好，你只是对「该怎么做」有极高标准。你习惯直接处理问题，而不是讨论问题。很多人觉得你太冲，但关键时刻，第一个站出来的也一定是你。属于那种「骂归骂，但事绝对能办成」的人。",
     "vector": {
-      "expression": 0,
-      "temperature": 1,
-      "judgement": 3,
-      "order": 3,
+      "expression": 2,
+      "temperature": 2,
+      "judgement": 1,
+      "order": 0,
       "agency": 3,
       "aura": 1
     },
     "signature": {
       "uniqueAxes": {
-        "judgement": 3,
+        "expression": 2,
         "agency": 3
       }
     }
@@ -635,7 +614,7 @@
     "matchCode": "ESFJ",
     "code": "ARC",
     "title": "我的天呐电弧大人",
-    "archetypeId": "oathbound-captain",
+    "archetypeId": "moonlit-guardian",
     "tags": [
       "团队维持",
       "现场协调",
@@ -644,17 +623,17 @@
     ],
     "note": "电弧在《明日方舟》里更像队伍运转的黏合位，常在一线补节奏、补执行、补士气。你不是最强的那一个，但你是让团队正常运转的关键节点。你会盯节奏、补漏洞、接情绪，甚至在混乱中强行把秩序拉回来。属于那种「少了你，整个队伍就开始散架」的类型。",
     "vector": {
-      "expression": 0,
-      "temperature": 2,
+      "expression": -1,
+      "temperature": 1,
       "judgement": 2,
-      "order": 2,
-      "agency": 2,
-      "aura": 1
+      "order": 3,
+      "agency": 1,
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
-        "temperature": 2,
-        "order": 2
+        "order": 3,
+        "aura": 2
       }
     }
   },
@@ -663,12 +642,9 @@
     "name": "余",
     "series": "明日方舟",
     "matchCode": "ESFJ",
-    "matchCodeFlex": [
-      "ENFJ"
-    ],
     "code": "YU",
     "title": "余妹(误)",
-    "archetypeId": "luminous-lead",
+    "archetypeId": "trickster-orbit",
     "tags": [
       "机制怪",
       "全图支援",
@@ -678,9 +654,9 @@
     "note": "余在《明日方舟》里的定位偏向多功能补位，常在团队最缺口的地方承担关键职责。你不是单一定位，你是「哪里缺人往哪里补」。你能抗、能拉、能控、还能救场。别人是角色，你是系统组件。属于那种「看起来不显眼，但少了就直接崩盘」的存在。",
     "vector": {
       "expression": 3,
-      "temperature": 2,
+      "temperature": 1,
       "judgement": 1,
-      "order": 0,
+      "order": -1,
       "agency": 2,
       "aura": 1
     },
@@ -726,9 +702,6 @@
     "name": "弑君者",
     "series": "明日方舟",
     "matchCode": "ISFP",
-    "matchCodeFlex": [
-      "ISTP"
-    ],
     "code": "CRWN",
     "title": "泰拉传奇抗压王",
     "archetypeId": "shadow-strategist",
@@ -759,9 +732,6 @@
     "name": "斯卡蒂",
     "series": "明日方舟",
     "matchCode": "ISFP",
-    "matchCodeFlex": [
-      "ISTP"
-    ],
     "code": "SKDI",
     "title": "我从08年就开始等这个...蒂蒂",
     "archetypeId": "moonlit-guardian",
@@ -792,9 +762,6 @@
     "name": "令",
     "series": "明日方舟",
     "matchCode": "ESTP",
-    "matchCodeFlex": [
-      "ENTP"
-    ],
     "code": "LING",
     "title": "将进酒",
     "archetypeId": "trickster-orbit",
@@ -836,17 +803,17 @@
     ],
     "note": "遥在《明日方舟》里的存在感极强，更擅长把战斗与舞台感合成同一种高热表达。你不是要赢，你是要「赢得好看」。你对当下的体验极度敏感，也会放大一切情绪。别人追求结果，你追求过程的爽感。属于那种「只要你在场，气氛就不会冷」的人。",
     "vector": {
-      "expression": 3,
+      "expression": 2,
       "temperature": 1,
       "judgement": -1,
       "order": -2,
-      "agency": 3,
-      "aura": 3
+      "agency": 2,
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
-        "expression": 3,
-        "aura": 3
+        "temperature": 1,
+        "aura": 2
       }
     }
   },
@@ -855,9 +822,6 @@
     "name": "能天使",
     "series": "明日方舟",
     "matchCode": "ESFP",
-    "matchCodeFlex": [
-      "ENFP"
-    ],
     "code": "EXUS",
     "title": "啊噗鲁派",
     "archetypeId": "luminous-lead",
@@ -890,7 +854,7 @@
     "matchCode": "INTJ",
     "code": "WANG",
     "title": "搞么子",
-    "archetypeId": "shadow-strategist",
+    "archetypeId": "icebound-observer",
     "tags": [
       "深度布局",
       "信息差碾压",
@@ -899,17 +863,17 @@
     ],
     "note": "望在《明日方舟》里更偏幕后型角色，往往通过信息差与预判在暗处改写局面。你不参与表面的竞争，你直接决定规则。你习惯在更高一层看问题，把人、资源、时间全部当变量处理。别人以为局面是随机的，其实只是没看到你在背后动。",
     "vector": {
-      "expression": -1,
-      "temperature": -1,
+      "expression": -2,
+      "temperature": -2,
       "judgement": 3,
       "order": 2,
-      "agency": 2,
-      "aura": 3
+      "agency": 1,
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
-        "judgement": 3,
-        "aura": 3
+        "expression": -2,
+        "judgement": 3
       }
     }
   },
@@ -948,9 +912,6 @@
     "name": "维什戴尔",
     "series": "明日方舟",
     "matchCode": "ESTP",
-    "matchCodeFlex": [
-      "ENTP"
-    ],
     "code": "WISD",
     "title": "爆裂一大清早",
     "archetypeId": "trickster-orbit",
@@ -981,12 +942,9 @@
     "name": "灵知",
     "series": "明日方舟",
     "matchCode": "INTJ",
-    "matchCodeFlex": [
-      "INTP"
-    ],
     "code": "GNOS",
     "title": "我为雪山立过功，你们不能这么对我！",
-    "archetypeId": "shadow-strategist",
+    "archetypeId": "oathbound-captain",
     "tags": [
       "谢拉格学者",
       "理性至上",
@@ -995,18 +953,17 @@
     ],
     "note": "灵知在《明日方舟》里是谢拉格变革最锋利的理性派，他总试图用结构重写旧秩序。你不是反对信仰，你是觉得“未经验证的东西不配被相信”。你会把传统、规则甚至人心全部拆开分析，再按你认可的逻辑重组。别人觉得你冷血，其实你只是拒绝用情绪代替结论。属于那种“连世界观都想重写一遍”的人。",
     "vector": {
-      "expression": -2,
-      "temperature": -2,
+      "expression": 0,
+      "temperature": 1,
       "judgement": 3,
       "order": 3,
       "agency": 2,
-      "aura": 3
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
         "judgement": 3,
-        "order": 3,
-        "aura": 3
+        "order": 3
       }
     }
   },
@@ -1045,9 +1002,6 @@
     "name": "伊内丝",
     "series": "明日方舟",
     "matchCode": "ENTJ",
-    "matchCodeFlex": [
-      "ENTP"
-    ],
     "code": "INES",
     "title": "土豆",
     "archetypeId": "shadow-strategist",
@@ -1080,7 +1034,7 @@
     "matchCode": "ENTJ",
     "code": "WTGR",
     "title": "铃兰爸爸会凶女儿吗",
-    "archetypeId": "oathbound-captain",
+    "archetypeId": "icebound-observer",
     "tags": [
       "杀手",
       "任务优先",
@@ -1089,17 +1043,17 @@
     ],
     "note": "忍冬在《明日方舟》里带着任务优先的冷硬底色，常把个人情绪完全让位给执行。你不太关心过程是否优雅，你只关心任务有没有完成。你习惯把一切变量压缩到最小，然后持续推进直到结束。别人会累、会停，你不会。属于那种“只要开始了就一定推进到底”的人。",
     "vector": {
-      "expression": 0,
-      "temperature": 1,
+      "expression": -1,
+      "temperature": -2,
       "judgement": 3,
-      "order": 3,
-      "agency": 3,
-      "aura": 1
+      "order": 2,
+      "agency": 1,
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
-        "order": 3,
-        "agency": 3
+        "expression": -1,
+        "judgement": 3
       }
     }
   },
@@ -1108,9 +1062,6 @@
     "name": "林",
     "series": "明日方舟",
     "matchCode": "ENTJ",
-    "matchCodeFlex": [
-      "INTJ"
-    ],
     "code": "LIN",
     "title": "可爱的黑道千金",
     "archetypeId": "luminous-lead",
@@ -1122,16 +1073,16 @@
     ],
     "note": "林在《明日方舟》里最有辨识度的是温和外壳下的局势掌控力，擅长用关系与规则推进秩序。你看起来温和、甚至有点可爱，但那只是你选择的表达方式。你从不需要提高音量，因为局势本来就在你的掌控之中。你习惯用人情、规则和利益去推动一切，让事情“自然地”走向你想要的结果。别人以为你只是站在边缘，其实你一直在中心。你不是黑道的执行者，你是决定它该怎么存在的人。",
     "vector": {
-      "expression": 2,
+      "expression": 3,
       "temperature": 2,
-      "judgement": 2,
-      "order": 1,
+      "judgement": 3,
+      "order": 0,
       "agency": 3,
       "aura": 1
     },
     "signature": {
       "uniqueAxes": {
-        "expression": 2,
+        "judgement": 3,
         "agency": 3
       }
     }
@@ -1141,12 +1092,9 @@
     "name": "霍尔海雅",
     "series": "明日方舟",
     "matchCode": "ENTP",
-    "matchCodeFlex": [
-      "INTP"
-    ],
     "code": "HRHY",
     "title": "恭喜雅雅",
-    "archetypeId": "trickster-orbit",
+    "archetypeId": "shadow-strategist",
     "tags": [
       "认知实验",
       "高维旁观",
@@ -1155,17 +1103,17 @@
     ],
     "note": "霍尔海雅在《明日方舟》里像一名高维观察者，常把人心与冲突当作可验证的实验变量。你不是冷血，你只是没有把情感当作判断标准。你习惯站在更高的视角看问题，把人、关系、甚至冲突都视为可以被验证的变量。你不会强迫任何人，但你会构建一个让选择不可避免发生的环境。别人以为你在参与，其实你一直在观察。对你来说，世界不是需要拯救的地方，而是需要被理解的系统。",
     "vector": {
-      "expression": 1,
+      "expression": -1,
       "temperature": -1,
-      "judgement": 2,
-      "order": -1,
-      "agency": 3,
-      "aura": 2
+      "judgement": 3,
+      "order": 2,
+      "agency": 2,
+      "aura": 3
     },
     "signature": {
       "uniqueAxes": {
-        "agency": 3,
-        "temperature": -1
+        "judgement": 3,
+        "aura": 3
       }
     }
   },
@@ -1174,12 +1122,9 @@
     "name": "多萝西",
     "series": "明日方舟",
     "matchCode": "INFJ",
-    "matchCodeFlex": [
-      "INFP"
-    ],
     "code": "DRTY",
     "title": "莱茵金鼠",
-    "archetypeId": "luminous-lead",
+    "archetypeId": "gentle-healer",
     "tags": [
       "理想驱动",
       "实验伦理模糊",
@@ -1191,14 +1136,14 @@
       "expression": 1,
       "temperature": 3,
       "judgement": 1,
-      "order": 1,
-      "agency": 2,
-      "aura": 1
+      "order": 2,
+      "agency": 1,
+      "aura": 0
     },
     "signature": {
       "uniqueAxes": {
         "temperature": 3,
-        "agency": 2
+        "order": 2
       }
     }
   },
@@ -1209,7 +1154,7 @@
     "matchCode": "INFJ",
     "code": "HDRY",
     "title": "我们早就过了谈友情的年纪了。",
-    "archetypeId": "moonlit-guardian",
+    "archetypeId": "oathbound-captain",
     "tags": [
       "信念稳定",
       "内敛表达",
@@ -1218,17 +1163,17 @@
     ],
     "note": "赫德雷在《明日方舟》里是典型的沉默硬骨头，历经旧时代后依旧守着自己的判断。你不是最显眼的人，但你是那种一直在、一直做、一直不变的人。世界再怎么乱，你也有一套自己的判断标准，并且不会轻易动摇。属于那种“别人可能会变，但你不会”的类型。",
     "vector": {
-      "expression": -1,
+      "expression": 0,
       "temperature": 1,
       "judgement": 2,
       "order": 3,
-      "agency": 1,
-      "aura": 2
+      "agency": 2,
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
         "order": 3,
-        "judgement": 2
+        "agency": 2
       }
     }
   },
@@ -1239,7 +1184,7 @@
     "matchCode": "ENFJ",
     "code": "SLEC",
     "title": "你有没有听到孩子们的悲鸣",
-    "archetypeId": "luminous-lead",
+    "archetypeId": "gentle-healer",
     "tags": [
       "理想骑士",
       "精神感召",
@@ -1248,17 +1193,17 @@
     ],
     "note": "琴柳在《明日方舟》里常把“为弱者发声”扛在肩上，温柔与责任感几乎同时拉满。你不是单纯在战斗，你是在回应那些没人愿意听的声音。你会主动去承担那些本不属于你的痛苦，并试图把它们变成改变世界的动力。别人可以无视，但你做不到。属于那种“越温柔，背负越重”的人。",
     "vector": {
-      "expression": 2,
+      "expression": 1,
       "temperature": 3,
-      "judgement": 1,
-      "order": 2,
-      "agency": 2,
-      "aura": 1
+      "judgement": 2,
+      "order": 1,
+      "agency": 1,
+      "aura": 0
     },
     "signature": {
       "uniqueAxes": {
         "temperature": 3,
-        "order": 2
+        "judgement": 2
       }
     }
   },
@@ -1281,14 +1226,14 @@
       "expression": -1,
       "temperature": 2,
       "judgement": 2,
-      "order": 2,
+      "order": 3,
       "agency": 1,
       "aura": 2
     },
     "signature": {
       "uniqueAxes": {
-        "temperature": 2,
-        "aura": 2
+        "order": 3,
+        "temperature": 2
       }
     }
   },
@@ -1297,9 +1242,6 @@
     "name": "夕",
     "series": "明日方舟",
     "matchCode": "INFP",
-    "matchCodeFlex": [
-      "ISFP"
-    ],
     "code": "DUSK",
     "title": "画中人",
     "archetypeId": "trickster-orbit",
@@ -1315,7 +1257,7 @@
       "temperature": 1,
       "judgement": 1,
       "order": -1,
-      "agency": 2,
+      "agency": 3,
       "aura": 1
     },
     "signature": {
@@ -1330,12 +1272,9 @@
     "name": "塑心",
     "series": "明日方舟",
     "matchCode": "ENFP",
-    "matchCodeFlex": [
-      "ENFJ"
-    ],
     "code": "ARTU",
     "title": "阿尔图罗",
-    "archetypeId": "chaos-spark",
+    "archetypeId": "shadow-strategist",
     "tags": [
       "情绪操控",
       "艺术表达",
@@ -1344,16 +1283,16 @@
     ],
     "note": "塑心在《明日方舟》里最危险的不是技法，而是她能把情绪与信念塑造成可传播的感染力。你不是在表达情绪，你是在“塑造”情绪。你可以把信念、痛苦甚至疯狂变成某种感染力，让别人不自觉地被卷进去。你不一定在说谎，但你会选择让别人相信什么。属于那种“越美越危险”的人。",
     "vector": {
-      "expression": 3,
-      "temperature": 1,
-      "judgement": -1,
-      "order": -2,
-      "agency": 3,
+      "expression": -1,
+      "temperature": -1,
+      "judgement": 2,
+      "order": 2,
+      "agency": 2,
       "aura": 3
     },
     "signature": {
       "uniqueAxes": {
-        "expression": 3,
+        "judgement": 2,
         "aura": 3
       }
     }
@@ -1375,7 +1314,7 @@
     "note": "莱伊在《明日方舟》里是标准的流程执行型角色，少言但稳定，强在持续兑现结果。你不太需要解释，也不太喜欢解释。给你一个目标，你就会用最直接的方式把它完成。别人还在讨论，你已经开始干活，而且一下一下稳得离谱。属于那种“看着简单，但谁都替代不了”的人。",
     "vector": {
       "expression": -2,
-      "temperature": -1,
+      "temperature": -2,
       "judgement": 3,
       "order": 3,
       "agency": 1,
@@ -1393,9 +1332,6 @@
     "name": "赫拉格",
     "series": "明日方舟",
     "matchCode": "ISTJ",
-    "matchCodeFlex": [
-      "ISFJ"
-    ],
     "code": "HLGR",
     "title": "老爷子",
     "archetypeId": "moonlit-guardian",
@@ -1407,7 +1343,7 @@
     ],
     "note": "赫拉格在《明日方舟》里是老兵气质的化身，经历沉淀出的判断力远比锋芒更可怕。你不需要证明自己，因为你的经历本身就是答案。你见过太多事情，所以很少情绪波动，也很少被动摇。别人可能会慌，但你不会。属于那种“只要还站着，就没人敢乱来”的存在。",
     "vector": {
-      "expression": -2,
+      "expression": -1,
       "temperature": 1,
       "judgement": 3,
       "order": 3,
@@ -1428,7 +1364,7 @@
     "matchCode": "ISFJ",
     "code": "NEVE",
     "title": "草莓奶油小蛋糕",
-    "archetypeId": "gentle-healer",
+    "archetypeId": "moonlit-guardian",
     "tags": [
       "温柔照顾",
       "情绪缓冲",
@@ -1437,17 +1373,17 @@
     ],
     "note": "妮芙在《明日方舟》里偏向温柔补位者，常在细节处默默维持团队状态。你不是那种会改变局势的人，但你是让一切不至于崩掉的人。你会默默照顾他人，把细节一点点补上。别人可能注意不到你，但一旦没有你，问题会立刻出现。",
     "vector": {
-      "expression": 0,
+      "expression": -1,
       "temperature": 3,
-      "judgement": 1,
-      "order": 2,
+      "judgement": 2,
+      "order": 3,
       "agency": 1,
-      "aura": 0
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
         "temperature": 3,
-        "order": 2
+        "expression": -1
       }
     }
   },
@@ -1456,9 +1392,6 @@
     "name": "异客",
     "series": "明日方舟",
     "matchCode": "ISFJ",
-    "matchCodeFlex": [
-      "INTJ"
-    ],
     "code": "PSGR",
     "title": "神",
     "archetypeId": "icebound-observer",
@@ -1489,12 +1422,9 @@
     "name": "菲亚梅塔",
     "series": "明日方舟",
     "matchCode": "ESTJ",
-    "matchCodeFlex": [
-      "ENTJ"
-    ],
     "code": "FIAM",
     "title": "肥鸭 | 毁灭凤凰人",
-    "archetypeId": "oathbound-captain",
+    "archetypeId": "chaos-spark",
     "tags": [
       "拉特兰执行官",
       "规则狂信",
@@ -1503,17 +1433,17 @@
     ],
     "note": "菲亚梅塔在《明日方舟》里把拉特兰式规则感执行到极致，触线时的清算强度非常直接。你不是单纯讲规则，你是把规则当信仰。平时看起来压得很稳，但一旦触线，你的反应会直接拉到极端。别人还在劝，你已经开始清算。属于那种“平时能忍，一旦动手就是结算阶段”的人。",
     "vector": {
-      "expression": 0,
-      "temperature": 1,
-      "judgement": 3,
-      "order": 3,
-      "agency": 3,
+      "expression": 2,
+      "temperature": -1,
+      "judgement": 2,
+      "order": 1,
+      "agency": 1,
       "aura": 1
     },
     "signature": {
       "uniqueAxes": {
-        "judgement": 3,
-        "agency": 3
+        "judgement": 2,
+        "order": 1
       }
     }
   },
@@ -1524,7 +1454,7 @@
     "matchCode": "ESTJ",
     "code": "LEIZ",
     "title": "小姨",
-    "archetypeId": "oathbound-captain",
+    "archetypeId": "shadow-strategist",
     "tags": [
       "监察体系",
       "责任导向",
@@ -1533,17 +1463,17 @@
     ],
     "note": "惊蛰在《明日方舟》里带着监察体系出身的强执行逻辑，习惯用制度压住混乱。你不是爱管人，你是觉得“必须有人把事情管好”。你习惯用制度和执行去压住混乱，对人也一样。别人觉得你强势，其实你只是默认自己要把事情兜住。属于那种“你可以不服，但你还是得按她说的做”的人。",
     "vector": {
-      "expression": 0,
-      "temperature": 1,
+      "expression": -1,
+      "temperature": -1,
       "judgement": 3,
-      "order": 3,
+      "order": 2,
       "agency": 2,
-      "aura": 1
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
-        "order": 3,
-        "judgement": 3
+        "judgement": 3,
+        "aura": 2
       }
     }
   },
@@ -1566,8 +1496,8 @@
       "expression": 3,
       "temperature": 2,
       "judgement": 1,
-      "order": 1,
-      "agency": 2,
+      "order": 0,
+      "agency": 3,
       "aura": 1
     },
     "signature": {
@@ -1582,9 +1512,6 @@
     "name": "隐德来希",
     "series": "明日方舟",
     "matchCode": "ESFJ",
-    "matchCodeFlex": [
-      "ENFJ"
-    ],
     "code": "INDR",
     "title": "隐隐",
     "archetypeId": "gentle-healer",
@@ -1628,15 +1555,15 @@
     "vector": {
       "expression": -2,
       "temperature": -2,
-      "judgement": 3,
-      "order": 1,
-      "agency": 2,
+      "judgement": 2,
+      "order": -1,
+      "agency": 1,
       "aura": 2
     },
     "signature": {
       "uniqueAxes": {
         "expression": -2,
-        "agency": 2
+        "agency": 1
       }
     }
   },
@@ -1645,9 +1572,6 @@
     "name": "德克萨斯",
     "series": "明日方舟",
     "matchCode": "ISTP",
-    "matchCodeFlex": [
-      "ISTJ"
-    ],
     "code": "TEXS",
     "title": "德狗",
     "archetypeId": "icebound-observer",
@@ -1660,7 +1584,7 @@
     "note": "德克萨斯在《明日方舟》里把叙拉古旧影收进沉默执行里，关键时总能最快补到位。你也是那种不爱解释旧事、但会把当下责任做扎实的人；平时看着冷静疏离，关键时刻却总能第一时间补位。",
     "vector": {
       "expression": -2,
-      "temperature": -1,
+      "temperature": -2,
       "judgement": 3,
       "order": 2,
       "agency": 1,
@@ -1680,7 +1604,7 @@
     "matchCode": "ISFP",
     "code": "MZKI",
     "title": "4000",
-    "archetypeId": "moonlit-guardian",
+    "archetypeId": "gentle-healer",
     "tags": [
       "深海关联",
       "异常存在",
@@ -1689,17 +1613,17 @@
     ],
     "note": "水月在《明日方舟》里始终带着深海系的异质感，纯真外表与危险本能并行不悖。你不完全属于这个世界，也不完全脱离它。你会感受到情绪，但表达方式和常人不一样。别人看你像个孩子，但你背后的东西远不简单。属于那种“看着轻飘飘，其实很危险”的存在。",
     "vector": {
-      "expression": -1,
-      "temperature": 1,
-      "judgement": 2,
-      "order": 2,
+      "expression": 1,
+      "temperature": 2,
+      "judgement": 1,
+      "order": 1,
       "agency": 1,
       "aura": 2
     },
     "signature": {
       "uniqueAxes": {
-        "aura": 2,
-        "temperature": 1
+        "temperature": 2,
+        "aura": 2
       }
     }
   },
@@ -1708,12 +1632,9 @@
     "name": "史尔特尔",
     "series": "明日方舟",
     "matchCode": "ESTP",
-    "matchCodeFlex": [
-      "ENTP"
-    ],
     "code": "SURT",
     "title": "42奶奶",
-    "archetypeId": "chaos-spark",
+    "archetypeId": "luminous-lead",
     "tags": [
       "短时爆发",
       "无视规则",
@@ -1723,16 +1644,16 @@
     "note": "史尔特尔在《明日方舟》里是典型的极限爆发型存在，能以短时间超高强度直接改写战局。你不是稳，你是“直接把局面烧穿”。你不考虑长远，也不打算收手，只要现在能解决问题就够了。别人讲策略，你直接上强度。属于那种“能赢，但代价你自己背”的人。",
     "vector": {
       "expression": 3,
-      "temperature": 1,
-      "judgement": -1,
-      "order": -2,
+      "temperature": 2,
+      "judgement": 1,
+      "order": 0,
       "agency": 3,
-      "aura": 2
+      "aura": 3
     },
     "signature": {
       "uniqueAxes": {
-        "agency": 3,
-        "order": -2
+        "expression": 3,
+        "aura": 3
       }
     }
   },
@@ -1741,9 +1662,6 @@
     "name": "幽灵鲨",
     "series": "明日方舟",
     "matchCode": "ESFP",
-    "matchCodeFlex": [
-      "ISFP"
-    ],
     "code": "SPTR",
     "title": "鲨鲨",
     "archetypeId": "chaos-spark",
@@ -1755,17 +1673,17 @@
     ],
     "note": "幽灵鲨在《明日方舟》里把狂气、信仰与战斗本能缠在一起，危险却极具生命力。你不是在压制自己，你是在边崩边活。你会笑、会疯、会战斗，一切混在一起。别人看你不稳定，但你反而在这种状态下最真实。属于那种“越危险越活得像自己”的人。",
     "vector": {
-      "expression": 3,
-      "temperature": 1,
-      "judgement": -1,
+      "expression": 2,
+      "temperature": 2,
+      "judgement": -2,
       "order": -2,
       "agency": 3,
       "aura": 2
     },
     "signature": {
       "uniqueAxes": {
-        "expression": 3,
-        "agency": 3
+        "temperature": 2,
+        "judgement": -2
       }
     }
   },
@@ -1776,7 +1694,7 @@
     "matchCode": "ESFP",
     "code": "MON3",
     "title": "哈脊米",
-    "archetypeId": "chaos-spark",
+    "archetypeId": "moonlit-guardian",
     "tags": [
       "听令行动",
       "大型生物",
@@ -1785,17 +1703,17 @@
     ],
     "note": "Mon3tr在《明日方舟》里是凯尔希意志的延伸，沉默服从却具备足以改写战场的破坏力。你不是在思考，你是在“被指令驱动”。给你一个目标，你会很认真地去做，但过程可能有点笨拙甚至过头。你看起来有点呆，但一旦动起来，强度是实打实的。属于那种“本人很乖，但一出手就容易把场面搞大”的类型。",
     "vector": {
-      "expression": 3,
+      "expression": -1,
       "temperature": 1,
-      "judgement": -1,
-      "order": -2,
+      "judgement": 2,
+      "order": 2,
       "agency": 3,
       "aura": 2
     },
     "signature": {
       "uniqueAxes": {
-        "agency": 3,
-        "order": -2
+        "order": 2,
+        "agency": 3
       }
     }
   },
@@ -1818,9 +1736,9 @@
       "expression": -2,
       "temperature": -1,
       "judgement": 2,
-      "order": 2,
+      "order": -1,
       "agency": 1,
-      "aura": 2
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -1834,12 +1752,9 @@
     "name": "重岳",
     "series": "明日方舟",
     "matchCode": "ESFJ",
-    "matchCodeFlex": [
-      "ENFJ"
-    ],
     "code": "CHYG",
     "title": "大哥",
-    "archetypeId": "luminous-lead",
+    "archetypeId": "oathbound-captain",
     "tags": [
       "岁相长兄",
       "稳重护短",
@@ -1848,17 +1763,17 @@
     ],
     "note": "重岳在《明日方舟》里是“岁”系长兄式存在，平日温厚，关键时一句话就能定盘。你不是最爱说话的那个，但你是所有人默认会听的那个。你会照顾人，也会在关键时刻直接做决定。别人可以闹、可以乱，但只要你开口，事情就会回到正轨。属于那种“场子可以乱，大哥不能乱”的人。",
     "vector": {
-      "expression": 2,
-      "temperature": 2,
-      "judgement": 1,
-      "order": 2,
+      "expression": 0,
+      "temperature": 1,
+      "judgement": 2,
+      "order": 3,
       "agency": 2,
       "aura": 1
     },
     "signature": {
       "uniqueAxes": {
-        "order": 2,
-        "agency": 2
+        "order": 3,
+        "judgement": 2
       }
     }
   },
@@ -1878,8 +1793,8 @@
     ],
     "note": "锏在《明日方舟》里以黑骑士姿态行事，重结果、轻修辞，战斗判断极其干脆。你不是那种讲荣耀的骑士，你更像是把“战斗”当成工具的人。你不会多说，也不会多想，判断完成就直接执行。别人讲立场，你讲效率。属于那种“只做必要的事，其余一概无视”的人。",
     "vector": {
-      "expression": -2,
-      "temperature": -2,
+      "expression": -1,
+      "temperature": -1,
       "judgement": 3,
       "order": 2,
       "agency": 2,
@@ -1897,9 +1812,6 @@
     "name": "拉普兰德",
     "series": "明日方舟",
     "matchCode": "ESTP",
-    "matchCodeFlex": [
-      "ENTP"
-    ],
     "code": "LPLD",
     "title": "德克萨斯做得到吗",
     "archetypeId": "chaos-spark",
@@ -1911,17 +1823,17 @@
     ],
     "note": "拉普兰德在《明日方舟》里把癫狂与执念写在同一把剑上，尤其与德克萨斯关系线最具张力。你不是单纯在战斗，你是在享受战斗本身。危险越高，你越兴奋，甚至会主动去逼近极限。你对某些人有着异常执着的兴趣，而这份执着往往也很危险。属于那种“越不正常越真实”的人。",
     "vector": {
-      "expression": 3,
-      "temperature": 1,
+      "expression": 2,
+      "temperature": 2,
       "judgement": -1,
       "order": -2,
       "agency": 3,
-      "aura": 2
+      "aura": 3
     },
     "signature": {
       "uniqueAxes": {
-        "expression": 3,
-        "order": -2
+        "temperature": 2,
+        "aura": 3
       }
     }
   },
@@ -1960,12 +1872,9 @@
     "name": "塔露拉",
     "series": "明日方舟",
     "matchCode": "ENFJ",
-    "matchCodeFlex": [
-      "INFJ"
-    ],
     "code": "TLLU",
     "title": "整合运动的领袖",
-    "archetypeId": "luminous-lead",
+    "archetypeId": "chaos-spark",
     "tags": [
       "理想领袖",
       "信念极端化",
@@ -1974,17 +1883,17 @@
     ],
     "note": "塔露拉在《明日方舟》里是“理想被时代扭曲”的核心悲剧人物，点燃众人也灼伤自己。你一开始是想改变世界的，但当你真的拥有改变世界的力量时，你也开始被它反过来改变。你能带动人，也能点燃人，但火一旦烧起来，就不一定还能控制。属于那种“理想是真的，但代价也是真的”的人。",
     "vector": {
-      "expression": 3,
-      "temperature": 2,
-      "judgement": 1,
-      "order": 1,
+      "expression": 2,
+      "temperature": 1,
+      "judgement": -1,
+      "order": 0,
       "agency": 3,
-      "aura": 1
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
         "agency": 3,
-        "temperature": 2
+        "order": 0
       }
     }
   },
@@ -1995,7 +1904,7 @@
     "matchCode": "INTJ",
     "code": "KRST",
     "title": "晚安，克丽斯腾",
-    "archetypeId": "shadow-strategist",
+    "archetypeId": "luminous-lead",
     "tags": [
       "莱茵生命",
       "终极理性",
@@ -2005,16 +1914,16 @@
     "note": "克丽斯腾在《明日方舟》里把视角抬到文明跃迁层级，几乎以“超越人类边界”为目标行进。你不是在解决问题，你是在定义问题的层级。你关注的不是个体、组织，而是文明本身。人类的限制在你眼里只是一个阶段。别人觉得你冷，是因为你已经站在他们理解范围之外。属于那种“已经不在同一维度思考”的人。",
     "vector": {
       "expression": -1,
-      "temperature": -2,
-      "judgement": 3,
-      "order": 3,
-      "agency": 2,
-      "aura": 3
+      "temperature": -1,
+      "judgement": 2,
+      "order": 1,
+      "agency": 1,
+      "aura": -2
     },
     "signature": {
       "uniqueAxes": {
-        "judgement": 3,
-        "aura": 3
+        "agency": 1,
+        "aura": -2
       }
     }
   },
@@ -2034,17 +1943,17 @@
     ],
     "note": "霜星在《明日方舟》里是温柔与绝境并存的代表，她清醒却被命运推向无可回头之处。你也有这种“越艰难越不愿放弃温柔”的特质，会在高压处境里坚持自己的判断，哪怕要独自承受代价。",
     "vector": {
-      "expression": -2,
+      "expression": -1,
       "temperature": 2,
-      "judgement": 2,
-      "order": 2,
+      "judgement": -1,
+      "order": -1,
       "agency": 1,
-      "aura": 2
+      "aura": 0
     },
     "signature": {
       "uniqueAxes": {
         "temperature": 2,
-        "aura": 2
+        "order": -1
       }
     }
   },
@@ -2053,13 +1962,9 @@
     "name": "海猫络合物",
     "series": "明日方舟",
     "matchCode": "ENTP",
-    "matchCodeFlex": [
-      "INTJ",
-      "ENFP"
-    ],
     "code": "HG",
     "title": "法老·香艳的游戏制作人",
-    "archetypeId": "trickster-orbit",
+    "archetypeId": "luminous-lead",
     "tags": [
       "苦难陈述者",
       "全局变量",
@@ -2068,16 +1973,16 @@
     ],
     "note": "海猫络合物在《明日方舟》里以“全局创世者”式形象出现，像是把整个泰拉写进变量的人。你无法被分类，因为分类本身就是你写的。角色、机制、强度、剧情——一切都在你的控制之下。别人做选择，你决定选项。",
     "vector": {
-      "expression": 2,
-      "temperature": 1,
+      "expression": 3,
+      "temperature": 2,
       "judgement": 1,
-      "order": -1,
+      "order": 0,
       "agency": 3,
       "aura": 3
     },
     "signature": {
       "uniqueAxes": {
-        "order": -1,
+        "temperature": 2,
         "aura": 3
       }
     }

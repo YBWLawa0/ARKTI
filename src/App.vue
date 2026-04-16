@@ -3,9 +3,11 @@ import { computed, ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 import { useI18n } from './i18n'
+import { useQuiz } from './composables/useQuiz'
 
 const route = useRoute()
 const { locale, localeOptions, setLocale, t } = useI18n()
+const quiz = useQuiz()
 
 const isLangOpen = ref(false)
 const isMobileMenuOpen = ref(false)
@@ -66,6 +68,35 @@ watch(
 
 const showRecentResult = computed(() => route.path !== '/result')
 const showFooter = computed(() => route.path !== '/quiz')
+const showLiveMetricsToggle = computed(() => route.path === '/quiz' && !!quiz.latestResult.value)
+
+const ANNOUNCEMENT_STORAGE_KEY = 'arkti:announcement:last-seen-version'
+const ANNOUNCEMENT_VERSION = '2026-04-16-v2'
+const announcementTitle = '更新#3'
+const announcementBody = '重构了角色匹配机制，并为每道题增加了可视化评测数值显示与总体的实时状态评测数据表，便于用户查看匹配细则，这两个内容将在至少完成一次评测后解锁。'
+const isAnnouncementVisible = ref(false)
+
+const closeAnnouncement = () => {
+  isAnnouncementVisible.value = false
+  try {
+    localStorage.setItem(ANNOUNCEMENT_STORAGE_KEY, ANNOUNCEMENT_VERSION)
+  } catch (error) {
+    console.warn('Failed to persist announcement state:', error)
+  }
+}
+
+onMounted(() => {
+  try {
+    const lastSeenVersion = localStorage.getItem(ANNOUNCEMENT_STORAGE_KEY)
+    if (lastSeenVersion !== ANNOUNCEMENT_VERSION) {
+      isAnnouncementVisible.value = true
+      localStorage.setItem(ANNOUNCEMENT_STORAGE_KEY, ANNOUNCEMENT_VERSION)
+    }
+  } catch (error) {
+    console.warn('Failed to read announcement state:', error)
+    isAnnouncementVisible.value = true
+  }
+})
 </script>
 
 <template>
@@ -103,7 +134,6 @@ const showFooter = computed(() => route.path !== '/quiz')
             </ul>
           </transition>
         </div>
-        <RouterLink to="/intro">{{ t('app.nav.intro') }}</RouterLink>
         <RouterLink to="/characters">{{ t('app.nav.characters') }}</RouterLink>
         <RouterLink to="/about">{{ t('app.nav.about') }}</RouterLink>
         <RouterLink to="/result" v-if="showRecentResult">{{ t('app.nav.result') }}</RouterLink>
@@ -174,6 +204,27 @@ const showFooter = computed(() => route.path !== '/quiz')
       </div>
     </header>
 
+    <transition name="announcement-fade">
+      <aside
+        v-if="isAnnouncementVisible"
+        class="release-announcement"
+        role="status"
+        aria-live="polite"
+      >
+        <button
+          type="button"
+          class="release-announcement-close"
+          aria-label="关闭公告"
+          @click="closeAnnouncement"
+        >
+          ×
+        </button>
+        <p class="release-announcement-tag">NEW</p>
+        <h2>{{ announcementTitle }}</h2>
+        <p>{{ announcementBody }}</p>
+      </aside>
+    </transition>
+
     <main class="site-main">
       <router-view v-slot="{ Component }">
           <transition name="page-fade" mode="out-in">
@@ -182,18 +233,36 @@ const showFooter = computed(() => route.path !== '/quiz')
         </router-view>
     </main>
 
+    <transition name="floating-live-toggle-fade">
+      <button
+        v-if="showLiveMetricsToggle && !quiz.liveMetricsVisible.value"
+        type="button"
+        class="nav-live-toggle floating-live-toggle"
+        :class="{ active: quiz.liveMetricsVisible.value }"
+        :aria-pressed="quiz.liveMetricsVisible.value"
+        aria-label="显示或隐藏实时评测状态"
+        title="显示/隐藏 实时评测状态"
+        @click="quiz.toggleLiveMetricsPanel()"
+      >
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" />
+          <path d="M4.5 20a7.5 7.5 0 0 1 15 0" />
+        </svg>
+      </button>
+    </transition>
+
     <footer v-if="showFooter" class="site-footer">
       <div class="footer-content">
         <div class="footer-section">
           <h3 class="footer-title">{{ t('app.footer.sections.test') }}</h3>
           <RouterLink to="/quiz" class="footer-link">{{ t('app.footer.links.startQuiz') }}</RouterLink>
           <RouterLink to="/result" class="footer-link">{{ t('app.footer.links.latestResult') }}</RouterLink>
-          <RouterLink to="/intro" class="footer-link">{{ t('app.footer.links.types') }}</RouterLink>
+          <RouterLink to="/quiz" class="footer-link">{{ t('app.footer.links.types') }}</RouterLink>
           <RouterLink to="/characters" class="footer-link">{{ t('app.footer.links.characters') }}</RouterLink>
         </div>
         <div class="footer-section">
           <h3 class="footer-title">{{ t('app.footer.sections.project') }}</h3>
-          <RouterLink to="/intro" class="footer-link">{{ t('app.footer.links.resultStructure') }}</RouterLink>
+          <RouterLink to="/result" class="footer-link">{{ t('app.footer.links.resultStructure') }}</RouterLink>
           <RouterLink to="/about" class="footer-link">{{ t('app.footer.links.boundaries') }}</RouterLink>
           <RouterLink to="/about" class="footer-link">{{ t('app.footer.links.roadmap') }}</RouterLink>
         </div>
@@ -227,7 +296,6 @@ const showFooter = computed(() => route.path !== '/quiz')
         <div class="footer-social">
           <RouterLink to="/" :title="t('app.footer.social.home')">{{ t('app.footer.social.home') }}</RouterLink>
           <RouterLink to="/quiz" :title="t('app.footer.social.quiz')">{{ t('app.footer.social.quiz') }}</RouterLink>
-          <RouterLink to="/intro" :title="t('app.footer.social.intro')">{{ t('app.footer.social.intro') }}</RouterLink>
           <RouterLink to="/characters" :title="t('app.footer.social.characters')">{{ t('app.footer.social.characters') }}</RouterLink>
           <RouterLink to="/about" :title="t('app.footer.social.about')">{{ t('app.footer.social.about') }}</RouterLink>
         </div>

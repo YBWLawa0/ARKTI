@@ -61,6 +61,10 @@ export interface Archetype {
   keywords: string[]
   accent: string
   vector: Record<DimensionId, number>
+  /** 光面（优势面向） */
+  lightSide?: string
+  /** 暗面：阴影面正文（内在阴影描述） */
+  darkSide?: string
 }
 
 export interface CharacterMatch {
@@ -75,7 +79,6 @@ export interface CharacterMatch {
   backgroundPositionY?: number
   accent?: string
   matchCode: string
-  matchCodeFlex?: string[]
   code: string
   title?: string
   archetypeId: ArchetypeId
