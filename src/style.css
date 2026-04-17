@@ -118,6 +118,7 @@ select {
 
 .site-header {
   width: 100%;
+  min-width: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -136,6 +137,8 @@ select {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 .brand-logo {
@@ -169,6 +172,418 @@ select {
   display: flex;
   align-items: center;
   gap: 4px;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+/* 桌面导航：不要用 overflow 裁切子元素，否则 .lang-dropdown-menu（absolute 向下展开）会被挡住 */
+@media (min-width: 1025px) {
+  .site-nav {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    overflow: visible;
+    min-width: 0;
+  }
+}
+
+.site-shell.force-mobile-nav .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  flex-direction: row;
+  gap: 8px;
+  padding: 12px;
+  min-height: 68px;
+}
+
+.site-shell.force-mobile-nav .site-nav {
+  display: none;
+}
+
+.site-shell.force-mobile-nav .mobile-nav {
+  display: flex;
+}
+
+.site-shell.force-mobile-nav .site-main {
+  padding-top: 68px;
+}
+
+.site-shell.force-mobile-nav .floating-live-toggle {
+  right: max(12px, env(safe-area-inset-right, 0px));
+  bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+}
+
+.site-shell.force-mobile-nav .release-announcement {
+  top: 80px;
+  right: 12px;
+  width: min(300px, calc(100vw - 24px));
+}
+
+html.force-compact .floating-live-toggle {
+  right: max(12px, env(safe-area-inset-right, 0px));
+  bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+}
+
+html.force-compact,
+html.force-compact body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+html.force-compact .site-shell,
+html.force-compact .site-main {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+html.force-compact .site-header {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+html.force-compact .quiz-page-16p .quiz-main {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  overflow-x: hidden !important;
+}
+
+html.force-compact .quiz-page-16p .step-cards {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  overflow: visible !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+html.force-compact .quiz-page-16p .step-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  text-align: left !important;
+}
+
+html.force-compact .quiz-top-progress-bar {
+  width: 100% !important;
+  max-width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+html.force-compact .live-metrics-panel,
+html.force-compact .release-announcement {
+  max-width: calc(100% - 24px) !important;
+}
+
+html.force-compact .mobile-menu-panel {
+  width: min(320px, calc(100vw - 24px)) !important;
+  max-width: calc(100vw - 24px) !important;
+}
+
+html.force-compact .quiz-page-16p .step-card h3,
+html.force-compact .quiz-page-16p .step-card p {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  text-align: left !important;
+}
+
+html.force-compact .quiz-page-16p .question-list,
+html.force-compact .quiz-page-16p .quiz-notice,
+html.force-compact .quiz-page-16p .detail-toggle-bar,
+html.force-compact .quiz-page-16p .result-form-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
+html.force-compact .quiz-page-16p .detail-toggle-bar,
+html.force-compact .quiz-page-16p .scoring-cards-container {
+  grid-template-columns: 1fr !important;
+}
+
+html.force-compact .quiz-page-16p .question-block {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+html.force-compact .quiz-page-16p .question-scale {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  gap: 8px !important;
+}
+
+html.force-compact .quiz-page-16p .question-scale > .agree-label,
+html.force-compact .quiz-page-16p .question-scale > .disagree-label {
+  display: none !important;
+}
+
+html.force-compact .quiz-page-16p .mobile-labels {
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin: 0 2px !important;
+}
+
+html.force-compact .quiz-page-16p .mobile-labels .agree-label,
+html.force-compact .quiz-page-16p .mobile-labels .disagree-label {
+  display: block !important;
+  width: auto !important;
+  font-size: 13px !important;
+}
+
+html.force-compact .quiz-page-16p .scale-buttons {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  gap: 5px !important;
+  overflow: visible !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+
+html.force-compact .quiz-page-16p .scale-btn {
+  flex: 0 0 auto !important;
+}
+
+html.force-compact .quiz-page-16p .size-sm {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+html.force-compact .quiz-page-16p .size-md {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+html.force-compact .quiz-page-16p .size-lg {
+  width: 34px !important;
+  height: 34px !important;
+}
+
+html.force-compact .quiz-page-16p .size-xl {
+  width: 42px !important;
+  height: 42px !important;
+}
+
+html.force-compact .container,
+html.force-compact .compact,
+html.force-compact .about-container,
+html.force-compact .result-page,
+html.force-compact .page-stack {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+html.force-compact .container,
+html.force-compact .about-container {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+html.force-compact .hero-title,
+html.force-compact .display-title,
+html.force-compact .main-title,
+html.force-compact .feature-title,
+html.force-compact .testimonial-title,
+html.force-compact .section-title {
+  max-width: 100% !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  letter-spacing: 0 !important;
+}
+
+html.force-compact .lead,
+html.force-compact .lead-text,
+html.force-compact .feature-copy,
+html.force-compact .body-copy,
+html.force-compact .hero-subtitle,
+html.force-compact .hero-relay-copy,
+html.force-compact .testimonial-title,
+html.force-compact .testimonial-tag {
+  max-width: 100% !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+html.force-compact .home .hero {
+  padding-top: 4.2rem !important;
+  padding-bottom: 11.5rem !important;
+}
+
+html.force-compact .home .hero-scene {
+  height: 170px !important;
+}
+
+html.force-compact .home .stat-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  row-gap: 1.8rem !important;
+}
+
+html.force-compact .home .feature-layout,
+html.force-compact .home .feature-layout.reverse {
+  grid-template-columns: 1fr !important;
+}
+
+html.force-compact .home .feature-illustration {
+  height: 320px !important;
+  max-width: 100% !important;
+}
+
+html.force-compact .home .testimonial-track {
+  grid-auto-columns: minmax(260px, 86vw) !important;
+}
+
+html.force-compact .about-grid,
+html.force-compact .main-card-body {
+  grid-template-columns: 1fr !important;
+}
+
+html.force-compact .main-card,
+html.force-compact .matching-card,
+html.force-compact .side-card {
+  padding: 24px !important;
+}
+
+html.force-compact .characters-grid {
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  padding: 1rem !important;
+}
+
+html.force-compact .character-search {
+  width: 100% !important;
+}
+
+html.force-compact .character-card {
+  min-width: 0 !important;
+}
+
+html.force-compact .character-card .card-content {
+  padding: 0.75rem !important;
+  text-align: left !important;
+  align-items: flex-start !important;
+}
+
+html.force-compact .character-card .card-name {
+  font-size: 1.1rem !important;
+  text-align: left !important;
+}
+
+html.force-compact .character-card .card-tags {
+  flex-wrap: wrap !important;
+  gap: 0.25rem !important;
+  justify-content: flex-start !important;
+}
+
+html.force-compact .result-hero {
+  min-height: 560px !important;
+  padding-top: 34px !important;
+}
+
+html.force-compact .result-hero-inner,
+html.force-compact .result-body {
+  grid-template-columns: 1fr !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+html.force-compact .result-hero-inner {
+  padding-top: 22px !important;
+  padding-bottom: 72px !important;
+  gap: 16px !important;
+}
+
+html.force-compact .result-body {
+  padding-top: 16px !important;
+  padding-bottom: 24px !important;
+  gap: 16px !important;
+  margin-top: 0 !important;
+}
+
+html.force-compact .result-sidebar {
+  position: static !important;
+}
+
+html.force-compact .sidebar-poster-card {
+  display: none !important;
+}
+
+html.force-compact .hero-visual.poster-box {
+  display: block !important;
+}
+
+html.force-compact .traits-card,
+html.force-compact .analysis-grid,
+html.force-compact .match-breakdown-grid {
+  grid-template-columns: 1fr !important;
+}
+
+html.force-compact .traits-highlight {
+  border-left: 0 !important;
+  border-top: 1px solid #edf0f2 !important;
+}
+
+html.force-compact .hero-actions {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 8px !important;
+}
+
+html.force-compact .action-btn {
+  width: 100% !important;
+  justify-content: center !important;
+}
+
+html.force-compact .hero-title {
+  font-size: clamp(30px, 10vw, 42px) !important;
+}
+
+html.force-compact .hero-code {
+  font-size: clamp(22px, 6vw, 30px) !important;
+}
+
+html.force-compact .hero-metrics {
+  gap: 8px !important;
+}
+
+html.force-compact .hero-metric {
+  flex: 1 1 140px !important;
+  min-width: 0 !important;
+}
+
+@media (max-width: 420px) {
+  html.force-compact .container,
+  html.force-compact .about-container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  html.force-compact .characters-grid {
+    gap: 0.75rem !important;
+    padding: 0.75rem !important;
+  }
 }
 
 .nav-live-toggle,
@@ -204,8 +619,8 @@ select {
 
 .floating-live-toggle {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
+  right: max(24px, env(safe-area-inset-right, 0px));
+  bottom: max(24px, env(safe-area-inset-bottom, 0px));
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -217,7 +632,7 @@ select {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 40;
+  z-index: 120;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -379,6 +794,8 @@ select {
   display: flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .lang-dropdown-trigger .arrow {
@@ -468,6 +885,11 @@ select {
   transition:
     background-color 180ms ease,
     color 180ms ease;
+}
+
+.site-nav .nav-github-link {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .site-nav a:hover {
@@ -1084,7 +1506,8 @@ select {
    Responsive Design
    ============================================ */
 
-@media (max-width: 768px) {
+/* 平板与窄窗口：顶栏项过多时改为汉堡菜单（1280px 以下含手机横屏、部分“桌面版网站”视口） */
+@media (max-width: 1280px) {
   .site-header {
     position: fixed;
     top: 0;
@@ -1105,8 +1528,8 @@ select {
   }
 
   .floating-live-toggle {
-    right: 12px;
-    bottom: 12px;
+    right: max(12px, env(safe-area-inset-right, 0px));
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
   }
 
   .release-announcement {
@@ -1118,7 +1541,9 @@ select {
   .site-main {
     padding-top: 68px;
   }
+}
 
+@media (max-width: 768px) {
   .hero-section {
     padding: 60px 20px 40px;
   }

@@ -481,7 +481,7 @@ function setMiniMetricsSectionIndex(nextIndex: number) {
 
 function isDesktopDragAllowed(event: MouseEvent) {
   if (event.button !== 0) return false
-  return window.matchMedia('(min-width: 761px)').matches
+  return window.matchMedia('(min-width: 1281px)').matches
 }
 
 function clampLiveMetricsPosition(top: number, left: number) {
@@ -1174,16 +1174,22 @@ async function submitQuiz() {
   background-color: #2b8b62;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .quiz-top-progress-bar {
     top: 68px;
   }
+}
+
+:global(html.force-compact) .quiz-top-progress-bar {
+  top: 68px;
 }
 
 .quiz-page-16p {
   min-height: 100vh;
   background: #ffffff;
   color: #2d3436;
+  direction: ltr;
+  text-align: left;
 }
 
 .quiz-main {
@@ -1224,12 +1230,16 @@ async function submitQuiz() {
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 8px 24px rgba(17, 24, 39, 0.05);
+  min-width: 0;
+  text-align: left;
 }
 
 .step-card h3 {
   margin: 10px 0 8px;
   font-size: 22px;
   color: #2e353a;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .step-card p {
@@ -1237,6 +1247,8 @@ async function submitQuiz() {
   font-size: 14px;
   color: #61707f;
   line-height: 1.65;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .step-pill {
@@ -1349,6 +1361,7 @@ async function submitQuiz() {
   align-items: center;
   justify-content: center;
   gap: 14px;
+  min-width: 0;
 }
 
 .scale-btn {
@@ -1360,6 +1373,7 @@ async function submitQuiz() {
   justify-content: center;
   cursor: pointer;
   position: relative;
+  flex: 0 0 auto;
   transition: transform 0.18s ease, background-color 0.18s ease, opacity 0.18s ease;
 }
 
@@ -1657,6 +1671,7 @@ async function submitQuiz() {
   display: grid;
   gap: 6px;
   line-height: 1.7;
+  text-align: left;
 }
 
 .quiz-notice p {
@@ -1837,7 +1852,7 @@ async function submitQuiz() {
   -webkit-user-select: none;
 }
 
-@media (min-width: 761px) {
+@media (min-width: 1281px) {
   .live-metrics-head {
     cursor: default;
   }
@@ -2201,7 +2216,8 @@ async function submitQuiz() {
   }
 }
 
-@media (max-width: 760px) {
+/* 手机横屏、窄平板等：量表改为上下排布 + 横向滑动，避免圆点被裁切 */
+@media (max-width: 1024px) {
   .quiz-main {
     padding-left: 14px;
     padding-right: 14px;
@@ -2213,6 +2229,23 @@ async function submitQuiz() {
 
   .question-block h2 {
     margin-bottom: 18px;
+  }
+
+  .step-cards {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    overflow-x: auto;
+    padding: 0 2px 8px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .step-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step-card {
+    scroll-snap-align: start;
   }
 
   .question-head {
@@ -2227,6 +2260,7 @@ async function submitQuiz() {
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
+    min-width: 0;
   }
 
   .agree-label,
@@ -2263,12 +2297,149 @@ async function submitQuiz() {
     grid-template-columns: 1fr;
   }
 
+  .scale-buttons {
+    gap: 8px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: visible;
+    overflow-y: visible;
+    padding: 2px max(2px, env(safe-area-inset-right, 0px)) 6px max(2px, env(safe-area-inset-left, 0px));
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+  }
+
+  .scale-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scale-btn {
+    flex: 0 0 auto;
+  }
+
+  .size-sm { width: 24px; height: 24px; }
+  .size-md { width: 30px; height: 30px; }
+  .size-lg { width: 38px; height: 38px; }
+  .size-xl { width: 46px; height: 46px; }
+
+  .checkmark {
+    font-size: 12px;
+  }
+
+  .result-form-card,
+  .quiz-notice,
+  .detail-toggle-bar,
+  .question-list {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .submit-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .share-count {
+    font-size: 20px;
+  }
+}
+
+:global(html.force-compact) .quiz-main {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+:global(html.force-compact) .question-scale {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  min-width: 0;
+}
+
+:global(html.force-compact) .question-scale > .agree-label,
+:global(html.force-compact) .question-scale > .disagree-label {
+  display: none;
+}
+
+:global(html.force-compact) .mobile-labels {
+  display: flex;
+  justify-content: space-between;
+  max-width: none;
+  margin: 0 2px;
+}
+
+:global(html.force-compact) .mobile-labels .agree-label,
+:global(html.force-compact) .mobile-labels .disagree-label {
+  display: block;
+  width: auto;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+:global(html.force-compact) .mobile-labels .agree-label {
+  color: #33a474;
+  text-align: left;
+}
+
+:global(html.force-compact) .mobile-labels .disagree-label {
+  color: #88619a;
+  text-align: right;
+}
+
+:global(html.force-compact) .scale-buttons {
+  gap: 8px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 2px max(2px, env(safe-area-inset-right, 0px)) 6px max(2px, env(safe-area-inset-left, 0px));
+  touch-action: manipulation;
+}
+
+:global(html.force-compact) .scale-btn {
+  flex: 0 0 auto;
+}
+
+:global(html.force-compact) .size-sm { width: 24px; height: 24px; }
+:global(html.force-compact) .size-md { width: 30px; height: 30px; }
+:global(html.force-compact) .size-lg { width: 38px; height: 38px; }
+:global(html.force-compact) .size-xl { width: 46px; height: 46px; }
+
+:global(html.force-compact) .result-form-card,
+:global(html.force-compact) .quiz-notice,
+:global(html.force-compact) .detail-toggle-bar,
+:global(html.force-compact) .question-list {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+@media (max-width: 1280px) {
   .live-metrics-panel {
-    top: 80px;
-    left: 12px;
-    right: 12px;
+    top: auto !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
     width: auto;
-    max-height: calc(100vh - 96px);
+    max-height: min(520px, calc(100vh - 92px));
+  }
+
+  .live-metrics-panel.is-positioned {
+    top: auto !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
   }
 
   .live-metrics-panel.is-minimized {
@@ -2360,55 +2531,6 @@ async function submitQuiz() {
   .live-metrics-reveal-leave-from {
     clip-path: circle(150vmax at calc(100vw - 36px) calc(100vh - 36px));
   }
-
-  .scale-buttons {
-    gap: 8px;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    overflow-x: auto;
-    padding: 2px 2px 6px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .scale-buttons::-webkit-scrollbar {
-    display: none;
-  }
-
-  .scale-btn {
-    flex: none;
-  }
-
-  .size-sm { width: 24px; height: 24px; }
-  .size-md { width: 30px; height: 30px; }
-  .size-lg { width: 38px; height: 38px; }
-  .size-xl { width: 46px; height: 46px; }
-
-  .checkmark {
-    font-size: 12px;
-  }
-
-  .result-form-card,
-  .quiz-notice,
-  .detail-toggle-bar,
-  .question-list {
-    margin-left: 2px;
-    margin-right: 2px;
-  }
-
-  .submit-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-
-  .submit-btn {
-    width: 100%;
-  }
-
-  .share-count {
-    font-size: 20px;
-  }
 }
 
 @media (max-width: 520px) {
@@ -2439,6 +2561,17 @@ async function submitQuiz() {
     font-size: 19px;
   }
 
+  .step-cards {
+    grid-template-columns: 1fr;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .step-card h3,
+  .step-card p {
+    max-width: 34rem;
+  }
+
   .question-block {
     padding: 24px 12px;
   }
@@ -2448,8 +2581,13 @@ async function submitQuiz() {
   }
 
   .scale-buttons {
-    gap: 6px;
+    gap: 5px;
   }
+
+  .size-sm { width: 20px; height: 20px; }
+  .size-md { width: 26px; height: 26px; }
+  .size-lg { width: 34px; height: 34px; }
+  .size-xl { width: 42px; height: 42px; }
 
   .result-form-card,
   .quiz-notice,

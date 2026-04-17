@@ -37,12 +37,39 @@ let heroMotionFrame = 0
 let heroIsHovering = false
 const characterVisuals = characterVisualsData as Record<string, { smallCharacterVideo?: string }>
 
+function getCompactViewportState() {
+  const viewportWidth = Math.min(
+    window.innerWidth || Number.POSITIVE_INFINITY,
+    window.visualViewport?.width || Number.POSITIVE_INFINITY,
+    document.documentElement.clientWidth || Number.POSITIVE_INFINITY,
+  )
+  const screenShortSide = Math.min(window.screen?.width || viewportWidth, window.screen?.height || viewportWidth)
+  const isTouchDevice =
+    navigator.maxTouchPoints > 0 ||
+    window.matchMedia?.('(any-pointer: coarse)').matches ||
+    window.matchMedia?.('(hover: none)').matches
+
+  return (
+    viewportWidth <= 1280 ||
+    document.documentElement.classList.contains('force-compact') ||
+    (isTouchDevice && screenShortSide <= 920) ||
+    (isTouchDevice && viewportWidth <= 1400)
+  )
+}
+
+function updateMobileState() {
+  isMobile.value = getCompactViewportState()
+}
+
 onMounted(() => {
   quiz.resumeLastResult()
   applyDebugResultFromRoute()
-  mobileMediaQuery = window.matchMedia('(max-width: 768px)')
-  isMobile.value = mobileMediaQuery.matches
+  mobileMediaQuery = window.matchMedia('(max-width: 1280px)')
+  updateMobileState()
   mobileMediaQuery.addEventListener('change', handleMobileMediaChange)
+  window.addEventListener('resize', updateMobileState)
+  window.addEventListener('orientationchange', updateMobileState)
+  window.visualViewport?.addEventListener('resize', updateMobileState)
 
   if (!result.value) {
     void router.replace('/quiz')
@@ -149,7 +176,11 @@ function handleHeroMouseLeave() {
 }
 
 function handleMobileMediaChange(event: MediaQueryListEvent) {
-  isMobile.value = event.matches
+  if (event.matches) {
+    isMobile.value = true
+    return
+  }
+  updateMobileState()
 }
 
 function applyDebugResultFromRoute() {
@@ -253,6 +284,9 @@ watch(primaryCharacterImage, () => {
 
 onBeforeUnmount(() => {
   mobileMediaQuery?.removeEventListener('change', handleMobileMediaChange)
+  window.removeEventListener('resize', updateMobileState)
+  window.removeEventListener('orientationchange', updateMobileState)
+  window.visualViewport?.removeEventListener('resize', updateMobileState)
   if (heroMotionFrame) {
     cancelAnimationFrame(heroMotionFrame)
   }
@@ -834,9 +868,8 @@ watch(
   z-index: 2;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1281px) {
   .result-hero-inner {
-    grid-template-columns: 1fr 1fr;
     padding-top: 60px;
     padding-bottom: 120px;
     gap: 60px;
@@ -1605,7 +1638,7 @@ watch(
   font-weight: 600;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1281px) {
   .result-hero-inner {
     grid-template-columns: 1fr;
     align-items: center;
@@ -1650,7 +1683,7 @@ watch(
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .result-hero {
     padding-top: 34px;
     min-height: 560px;

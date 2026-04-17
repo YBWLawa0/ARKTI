@@ -68,8 +68,8 @@ export const messages = {
         label: '语言',
       },
       announcement: {
-        title: '更新#3',
-        body: '重构了角色匹配机制，并为每道题增加了可视化评测数值显示与总体的实时状态评测数据表，便于用户查看匹配细则，这两个内容将在至少完成一次评测后解锁。',
+        title: '更新#4',
+        body: '本次更新角色总数来到100啦，新增列表详见项目说明-更新记录。\n还重制了题目文本内容，补全了繁体中文/英语/日语等其它语言的所有文本内容。\n修复了部分已知BUG。',
         closeAria: '关闭公告',
       },
       liveMetricsToggle: {
@@ -380,6 +380,7 @@ export const messages = {
       ],
       updateTitle: '版本更新记录',
       updateItems: [
+        ['更新#4 (2026-4-18)', '本次更新增加了34名角色，角色总数来到100。\n增加角色列表：古米；真理；早露；烈夏；絮雨；伺夜；斥罪；号角；歌蕾蒂娅；阿；华法琳；星极；帕拉斯；澄闪；傀影；羽毛笔；初雪；煌；桃金娘；艾丽妮；山；送葬人；左乐；黑；风笛；星熊；森蚺；老鲤；伊芙利特；闪灵；颉；安多恩；普瑞赛斯；可露希尔\n本次更新还重制了题目文本内容，补全了繁体中文/英语/日语等其它语言的所有文本内容。修复了部分已知BUG。'],
         ['更新#3 (2026-4-16)', '本次更新重构了角色匹配机制，并为每道题增加了可视化评测数值显示与总体的实时状态评测数据表，便于用户查看匹配细则，这两个内容将在至少完成一次评测后解锁。\n还重制了大部分角色的属性，避免出现有的角色永远匹配不到的情况，增加了可玩性。'],
         ['更新#2 (2026-4-15)', '本次更新增加了34位角色：灵知(INTJ)；白面鸮(INTP)；伊内斯(ENTJ)；忍冬(ENTJ)；林(ENTJ)；霍尔海雅(ENTP)；多萝西(INFJ)；赫德雷(INFJ)；琴柳(ENFJ)；薇薇安娜(INFP)；夕(INFP)；塑心(ENFP) ；莱伊(ISTJ)；赫拉格(ISTJ)；妮芙(ISFJ)；异客(ISFJ)；菲亚梅塔(ESTJ)；惊蛰(ESTJ)；信仰搅拌机(ESFJ) ；隐德来希(ESFJ) ；阿斯卡纶(ISTP)；德克萨斯(ISTP) ；水月(ISFP) ；史尔特尔(ESTP)；幽灵鲨(ESFP) ；Mon3tr(ESFP)；提丰(ISTP) ；重岳(ESFJ) ；锏（ISTP）；拉普兰德(ESTP) ；坎诺特(ENTP)；塔露拉(ENFJ) ；克丽斯腾(INTJ)；霜星(INFP)。\n将题目扩充到了30道。\n修复了一系列bug。'],
         ['更新#1 (2026-4-14)', '本次更新初始化了项目。\n增加了20道初始题目。\n增加了32位角色：阿米娅；特雷西娅；蕾缪安；临光；迷迭香；泥岩；缪尔塞斯；凯尔希; 佩佩; 乌尔比安; 莫斯提马; 逻各斯; 银灰; 凛冬；年；玛恩纳；塞雷娅；黍；艾雅法拉；陈；电弧；余；棘刺；弑君者；斯卡蒂；令；遥；能天使；望；死芒；W；海猫。'],
@@ -436,8 +437,8 @@ export const messages = {
       },
       language: { label: '語言' },
       announcement: {
-        title: '更新#3',
-        body: '重構了角色匹配機制，並為每道題增加可視化評測數值顯示與整體即時狀態評測資料表，方便查看匹配細則。這兩項內容會在至少完成一次評測後解鎖。',
+        title: '更新#4',
+        body: '本次更新角色總數來到 100 啦，新增列表詳見專案說明－更新記錄。\n還重製了題目文本內容，補全了繁體中文／英語／日語等其它語言的所有文本內容。\n修復了部分已知 BUG。',
         closeAria: '關閉公告',
       },
       liveMetricsToggle: {
@@ -748,6 +749,7 @@ export const messages = {
       ],
       updateTitle: '版本更新紀錄',
       updateItems: [
+        ['更新#4 (2026-4-18)', '本次更新增加了34名角色，角色總數來到100。\n增加角色列表：古米；真理；早露；烈夏；絮雨；伺夜；斥罪；號角；歌蕾蒂婭；阿；華法琳；星極；帕拉斯；澄閃；傀影；羽毛筆；初雪；煌；桃金娘；艾麗妮；山；送葬人；左樂；黑；風笛；星熊；森蚺；老鯉；伊芙利特；閃靈；頡；安多恩；普瑞賽斯；可露希爾\n本次更新還重製了題目文本內容，補全了繁體中文/英語/日語等其它語言的所有文本內容。修復了部分已知BUG。'],
         ['更新#3 (2026-4-16)', '本次更新重構了角色匹配機制，並為每道題增加了視覺化評測數值顯示與總體的即時狀態評測數據表，便於用戶查看匹配細則，這兩個內容將在至少完成一次評測後解鎖。\n還重製了大部分角色的屬性，避免出現有的角色永遠匹配不到的情況，增加了可玩性。'],
         ['更新#2 (2026-4-15)', '本次更新增加了34位角色：靈知(INTJ)；白面鴞(INTP)；伊內絲(ENTJ)；忍冬(ENTJ)；林(ENTJ)；霍爾海雅(ENTP)；多蘿西(INFJ)；赫德雷(INFJ)；琴柳(ENFJ)；薇薇安娜(INFP)；夕(INFP)；塑心(ENFP) ；萊伊(ISTJ)；赫拉格(ISTJ)；妮芙(ISFJ)；異客(ISFJ)；菲亞梅塔(ESTJ)；驚蟄(ESTJ)；信仰攪拌機(ESFJ) ；隱德來希(ESFJ) ；阿斯卡綸(ISTP)；德克薩斯(ISTP) ；水月(ISFP) ；史爾特爾(ESTP)；幽靈鯊(ESFP) ；Mon3tr(ESFP)；提豐(ISTP) ；重岳(ESFJ) ；鐧（ISTP）；拉普蘭德(ESTP) ；坎諾特(ENTP)；塔露拉(ENFJ) ；克麗斯騰(INTJ)；霜星(INFP)。\n將題目擴充到了30道。\n修復了一系列bug。'],
         ['更新#1 (2026-4-14)', '本次更新初始化了專案。\n增加了20道初始題目。\n增加了32位角色：阿米婭；特蕾西婭；蕾繆安；臨光；迷迭香；泥岩；繆爾塞斯；凱爾希; 佩佩; 烏爾比安; 莫斯提馬; 邏各斯; 銀灰; 凜冬；年；瑪恩納；塞雷婭；黍；艾雅法拉；陳；電弧；餘；棘刺；弒君者；斯卡蒂；令；遙；能天使；望；死芒；W；海貓。'],
@@ -804,8 +806,8 @@ export const messages = {
       },
       language: { label: 'Language' },
       announcement: {
-        title: 'Update #3',
-        body: 'The character matching system has been rebuilt. Each question now includes visible scoring details, and the quiz page now has a live status panel for the overall evaluation. Both unlock after you complete at least one quiz.',
+        title: 'Update #4',
+        body: 'The roster now has 100 characters; see the full new list under About → Update Log.\nQuestion text has been rewritten, with Traditional Chinese, English, Japanese, and other locales completed.\nSeveral known bugs have been fixed.',
         closeAria: 'Close announcement',
       },
       liveMetricsToggle: {
@@ -1116,6 +1118,7 @@ export const messages = {
       ],
       updateTitle: 'Update Log',
       updateItems: [
+        ['Update #4 (2026-4-18)', 'Added 34 characters; the roster now has 100 characters.\nNew characters: Gummy; Istina; Rosa; Leto; Folin; Vigil; Penance; Horn; Gladiia; A; Warfarin; Astesia; Pallas; Goldenglow; Phantom; La Plume; Pramanix; Blaze; Myrtle; Irene; Mountain; Executor; Zuole; Schwarz; Bagpipe; Hoshiguma; Gavial the Invincible; Lee; Ifrit; Shining; Jie; Andoain; Priestess; Closure.\nRewrote question text and completed Traditional Chinese, English, Japanese, and other locales. Fixed several known bugs.'],
         ['Update #3 (2026-4-16)', 'Refactored the character matching mechanism, added visual evaluation value display for each question and an overall real-time status evaluation data table, making it easier for users to view matching details. These two features will be unlocked after completing at least one evaluation.\nAlso reworked the attributes of most characters to avoid situations where some characters can never be matched, increasing playability.'],
         ['Update #2 (2026-4-15)', 'Added 34 characters: Gnosis(INTJ); Ptilopsis(INTP); Ines(ENTJ); Puzzle(ENTJ); Lin(ENTJ); Ho\'olheyak(ENTP); Dorothy(INFJ); Hoederer(INFJ); Saileach(ENFJ); Viviana(INFP); Dusk(INFP); Arturia(ENFP); Ray(ISTJ); Hellagur(ISTJ); Nymph(ISFJ); Passenger(ISFJ); Fiammetta(ESTJ); Leizi(ESTJ); Faith Mixer(ESFJ); Indrech(ESFJ); Ascalon(ISTP); Texas(ISTP); Mizuki(ISFP); Surtr(ESTP); Specter(ESFP); Mon3tr(ESFP); Typhon(ISTP); Chongyue(ESFJ); Degenbrecher(ISTP); Lappland(ESTP); Cannot(ENTP); Talulah(ENFJ); Kristen(INTJ); FrostNova(INFP).\nExpanded questions to 30.\nFixed a series of bugs.'],
         ['Update #1 (2026-4-14)', 'Project initialized.\nAdded 20 initial questions.\nAdded 32 characters: Amiya; Theresa; Lemuen; Nearl; Rosmontis; Mudrock; Muelsyse; Kal\'tsit; Pepe; Ulpianus; Mostima; Logos; SilverAsh; Zima; Nian; Mlynar; Saria; Shu; Eyjafjalla; Ch\'en; Arc; Yu; Thorns; Crownslayer; Skadi; Ling; Yao; Exusiai; Wang; Shmang; W; Hypergryph.'],
@@ -1172,8 +1175,8 @@ export const messages = {
       },
       language: { label: '言語' },
       announcement: {
-        title: '更新#3',
-        body: 'キャラクターマッチング機構を再構築し、各設問のスコア詳細表示と全体のリアルタイム評価ステータス表を追加しました。どちらも一度テストを完了すると解放されます。',
+        title: '更新#4',
+        body: '今回の更新でキャラクター総数が 100 人になりました。追加リストはプロジェクト概要のアップデート履歴をご覧ください。\n設問テキストを刷新し、繁体字中国語・英語・日本語など各言語の文言を補完しました。\n既知の不具合を一部修正しました。',
         closeAria: 'お知らせを閉じる',
       },
       liveMetricsToggle: {
@@ -1484,6 +1487,7 @@ export const messages = {
       ],
       updateTitle: 'アップデート履歴',
       updateItems: [
+        ['更新#4 (2026-4-18)', '今回の更新でキャラクターを 34 人追加し、総数は 100 人になりました。\n追加キャラ：グミ、イスティーナ、ローザ、レト、フォリン、ヴィジル、ペナンス、ホーン、グラディア、エー、ワーファリン、アステシア、パラス、ゴールデングロー、ファントム、ラ・プルーム、プラマニクス、ブレイズ、マートル、アイリーン、マウンテン、エクゼキュター、サクガ、シュヴァルツ、バグパイプ、ホシグマ、ガヴィル・ジ・インヴィンシブル、リー、イフリータ、シャイニング、頡、アンドアイン、プリーステス、クロージャ。\n設問テキストを全面的に書き直し、繁体字中国語・英語・日本語など各言語の文言を補完しました。既知の不具合を一部修正しました。'],
         ['更新#3 (2026-4-16)', 'キャラマッチング機能をリファクタリングし、各質問の視覚的な評価値表示とリアルタイムの全体状態評価データ表を追加しました。これにより、マッチングの詳細を確認しやすくなります。これら2つの機能は、評価を少なくとも1回完了した後にアンロックされます。\nまた、永遠にマッチングしないキャラが出ないよう、ほとんどのキャラの属性を再調整し、プレイの幅を広げました。'],
         ['更新#2 (2026-4-15)', '今回の更新で 34 人のキャラクターを追加しました：ノーシス(INTJ)、フィリオプシス(INTP)、イネス(ENTJ)、パズル(ENTJ)、リン(ENTJ)、ホルハイヤ(ENTP)、ドロシー(INFJ)、ヘドリー(INFJ)、サイラッハ(ENFJ)、ヴィヴィアナ(INFP)、シー(INFP)、アルトゥリア(ENFP)、レイ(ISTJ)、ヘラグ(ISTJ)、ニンフ(ISFJ)、パッセンジャー(ISFJ)、フィアメッタ(ESTJ)、レイズ(ESTJ)、信仰ミキサー(ESFJ)、インドレク(ESFJ)、アスカロン(ISTP)、テキサス(ISTP)、ミヅキ(ISFP)、スルト(ESTP)、スペクター(ESFP)、Mon3tr(ESFP)、ティフォン(ISTP)、チョンユエ(ESFJ)、デーゲンブレヒャー(ISTP)、ラップランド(ESTP)、カノット(ENTP)、タルラ(ENFJ)、クリステン(INTJ)、フロストノヴァ(INFP)。\n問題を 30 問に拡充しました。\n一連のバグを修正しました。'],
         ['更新#1 (2026-4-14)', '今回の更新でプロジェクトを初期化しました。\n初期問題を 20 問追加しました。\n32 人のキャラクターを追加しました：アーミヤ、テレジア、レミュアン、ニアール、ロスモンティス、マドロック、ミュルジス、ケルシー、ペペ、ウルピアヌス、モスティマ、ロゴス、シルバーアッシュ、ズィマー、ニェン、ムリナール、サリア、シュウ、エイヤフィヤトラ、チェン、アーク、ユー、ソーンズ、クラウンスレイヤー、スカジ、リィン、ヤオ、エクシア、ワン、シュマン、W、ハイパーグリフ。'],

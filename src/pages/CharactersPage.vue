@@ -240,6 +240,7 @@ function buildCardStyle(character: CharacterMatch) {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  text-align: left;
 }
 
 .card-tags {
