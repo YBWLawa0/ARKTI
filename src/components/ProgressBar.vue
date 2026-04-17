@@ -1,11 +1,11 @@
 <template>
-  <section class="panel progress-panel" :aria-label="label">
+  <section class="panel progress-panel" :aria-label="displayLabel">
     <div class="progress-topline">
       <div>
-        <p class="eyebrow">{{ label }}</p>
-        <p class="progress-copy">第 {{ current }} / {{ total }} 题</p>
+        <p class="eyebrow">{{ displayLabel }}</p>
+        <p class="progress-copy">{{ t('quiz.progressCurrent', { current, total }) }}</p>
       </div>
-      <p class="muted">已作答 {{ answered }} 题</p>
+      <p class="muted">{{ t('quiz.progressAnswered', { answered }) }}</p>
     </div>
 
     <div class="progress-track" aria-hidden="true">
@@ -16,6 +16,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from '../i18n'
+
+const { t } = useI18n()
 
 const props = withDefaults(
   defineProps<{
@@ -25,9 +28,11 @@ const props = withDefaults(
     label?: string
   }>(),
   {
-    label: '测试进度',
+    label: undefined,
   },
 )
+
+const displayLabel = computed(() => props.label ?? t('quiz.progressLabel'))
 
 const percentage = computed(() => {
   if (props.total <= 0) return 0

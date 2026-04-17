@@ -73,7 +73,7 @@ const VECTOR_PERCENT_BASE = 0.3
 const QUESTION_VECTOR_PERCENT_DENOMINATOR = 3
 
 /**
- * 分项权重（合计 1.0）：MBTI 占最大头，其次原型，再次六维向量，专属题最后。
+ * Component weights total 1.0: MBTI first, then archetype, vector, and character-specific bonuses.
  */
 const MBTI_DIMENSION_WEIGHT = 0.125
 const MBTI_WEIGHT = MBTI_DIMENSION_WEIGHT * 4
@@ -81,51 +81,51 @@ const ARCHETYPE_WEIGHT = 0.22
 const VECTOR_WEIGHT = 0.18
 const CHARACTER_SPECIFIC_WEIGHT = 0.1
 
-/** 原型/向量分项向中性收缩，避免少数组合在随机答卷下长期碾压 */
+/** Blend archetype/vector scores toward neutral so a few combinations do not dominate random simulations. */
 const ARCHETYPE_BLEND_NEUTRAL = 0.25
 const ARCHETYPE_BLEND_RELATIVE = 0.75
 const VECTOR_BLEND_NEUTRAL = 0.25
 const VECTOR_BLEND_RAW = 0.75
 
-/** 对 MBTI 四维均值做幂次压缩，缩小「极贴合 vs 一般贴合」的差距（0~1 内） */
+/** Compress the four-dimension MBTI mean to reduce the gap between close and average matches. */
 export const MBTI_MEAN_POWER = 0.56
 
 const CLOSE_MATCH_THRESHOLD = 0.025
 
 const MBTI_DIMENSION_PAIRS: DimensionPair[] = ['E_I', 'S_N', 'T_F', 'J_P']
 
-// 16personalities 风格的维度标签配置
+// 16personalities-style dimension label config.
 export const TRAIT_CONFIG = {
   'E_I': {
     label: 'Energy',
     leftLabel: 'Extraverted',
     rightLabel: 'Introverted',
-    leftCN: '外放',
-    rightCN: '收束',
+    leftCN: 'Expressive',
+    rightCN: 'Reserved',
     color: '#9b59b6'
   },
   'S_N': {
     label: 'Mind',
     leftLabel: 'Observant',
     rightLabel: 'Intuitive',
-    leftCN: '实感',
-    rightCN: '直觉',
+    leftCN: 'Observant',
+    rightCN: 'Intuitive',
     color: '#3498db'
   },
   'T_F': {
     label: 'Nature',
     leftLabel: 'Thinking',
     rightLabel: 'Feeling',
-    leftCN: '理性',
-    rightCN: '共情',
+    leftCN: 'Thinking',
+    rightCN: 'Feeling',
     color: '#e74c3c'
   },
   'J_P': {
     label: 'Tactics',
     leftLabel: 'Judging',
     rightLabel: 'Prospecting',
-    leftCN: '判断',
-    rightCN: '展望',
+    leftCN: 'Judging',
+    rightCN: 'Prospecting',
     color: '#f39c12'
   }
 }
@@ -373,15 +373,15 @@ function pickMatchedArchetype(
     sortedByScore[0] ??
     resolveArchetypeForMbti(finalCode, archetypes) ?? {
       id: 'luminous-lead' as ArchetypeId,
-      name: '异格旅行者',
-      subtitle: '无法被定义的观测者',
-      oneLiner: '世界之外，唯有真实的自我。',
-      description: '游离于传统分类之外的特殊存在',
-      tags: ['神秘判定', '罕见'],
-      narrativeRole: '旁观者',
-      spotlight: '不可名状的直觉',
-      weakness: '常常难以被常人理解',
-      keywords: ['观测', '唯一', '脱轨'],
+      name: 'Unclassified Traveler',
+      subtitle: 'An observer who cannot be defined',
+      oneLiner: 'Beyond the world, only the real self remains.',
+      description: 'A special presence outside conventional categories.',
+      tags: ['special result', 'rare'],
+      narrativeRole: 'Observer',
+      spotlight: 'A nameless intuition',
+      weakness: 'Often hard for others to understand',
+      keywords: ['observe', 'unique', 'off-track'],
       accent: '#aaaaaa',
       vector: { expression: 0, temperature: 0, judgement: 0, order: 0, agency: 0, aura: 0 }
     }
@@ -457,7 +457,8 @@ function rankCharactersByProfile({
 }
 
 /**
- * 单维 MBTI 匹配分（0~1）：与 matchCode 对应字母一致取 percentage，否则取 100 - percentage，再除以 100。
+ * Single MBTI dimension match score (0-1): use percentage when the dominant letter matches,
+ * otherwise use 100 - percentage, then divide by 100.
  */
 function scoreMbtiDimension(
   pair: DimensionPair,
@@ -469,8 +470,8 @@ function scoreMbtiDimension(
 }
 
 /**
- * 仅使用 `matchCode`：四维各 MBTI_DIMENSION_WEIGHT，加总为 MBTI_WEIGHT。
- * `mean` 为四维均值（0~1），用于排序 tie-break。
+ * Uses only `matchCode`: each of the four dimensions contributes MBTI_DIMENSION_WEIGHT.
+ * `mean` is the four-dimension average (0-1), used as a sorting tie-break.
  */
 function scoreMbtiMatchCode(matchCode: string, scores: Record<DimensionPair, DimensionScore>) {
   if (!MBTI_PATTERN.test(matchCode.toUpperCase())) {
@@ -494,9 +495,9 @@ function scoreMbtiMatchCode(matchCode: string, scores: Record<DimensionPair, Dim
 }
 
 /**
- * 原型匹配分项（0~1）：按累计分全局排名，第 1/2/3 名分别占满 25% 权重中的 12%/8%/5%（即返回 12/25、8/25、5/25），其余为 0。
- * 同分按 archetypeId 字典序打破平局。
- * 仅用于「答题页原型条」等展示，与最终角色排序使用的 `scoreArchetypeRelative` 分离。
+ * Archetype display score (0-1): rank global raw totals, then assign the top three
+ * 12/25, 8/25, and 5/25 respectively. Ties are resolved by archetypeId.
+ * This is only for UI displays such as the quiz page archetype bars.
  */
 export function scoreArchetypeByRank(archetypeId: ArchetypeId, archetypeRaw: ArchetypeAccumulator) {
   const sorted = (Object.keys(archetypeRaw) as ArchetypeId[]).sort((a, b) => {
@@ -512,8 +513,8 @@ export function scoreArchetypeByRank(archetypeId: ArchetypeId, archetypeRaw: Arc
 }
 
 /**
- * 原型分项（0~1）：对本次答卷各原型 `archetypeRaw` 做 min-max 归一化。
- * 使后五名原型仍获得非零分，减轻随机模拟下少数原型垄断冠军的问题。
+ * Archetype contribution score (0-1): min-max normalize this answer sheet's archetypeRaw.
+ * Lower-ranked archetypes still get a non-zero value to reduce random-simulation monopolies.
  */
 export function scoreArchetypeRelative(archetypeId: ArchetypeId, archetypeRaw: ArchetypeAccumulator) {
   const ids = Object.keys(archetypeRaw) as ArchetypeId[]

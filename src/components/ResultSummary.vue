@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from '../i18n'
-import { getLocalizedCharacterName, getLocalizedCharacterSeries } from '../i18n/characters'
+import { getLocalizedCharacterName, getLocalizedCharacterNote, getLocalizedCharacterSeries, getLocalizedCharacterTags } from '../i18n/characters'
 import type { QuizResult } from '../types/quiz'
 import { getRoleForType, TRAIT_CONFIG } from '../utils/quizEngine'
 
@@ -16,26 +16,26 @@ const currentSlide = ref(0)
 const slides = computed(() => [
   {
     id: 'personality',
-    title: '人格原型',
-    subtitle: `${props.result.archetype.name} (${props.result.mbtiCode})`,
-    description: props.result.archetype.description,
-    learnMoreText: '继续测试',
+    title: t('resultSummary.personalityTitle'),
+    subtitle: `${t('archetypes.' + props.result.archetype.id + '.name', undefined, props.result.archetype.name)} (${props.result.mbtiCode})`,
+    description: t('archetypes.' + props.result.archetype.id + '.description', undefined, props.result.archetype.description),
+    learnMoreText: t('resultSummary.continueTest'),
     to: '/quiz'
   },
   {
     id: 'role',
-    title: '人格分组',
+    title: t('resultSummary.groupTitle'),
     subtitle: getRoleForType(props.result.mbtiCode).name,
     description: getRoleForType(props.result.mbtiCode).description,
-    learnMoreText: '查看结果页',
+    learnMoreText: t('resultSummary.viewResult'),
     to: '/result'
   },
   {
     id: 'matches',
-    title: '角色映射',
-    subtitle: `当前命中 ${props.result.characterMatches.length} 位角色`,
-    description: '当前版本会输出唯一命中角色，并围绕该角色展开结果页展示与分享内容。',
-    learnMoreText: '查看项目说明',
+    title: t('resultSummary.mappingTitle'),
+    subtitle: t('resultSummary.matchCount', { count: props.result.characterMatches.length }),
+    description: t('resultSummary.mappingDescription'),
+    learnMoreText: t('resultSummary.viewAbout'),
     to: '/about'
   }
 ])
@@ -211,10 +211,10 @@ const traits = computed(() => {
               <p class="character-series">{{ getLocalizedCharacterSeries(character, locale) }}</p>
             </div>
             <div class="character-tags">
-              <span v-for="(tag, idx) in character.tags" :key="tag" class="character-tag">{{ t('characters.' + character.id + '.tags.' + idx, undefined, tag) }}</span>
+              <span v-for="tag in getLocalizedCharacterTags(character, locale)" :key="tag" class="character-tag">{{ tag }}</span>
             </div>
           </div>
-          <p class="character-note">{{ t('characters.' + character.id + '.note', undefined, character.note) }}</p>
+          <p class="character-note">{{ getLocalizedCharacterNote(character, locale) }}</p>
         </article>
       </div>
 

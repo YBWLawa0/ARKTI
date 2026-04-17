@@ -8,7 +8,7 @@ import { useShare } from '../composables/useShare'
 import { useQuiz } from '../composables/useQuiz'
 import characterVisualsData from '../data/characterVisuals.json'
 import { useI18n } from '../i18n'
-import { getLocalizedCharacterName } from '../i18n/characters'
+import { getLocalizedCharacterName, getLocalizedCharacterNote, getLocalizedCharacterTags } from '../i18n/characters'
 import { resolvePublicAsset } from '../utils/characterVisuals'
 import { normalizeMbtiCode } from '../utils/quizEngine'
 
@@ -25,7 +25,9 @@ const resultAdSlot = String(import.meta.env.VITE_ADSENSE_SLOT_RESULT ?? '').trim
 const heroBgOffsetX = ref(0)
 const heroBgOffsetY = ref(0)
 const isMobile = ref(false)
+const isHeroMascotTransparencySupported = ref(false)
 let mobileMediaQuery: MediaQueryList | null = null
+let mascotCheckToken = 0
 
 let heroTargetX = 0
 let heroTargetY = 0
@@ -196,6 +198,7 @@ const heroCornerMascotVideo = computed(() => {
 
   return resolvePublicAsset(characterVisuals[characterId]?.smallCharacterVideo)
 })
+const shouldShowHeroCornerMascot = computed(() => Boolean(heroCornerMascotVideo.value && isHeroMascotTransparencySupported.value))
 const resultHeroImageLayerStyle = computed(() => {
   const backgroundImage = primaryCharacter.value?.backgroundImage
   if (!backgroundImage) {
@@ -258,31 +261,31 @@ onBeforeUnmount(() => {
 type TraitDimension = 'E_I' | 'S_N' | 'T_F' | 'J_P'
 type VectorAxis = 'expression' | 'temperature' | 'judgement' | 'order' | 'agency' | 'aura'
 
-const ARCHETYPE_LABELS: Record<string, string> = {
-  'luminous-lead': '引领者',
-  'icebound-observer': '观察者',
-  'oathbound-captain': '秩序引导者',
-  'trickster-orbit': '机变者',
-  'gentle-healer': '疗愈者',
-  'shadow-strategist': '策略者',
-  'chaos-spark': '破局者',
-  'moonlit-guardian': '守护者',
-}
+const archetypeLabels = computed<Record<string, string>>(() => ({
+  'luminous-lead': t('archetypes.luminous-lead.name'),
+  'icebound-observer': t('archetypes.icebound-observer.name'),
+  'oathbound-captain': t('archetypes.oathbound-captain.name'),
+  'trickster-orbit': t('archetypes.trickster-orbit.name'),
+  'gentle-healer': t('archetypes.gentle-healer.name'),
+  'shadow-strategist': t('archetypes.shadow-strategist.name'),
+  'chaos-spark': t('archetypes.chaos-spark.name'),
+  'moonlit-guardian': t('archetypes.moonlit-guardian.name'),
+}))
 
-const VECTOR_AXIS_LABELS: Record<VectorAxis, string> = {
-  expression: '表达度',
-  temperature: '情感温度',
-  judgement: '判断力',
-  order: '秩序性',
-  agency: '行动能动性',
-  aura: '气场',
-}
+const vectorAxisLabels = computed<Record<VectorAxis, string>>(() => ({
+  expression: t('quiz.vectorAxes.expression'),
+  temperature: t('quiz.vectorAxes.temperature'),
+  judgement: t('quiz.vectorAxes.judgement'),
+  order: t('quiz.vectorAxes.order'),
+  agency: t('quiz.vectorAxes.agency'),
+  aura: t('quiz.vectorAxes.aura'),
+}))
 
 const archetypeMeta = computed(() => {
   const archetypeId = result.value?.archetype.id ?? ''
   return {
     id: archetypeId,
-    label: ARCHETYPE_LABELS[archetypeId] ?? '未定义原型',
+    label: archetypeLabels.value[archetypeId] ?? t('result.undefinedArchetype'),
   }
 })
 
@@ -292,13 +295,13 @@ const vectorAxisRows = computed(() => {
     return [] as Array<{ axis: VectorAxis; label: string; value: number; width: number }>
   }
 
-  const axes = Object.keys(VECTOR_AXIS_LABELS) as VectorAxis[]
+  const axes = Object.keys(vectorAxisLabels.value) as VectorAxis[]
   const MAX_AXIS = 3
   return axes.map((axis) => {
     const value = vector[axis]
     return {
       axis,
-      label: VECTOR_AXIS_LABELS[axis],
+      label: vectorAxisLabels.value[axis],
       value,
       width: Math.min(100, Math.round((Math.abs(value) / MAX_AXIS) * 100)),
     }
@@ -332,6 +335,93 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
   if (!result.value) return ''
   return result.value.scores[traitId].dominant === leftCode ? leftLabel : rightLabel
 }
+
+function loadVideoFrame(videoSource: string) {
+  return new Promise<HTMLVideoElement>((resolve, reject) => {
+    const video = document.createElement('video')
+    video.muted = true
+    video.playsInline = true
+    video.preload = 'auto'
+    video.src = videoSource
+
+    const clear = () => {
+      video.onloadeddata = null
+      video.onerror = null
+      window.clearTimeout(timeoutId)
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      clear()
+      reject(new Error('webm transparent check timed out'))
+    }, 3500)
+
+    video.onloadeddata = () => {
+      clear()
+      resolve(video)
+    }
+
+    video.onerror = () => {
+      clear()
+      reject(new Error('failed to load webm for transparent check'))
+    }
+  })
+}
+
+async function detectVideoTransparencySupport(videoSource: string) {
+  try {
+    const video = await loadVideoFrame(videoSource)
+    const width = Math.max(1, Math.min(64, video.videoWidth || 1))
+    const height = Math.max(1, Math.min(64, video.videoHeight || 1))
+    const canvas = document.createElement('canvas')
+    canvas.width = width
+    canvas.height = height
+    const context = canvas.getContext('2d', { willReadFrequently: true })
+
+    if (!context) {
+      return false
+    }
+
+    context.drawImage(video, 0, 0, width, height)
+
+    const samplePoints = [
+      [0, 0],
+      [Math.max(0, width - 1), 0],
+      [0, Math.max(0, height - 1)],
+      [Math.max(0, width - 1), Math.max(0, height - 1)],
+      [Math.floor(width / 2), 0],
+      [Math.floor(width / 2), Math.max(0, height - 1)],
+      [0, Math.floor(height / 2)],
+      [Math.max(0, width - 1), Math.floor(height / 2)],
+    ] as const
+
+    return samplePoints.some(([x, y]) => {
+      const alpha = context.getImageData(x, y, 1, 1).data[3]
+      return alpha < 12
+    })
+  } catch {
+    return false
+  }
+}
+
+watch(
+  heroCornerMascotVideo,
+  async (videoSource) => {
+    const token = ++mascotCheckToken
+    isHeroMascotTransparencySupported.value = false
+
+    if (!videoSource) {
+      return
+    }
+
+    const isSupported = await detectVideoTransparencySupport(videoSource)
+    if (token !== mascotCheckToken) {
+      return
+    }
+
+    isHeroMascotTransparencySupported.value = isSupported
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
@@ -468,7 +558,7 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
         </div>
       </div>
 
-      <div v-if="heroCornerMascotVideo" class="hero-corner-mascot" aria-hidden="true">
+      <div v-if="shouldShowHeroCornerMascot" class="hero-corner-mascot" aria-hidden="true">
         <video
           class="hero-corner-mascot__video"
           :src="heroCornerMascotVideo"
@@ -491,7 +581,7 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
       <main class="result-main">
         <section class="intro-block" v-reveal>
           <p>{{ t('archetypes.' + result.archetype.id + '.description', undefined, result.archetype.description) }}</p>
-          <p>{{ primaryCharacter ? t('characters.' + primaryCharacter.id + '.note', undefined, primaryCharacter.note) : '' }}</p>
+          <p>{{ primaryCharacter ? getLocalizedCharacterNote(primaryCharacter, locale) : '' }}</p>
         </section>
 
         <section class="traits-section" id="traits-section" v-reveal>
@@ -549,11 +639,11 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
         <section v-if="primaryCharacter" class="match-breakdown-block" v-reveal>
           <h3>
             <AppIcon name="character" />
-            角色匹配构成
+            {{ t('result.matchBreakdownTitle') }}
           </h3>
           <div class="match-breakdown-grid">
             <article class="match-breakdown-card">
-              <p class="breakdown-title">原型匹配（25%）</p>
+              <p class="breakdown-title">{{ t('quiz.scoring.archetype') }}</p>
               <p class="archetype-id">{{ result.archetype.id }}</p>
               <p class="archetype-label">{{ archetypeMeta.label }}</p>
               <div
@@ -561,13 +651,13 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
                 class="archetype-duality"
               >
                 <template v-if="result.archetype.lightSide">
-                  <p class="archetype-duality-label">光面</p>
+                  <p class="archetype-duality-label">{{ t('result.archetypeLight') }}</p>
                   <p class="archetype-duality-text archetype-light">
                     {{ t('archetypes.' + result.archetype.id + '.lightSide', undefined, result.archetype.lightSide) }}
                   </p>
                 </template>
                 <template v-if="result.archetype.darkSide">
-                  <p class="archetype-duality-label">暗面</p>
+                  <p class="archetype-duality-label">{{ t('result.archetypeDark') }}</p>
                   <p class="archetype-duality-text archetype-dark">
                     {{ t('archetypes.' + result.archetype.id + '.darkSide', undefined, result.archetype.darkSide) }}
                   </p>
@@ -576,7 +666,7 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
             </article>
 
             <article class="match-breakdown-card">
-              <p class="breakdown-title">向量相似度（15%）</p>
+              <p class="breakdown-title">{{ t('quiz.scoring.vector') }}</p>
               <div class="vector-list">
                 <div v-for="axis in vectorAxisRows" :key="axis.axis" class="vector-row">
                   <div class="vector-row-head">
@@ -601,14 +691,14 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
           <article class="analysis-card good">
             <h3>
                 <AppIcon name="star" />
-                {{ t('result.spotlight', undefined, '亮点表现') }}
+                {{ t('result.spotlight') }}
               </h3>
             <p>{{ t('archetypes.' + result.archetype.id + '.spotlight', undefined, result.archetype.spotlight) }}</p>
           </article>
           <article class="analysis-card bad">
             <h3>
                 <AppIcon name="warning" />
-                {{ t('result.weakness', undefined, '短板分析') }}
+                {{ t('result.weakness') }}
               </h3>
             <p>{{ t('archetypes.' + result.archetype.id + '.weakness', undefined, result.archetype.weakness) }}</p>
           </article>
@@ -620,7 +710,7 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
             {{ t('result.tags') }}
           </h3>
           <div class="tags-wrap">
-            <span v-for="(tag, idx) in primaryCharacter.tags" :key="tag"># {{ t('characters.' + primaryCharacter.id + '.tags.' + idx, undefined, tag) }}</span>
+            <span v-for="tag in getLocalizedCharacterTags(primaryCharacter, locale)" :key="tag"># {{ tag }}</span>
           </div>
         </section>
 
@@ -664,9 +754,9 @@ function getDominantTraitLabel(traitId: TraitDimension, leftCode: string, leftLa
 
         <div class="sidebar-card relay-card">
           <p class="relay-credit">
-            本项目二创自
+            {{ t('result.relayCreditPrefix') }}
             <a href="https://acgti.tianxingleo.top" target="_blank" rel="noopener noreferrer">ACGTI</a>
-            ，欢迎大家访问
+            {{ t('result.relayCreditSuffix') }}
           </p>
           <p class="small-title">{{ t('result.relayTitle') }}</p>
           <p class="relay-copy">{{ t('result.relayCopy') }}</p>

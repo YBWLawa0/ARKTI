@@ -1,2 +1,2 @@
-/** 每次测验从题库中随机抽取的题目数量 */
+/** Number of questions randomly drawn from the bank for each quiz session. */
 export const QUIZ_SESSION_QUESTION_COUNT = 30

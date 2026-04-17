@@ -144,7 +144,7 @@ function setLiveMetricsPanelVisible(visible: boolean) {
   state.liveMetricsVisible = visible
 }
 
-/** 题干在题库 JSON / i18n 数组中的下标，用于 quiz.questions.{index} */
+/** Prompt index in the JSON question bank / i18n arrays, used by quiz.questions.{index}. */
 function questionMessageIndex(questionId: string) {
   return allQuestions.findIndex((q) => q.id === questionId)
 }

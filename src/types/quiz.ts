@@ -61,9 +61,9 @@ export interface Archetype {
   keywords: string[]
   accent: string
   vector: Record<DimensionId, number>
-  /** 光面（优势面向） */
+  /** Light side, or the strength-facing aspect. */
   lightSide?: string
-  /** 暗面：阴影面正文（内在阴影描述） */
+  /** Dark side, or the shadow-facing body copy. */
   darkSide?: string
 }
 
@@ -104,7 +104,7 @@ export interface DimensionScore {
 
 export interface QuizRecord {
   answers: number[]
-  /** 本次答卷对应的题目 id 顺序（与 answers 一一对应） */
+  /** Question id order for this answer sheet, aligned with answers. */
   questionIds?: string[]
   createdAt: string
   result: QuizResult
@@ -122,7 +122,7 @@ export interface QuizResult {
   featuredCharacter: CharacterMatch | null
 }
 
-// 16personalities 风格的额外类型
+// 16personalities-style extra types.
 export interface TraitBar {
   label: string
   leftLabel: string

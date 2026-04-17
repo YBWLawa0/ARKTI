@@ -1,14 +1,14 @@
 <template>
   <div class="quiz-page-16p">
     <Teleport to="body">
-      <div class="quiz-top-progress-bar" aria-label="答题进度条">
+      <div class="quiz-top-progress-bar" :aria-label="t('quiz.progressBarAria')">
         <div 
           v-for="(_, idx) in questions" 
           :key="idx" 
           class="progress-block" 
           :class="{ 'is-answered': state.answers[idx] !== undefined && isAnsweredValue(state.answers[idx]) }"
           @click="jumpToUnansweredQuestion(idx)"
-          :aria-label="`跳转到第 ${idx + 1} 题`"
+          :aria-label="t('quiz.jumpQuestionAria', { index: idx + 1 })"
         ></div>
       </div>
     </Teleport>
@@ -19,7 +19,7 @@
         <p>ARKTI</p>
       </section>
 
-      <section class="step-cards" aria-label="测试步骤">
+      <section class="step-cards" :aria-label="t('quiz.stepsAria')">
         <article v-for="(item, i) in tm<string[][]>('quiz.steps')" :key="i" class="step-card" :class="i === 0 ? 'step-teal' : i === 1 ? 'step-green' : 'step-purple'">
           <span class="step-pill">{{ item[0] }}</span>
           <h3>{{ item[1] }}</h3>
@@ -27,30 +27,30 @@
         </article>
       </section>
 
-      <section class="quiz-notice" aria-label="测试说明">
+      <section class="quiz-notice" :aria-label="t('quiz.noticeAria')">
         <p>{{ t('quiz.noticeA', { count: questions.length }) }}</p>
         <p>{{ t('quiz.noticeB') }}</p>
       </section>
 
-      <section v-if="latestResult" class="detail-toggle-bar" aria-label="题目属性详情开关">
+      <section v-if="latestResult" class="detail-toggle-bar" :aria-label="t('quiz.detailToggleAria')">
         <button
           class="detail-toggle-action detail-toggle-collapse"
           type="button"
           @click="collapseAllQuestionDetails"
         >
-          收起各题评测标准属性详情
+          {{ t('quiz.detailCollapseAll') }}
         </button>
         <button
           class="detail-toggle-action detail-toggle-expand"
           type="button"
           @click="expandAllQuestionDetails"
         >
-          开启各题评测标准属性详情
+          {{ t('quiz.detailExpandAll') }}
         </button>
       </section>
       <section v-else class="detail-toggle-bar detail-toggle-bar-placeholder">
         <div class="placeholder-box">
-          <p>完成一次测试之后可以查看题目评测属性详情</p>
+          <p>{{ t('quiz.detailPlaceholder') }}</p>
         </div>
       </section>
 
@@ -61,7 +61,7 @@
           :class="{ 'is-minimized': isLiveMetricsMinimized, 'is-positioned': !!liveMetricsPanelPosition }"
           :style="liveMetricsPanelStyle"
           ref="liveMetricsPanelRef"
-          aria-label="实时评测状态"
+          :aria-label="t('quiz.liveMetrics.aria')"
         >
           <div
             class="live-metrics-head"
@@ -69,12 +69,12 @@
             @mousedown="onLiveMetricsHeadMouseDown"
           >
             <div class="live-metrics-title-row">
-              <h3>实时评测状态</h3>
+              <h3>{{ t('quiz.liveMetrics.title') }}</h3>
               <div class="live-metrics-actions">
                 <button
                   type="button"
                   class="live-metrics-action-btn"
-                  :aria-label="isLiveMetricsMinimized ? '展开实时评测状态栏' : '缩小实时评测状态栏'"
+                  :aria-label="isLiveMetricsMinimized ? t('quiz.liveMetrics.expandAria') : t('quiz.liveMetrics.minimizeAria')"
                   @click="toggleLiveMetricsMinimized"
                 >
                   {{ isLiveMetricsMinimized ? '□' : '－' }}
@@ -82,24 +82,24 @@
                 <button
                   type="button"
                   class="live-metrics-close live-metrics-action-btn"
-                  aria-label="关闭实时评测状态栏"
+                  :aria-label="t('quiz.liveMetrics.closeAria')"
                   @click="toggleLiveMetricsPanel"
                 >
                   ×
                 </button>
               </div>
             </div>
-            <p>基于当前已作答题目动态计算</p>
+            <p>{{ t('quiz.liveMetrics.subtitle') }}</p>
           </div>
 
           <div class="live-metrics-scroll">
             <section v-if="!isLiveMetricsMinimized || currentMiniMetricsSection === 'mbti'" class="live-section">
-              <h4>MBTI 各项属性</h4>
+              <h4>{{ t('quiz.liveMetrics.sections.mbti') }}</h4>
               <div class="live-list">
                 <div v-for="item in liveMetrics.mbtiRows" :key="`mbti-${item.pair}`" class="live-trait-row">
                   <div class="live-row">
                     <span>{{ item.pair }}</span>
-                    <span>{{ item.dominant }} · {{ item.percentage }}%</span>
+                    <span>{{ t('quiz.liveMetrics.dominantPath', { code: item.dominant, percentage: item.percentage }) }}</span>
                   </div>
                   <div class="live-trait-track-wrap">
                     <div class="trait-track" :style="{ backgroundColor: getMbtiColor(item.pair) }">
@@ -122,7 +122,7 @@
             </section>
 
             <section v-if="!isLiveMetricsMinimized || currentMiniMetricsSection === 'archetype'" class="live-section">
-              <h4>原型数值</h4>
+              <h4>{{ t('quiz.liveMetrics.sections.archetype') }}</h4>
               <div class="live-list">
                 <div v-for="item in liveMetrics.archetypeRows" :key="`arch-${item.id}`" class="live-row">
                   <span>{{ item.label }}</span>
@@ -132,7 +132,7 @@
             </section>
 
             <section v-if="!isLiveMetricsMinimized || currentMiniMetricsSection === 'vector'" class="live-section">
-              <h4>向量维度数值</h4>
+              <h4>{{ t('quiz.liveMetrics.sections.vector') }}</h4>
               <div class="live-vector-list">
                 <div v-for="axis in liveMetrics.vectorRows" :key="`vector-${axis.axis}`" class="live-vector-row">
                   <div class="live-row">
@@ -152,18 +152,18 @@
             </section>
 
             <section v-if="!isLiveMetricsMinimized || currentMiniMetricsSection === 'character'" class="live-section">
-              <h4>角色特征匹配（10%分项）</h4>
+              <h4>{{ t('quiz.liveMetrics.sections.character') }}</h4>
               <div v-if="liveMetrics.characterRows.length" class="live-list">
                 <div v-for="item in liveMetrics.characterRows" :key="`char-${item.id}`" class="live-row">
                   <span>{{ item.name }}</span>
                   <span>{{ item.score }}%</span>
                 </div>
               </div>
-              <p v-else class="live-note">当前无角色特征匹配加分</p>
+              <p v-else class="live-note">{{ t('quiz.liveMetrics.noCharacterBonus') }}</p>
             </section>
 
             <section v-if="!isLiveMetricsMinimized || currentMiniMetricsSection === 'final'" class="live-section">
-              <h4>角色匹配度（综合）</h4>
+              <h4>{{ t('quiz.liveMetrics.sections.final') }}</h4>
               <div class="live-list">
                 <div v-for="item in liveMetrics.liveFinalTopRows" :key="`final-${item.id}`" class="live-row">
                   <span>{{ item.name }}</span>
@@ -172,11 +172,11 @@
               </div>
             </section>
           </div>
-          <div v-if="isLiveMetricsMinimized" class="live-metrics-mini-nav" aria-label="实时评测模块切换">
+          <div v-if="isLiveMetricsMinimized" class="live-metrics-mini-nav" :aria-label="t('quiz.liveMetrics.miniNavAria')">
             <button
               type="button"
               class="live-metrics-mini-arrow"
-              aria-label="查看上一个模块"
+              :aria-label="t('quiz.liveMetrics.prevAria')"
               @click="goPrevMiniMetricsSection"
             >
               ‹
@@ -188,7 +188,7 @@
                 type="button"
                 class="live-metrics-mini-dot"
                 :class="{ active: idx === miniMetricsSectionIndex }"
-                :aria-label="`切换到${item.label}`"
+                :aria-label="t('quiz.liveMetrics.switchToAria', { label: item.label })"
                 :aria-pressed="idx === miniMetricsSectionIndex"
                 @click="setMiniMetricsSectionIndex(idx)"
               ></button>
@@ -196,7 +196,7 @@
             <button
               type="button"
               class="live-metrics-mini-arrow"
-              aria-label="查看下一个模块"
+              :aria-label="t('quiz.liveMetrics.nextAria')"
               @click="goNextMiniMetricsSection"
             >
               ›
@@ -205,7 +205,7 @@
         </aside>
       </transition>
 
-      <section class="question-list" aria-label="测试题目">
+      <section class="question-list" :aria-label="t('quiz.questionListAria')">
         <article
           v-for="(question, idx) in questions"
           :key="question.id"
@@ -255,7 +255,7 @@
             <article class="scoring-card" @mousemove="onCardMouseMove" @mouseleave="onCardMouseLeave">
               <div class="card-header">
                 <span class="card-icon">✨</span>
-                <p class="scoring-title">MBTI 维度匹配（50%）</p>
+                <p class="scoring-title">{{ t('quiz.scoring.mbti') }}</p>
               </div>
               <p class="mbti-pair">
                 <span :class="{ 'mbti-dominant': getLiveMbtiDominant(question, idx) === question.dimension[0] }">{{ question.dimension[0] }}</span><span class="mbti-sep">_</span><span :class="{ 'mbti-dominant': getLiveMbtiDominant(question, idx) === question.dimension[2] }">{{ question.dimension[2] }}</span>
@@ -272,8 +272,8 @@
                   ></span>
                 </div>
                 <div class="trait-labels">
-                  <span :class="{ 'mbti-label-active': state.answers[idx] !== undefined && state.answers[idx]! > 0 }">同意倾向：{{ getMbtiDimensionHint(question).agree }}</span>
-                  <span :class="{ 'mbti-label-active': state.answers[idx] !== undefined && state.answers[idx]! < 0 }">不同意倾向：{{ getMbtiDimensionHint(question).disagree }}</span>
+                  <span :class="{ 'mbti-label-active': state.answers[idx] !== undefined && state.answers[idx]! > 0 }">{{ t('quiz.scoring.agreeTendency', { value: getMbtiDimensionHint(question).agree }) }}</span>
+                  <span :class="{ 'mbti-label-active': state.answers[idx] !== undefined && state.answers[idx]! < 0 }">{{ t('quiz.scoring.disagreeTendency', { value: getMbtiDimensionHint(question).disagree }) }}</span>
                 </div>
               </div>
             </article>
@@ -281,7 +281,7 @@
             <article class="scoring-card" @mousemove="onCardMouseMove" @mouseleave="onCardMouseLeave">
               <div class="card-header">
                 <span class="card-icon">✨</span>
-                <p class="scoring-title">原型匹配（25%）</p>
+                <p class="scoring-title">{{ t('quiz.scoring.archetype') }}</p>
               </div>
               <div class="score-list">
                 <div v-for="item in getQuestionArchetypeRows(question)" :key="`${question.id}-${item.archetypeId}`" class="score-row">
@@ -296,7 +296,7 @@
             <article class="scoring-card" @mousemove="onCardMouseMove" @mouseleave="onCardMouseLeave">
               <div class="card-header">
                 <span class="card-icon">✨</span>
-                <p class="scoring-title">向量相似度（15%）</p>
+                <p class="scoring-title">{{ t('quiz.scoring.vector') }}</p>
               </div>
               <div class="score-list">
                 <div v-for="axis in getQuestionVectorRows(question)" :key="`${question.id}-${axis.axis}`" class="vector-score-item">
@@ -321,15 +321,15 @@
             <article class="scoring-card" @mousemove="onCardMouseMove" @mouseleave="onCardMouseLeave">
               <div class="card-header">
                 <span class="card-icon">✨</span>
-                <p class="scoring-title">角色特征匹配（10%）</p>
+                <p class="scoring-title">{{ t('quiz.scoring.character') }}</p>
               </div>
               <div v-if="getQuestionAffinityRows(question.id).length" class="score-list">
                 <div v-for="(affinity, i) in getQuestionAffinityRows(question.id)" :key="`${question.id}-${affinity.characterName}-${i}`" class="score-row">
-                  <span>{{ affinity.characterName }} · {{ EXPECTED_LABELS[affinity.expected] }}</span>
-                  <span>权重 {{ affinity.weight }}</span>
+                  <span>{{ t('quiz.scoring.affinityExpected', { character: affinity.characterName, expected: EXPECTED_LABELS[affinity.expected] }) }}</span>
+                  <span>{{ t('quiz.scoring.weight', { value: affinity.weight }) }}</span>
                 </div>
               </div>
-              <p v-else class="feature-subtitle">当前题目暂无角色定向亲和配置</p>
+              <p v-else class="feature-subtitle">{{ t('quiz.scoring.noAffinity') }}</p>
             </article>
           </div>
 
@@ -338,10 +338,10 @@
               class="question-detail-toggle"
               type="button"
               :aria-expanded="isQuestionDetailVisible(question.id)"
-              :aria-label="`${isQuestionDetailVisible(question.id) ? '收起' : '展开'}本题评测标准属性详情`"
+              :aria-label="isQuestionDetailVisible(question.id) ? t('quiz.detailCollapseOneAria') : t('quiz.detailExpandOneAria')"
               @click="toggleQuestionDetail(question.id)"
             >
-              {{ isQuestionDetailVisible(question.id) ? '收起↑' : '展开↓' }}
+              {{ isQuestionDetailVisible(question.id) ? t('quiz.detailCollapseOne') : t('quiz.detailExpandOne') }}
             </button>
           </div>
         </article>
@@ -370,7 +370,7 @@
           <RouterLink to="/result">{{ t('app.nav.result') }}</RouterLink>
           <span>{{ t('quiz.footerLocal') }}</span>
         </div>
-        <p>© 2026 ARKTI Project</p>
+        <p>{{ t('app.footer.copyright', undefined, '© 2026 ARKTI Project') }}</p>
       </div>
     </footer>
   </div>
@@ -383,6 +383,7 @@ import { useRouter } from 'vue-router'
 
 import { useQuiz } from '../composables/useQuiz'
 import { useI18n } from '../i18n'
+import { getLocalizedCharacterName } from '../i18n/characters'
 import type { ArchetypeId, DimensionId, DimensionPair, Question, QuestionArchetypeWeightId } from '../types/quiz'
 import { MBTI_MEAN_POWER, scoreArchetypeRelative } from '../utils/quizEngine'
 
@@ -417,22 +418,22 @@ function bankIndexFor(question: { id: string }) {
   const i = questionMessageIndex(question.id)
   return i >= 0 ? i : 0
 }
-const { t, tm } = useI18n()
+const { locale, t, tm } = useI18n()
 
 const questionRefs = ref<HTMLElement[]>([])
 const pendingUnansweredIndex = ref<number | null>(null)
 const questionDetailVisibility = ref<Record<string, boolean>>({})
 const isLiveMetricsMinimized = ref(false)
-const MINI_METRICS_SECTIONS = [
-  { key: 'mbti', label: 'MBTI 各项属性' },
-  { key: 'archetype', label: '原型数值' },
-  { key: 'vector', label: '向量维度数值' },
-  { key: 'character', label: '角色特征匹配' },
-  { key: 'final', label: '角色匹配度' },
-] as const
+const MINI_METRICS_SECTIONS = computed(() => ([
+  { key: 'mbti', label: t('quiz.liveMetrics.sections.mbti') },
+  { key: 'archetype', label: t('quiz.liveMetrics.sections.archetype') },
+  { key: 'vector', label: t('quiz.liveMetrics.sections.vector') },
+  { key: 'character', label: t('quiz.liveMetrics.sections.characterShort') },
+  { key: 'final', label: t('quiz.liveMetrics.sections.finalShort') },
+] as const))
 const miniMetricsSectionIndex = ref(0)
 const currentMiniMetricsSection = computed(
-  () => MINI_METRICS_SECTIONS[miniMetricsSectionIndex.value]?.key ?? 'mbti',
+  () => MINI_METRICS_SECTIONS.value[miniMetricsSectionIndex.value]?.key ?? 'mbti',
 )
 const liveMetricsPanelRef = ref<HTMLElement | null>(null)
 const liveMetricsPanelPosition = ref<{ top: number; left: number } | null>(null)
@@ -466,15 +467,15 @@ function toggleLiveMetricsMinimized() {
 
 function goPrevMiniMetricsSection() {
   miniMetricsSectionIndex.value =
-    (miniMetricsSectionIndex.value - 1 + MINI_METRICS_SECTIONS.length) % MINI_METRICS_SECTIONS.length
+    (miniMetricsSectionIndex.value - 1 + MINI_METRICS_SECTIONS.value.length) % MINI_METRICS_SECTIONS.value.length
 }
 
 function goNextMiniMetricsSection() {
-  miniMetricsSectionIndex.value = (miniMetricsSectionIndex.value + 1) % MINI_METRICS_SECTIONS.length
+  miniMetricsSectionIndex.value = (miniMetricsSectionIndex.value + 1) % MINI_METRICS_SECTIONS.value.length
 }
 
 function setMiniMetricsSectionIndex(nextIndex: number) {
-  if (nextIndex < 0 || nextIndex >= MINI_METRICS_SECTIONS.length) return
+  if (nextIndex < 0 || nextIndex >= MINI_METRICS_SECTIONS.value.length) return
   miniMetricsSectionIndex.value = nextIndex
 }
 
@@ -675,27 +676,30 @@ const QUESTION_ROLE_BALANCE: Record<QuestionArchetypeWeightId, number> = {
   ruler: 1,
 }
 
-const ARCHETYPE_CN: Record<string, string> = {
-  'luminous-lead': '引领者',
-  'icebound-observer': '观察者',
-  'oathbound-captain': '秩序引导者',
-  'trickster-orbit': '机变者',
-  'gentle-healer': '疗愈者',
-  'shadow-strategist': '策略者',
-  'chaos-spark': '破局者',
-  'moonlit-guardian': '守护者',
-}
+const archetypeLabels = computed<Record<string, string>>(() => ({
+  'luminous-lead': t('archetypes.luminous-lead.name'),
+  'icebound-observer': t('archetypes.icebound-observer.name'),
+  'oathbound-captain': t('archetypes.oathbound-captain.name'),
+  'trickster-orbit': t('archetypes.trickster-orbit.name'),
+  'gentle-healer': t('archetypes.gentle-healer.name'),
+  'shadow-strategist': t('archetypes.shadow-strategist.name'),
+  'chaos-spark': t('archetypes.chaos-spark.name'),
+  'moonlit-guardian': t('archetypes.moonlit-guardian.name'),
+}))
 
-/** 与 quizEngine DIMENSION_LETTERS 一致：第一极为正向计分、第二极为负向计分 */
-const MBTI_POLE_LABELS: Record<DimensionPair, { positive: string; negative: string }> = {
-  E_I: { positive: '外向 (E)', negative: '内向 (I)' },
-  S_N: { positive: '实感 (S)', negative: '直觉 (N)' },
-  T_F: { positive: '理智 (T)', negative: '情感 (F)' },
-  J_P: { positive: '判断 (J)', negative: '感知 (P)' },
-}
+/** Keep this aligned with quizEngine DIMENSION_LETTERS: the first pole scores positive, the second scores negative. */
+const mbtiPoleLabels = computed<Record<DimensionPair, { positive: string; negative: string }>>(() => {
+  const labels = tm<Record<string, string[]>>('result.dimensions')
+  return {
+    E_I: { positive: `${labels.E_I[0]} (E)`, negative: `${labels.E_I[1]} (I)` },
+    S_N: { positive: `${labels.S_N[0]} (S)`, negative: `${labels.S_N[1]} (N)` },
+    T_F: { positive: `${labels.T_F[0]} (T)`, negative: `${labels.T_F[1]} (F)` },
+    J_P: { positive: `${labels.J_P[0]} (J)`, negative: `${labels.J_P[1]} (P)` },
+  }
+})
 
 function getMbtiDimensionHint(question: Question) {
-  const { positive, negative } = MBTI_POLE_LABELS[question.dimension]
+  const { positive, negative } = mbtiPoleLabels.value[question.dimension]
   if (question.sign > 0) {
     return { agree: positive, disagree: negative }
   }
@@ -734,23 +738,23 @@ function getLiveMbtiDominant(question: Question, idx: number) {
   return isPositivePole ? question.dimension[0] : question.dimension[2]
 }
 
-const VECTOR_AXIS_LABELS: Record<DimensionId, string> = {
-  expression: '表达度',
-  temperature: '情感温度',
-  judgement: '判断力',
-  order: '秩序性',
-  agency: '行动能动性',
-  aura: '气场',
-}
+const vectorAxisLabels = computed<Record<DimensionId, string>>(() => ({
+  expression: t('quiz.vectorAxes.expression'),
+  temperature: t('quiz.vectorAxes.temperature'),
+  judgement: t('quiz.vectorAxes.judgement'),
+  order: t('quiz.vectorAxes.order'),
+  agency: t('quiz.vectorAxes.agency'),
+  aura: t('quiz.vectorAxes.aura'),
+}))
 
 const VECTOR_AXES: DimensionId[] = ['expression', 'temperature', 'judgement', 'order', 'agency', 'aura']
 const VECTOR_AXIS_BASE_MAX = 0.3
-const EXPECTED_LABELS = {
-  agree: '期望同意',
-  disagree: '期望不同意',
-  neutral: '期望中立',
-} as const
-/** 与 quizEngine 权重一致 */
+const EXPECTED_LABELS = computed(() => ({
+  agree: t('quiz.expected.agree'),
+  disagree: t('quiz.expected.disagree'),
+  neutral: t('quiz.expected.neutral'),
+}) as const)
+/** Keep these weights aligned with quizEngine. */
 const LIVE_MBTI_DIMENSION_WEIGHT = 0.125
 const LIVE_MBTI_WEIGHT = LIVE_MBTI_DIMENSION_WEIGHT * 4
 const LIVE_ARCHETYPE_WEIGHT = 0.22
@@ -804,7 +808,7 @@ function getQuestionArchetypeRows(question: Question) {
       const archetypeId = ROLE_TO_ARCHETYPE[role]
       return {
         archetypeId,
-        name: ARCHETYPE_CN[archetypeId] ?? archetypeId,
+        name: archetypeLabels.value[archetypeId] ?? archetypeId,
         value: normalized[role],
       }
     })
@@ -830,7 +834,7 @@ function getQuestionVectorRows(question: Question) {
   return VECTOR_AXES
     .map((axis) => ({
       axis,
-      label: VECTOR_AXIS_LABELS[axis],
+      label: vectorAxisLabels.value[axis],
       value: raw[axis],
       percent: Math.round((Math.abs(raw[axis]) / maxAbs) * 100),
       progressPercent: Math.round(((raw[axis] + 3) / 6) * 100),
@@ -844,7 +848,7 @@ function getQuestionAffinityRows(questionId: string) {
       (character.signature?.questionAffinity ?? [])
         .filter((item) => item.questionId === questionId)
         .map((item) => ({
-          characterName: character.name,
+          characterName: getLocalizedCharacterName(character, locale.value),
           expected: item.expected,
           weight: item.weight ?? 1,
         })),
@@ -965,14 +969,14 @@ const liveMetrics = computed(() => {
   })
   const archetypeRows = archetypeRankOrder.map((id) => ({
     id,
-    label: ARCHETYPE_CN[id] ?? id,
+    label: archetypeLabels.value[id] ?? id,
     score: Math.round(scoreArchetypeRelative(id, archetypeRaw) * 100),
   }))
 
   const maxVectorAbs = Math.max(...Object.values(userVector).map((value) => Math.abs(value)), 1)
   const vectorRows = VECTOR_AXES.map((axis) => ({
     axis,
-    label: VECTOR_AXIS_LABELS[axis],
+    label: vectorAxisLabels.value[axis],
     value: Number(userVector[axis].toFixed(2)),
     width: Math.round((Math.abs(userVector[axis]) / maxVectorAbs) * 100),
   }))
@@ -1001,7 +1005,7 @@ const liveMetrics = computed(() => {
       })
       const affinityScore = weightTotal ? weightedScore / weightTotal : 0
       const specificScore = axisScore * 0.45 + affinityScore * 0.55
-      return { id: character.id, name: character.name, score: Math.round(specificScore * 100) }
+      return { id: character.id, name: getLocalizedCharacterName(character, locale.value), score: Math.round(specificScore * 100) }
     })
     .filter((item): item is { id: string; name: string; score: number } => item !== null)
     .sort((left, right) => right.score - left.score)
@@ -1063,7 +1067,7 @@ const liveMetrics = computed(() => {
 
       return {
         id: character.id,
-        name: character.name,
+        name: getLocalizedCharacterName(character, locale.value),
         score: Math.max(0, Math.min(99, Math.round(total * 100))),
       }
     })

@@ -1,20 +1,24 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
 
+import { useI18n } from '../i18n'
 import { ensureAdsenseScript, getAdsenseClient, requestAdsenseSlot } from '../utils/adsense'
+
+const { t } = useI18n()
 
 const props = withDefaults(defineProps<{
   slot: string
   label?: string
   format?: 'auto' | 'fluid' | 'rectangle' | 'horizontal' | 'vertical'
 }>(), {
-  label: '广告',
+  label: undefined,
   format: 'auto',
 })
 
 const adsenseClient = getAdsenseClient()
 const trimmedSlot = computed(() => props.slot.trim())
 const isEnabled = computed(() => adsenseClient.length > 0 && trimmedSlot.value.length > 0)
+const displayLabel = computed(() => props.label ?? t('app.common.advertisement'))
 
 onMounted(() => {
   if (!isEnabled.value) {
@@ -27,9 +31,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <section v-if="isEnabled" class="adsense-block" aria-label="广告位">
+  <section v-if="isEnabled" class="adsense-block" :aria-label="t('app.common.adSlot')">
     <div class="adsense-head">
-      <span>{{ label }}</span>
+      <span>{{ displayLabel }}</span>
     </div>
     <ins
       class="adsbygoogle adsense-slot"

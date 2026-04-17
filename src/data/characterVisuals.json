@@ -591,5 +591,307 @@
     "backgroundShadow": false,
     "backgroundPositionX": 50,
     "backgroundPositionY": 40
+  },
+  "gummy": {
+    "image": "/images/characters/古米.png",
+    "accent": "#f0a33a",
+    "smallCharacterVideo": "/images/small_characters/古米-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_古米_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -40,
+    "backgroundPositionY": 32
+  },
+  "istina": {
+    "image": "/images/characters/真理.png",
+    "accent": "#7f8fc5",
+    "smallCharacterVideo": "/images/small_characters/真理-书味-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_真理_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -30,
+    "backgroundPositionY": 47
+  },
+  "rosa": {
+    "image": "/images/characters/早露.png",
+    "accent": "#b77fa4",
+    "smallCharacterVideo": "/images/small_characters/早露-杰作-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_早露_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -25,
+    "backgroundPositionY": 35
+  },
+  "leto": {
+    "image": "/images/characters/烈夏.png",
+    "accent": "#d85f43",
+    "smallCharacterVideo": "/images/small_characters/烈夏-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_烈夏_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 58
+  },
+  "whisperain": {
+    "image": "/images/characters/絮雨.png",
+    "accent": "#8fb9d8",
+    "smallCharacterVideo": "/images/small_characters/絮雨-幽邃隐修-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_絮雨_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 37
+  },
+  "vigil": {
+    "image": "/images/characters/伺夜.png",
+    "accent": "#6d5a4f",
+    "smallCharacterVideo": "/images/small_characters/伺夜-叙拉古的彼面-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_伺夜_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -70,
+    "backgroundPositionY": 45
+  },
+  "penance": {
+    "image": "/images/characters/斥罪.png",
+    "accent": "#9b6a52",
+    "smallCharacterVideo": "/images/small_characters/斥罪-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_斥罪_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -35,
+    "backgroundPositionY": 45
+  },
+  "horn": {
+    "image": "/images/characters/号角.png",
+    "accent": "#b5443b",
+    "smallCharacterVideo": "/images/small_characters/号角-化花-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_号角_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -10,
+    "backgroundPositionY": 42
+  },
+  "gladiia": {
+    "image": "/images/characters/歌蕾蒂娅.png",
+    "accent": "#6f8da5",
+    "smallCharacterVideo": "/images/small_characters/歌蕾蒂娅-返航-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_歌蕾蒂娅_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -25,
+    "backgroundPositionY": 33
+  },
+  "aak": {
+    "image": "/images/characters/阿.png",
+    "accent": "#6fb16a",
+    "smallCharacterVideo": "/images/small_characters/阿-百面郎中-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_阿_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 30,
+    "backgroundPositionY": 55
+  },
+  "warfarin": {
+    "image": "/images/characters/华法琳.png",
+    "accent": "#b64d72",
+    "smallCharacterVideo": "/images/small_characters/华法琳-盛宴-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_华法琳_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -30,
+    "backgroundPositionY": 46
+  },
+  "astesia": {
+    "image": "/images/characters/星极.png",
+    "accent": "#6c7fc6",
+    "smallCharacterVideo": "/images/small_characters/星极-殿堂上的游禽-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_星极_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 46
+  },
+  "pallas": {
+    "image": "/images/characters/帕拉斯.png",
+    "accent": "#c08a4f",
+    "smallCharacterVideo": "/images/small_characters/帕拉斯-山川的酿造-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_帕拉斯_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -5,
+    "backgroundPositionY": 14
+  },
+  "goldenglow": {
+    "image": "/images/characters/澄闪.png",
+    "accent": "#df8fc0",
+    "smallCharacterVideo": "/images/small_characters/澄闪-花房茶话会-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_澄闪_skin3.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -5,
+    "backgroundPositionY": 42
+  },
+  "phantom": {
+    "image": "/images/characters/傀影.png",
+    "accent": "#6d587b",
+    "smallCharacterVideo": "/images/small_characters/傀影-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_傀影_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX":25,
+    "backgroundPositionY": 45
+  },
+  "la-pluma": {
+    "image": "/images/characters/羽毛笔.png",
+    "accent": "#9bb36a",
+    "smallCharacterVideo": "/images/small_characters/羽毛笔-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_羽毛笔_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -70,
+    "backgroundPositionY": 56
+  },
+  "pramanix": {
+    "image": "/images/characters/初雪.png",
+    "accent": "#9ec7dd",
+    "smallCharacterVideo": "/images/small_characters/圣聆初雪-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_圣聆初雪_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -20,
+    "backgroundPositionY": 55
+  },
+  "blaze": {
+    "image": "/images/characters/煌.png",
+    "accent": "#d85a45",
+    "smallCharacterVideo": "/images/small_characters/烛煌-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_烛煌_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -18,
+    "backgroundPositionY": 48
+  },
+  "myrtle": {
+    "image": "/images/characters/桃金娘.png",
+    "accent": "#e6b94a",
+    "smallCharacterVideo": "/images/small_characters/桃金娘-淡金庆典-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_桃金娘_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -8,
+    "backgroundPositionY": 45
+  },
+  "irene": {
+    "image": "/images/characters/艾丽妮.png",
+    "accent": "#d39b4a",
+    "smallCharacterVideo": "/images/small_characters/艾丽妮-至高判决-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_艾丽妮_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -48,
+    "backgroundPositionY": 46
+  },
+  "mountain": {
+    "image": "/images/characters/山.png",
+    "accent": "#9c7a5a",
+    "backgroundImage": "/images/background/立绘_山_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 40,
+    "backgroundPositionY": 36
+  },
+  "executor": {
+    "image": "/images/characters/送葬人.png",
+    "accent": "#c8b07a",
+    "smallCharacterVideo": "/images/small_characters/圣约送葬人-众志归一-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_圣约送葬人_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -22,
+    "backgroundPositionY": 60
+  },
+  "zuo-le": {
+    "image": "/images/characters/左乐.png",
+    "accent": "#c35d43",
+    "smallCharacterVideo": "/images/small_characters/左乐-无息破局-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_左乐_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -18,
+    "backgroundPositionY": 54
+  },
+  "schwarz": {
+    "image": "/images/characters/黑.png",
+    "accent": "#6f5a4f",
+    "smallCharacterVideo": "/images/small_characters/黑-天际线-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_黑_skin2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -24,
+    "backgroundPositionY": 40
+  },
+  "bagpipe": {
+    "image": "/images/characters/风笛.png",
+    "accent": "#d84b42",
+    "smallCharacterVideo": "/images/small_characters/风笛-风笛声声-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_风笛_skin3.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -18,
+    "backgroundPositionY": 42
+  },
+  "hoshiguma": {
+    "image": "/images/characters/星熊.png",
+    "accent": "#3f8f7c",
+    "smallCharacterVideo": "/images/small_characters/斩业星熊-默认-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_斩业星熊_2.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -16,
+    "backgroundPositionY": 46
+  },
+  "eunectes": {
+    "image": "/images/characters/森蚺.png",
+    "accent": "#c88f36",
+    "smallCharacterVideo": "/images/small_characters/森蚺-熔锻铸匠-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_森蚺_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -38,
+    "backgroundPositionY": 46
+  },
+  "lee": {
+    "image": "/images/characters/老鲤.png",
+    "accent": "#d09a45",
+    "smallCharacterVideo": "/images/small_characters/老鲤-手到牌来-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_老鲤_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -22,
+    "backgroundPositionY": 42
+  },
+  "ifrit": {
+    "image": "/images/characters/伊芙利特.png",
+    "accent": "#e45b35",
+    "smallCharacterVideo": "/images/small_characters/伊芙利特-轻松旅途-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_伊芙利特_skin3.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -66,
+    "backgroundPositionY": 32
+  },
+  "shining": {
+    "image": "/images/characters/闪灵.png",
+    "accent": "#c8d2d8",
+    "smallCharacterVideo": "/images/small_characters/闪灵-静谧午夜 DN02-基建-Move-x1.webm",
+    "backgroundImage": "/images/background/立绘_闪灵_skin1.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": -24,
+    "backgroundPositionY": 52
+  },
+  "jie": {
+    "image": "/images/characters/颉.png",
+    "accent": "#8b6fbd",
+    "backgroundImage": "/images/background/颉_背景.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 10,
+    "backgroundPositionY": 42
+  },
+  "andoain": {
+    "image": "/images/characters/安多恩.png",
+    "accent": "#d7b15f",
+    "smallCharacterVideo": "/images/small_characters/“殉道者”，安多恩-默认-战斗-Move2-x1.webm",
+    "backgroundImage": "/images/background/安多恩_背景.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 40,
+    "backgroundPositionY": 38
+  },
+  "priestess": {
+    "image": "/images/characters/普瑞赛斯.png",
+    "accent": "#81b6d4",
+    "backgroundImage": "/images/background/普瑞赛斯_背景.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 10,
+    "backgroundPositionY": 46
+  },
+  "closure": {
+    "image": "/images/characters/可露希尔.png",
+    "accent": "#bd6ac9",
+    "backgroundImage": "/images/background/可露希尔_背景.png",
+    "backgroundShadow": true,
+    "backgroundPositionX": 10,
+    "backgroundPositionY": 46
   }
 }

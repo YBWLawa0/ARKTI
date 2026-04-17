@@ -1,7 +1,7 @@
 <template>
   <section class="question-card">
     <div class="question-content">
-      <h1 class="question-title">{{ question.text ?? question.prompt ?? '（题干缺失）' }}</h1>
+      <h1 class="question-title">{{ question.text ?? question.prompt ?? t('quiz.missingQuestion') }}</h1>
     </div>
 
     <div class="options-grid">
@@ -25,6 +25,9 @@
 
 <script setup lang="ts">
 import type { Question } from '../types/quiz'
+import { useI18n } from '../i18n'
+
+const { t } = useI18n()
 
 defineProps<{
   question: Question

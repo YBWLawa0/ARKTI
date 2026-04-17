@@ -15,12 +15,12 @@
     ],
     "note": "阿米娅在《明日方舟》里是罗德岛的精神中枢，年纪最轻却始终站在最前线背负理想与代价。你像阿米娅一样，从来不只是罗德岛吉祥物。她是那个永远站在最前面接住所有人情绪的人，也是把迷茫、痛苦和责任一并背起来的年轻领袖。她的共情不是温柔滤镜，而是近乎残酷的感知力——他人的悲伤、愤怒、动摇，她很多时候都是真切‘听见’、甚至‘承受’的。可即便这样，她还是会压住自己的疲惫，努力给同伴一个可以相信的方向。属于典型的那种：年纪最小，背的东西却最重；平时软软的，一到关键时刻比谁都清醒也比谁都能扛。",
     "vector": {
-      "expression": 1,
+      "expression": -1,
       "temperature": 1,
-      "judgement": 1,
+      "judgement": 2,
       "order": 2,
-      "agency": 1,
-      "aura": 1
+      "agency": 3,
+      "aura": 3
     },
     "signature": {
       "uniqueAxes": {
@@ -46,12 +46,12 @@
     ],
     "note": "特蕾西娅在《明日方舟》里代表萨卡兹少见的温柔理想，她用平静姿态凝聚了巴别塔时代的信念。你像特蕾西娅一样，最特别的地方，从来不是单纯的温柔，而是她真的能让人相信：萨卡兹也可以拥有不一样的未来。她不是靠恐惧维系权威的人，反而越是平静、越是温和，越能让人意识到她意志有多坚定。很多人会被她的柔和外表骗到，觉得她像理想本身；但真正在局里的人都明白，她从来不是会被时代裹挟着走的那类君主，而是少数能反过来给时代定方向的人。她的可怕，不在于锋芒外露，而在于她几乎不用提高声音，就能让无数人心甘情愿把命运押在她所相信的明天上",
     "vector": {
-      "expression": 1,
-      "temperature": 1,
-      "judgement": -1,
-      "order": -1,
-      "agency": 1,
-      "aura": 1
+      "expression": 3,
+      "temperature": 3,
+      "judgement": 1,
+      "order": 0,
+      "agency": 3,
+      "aura": 3
     },
     "signature": {
       "uniqueAxes": {
@@ -79,10 +79,10 @@
     "vector": {
       "expression": 1,
       "temperature": 1,
-      "judgement": -1,
+      "judgement": 2,
       "order": 1,
       "agency": 1,
-      "aura": -3
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -109,9 +109,9 @@
     "note": "临光在《明日方舟》里是卡西米尔骑士精神的火种，明知现实沉重也要把“正道”重新举起来。你像临光一样，最像卡西米尔那种已经快被现实磨没了、却偏偏还没熄灭的骑士精神本身。她当然知道这个世界不会因为一个人坚持正道就突然变好，但她还是会去做，因为如果连她都不做，那很多东西就真的一点都不剩了。她不是天真，而是清醒之后依然选择相信；不是不懂妥协的代价，而是知道总得有人把底线留住。",
     "vector": {
       "expression": 1,
-      "temperature": 1,
-      "judgement": -1,
-      "order": 1,
+      "temperature": 2,
+      "judgement": 1,
+      "order": 0,
       "agency": 1,
       "aura": 2
     },
@@ -142,9 +142,9 @@
       "expression": -3,
       "temperature": 3,
       "judgement": -1,
-      "order": -1,
+      "order": 1,
       "agency": 1,
-      "aura": 1
+      "aura": 0
     },
     "signature": {
       "uniqueAxes": {
@@ -169,12 +169,12 @@
     ],
     "note": "泥岩在《明日方舟》里从整合运动走到罗德岛，始终坚持先护住同伴再谈立场。你也是那种不爱高调表态、却会在关键时刻扛住第一波压力的人，温和但有底线，认定的原则很难被动摇。",
     "vector": {
-      "expression": -2,
+      "expression": -1,
       "temperature": 1,
       "judgement": -1,
       "order": -1,
-      "agency": 0,
-      "aura": 3
+      "agency": 1,
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
@@ -201,10 +201,10 @@
     "vector": {
       "expression": 2,
       "temperature": 1,
-      "judgement": -1,
+      "judgement": 1,
       "order": -3,
       "agency": 1,
-      "aura": 0
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -292,12 +292,12 @@
     ],
     "note": "乌尔比安在《明日方舟》里带着深海猎人的沉重改造痕迹，理性与非人化边界始终模糊。你不是单纯的理性，你是那种会把自己也纳入实验的理性。深海猎人的身份让你早就脱离了普通人的生存逻辑，你更关注「进化」和「适应」，而不是「活得像人」。属于那种「人还在，但已经不完全是人」的类型。",
     "vector": {
-      "expression": -2,
-      "temperature": -1,
+      "expression": -1,
+      "temperature": 1,
       "judgement": 2,
       "order": 1,
-      "agency": 0,
-      "aura": 0
+      "agency": 1,
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
@@ -565,10 +565,10 @@
     "vector": {
       "expression": 1,
       "temperature": 2,
-      "judgement": -1,
-      "order": 1,
-      "agency": 1,
-      "aura": -4
+      "judgement": 1,
+      "order": 0,
+      "agency": 3,
+      "aura": 1
     },
     "signature": {
       "uniqueAxes": {
@@ -807,7 +807,7 @@
       "temperature": 1,
       "judgement": -1,
       "order": -2,
-      "agency": 2,
+      "agency": 3,
       "aura": 2
     },
     "signature": {
@@ -1434,11 +1434,11 @@
     "note": "菲亚梅塔在《明日方舟》里把拉特兰式规则感执行到极致，触线时的清算强度非常直接。你不是单纯讲规则，你是把规则当信仰。平时看起来压得很稳，但一旦触线，你的反应会直接拉到极端。别人还在劝，你已经开始清算。属于那种“平时能忍，一旦动手就是结算阶段”的人。",
     "vector": {
       "expression": 2,
-      "temperature": -1,
+      "temperature": 1,
       "judgement": 2,
       "order": 1,
-      "agency": 1,
-      "aura": 1
+      "agency": 3,
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
@@ -1555,8 +1555,8 @@
     "vector": {
       "expression": -2,
       "temperature": -2,
-      "judgement": 2,
-      "order": -1,
+      "judgement": 3,
+      "order": 2,
       "agency": 1,
       "aura": 2
     },
@@ -1735,10 +1735,10 @@
     "vector": {
       "expression": -2,
       "temperature": -1,
-      "judgement": 2,
-      "order": -1,
+      "judgement": 3,
+      "order": 2,
       "agency": 1,
-      "aura": 1
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
@@ -1913,10 +1913,10 @@
     ],
     "note": "克丽斯腾在《明日方舟》里把视角抬到文明跃迁层级，几乎以“超越人类边界”为目标行进。你不是在解决问题，你是在定义问题的层级。你关注的不是个体、组织，而是文明本身。人类的限制在你眼里只是一个阶段。别人觉得你冷，是因为你已经站在他们理解范围之外。属于那种“已经不在同一维度思考”的人。",
     "vector": {
-      "expression": -1,
-      "temperature": -1,
-      "judgement": 2,
-      "order": 1,
+      "expression": 3,
+      "temperature": 2,
+      "judgement": 1,
+      "order": 0,
       "agency": 1,
       "aura": -2
     },
@@ -1945,10 +1945,10 @@
     "vector": {
       "expression": -1,
       "temperature": 2,
-      "judgement": -1,
+      "judgement": 2,
       "order": -1,
       "agency": 1,
-      "aura": 0
+      "aura": 2
     },
     "signature": {
       "uniqueAxes": {
@@ -1985,6 +1985,1156 @@
         "temperature": 2,
         "aura": 3
       }
+    }
+  },
+  {
+    "id": "gummy",
+    "name": "古米",
+    "series": "明日方舟",
+    "matchCode": "ESFJ",
+    "code": "GUMY",
+    "title": "",
+    "archetypeId": "gentle-healer",
+    "tags": [
+      "乌萨斯学生自治团",
+      "战地厨房",
+      "保护同伴",
+      "积极融入"
+    ],
+    "note": "古米是乌萨斯学生自治团里最努力把日常重新端上桌的人。她经历过切尔诺伯格的创伤，却仍然用早餐、厨房和重装盾牌维持团队的温度。你像古米一样，常常不是靠大道理安抚别人，而是把事情做成能被摸到、吃到、依靠到的样子。你会先照顾现场，确认每个人有没有跟上，再用朴素但稳定的行动把队伍往前推。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 2,
+        "temperature": 3,
+        "judgement": 1,
+        "order": 2,
+        "agency": 2,
+        "aura": 0
+      }
+    },
+    "vector": {
+      "expression": 2,
+      "temperature": 3,
+      "judgement": 1,
+      "order": 2,
+      "agency": 2,
+      "aura": 0
+    }
+  },
+  {
+    "id": "istina",
+    "name": "真理",
+    "series": "明日方舟",
+    "matchCode": "INTP",
+    "code": "ISTN",
+    "title": "",
+    "archetypeId": "icebound-observer",
+    "tags": [
+      "冷静理智",
+      "书本与理论",
+      "控制类源石技艺",
+      "学生团沟通节点"
+    ],
+    "note": "真理在乌萨斯学生自治团里承担的是安静但关键的理解者位置。她习惯从书籍、社会理论和人际观察里整理答案，也最早推动学生们形成互助结构。你像真理一样，不急着用情绪占据场面，而是先把线索、规则和动机拆开。别人看到的是沉默和书本，你真正擅长的是在混乱里找到一套可以运转的解释。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -1,
+        "temperature": -1,
+        "judgement": 3,
+        "order": 2,
+        "agency": 1,
+        "aura": 1
+      }
+    },
+    "vector": {
+      "expression": -1,
+      "temperature": -1,
+      "judgement": 3,
+      "order": 2,
+      "agency": 1,
+      "aura": 1
+    }
+  },
+  {
+    "id": "rosa",
+    "name": "早露",
+    "series": "明日方舟",
+    "matchCode": "ENFJ",
+    "code": "ROSA",
+    "title": "早子姐",
+    "archetypeId": "oathbound-captain",
+    "tags": [
+      "前学生会长",
+      "没落贵族",
+      "成熟克制",
+      "背负责任"
+    ],
+    "note": "早露曾是切尔诺伯格的学生会长，也是乌萨斯学生自治团里最早学会把责任放在自己肩上的人。她的温和不是轻飘飘的亲切，而是经历过身份崩塌、错误和愧疚之后，仍然选择认真面对新生活。你像早露一样，擅长读懂他人的需要，也会主动把散乱的人和事重新组织起来。只是你越能照顾全局，越容易把自己的重量藏得太深。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 0,
+        "temperature": 1,
+        "judgement": 2,
+        "order": 3,
+        "agency": 2,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": 0,
+      "temperature": 1,
+      "judgement": 2,
+      "order": 3,
+      "agency": 2,
+      "aura": 2
+    }
+  },
+  {
+    "id": "leto",
+    "name": "烈夏",
+    "series": "明日方舟",
+    "matchCode": "ESFP",
+    "code": "LETO",
+    "title": "",
+    "archetypeId": "luminous-lead",
+    "tags": [
+      "学生领军人物",
+      "乌拉冲锋",
+      "外勤行动派",
+      "把苦难讲成冒险"
+    ],
+    "note": "烈夏是那种会把废墟里的求生经历讲成冒险小说的人。她并非不懂痛苦，而是更愿意记住自己和伙伴们闯过去的结果。你像烈夏一样，天然会把空气点热，把迟疑的人拉进节奏里。你相信行动比反复咀嚼更有用，也擅长用豪爽、玩笑和冲锋姿态把沉重的东西变得可以继续承受。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 3,
+        "temperature": 2,
+        "judgement": 0,
+        "order": -1,
+        "agency": 3,
+        "aura": 1
+      }
+    },
+    "vector": {
+      "expression": 3,
+      "temperature": 2,
+      "judgement": 0,
+      "order": -1,
+      "agency": 3,
+      "aura": 1
+    }
+  },
+  {
+    "id": "whisperain",
+    "name": "絮雨",
+    "series": "明日方舟",
+    "matchCode": "INFP",
+    "code": "WSPR",
+    "title": "",
+    "archetypeId": "gentle-healer",
+    "tags": [
+      "伊比利亚巡游医师",
+      "温柔与孤独同行",
+      "脆弱体质",
+      "记忆与漂泊"
+    ],
+    "note": "絮雨很少在同一个地方停留，却总会在旅途中救下伤患。她的温柔带着明显的孤独感，像一场不会久留的细雨，安静地落下，又安静地离开。你像絮雨一样，对他人的伤口有很强的感知力，也会本能地靠近需要被照顾的人。你不一定善于占据关系中心，但你留下的善意往往比声音更久。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -1,
+        "temperature": 3,
+        "judgement": 1,
+        "order": 1,
+        "agency": 0,
+        "aura": 1
+      }
+    },
+    "vector": {
+      "expression": -1,
+      "temperature": 3,
+      "judgement": 1,
+      "order": 1,
+      "agency": 0,
+      "aura": 1
+    }
+  },
+  {
+    "id": "vigil",
+    "name": "伺夜",
+    "series": "明日方舟",
+    "matchCode": "ENTJ",
+    "code": "VIGL",
+    "title": "四爷",
+    "archetypeId": "shadow-strategist",
+    "tags": [
+      "新沃尔西尼",
+      "贝洛内家族末裔",
+      "狼群领袖",
+      "悲观但不放弃"
+    ],
+    "note": "伺夜曾是贝洛内家族最后的领袖，如今把自己放进新沃尔西尼的建设里。他对局势并不天真，甚至常常预设失败，但这不妨碍他继续押上判断、资源和行动。你像伺夜一样，习惯先看清棋盘的阴影，再决定如何把人聚到自己的战术点上。你的领导感不是热血口号，而是明知局面不干净，仍然选择把下一步铺出来。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 1,
+        "temperature": 0,
+        "judgement": 3,
+        "order": 2,
+        "agency": 3,
+        "aura": 3
+      }
+    },
+    "vector": {
+      "expression": 1,
+      "temperature": 0,
+      "judgement": 3,
+      "order": 2,
+      "agency": 3,
+      "aura": 3
+    }
+  },
+  {
+    "id": "penance",
+    "name": "斥罪",
+    "series": "明日方舟",
+    "matchCode": "ENTJ",
+    "code": "PNCE",
+    "title": "",
+    "archetypeId": "oathbound-captain",
+    "tags": [
+      "叙拉古法官",
+      "法律顾问",
+      "荆棘之路",
+      "不可让渡的正义"
+    ],
+    "note": "斥罪是叙拉古少见地仍试图守住法律正义的人。她知道制度会被家族、利益和黑夜反复污染，也知道自己曾经无法完全摆脱那些结构，但她没有因此放弃定义光明的权利。你像斥罪一样，行动里带着很强的原则感和裁断力。你能理解灰色地带，却不会让灰色吞掉底线；越是混乱，你越需要一记清楚的法槌声。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 0,
+        "temperature": 0,
+        "judgement": 3,
+        "order": 3,
+        "agency": 2,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": 0,
+      "temperature": 0,
+      "judgement": 3,
+      "order": 3,
+      "agency": 2,
+      "aura": 2
+    }
+  },
+  {
+    "id": "horn",
+    "name": "号角",
+    "series": "明日方舟",
+    "matchCode": "ENTJ",
+    "code": "HORN",
+    "title": "",
+    "archetypeId": "oathbound-captain",
+    "tags": [
+      "维多利亚军人",
+      "风暴突击队",
+      "前线指挥官",
+      "危机共御"
+    ],
+    "note": "号角毕业于维多利亚皇家近卫学校，是风暴突击队第二分队指挥官。她的存在感来自长期训练、战场纪律和在伦蒂尼姆危机中仍能承担指挥责任的稳定性。你像号角一样，不会只满足于判断对错，而是会把判断落成队形、火力和撤退路线。你在压力下反而更清醒，适合做那个把局面重新组织起来的人。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 1,
+        "temperature": 1,
+        "judgement": 3,
+        "order": 3,
+        "agency": 3,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": 1,
+      "temperature": 1,
+      "judgement": 3,
+      "order": 3,
+      "agency": 3,
+      "aura": 2
+    }
+  },
+  {
+    "id": "gladiia",
+    "name": "歌蕾蒂娅",
+    "series": "明日方舟",
+    "matchCode": "ENTJ",
+    "code": "GLAD",
+    "title": "二队长",
+    "archetypeId": "shadow-strategist",
+    "tags": [
+      "深海猎人",
+      "阿戈尔执政官",
+      "总战争设计师",
+      "高压指挥"
+    ],
+    "note": "歌蕾蒂娅是阿戈尔技术执政官、荣誉军团长，也是深海猎人的总战争设计师之一。她的强势不是单纯的压迫感，而是来自长期战争、国家职能和对海洋灾厄的清醒认知。你像歌蕾蒂娅一样，习惯把混乱先整理成战略问题，再用几乎不容置疑的执行力推进。别人感受到的是距离感和锋利，你真正关心的是局面能否被控制、队伍能否活着抵达下一步。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 0,
+        "temperature": -1,
+        "judgement": 3,
+        "order": 3,
+        "agency": 3,
+        "aura": 3
+      }
+    },
+    "vector": {
+      "expression": 0,
+      "temperature": -1,
+      "judgement": 3,
+      "order": 3,
+      "agency": 3,
+      "aura": 3
+    }
+  },
+  {
+    "id": "aak",
+    "name": "阿",
+    "series": "明日方舟",
+    "matchCode": "ENTP",
+    "code": "AAK",
+    "title": "内鬼",
+    "archetypeId": "trickster-orbit",
+    "tags": [
+      "龙门黑医生",
+      "鲤氏侦探事务所",
+      "偏门医学",
+      "危险支援"
+    ],
+    "note": "阿是龙门灰色地带出身的黑医生，医疗理论和临床经验都极强，但治疗风格足够让人想先签免责书。他嬉皮笑脸、无法无天，也总能从常规医学之外找到奇怪但有效的解法。你像阿一样，对规则的边界特别敏感：不是为了乖乖遵守，而是为了知道哪里可以撬开。你的聪明带着实验性，能救场，也会让所有人先心里一紧。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 3,
+        "temperature": 0,
+        "judgement": 2,
+        "order": -2,
+        "agency": 3,
+        "aura": 1
+      }
+    },
+    "vector": {
+      "expression": 3,
+      "temperature": 0,
+      "judgement": 2,
+      "order": -2,
+      "agency": 3,
+      "aura": 1
+    }
+  },
+  {
+    "id": "warfarin",
+    "name": "华法琳",
+    "series": "明日方舟",
+    "matchCode": "ENTP",
+    "code": "WARF",
+    "title": "",
+    "archetypeId": "trickster-orbit",
+    "tags": [
+      "罗德岛元老",
+      "血库管理人",
+      "血魔医师",
+      "研究优先"
+    ],
+    "note": "华法琳是罗德岛医疗体系的元老之一，也是血库的建造者与管理人。她确实以维护生命安全为己任，但医学研究在她心里永远有一点额外重量。你像华法琳一样，对人和问题都有强烈的好奇心，越是禁忌、复杂、难以解释的对象越能激起你的兴趣。你可以很可靠，也可以很危险，因为你总会想再多试一步。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 2,
+        "temperature": 0,
+        "judgement": 3,
+        "order": 0,
+        "agency": 2,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": 2,
+      "temperature": 0,
+      "judgement": 3,
+      "order": 0,
+      "agency": 2,
+      "aura": 2
+    }
+  },
+  {
+    "id": "astesia",
+    "name": "星极",
+    "series": "明日方舟",
+    "matchCode": "INFJ",
+    "code": "ASTR",
+    "title": "D32钢",
+    "archetypeId": "moonlit-guardian",
+    "tags": [
+      "星象神秘学",
+      "莱茵生命顾问",
+      "感染者",
+      "妹妹守护者"
+    ],
+    "note": "星极来自哥伦比亚神秘学传承，曾以文献学顾问身份派驻莱茵生命，也因妹妹的事故与共发性矿石病来到罗德岛。她相信星象和秩序，却也亲眼见过命运把周全规划砸碎。你像星极一样，外在温和稳定，内里却一直在寻找更深的因果和预兆。你会照顾他人的迷茫，也会把自己的不安藏进一套安静、克制、近乎仪式化的秩序里。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -1,
+        "temperature": 2,
+        "judgement": 2,
+        "order": 3,
+        "agency": 1,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": -1,
+      "temperature": 2,
+      "judgement": 2,
+      "order": 3,
+      "agency": 1,
+      "aura": 2
+    }
+  },
+  {
+    "id": "pallas",
+    "name": "帕拉斯",
+    "series": "明日方舟",
+    "matchCode": "ENFJ",
+    "code": "PALL",
+    "title": "牛牛",
+    "archetypeId": "luminous-lead",
+    "tags": [
+      "米诺斯祭司",
+      "英雄史诗",
+      "热情谈话",
+      "人民与故乡"
+    ],
+    "note": "帕拉斯曾是米诺斯祭司，也带领阿克罗蒂村民反抗侵扰、推动当地文化与旅游发展。她身上有一种把苦难写成史诗的热情，相信英雄来自人民，也终将回到人民之中。你像帕拉斯一样，擅长用语言、信念和仪式感点燃他人。你不是只想自己赢，你更想让周围的人相信：他们也可以成为故事里站起来的那一部分。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 3,
+        "temperature": 3,
+        "judgement": 1,
+        "order": 1,
+        "agency": 2,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": 3,
+      "temperature": 3,
+      "judgement": 1,
+      "order": 1,
+      "agency": 2,
+      "aura": 2
+    }
+  },
+  {
+    "id": "goldenglow",
+    "name": "澄闪",
+    "series": "明日方舟",
+    "matchCode": "INFP",
+    "code": "GDGL",
+    "title": "猪猪",
+    "archetypeId": "gentle-healer",
+    "tags": [
+      "罗德岛理发师",
+      "预备术师",
+      "静电失控",
+      "生活充满希望"
+    ],
+    "note": "澄闪原名苏茜，出身维多利亚贫寒家庭，感染后辗转来到罗德岛，平时在理发室工作，也开始系统学习控制自己的源石技艺。她的日常有很多不稳定的静电和小小的慌张，但核心始终是认真生活的希望。你像澄闪一样，敏感、柔软，也愿意慢慢把失控的部分学会握在手里。你不需要一开始就很强，你的力量来自不放弃变好的那股亮光。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 0,
+        "temperature": 3,
+        "judgement": 0,
+        "order": 1,
+        "agency": 1,
+        "aura": 0
+      }
+    },
+    "vector": {
+      "expression": 0,
+      "temperature": 3,
+      "judgement": 0,
+      "order": 1,
+      "agency": 1,
+      "aura": 0
+    }
+  },
+  {
+    "id": "phantom",
+    "name": "傀影",
+    "series": "明日方舟",
+    "matchCode": "INFP",
+    "code": "PHAN",
+    "title": "酒神",
+    "archetypeId": "moonlit-guardian",
+    "tags": [
+      "维多利亚刺客",
+      "黑夜与假面",
+      "Miss.Christine",
+      "沉默独行"
+    ],
+    "note": "傀影是独自行走于维多利亚及周边的刺客，过去履历难以查定，来到罗德岛时也像影子一样难以被捕捉。他沉默、危险、带着与声音和身份相关的创伤，身边还有优雅又高傲的Miss.Christine。你像傀影一样，不太愿意把自己完整暴露给外界。你可以在关键时刻精准切入，却常常把真正的自己留在面具之后，只允许少数人靠近那片夜色。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -2,
+        "temperature": 0,
+        "judgement": 2,
+        "order": 1,
+        "agency": 2,
+        "aura": 3
+      }
+    },
+    "vector": {
+      "expression": -2,
+      "temperature": 0,
+      "judgement": 2,
+      "order": 1,
+      "agency": 2,
+      "aura": 3
+    }
+  },
+  {
+    "id": "la-pluma",
+    "name": "羽毛笔",
+    "series": "明日方舟",
+    "matchCode": "INFP",
+    "code": "LPLM",
+    "title": "",
+    "archetypeId": "moonlit-guardian",
+    "tags": [
+      "玻利瓦尔出身",
+      "多索雷斯",
+      "绝对服从指挥",
+      "迷糊与专注反差"
+    ],
+    "note": "羽毛笔出身玻利瓦尔，后来随潘乔辗转至多索雷斯。日常中的她有些迷糊、轻飘飘，很少主动表达意愿；但一到战场，又会展现出惊人的集中力和对指挥的绝对服从。你像羽毛笔一样，表面柔和到像没有攻击性，其实内里有一条很安静的执行线。你未必总会说出想法，但当你认定一个指令或一个人，就会用非常稳定的方式完成它。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -1,
+        "temperature": 2,
+        "judgement": 1,
+        "order": 2,
+        "agency": 1,
+        "aura": 1
+      }
+    },
+    "vector": {
+      "expression": -1,
+      "temperature": 2,
+      "judgement": 1,
+      "order": 2,
+      "agency": 1,
+      "aura": 1
+    }
+  },
+  {
+    "id": "pramanix",
+    "name": "初雪",
+    "series": "明日方舟",
+    "matchCode": "INFP",
+    "code": "PRAM",
+    "title": "圣女",
+    "archetypeId": "gentle-healer",
+    "tags": [
+      "喀兰圣女",
+      "谢拉格宗教领袖",
+      "圣铃与风雪",
+      "被神圣身份困住"
+    ],
+    "note": "初雪本名恩雅·希瓦艾什，是谢拉格的喀兰圣女，也是被神圣称号和家族政治同时推到高处的人。她能借圣铃呼唤风雪，外表安静、疏离、近乎不可触碰，内里却一直保留着很柔软的个人愿望。你像初雪一样，未必喜欢站在所有人的视线中心，却常常因为身份、期待或责任被放到那个位置。你真正有力量的地方不是高声号召，而是在沉默里守住自己的感受和底线；越是被要求完美，越会把一点微弱但真实的自我藏得很深。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -2,
+        "temperature": 2,
+        "judgement": 1,
+        "order": 2,
+        "agency": 0,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": -2,
+      "temperature": 2,
+      "judgement": 1,
+      "order": 2,
+      "agency": 0,
+      "aura": 2
+    }
+  },
+  {
+    "id": "blaze",
+    "name": "煌",
+    "series": "明日方舟",
+    "matchCode": "ENFP",
+    "code": "BLZE",
+    "title": "煌猫猫",
+    "archetypeId": "chaos-spark",
+    "tags": [
+      "罗德岛精英干员",
+      "高热量行动派",
+      "正面突破",
+      "热情但专业"
+    ],
+    "note": "煌是罗德岛精英干员，感染者身份并没有削弱她的行动力，反而让她在机动作战、歼灭战和突袭作战里显得更像一团稳定燃烧的火。她说话直接、情绪外放、战斗风格也足够正面，但这并不等于粗糙；她的热情底下有完整的战术素养和对同伴的可靠保护。你像煌一样，适合在气氛沉下去时把现场重新点燃，也适合在问题拖不动时第一个冲出去开路。别人记住的是你的热度，真正撑住局面的却是你边冲边照顾全队的能力。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 3,
+        "temperature": 2,
+        "judgement": 1,
+        "order": -1,
+        "agency": 3,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": 3,
+      "temperature": 2,
+      "judgement": 1,
+      "order": -1,
+      "agency": 3,
+      "aura": 2
+    }
+  },
+  {
+    "id": "myrtle",
+    "name": "桃金娘",
+    "series": "明日方舟",
+    "matchCode": "ENFP",
+    "code": "MYRT",
+    "title": "小苹果",
+    "archetypeId": "luminous-lead",
+    "tags": [
+      "杜林大将军",
+      "执旗手",
+      "士气提振",
+      "小个子高感染力"
+    ],
+    "note": "桃金娘是杜林族少女，自称大将军，履历写得像玩笑，战场表现却一点也不含糊。她没有传统意义上的战斗经验，却能用旗帜、声音和孩子气的明亮感把队伍士气拉起来，还能在关键时刻提供治疗与支援。你像桃金娘一样，未必靠压迫感赢得位置，而是靠一种天然的感染力让大家愿意动起来。你看起来轻快、可爱、甚至有点闹，但当团队需要一个开局信号时，你往往就是那个最先把节奏举起来的人。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 3,
+        "temperature": 3,
+        "judgement": 0,
+        "order": -1,
+        "agency": 2,
+        "aura": 0
+      }
+    },
+    "vector": {
+      "expression": 3,
+      "temperature": 3,
+      "judgement": 0,
+      "order": -1,
+      "agency": 2,
+      "aura": 0
+    }
+  },
+  {
+    "id": "irene",
+    "name": "艾丽妮",
+    "series": "明日方舟",
+    "matchCode": "ISTJ",
+    "code": "IRNE",
+    "title": "一有动静，我就哇嘎",
+    "archetypeId": "icebound-observer",
+    "tags": [
+      "前伊比利亚审判官",
+      "达里奥的学生",
+      "提灯与利剑",
+      "守望海岸线"
+    ],
+    "note": "艾丽妮曾是伊比利亚审判官，是大审判官达里奥的学生，熟悉伊比利亚的历史、律法与海岸线阴影。她并不是麻木执行命令的人，而是在愚人号之后仍选择带着提灯继续向黑暗处走的人。你像艾丽妮一样，对规则、职责和现场异常有很强的敏感度，不会因为害怕复杂就放弃判断。你可能显得紧绷、认真、反应很快，但这份警觉不是胆小，而是把“有人必须看见危险”当成自己的工作。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -1,
+        "temperature": 0,
+        "judgement": 3,
+        "order": 3,
+        "agency": 2,
+        "aura": 1
+      }
+    },
+    "vector": {
+      "expression": -1,
+      "temperature": 0,
+      "judgement": 3,
+      "order": 3,
+      "agency": 2,
+      "aura": 1
+    }
+  },
+  {
+    "id": "mountain",
+    "name": "山",
+    "series": "明日方舟",
+    "matchCode": "ISTJ",
+    "code": "MNTN",
+    "title": "安东尼",
+    "archetypeId": "moonlit-guardian",
+    "tags": [
+      "哥伦比亚旧贵公子",
+      "狱中斗士",
+      "礼貌而压迫",
+      "不动如山"
+    ],
+    "note": "山本名安东尼，出身哥伦比亚富贵家庭，却因家族被陷害而入狱，并在监狱中被迫把体魄和意志磨成武器。离开监狱后，他加入罗德岛，待人礼貌克制，不以出身为傲，也不把伤痕当谈资。你像山一样，真正的强并不总是吼出来的，而是站在那里就让局面变得稳。你习惯先把姿态放端正，再用可靠的执行力解决问题；越是混乱，越能看出你那种不动声色的保护性。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -1,
+        "temperature": 1,
+        "judgement": 2,
+        "order": 3,
+        "agency": 2,
+        "aura": 3
+      }
+    },
+    "vector": {
+      "expression": -1,
+      "temperature": 1,
+      "judgement": 2,
+      "order": 3,
+      "agency": 2,
+      "aura": 3
+    }
+  },
+  {
+    "id": "executor",
+    "name": "送葬人",
+    "series": "明日方舟",
+    "matchCode": "ISTJ",
+    "code": "EXEC",
+    "title": "费德里科",
+    "archetypeId": "icebound-observer",
+    "tags": [
+      "拉特兰公证所执行者",
+      "圣徒费德里科",
+      "精算式执法",
+      "绝对任务完成"
+    ],
+    "note": "送葬人本名费德里科·吉亚洛，是拉特兰公证所法定专业执行者，后来由教宗亲自授予圣徒封号。他的世界由任务、条款、权益和执行步骤构成，情绪表达极低，却并不虚伪；他只是把真诚也处理得像一份可执行文件。你像送葬人一样，适合面对需要精确拆解和稳定完成的任务。别人可能觉得你太直、太不懂气氛，但在真正需要结果的时候，你的可靠性来自“说到哪一步就做到哪一步”的冷静秩序。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -2,
+        "temperature": -1,
+        "judgement": 3,
+        "order": 3,
+        "agency": 2,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": -2,
+      "temperature": -1,
+      "judgement": 3,
+      "order": 3,
+      "agency": 2,
+      "aura": 2
+    }
+  },
+  {
+    "id": "zuo-le",
+    "name": "左乐",
+    "series": "明日方舟",
+    "matchCode": "ISTJ",
+    "code": "ZUOL",
+    "title": "中！",
+    "archetypeId": "oathbound-captain",
+    "tags": [
+      "大炎司岁台",
+      "秉烛人",
+      "侦查追踪",
+      "认真到有点笨拙"
+    ],
+    "note": "左乐隶属大炎处理巨兽问题的秘密组织司岁台，任秉烛人之职，因监督代理人而暂驻罗德岛。他擅长侦查、追踪、轻功和古文解译，做事很认真，认真到有时会显得过分板正甚至笨拙。你像左乐一样，不喜欢把职责说得太花，但会把该查的、该守的、该追到底的事一件件落实。你身上有一种年轻的正派感：还没完全学会圆滑，却已经很清楚自己不能把同伴落在身后。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 0,
+        "temperature": 1,
+        "judgement": 3,
+        "order": 3,
+        "agency": 2,
+        "aura": 1
+      }
+    },
+    "vector": {
+      "expression": 0,
+      "temperature": 1,
+      "judgement": 3,
+      "order": 3,
+      "agency": 2,
+      "aura": 1
+    }
+  },
+  {
+    "id": "schwarz",
+    "name": "黑",
+    "series": "明日方舟",
+    "matchCode": "ISTJ",
+    "code": "SCHW",
+    "title": "惯兰高手",
+    "archetypeId": "shadow-strategist",
+    "tags": [
+      "前汐斯塔市长护卫",
+      "城市治安局局长",
+      "阴影里的狙击手",
+      "保护锡兰"
+    ],
+    "note": "黑曾是汐斯塔市长SP兼城市治安局局长，随锡兰一同加入罗德岛。她是感染者，也是经历过漫长厮杀的人，擅长用精准、安静、几乎不留余地的方式处理危险。你像黑一样，不太需要被看见，也不急着解释自己为什么站在阴影里。你的责任感更接近护卫而不是领袖：把日程记好，把风险排掉，把会见血的事情拦在自己这边。越是重要的人和事，你越会用冷静、克制和高精度行动去保护。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -2,
+        "temperature": 0,
+        "judgement": 3,
+        "order": 3,
+        "agency": 2,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": -2,
+      "temperature": 0,
+      "judgement": 3,
+      "order": 3,
+      "agency": 2,
+      "aura": 2
+    }
+  },
+  {
+    "id": "bagpipe",
+    "name": "风笛",
+    "series": "明日方舟",
+    "matchCode": "ESFJ",
+    "code": "BAGP",
+    "title": "",
+    "archetypeId": "oathbound-captain",
+    "tags": [
+      "维多利亚退役军人",
+      "乡下农场直球派",
+      "先锋冲锋手",
+      "热心可靠的同伴"
+    ],
+    "note": "风笛出身维多利亚，受过皇家近卫学校与军旅体系训练，却保留着非常朴素的农场气质。你像风笛一样，外表是开朗好相处的热心人，底层却有一套很硬的责任感和执行纪律。她不会把复杂心思绕成谜语，遇到事情更习惯先把队友拉起来、把路线踩出来，再用行动告诉大家不用慌。这样的 ESFJ 不是单纯会照顾人，而是能把照顾落实成可见的推进力：该冲锋时冲锋，该稳定气氛时稳定气氛，热烈但不空泛。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 1,
+        "temperature": 2,
+        "order": 3,
+        "agency": 3
+      }
+    },
+    "vector": {
+      "expression": 1,
+      "temperature": 2,
+      "judgement": 2,
+      "order": 3,
+      "agency": 3,
+      "aura": 1
+    }
+  },
+  {
+    "id": "hoshiguma",
+    "name": "星熊",
+    "series": "明日方舟",
+    "matchCode": "ESFJ",
+    "code": "HOSH",
+    "title": "鬼姐",
+    "archetypeId": "oathbound-captain",
+    "tags": [
+      "龙门近卫局",
+      "鬼族重装",
+      "稳场大盾",
+      "豪爽可靠的大姐"
+    ],
+    "note": "星熊是龙门近卫局特别督察组的中坚，过去与街头灰色地带有牵连，却把那份江湖经验沉淀成了守护城市和同伴的厚重感。你像星熊一样，给人的第一印象不是精致算计，而是“这人站在这里就很稳”。她豪爽、能喝、讲义气，也清楚什么时候该把盾举到最前面。ESFJ 放在她身上不是讨好型社交，而是一种成熟的大姐式责任：看得懂场面，接得住人情，也能在混乱里用身体和判断把秩序顶住。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 1,
+        "temperature": 2,
+        "order": 3,
+        "agency": 2,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": 1,
+      "temperature": 2,
+      "judgement": 2,
+      "order": 3,
+      "agency": 2,
+      "aura": 2
+    }
+  },
+  {
+    "id": "eunectes",
+    "name": "森蚺",
+    "series": "明日方舟",
+    "matchCode": "ISTP",
+    "code": "EUNC",
+    "title": "我永远喜欢森蚺！",
+    "archetypeId": "trickster-orbit",
+    "tags": [
+      "阿卡胡拉部族首领",
+      "机甲大丑制造者",
+      "机械狂热",
+      "动手解决一切"
+    ],
+    "note": "森蚺本名祖玛玛，来自萨尔贡阿卡胡拉，是森蚺部族首领，也是真正会把热爱焊进机甲里的技术派。你像森蚺一样，很多时候并不靠长篇解释建立存在感，而是直接拆、直接装、直接试。她对机械的迷恋非常具体，喜欢的是结构、动力、材料和亲手完成的结果。ISTP 的味道就在这里：不需要把情绪铺满全场，但一旦遇到自己认定的东西，专注、灵巧、胆大，能用一台“大丑”把所有抽象争论变成轰鸣的现实。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 0,
+        "judgement": 2,
+        "order": 0,
+        "agency": 3,
+        "aura": 1
+      }
+    },
+    "vector": {
+      "expression": 0,
+      "temperature": 1,
+      "judgement": 2,
+      "order": 0,
+      "agency": 3,
+      "aura": 1
+    }
+  },
+  {
+    "id": "lee",
+    "name": "老鲤",
+    "series": "明日方舟",
+    "matchCode": "ESTP",
+    "code": "LEEE",
+    "title": "我吃两碗",
+    "archetypeId": "trickster-orbit",
+    "tags": [
+      "鲤氏侦探事务所",
+      "龙门活百科",
+      "街巷斡旋高手",
+      "笑眯眯的老江湖"
+    ],
+    "note": "老鲤是鲤氏侦探事务所的老板，熟悉龙门街巷的门道，也擅长在麻烦之间穿针引线。你像老鲤一样，最强的地方不是坐在桌前推演十年，而是到了现场就知道该找谁、该说什么、该从哪条缝里把局面绕出去。他看起来散漫、圆滑、爱打哈哈，实则对人情、风险和利益流向极敏感。ESTP 的行动感在他身上带着老江湖味：不急着端架子，但真到关键处，能用经验、嘴皮子和临场反应把事办成。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 2,
+        "judgement": 2,
+        "order": -1,
+        "agency": 3,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": 2,
+      "temperature": 1,
+      "judgement": 2,
+      "order": -1,
+      "agency": 3,
+      "aura": 2
+    }
+  },
+  {
+    "id": "ifrit",
+    "name": "伊芙利特",
+    "series": "明日方舟",
+    "matchCode": "ESFP",
+    "code": "IFRT",
+    "title": "小火龙",
+    "archetypeId": "chaos-spark",
+    "tags": [
+      "莱茵生命实验体",
+      "火焰源石技艺",
+      "高热量熊孩子",
+      "需要被好好接住"
+    ],
+    "note": "伊芙利特与莱茵生命的实验阴影紧密相连，强大的火焰能力、矿石病和被改造的经历让她既危险又让人心疼。你像伊芙利特一样，情绪和能量很难被压成安静的直线，开心、不爽、委屈、兴奋都会直接烧出来。她不是精密冷酷的兵器，反而更像一个被迫带着巨大火力长大的孩子。ESFP 的明亮和混乱在这里共存：有强烈的即时反应，有不加掩饰的生命力，也有需要同伴耐心守住的脆弱内核。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 3,
+        "temperature": 2,
+        "judgement": -1,
+        "order": -2,
+        "agency": 3,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": 3,
+      "temperature": 2,
+      "judgement": -1,
+      "order": -2,
+      "agency": 3,
+      "aura": 2
+    }
+  },
+  {
+    "id": "shining",
+    "name": "闪灵",
+    "series": "明日方舟",
+    "matchCode": "INFJ",
+    "code": "SHIN",
+    "title": "喜羊羊",
+    "archetypeId": "gentle-healer",
+    "tags": [
+      "前赦罪师",
+      "使徒领袖",
+      "巡回医师",
+      "温柔背后的剑"
+    ],
+    "note": "闪灵曾与萨卡兹“赦罪师”体系相连，后来以使徒成员和医疗干员的身份守护感染者与同伴。你像闪灵一样，温柔不是软弱，而是一种已经见过阴影之后仍选择不让别人掉下去的克制。她讲话不多，气质安静，却总让人觉得身后有一把真正拔得出来的剑。INFJ 的部分体现在她对苦难的理解、对救赎的坚持，以及把锋芒收进治疗和守护里的方式：越平静，越能看出她不是没有力量。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -1,
+        "temperature": 3,
+        "judgement": 2,
+        "order": 2,
+        "agency": 1,
+        "aura": 3
+      }
+    },
+    "vector": {
+      "expression": -1,
+      "temperature": 3,
+      "judgement": 2,
+      "order": 2,
+      "agency": 1,
+      "aura": 3
+    }
+  },
+  {
+    "id": "jie",
+    "name": "颉",
+    "series": "明日方舟",
+    "matchCode": "INFJ",
+    "code": "JIEE",
+    "title": "吾奶长衫造字龙",
+    "archetypeId": "moonlit-guardian",
+    "tags": [
+      "炎国文字意象",
+      "长衫造字龙",
+      "文化记忆承载者",
+      "温和但有分量"
+    ],
+    "note": "颉的角色气质和炎国文字、传承、记录紧密相连，像是把文明记忆穿在长衫里的人。你像颉一样，不一定用最响的声音进入现场，却会认真在意语言、名字和历史留下的形状。她的 INFJ 感不来自戏剧性的牺牲，而来自一种安静的使命感：知道有些东西必须被保存、被理解、被重新讲给后来者听。温和只是外壳，真正的内核是对意义的敏感，以及不愿让重要之物失语的执拗。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -1,
+        "temperature": 2,
+        "judgement": 2,
+        "order": 3,
+        "agency": 1,
+        "aura": 2
+      }
+    },
+    "vector": {
+      "expression": -1,
+      "temperature": 2,
+      "judgement": 2,
+      "order": 3,
+      "agency": 1,
+      "aura": 2
+    }
+  },
+  {
+    "id": "andoain",
+    "name": "安多恩",
+    "series": "明日方舟",
+    "matchCode": "INFJ",
+    "code": "ANDO",
+    "title": "传奇殉道者",
+    "archetypeId": "moonlit-guardian",
+    "tags": [
+      "拉特兰寻路者",
+      "殉道者",
+      "为了答案背离秩序",
+      "平静的信念犯"
+    ],
+    "note": "安多恩是为了提出问题、追寻答案而与拉特兰秩序相背的萨科塔。他不把自己包装成暴怒的复仇者，而是以近乎平静的方式走向苦难和冲突。你像安多恩一样，真正难动摇的地方不在表情，而在“我必须弄明白”的信念。他的 INFJ 不是温柔万能解法，而是价值观一旦成形，就会愿意为一个问题承担巨大代价。旁人看见的是背叛和危险，他自己看见的是不能再绕开的道路。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -1,
+        "temperature": 1,
+        "judgement": 3,
+        "order": 1,
+        "agency": 2,
+        "aura": 3
+      }
+    },
+    "vector": {
+      "expression": -1,
+      "temperature": 1,
+      "judgement": 3,
+      "order": 1,
+      "agency": 2,
+      "aura": 3
+    }
+  },
+  {
+    "id": "priestess",
+    "name": "普瑞赛斯",
+    "series": "明日方舟",
+    "matchCode": "INFJ",
+    "code": "PRST",
+    "title": "泰拉第一重女",
+    "archetypeId": "shadow-strategist",
+    "tags": [
+      "前文明遗影",
+      "博士记忆核心",
+      "文明尺度的执念",
+      "温柔又不可测"
+    ],
+    "note": "普瑞赛斯与前文明、博士记忆以及泰拉更深层的谜题相连，她的存在像一段温柔却无法简单判定的旧日回声。你像普瑞赛斯一样，表层可能很轻、很近，真正的重量却压在更长的时间线里。她不是单纯的陪伴者，而是把个人情感、文明命题和不可逆选择缠在一起的人。INFJ 在这里呈现为深层执念和意义统筹：看似在守护某个人，实际可能已经把未来、牺牲和整个世界都放进了同一个答案里。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": -1,
+        "temperature": 2,
+        "judgement": 3,
+        "order": 2,
+        "agency": 2,
+        "aura": 3
+      }
+    },
+    "vector": {
+      "expression": -1,
+      "temperature": 2,
+      "judgement": 3,
+      "order": 2,
+      "agency": 2,
+      "aura": 3
+    }
+  },
+  {
+    "id": "closure",
+    "name": "可露希尔",
+    "series": "明日方舟",
+    "matchCode": "ESTP",
+    "code": "CLOS",
+    "title": "奸商",
+    "archetypeId": "trickster-orbit",
+    "tags": [
+      "罗德岛工程部",
+      "采购中心老板",
+      "技术宅吸血鬼",
+      "会算账的快乐犯"
+    ],
+    "note": "可露希尔是罗德岛工程与后勤体系里非常醒目的存在，既懂技术，也懂生意，还懂怎么把博士的钱包安排得明明白白。你像可露希尔一样，脑子转得快，手上活也不慢，遇到新点子会立刻想怎么改装、怎么上线、怎么卖出去。她的 ESTP 不只是爱热闹，而是高度现实的临场商业嗅觉：资源在哪里、机会在哪里、谁会买单，她都能边笑边算清楚。看起来像奸商，实际也是罗德岛能运转下去的重要发动机。",
+    "signature": {
+      "uniqueAxes": {
+        "expression": 3,
+        "judgement": 2,
+        "order": -1,
+        "agency": 3,
+        "aura": 1
+      }
+    },
+    "vector": {
+      "expression": 3,
+      "temperature": 1,
+      "judgement": 2,
+      "order": -1,
+      "agency": 3,
+      "aura": 1
     }
   }
 ]

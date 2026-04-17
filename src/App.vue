@@ -72,8 +72,8 @@ const showLiveMetricsToggle = computed(() => route.path === '/quiz' && !!quiz.la
 
 const ANNOUNCEMENT_STORAGE_KEY = 'arkti:announcement:last-seen-version'
 const ANNOUNCEMENT_VERSION = '2026-04-16-v2'
-const announcementTitle = '更新#3'
-const announcementBody = '重构了角色匹配机制，并为每道题增加了可视化评测数值显示与总体的实时状态评测数据表，便于用户查看匹配细则，这两个内容将在至少完成一次评测后解锁。'
+const announcementTitle = computed(() => t('app.announcement.title'))
+const announcementBody = computed(() => t('app.announcement.body'))
 const isAnnouncementVisible = ref(false)
 
 const closeAnnouncement = () => {
@@ -214,7 +214,7 @@ onMounted(() => {
         <button
           type="button"
           class="release-announcement-close"
-          aria-label="关闭公告"
+          :aria-label="t('app.announcement.closeAria')"
           @click="closeAnnouncement"
         >
           ×
@@ -240,8 +240,8 @@ onMounted(() => {
         class="nav-live-toggle floating-live-toggle"
         :class="{ active: quiz.liveMetricsVisible.value }"
         :aria-pressed="quiz.liveMetricsVisible.value"
-        aria-label="显示或隐藏实时评测状态"
-        title="显示/隐藏 实时评测状态"
+        :aria-label="t('app.liveMetricsToggle.aria')"
+        :title="t('app.liveMetricsToggle.title')"
         @click="quiz.toggleLiveMetricsPanel()"
       >
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -287,8 +287,11 @@ onMounted(() => {
           </a>
         </div>
         <div class="footer-section">
-          <h3 class="footer-title">友情链接</h3>
-          <p class="footer-note">本项目二创自ACGTI，点击跳转：<a href="https://acgti.tianxingleo.top/#/" target="_blank" rel="noopener noreferrer" style="color: #3ba17c; text-decoration: none; font-weight: 600;">https://acgti.tianxingleo.top/#/</a></p>
+          <h3 class="footer-title">{{ t('app.footer.sections.links') }}</h3>
+          <p class="footer-note">
+            {{ t('app.footer.notes.acgtiPrefix') }}
+            <a href="https://acgti.tianxingleo.top/#/" target="_blank" rel="noopener noreferrer" style="color: #3ba17c; text-decoration: none; font-weight: 600;">https://acgti.tianxingleo.top/#/</a>
+          </p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -303,5 +306,4 @@ onMounted(() => {
     </footer>
   </div>
 </template>
-
 

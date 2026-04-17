@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 import { pinyin } from 'pinyin-pro'
 import { useQuiz } from '../composables/useQuiz'
 import { useI18n } from '../i18n'
-import { getLocalizedCharacterName, getLocalizedCharacterSeries } from '../i18n/characters'
+import { getLocalizedCharacterName, getLocalizedCharacterSeries, getLocalizedCharacterTitle } from '../i18n/characters'
 import type { CharacterMatch } from '../types/quiz'
 
 const { characters } = useQuiz()
@@ -21,10 +21,10 @@ function buildPinyinText(source: string) {
   const pinyinVariants = [pinyinArray]
   const sourceChars = Array.from(source)
 
-  // 为常见多音字补充检索别名（例如：重岳 => chongyue）。
+  // Add aliases for common polyphonic characters, for example Chongyue.
   if (sourceChars.length === pinyinArray.length) {
     sourceChars.forEach((char, index) => {
-      if (char === '重') {
+      if (char === '\u91cd') {
         const aliasVariant = [...pinyinArray]
         aliasVariant[index] = 'chong'
         pinyinVariants.push(aliasVariant)
@@ -50,7 +50,7 @@ const filteredCharacterList = computed(() => {
 
   return characterList.value.filter((character) => {
     const localizedName = getLocalizedCharacterName(character, locale.value)
-    const localizedTitle = t(`characters.${character.id}.title`, undefined, character.title)
+    const localizedTitle = getLocalizedCharacterTitle(character, locale.value)
     const namePinyin = buildPinyinText(localizedName)
     const titlePinyin = buildPinyinText(localizedTitle)
     const searchableText = [
@@ -89,8 +89,8 @@ function buildCardStyle(character: CharacterMatch) {
           v-model="searchQuery"
           type="search"
           class="character-search"
-          :placeholder="t('characters.searchPlaceholder', undefined, '搜索角色名、Title、MBTI 或角色ID')"
-          :aria-label="t('characters.searchPlaceholder', undefined, '搜索角色名、Title、MBTI 或角色ID')"
+          :placeholder="t('characters.searchPlaceholder')"
+          :aria-label="t('characters.searchPlaceholder')"
         />
       </div>
     </section>
@@ -116,7 +116,7 @@ function buildCardStyle(character: CharacterMatch) {
           </div>
           <h2 class="card-name">{{ getLocalizedCharacterName(character, locale) }}</h2>
           <p class="card-source">{{ getLocalizedCharacterSeries(character, locale) }}</p>
-          <p class="card-title">{{ t('characters.' + character.id + '.title', undefined, character.title) }}</p>
+          <p class="card-title">{{ getLocalizedCharacterTitle(character, locale) }}</p>
         </div>
       </RouterLink>
     </section>

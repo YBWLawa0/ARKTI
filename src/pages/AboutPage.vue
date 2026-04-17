@@ -3,10 +3,10 @@ import { useI18n } from '../i18n'
 
 const { t, tm } = useI18n()
 
-// Split text by Chinese period or exclamation mark, preserving the punctuation
+// Split text by sentence punctuation, preserving the punctuation.
 function formatParagraphs(text: string) {
   if (!text) return []
-  return text.match(/[^。！]+[。！]?/g)?.map(s => s.trim()).filter(Boolean) || [text]
+  return text.match(/[^。！？.!?]+[。！？.!?]?/g)?.map(s => s.trim()).filter(Boolean) || [text]
 }
 
 function formatLeadBParagraph(text: string) {
@@ -20,7 +20,7 @@ function formatLeadBParagraph(text: string) {
 <template>
   <div class="page-stack about-container">
     
-    <!-- Top Block (总) -->
+    <!-- Top block -->
     <div class="top-section" v-reveal>
       <article class="about-card main-card">
         <div class="main-card-header">
@@ -40,11 +40,11 @@ function formatLeadBParagraph(text: string) {
               </a>
               <a href="https://www.bilibili.com/video/BV1i9QvB9ERP/?share_source=copy_web&vd_source=90babda72a58cd66a0cb79e190722714" target="_blank" rel="noopener noreferrer" class="action-btn-primary btn-bilibili">
                 <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                Bilibili 宣传视频
+                {{ t('about.bilibili') }}
               </a>
               <a href="http://xhslink.com/o/5dHyyj5jkO2" target="_blank" rel="noopener noreferrer" class="action-btn-primary btn-xhs">
                 <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                小红书宣传文章
+                {{ t('about.xiaohongshu') }}
               </a>
             </div>
           </div>
@@ -58,7 +58,7 @@ function formatLeadBParagraph(text: string) {
       </article>
     </div>
 
-    <!-- Middle Block (分) -->
+    <!-- Middle block -->
     <div class="middle-section about-grid" v-reveal>
       <article class="about-card side-card">
         <div class="side-card-header">
@@ -100,7 +100,7 @@ function formatLeadBParagraph(text: string) {
       </article>
     </div>
 
-    <!-- Bottom Block (总) - Update Log Block -->
+    <!-- Bottom block - update log -->
     <div class="update-section" v-reveal>
       <article class="about-card update-card">
         <div class="update-card-header">
