@@ -384,8 +384,17 @@ import { useRouter } from 'vue-router'
 import { useQuiz } from '../composables/useQuiz'
 import { useI18n } from '../i18n'
 import { getLocalizedCharacterName } from '../i18n/characters'
-import type { ArchetypeId, DimensionId, DimensionPair, Question, QuestionArchetypeWeightId } from '../types/quiz'
-import { MBTI_MEAN_POWER, scoreArchetypeRelative } from '../utils/quizEngine'
+import type {
+  ArchetypeId,
+  DimensionId,
+  DimensionPair,
+  DimensionScore,
+  MBTILetter,
+  Question,
+  QuestionArchetypeWeightId,
+} from '../types/quiz'
+import { submitResultStats } from '../utils/stats'
+import { rankCharactersByProfile, scoreArchetypeRelative } from '../utils/quizEngine'
 
 type ScaleSide = 'agree' | 'neutral' | 'disagree'
 
@@ -755,16 +764,6 @@ const EXPECTED_LABELS = computed(() => ({
   neutral: t('quiz.expected.neutral'),
 }) as const)
 /** Keep these weights aligned with quizEngine. */
-const LIVE_MBTI_DIMENSION_WEIGHT = 0.125
-const LIVE_MBTI_WEIGHT = LIVE_MBTI_DIMENSION_WEIGHT * 4
-const LIVE_ARCHETYPE_WEIGHT = 0.22
-const LIVE_VECTOR_WEIGHT = 0.18
-const LIVE_SPECIFIC_WEIGHT = 0.1
-
-const LIVE_ARCHETYPE_BLEND_NEUTRAL = 0.25
-const LIVE_ARCHETYPE_BLEND_RELATIVE = 0.75
-const LIVE_VECTOR_BLEND_NEUTRAL = 0.25
-const LIVE_VECTOR_BLEND_RAW = 0.75
 const LIVE_VECTOR_PERCENT_DENOMINATOR = 3
 const MBTI_LETTERS: Record<DimensionPair, [string, string]> = {
   E_I: ['E', 'I'],
@@ -886,22 +885,6 @@ function evaluateAffinity(answer: number, expected: 'agree' | 'disagree' | 'neut
   return Math.max(0, 1 - Math.abs(answer) / 3)
 }
 
-function cosineSimilarityLive(
-  left: Record<DimensionId, number>,
-  right: Record<DimensionId, number>,
-) {
-  let dot = 0
-  let leftMagnitude = 0
-  let rightMagnitude = 0
-  VECTOR_AXES.forEach((axis) => {
-    dot += left[axis] * right[axis]
-    leftMagnitude += left[axis] * left[axis]
-    rightMagnitude += right[axis] * right[axis]
-  })
-  const denominator = Math.sqrt(leftMagnitude) * Math.sqrt(rightMagnitude)
-  return denominator ? dot / denominator : 0
-}
-
 const liveMetrics = computed(() => {
   const rawScores: Record<DimensionPair, number> = { E_I: 0, S_N: 0, T_F: 0, J_P: 0 }
   const directionalMax: Record<DimensionPair, { positive: number; negative: number }> = {
@@ -959,8 +942,18 @@ const liveMetrics = computed(() => {
     const score = rawScores[pair] / max
     const percentage = Math.round(50 + Math.min(1, Math.abs(score)) * 50)
     const dominant = score >= 0 ? MBTI_LETTERS[pair][0] : MBTI_LETTERS[pair][1]
-    return { pair, dominant, percentage }
+    return { pair, dominant, percentage, score }
   })
+
+  const scores = mbtiRows.reduce((acc, row) => {
+    acc[row.pair] = {
+      pair: row.pair,
+      score: row.score,
+      dominant: row.dominant as MBTILetter,
+      percentage: row.percentage,
+    }
+    return acc
+  }, {} as Record<DimensionPair, DimensionScore>)
 
   const archetypeRankOrder = (Object.keys(archetypeRaw) as ArchetypeId[]).sort((a, b) => {
     const d = archetypeRaw[b] - archetypeRaw[a]
@@ -1011,68 +1004,18 @@ const liveMetrics = computed(() => {
     .sort((left, right) => right.score - left.score)
     .slice(0, 6)
 
-  const mbtiScoreByCode = (code: string) => {
-    const normalized = code.trim().toUpperCase()
-    if (!/^[EI][SN][TF][JP]$/.test(normalized)) return 0
-    const pairs: DimensionPair[] = ['E_I', 'S_N', 'T_F', 'J_P']
-    let contribution = 0
-    pairs.forEach((pair, index) => {
-      const expected = normalized[index]
-      const actual = mbtiRows.find((row) => row.pair === pair)
-      if (!actual) return
-      const dim =
-        (actual.dominant === expected ? actual.percentage : 100 - actual.percentage) / 100
-      contribution += LIVE_MBTI_DIMENSION_WEIGHT * dim
-    })
-    return contribution / LIVE_MBTI_WEIGHT
-  }
-
-  const liveFinalTopRows = [...characters]
-    .map((character) => {
-      const mbtiRaw = mbtiScoreByCode(character.matchCode)
-      const mbti = Math.pow(mbtiRaw, MBTI_MEAN_POWER)
-      const archetype =
-        LIVE_ARCHETYPE_BLEND_RELATIVE * scoreArchetypeRelative(character.archetypeId, archetypeRaw)
-        + LIVE_ARCHETYPE_BLEND_NEUTRAL
-      const vectorRaw = (cosineSimilarityLive(userVector, character.vector) + 1) / 2
-      const vector = LIVE_VECTOR_BLEND_RAW * vectorRaw + LIVE_VECTOR_BLEND_NEUTRAL
-
-      const affinities = character.signature?.questionAffinity ?? []
-      let specific = 0
-      if (affinities.length) {
-        const uniqueAxes = character.signature?.uniqueAxes ?? {}
-        const axisScore = Object.keys(uniqueAxes).length
-          ? scoreUniqueAxesLive(userVector, uniqueAxes)
-          : 0
-        let weighted = 0
-        let weightSum = 0
-        affinities.forEach((affinity) => {
-          const qIndex = questionIdToIndex.get(affinity.questionId)
-          if (qIndex === undefined) return
-          const answer = state.answers[qIndex]
-          if (!isAnsweredValue(answer)) return
-          const weight = affinity.weight ?? 1
-          weighted += evaluateAffinity(answer, affinity.expected) * weight
-          weightSum += weight
-        })
-        const affinityScore = weightSum ? weighted / weightSum : 0
-        specific = axisScore * 0.45 + affinityScore * 0.55
-      }
-
-      const total =
-        LIVE_MBTI_WEIGHT * mbti +
-        LIVE_ARCHETYPE_WEIGHT * archetype +
-        LIVE_VECTOR_WEIGHT * vector +
-        LIVE_SPECIFIC_WEIGHT * specific
-
-      return {
-        id: character.id,
-        name: getLocalizedCharacterName(character, locale.value),
-        score: Math.max(0, Math.min(99, Math.round(total * 100))),
-      }
-    })
-    .sort((left, right) => right.score - left.score)
-    .slice(0, 6)
+  const rankedForLive = rankCharactersByProfile({
+    scores,
+    characters,
+    archetypeRaw,
+    userVector,
+    answers: [...state.answers],
+  })
+  const liveFinalTopRows = rankedForLive.slice(0, 6).map((item) => ({
+    id: item.character.id,
+    name: getLocalizedCharacterName(item.character, locale.value),
+    score: Math.max(0, Math.min(99, Math.round(item.total * 100))),
+  }))
 
   return { mbtiRows, archetypeRows, vectorRows, characterRows, liveFinalTopRows }
 })
@@ -1135,6 +1078,7 @@ async function submitQuiz() {
 
   const result = finalizeQuiz()
   if (!result) return
+  void submitResultStats(result, locale.value)
   router.push({ name: 'result' })
 }
 </script>

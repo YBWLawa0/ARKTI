@@ -397,7 +397,11 @@ type RankedCharacter = {
   specific: number
 }
 
-function rankCharactersByProfile({
+/**
+ * Same ordering as {@link calculateQuizResult} character rankings (including tie-breaks).
+ * Final ties use the order of the `characters` array (same order as `characters.json` when loaded).
+ */
+export function rankCharactersByProfile({
   scores,
   characters,
   archetypeRaw,
@@ -410,6 +414,8 @@ function rankCharactersByProfile({
   userVector: UserVector
   answers: number[]
 }) {
+  const sheetOrder = new Map(characters.map((character, index) => [character.id, index]))
+
   return [...characters]
     .map((character) => {
       const { mean: mbti, contribution: mbtiContribution } = scoreMbtiMatchCode(character.matchCode, scores)
@@ -452,7 +458,9 @@ function rankCharactersByProfile({
         return specificDelta
       }
 
-      return left.character.name.localeCompare(right.character.name, 'zh-Hans-CN')
+      const leftOrder = sheetOrder.get(left.character.id) ?? Number.MAX_SAFE_INTEGER
+      const rightOrder = sheetOrder.get(right.character.id) ?? Number.MAX_SAFE_INTEGER
+      return leftOrder - rightOrder
     })
 }
 

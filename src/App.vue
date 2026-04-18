@@ -182,6 +182,7 @@ onMounted(() => {
           </transition>
         </div>
         <RouterLink to="/characters">{{ t('app.nav.characters') }}</RouterLink>
+        <RouterLink to="/stats">统计</RouterLink>
         <RouterLink to="/about">{{ t('app.nav.about') }}</RouterLink>
         <RouterLink to="/result" v-if="showRecentResult">{{ t('app.nav.result') }}</RouterLink>
         <RouterLink to="/quiz" class="button button-primary nav-cta">{{ t('app.nav.cta') }}</RouterLink>
@@ -236,6 +237,9 @@ onMounted(() => {
 
             <RouterLink to="/characters" class="mobile-menu-item" @click="closeMobileMenu">
               {{ t('app.nav.characters') }}
+            </RouterLink>
+            <RouterLink to="/stats" class="mobile-menu-item" @click="closeMobileMenu">
+              统计
             </RouterLink>
             <RouterLink to="/about" class="mobile-menu-item" @click="closeMobileMenu">
               {{ t('app.nav.about') }}
@@ -306,6 +310,7 @@ onMounted(() => {
           <RouterLink to="/result" class="footer-link">{{ t('app.footer.links.latestResult') }}</RouterLink>
           <RouterLink to="/quiz" class="footer-link">{{ t('app.footer.links.types') }}</RouterLink>
           <RouterLink to="/characters" class="footer-link">{{ t('app.footer.links.characters') }}</RouterLink>
+          <RouterLink to="/stats" class="footer-link">全网统计</RouterLink>
         </div>
         <div class="footer-section">
           <h3 class="footer-title">{{ t('app.footer.sections.project') }}</h3>
@@ -347,6 +352,7 @@ onMounted(() => {
           <RouterLink to="/" :title="t('app.footer.social.home')">{{ t('app.footer.social.home') }}</RouterLink>
           <RouterLink to="/quiz" :title="t('app.footer.social.quiz')">{{ t('app.footer.social.quiz') }}</RouterLink>
           <RouterLink to="/characters" :title="t('app.footer.social.characters')">{{ t('app.footer.social.characters') }}</RouterLink>
+          <RouterLink to="/stats" title="全网统计">统计</RouterLink>
           <RouterLink to="/about" :title="t('app.footer.social.about')">{{ t('app.footer.social.about') }}</RouterLink>
         </div>
       </div>
