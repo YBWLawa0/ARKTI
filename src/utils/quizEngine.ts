@@ -62,8 +62,8 @@ const QUESTION_ROLE_BALANCE: Record<QuestionArchetypeWeightId, number> = {
 
 const QUESTION_WEIGHT_FALLBACKS: Record<DimensionPair, Partial<Record<QuestionArchetypeWeightId, number>>> = {
   'E_I': { hero: 2, trickster: 2, healer: 1, lonewolf: -2, strategist: -1 },
-  'S_N': { strategist: 2, trickster: 2, healer: 1, ruler: -1, guardian: -1 },
-  'T_F': { strategist: 2, ruler: 1, healer: -2, guardian: -1, berserker: 1 },
+  'S_N': { strategist: 1, trickster: 2, healer: 1, ruler: -1, guardian: -1 },
+  'T_F': { strategist: 1, ruler: 1, healer: -2, guardian: -1, berserker: 1 },
   'J_P': { ruler: 2, guardian: 1, strategist: 1, trickster: -2, berserker: 0 },
 }
 
@@ -74,16 +74,20 @@ const QUESTION_VECTOR_PERCENT_DENOMINATOR = 3
 
 /**
  * Component weights total 1.0: MBTI first, then archetype, vector, and character-specific bonuses.
+ * Archetype is kept intentionally lighter than MBTI/vector so question-role bias does not
+ * collapse winners onto a small character set (e.g. shadow-strategist).
  */
-const MBTI_DIMENSION_WEIGHT = 0.125
+const MBTI_DIMENSION_WEIGHT = 0.145
 const MBTI_WEIGHT = MBTI_DIMENSION_WEIGHT * 4
-const ARCHETYPE_WEIGHT = 0.22
-const VECTOR_WEIGHT = 0.18
-const CHARACTER_SPECIFIC_WEIGHT = 0.1
+const ARCHETYPE_WEIGHT = 0.12
+const VECTOR_WEIGHT = 0.24
+const CHARACTER_SPECIFIC_WEIGHT = 0.06
 
 /** Blend archetype/vector scores toward neutral so a few combinations do not dominate random simulations. */
-const ARCHETYPE_BLEND_NEUTRAL = 0.25
-const ARCHETYPE_BLEND_RELATIVE = 0.75
+const ARCHETYPE_BLEND_NEUTRAL = 0.38
+const ARCHETYPE_BLEND_RELATIVE = 0.62
+/** Values below 1 pull mid archetypes upward, shrinking the effective spread after min–max. */
+const ARCHETYPE_RELATIVE_GAMMA = 0.78
 const VECTOR_BLEND_NEUTRAL = 0.25
 const VECTOR_BLEND_RAW = 0.75
 
@@ -415,6 +419,8 @@ export function rankCharactersByProfile({
   answers: number[]
 }) {
   const sheetOrder = new Map(characters.map((character, index) => [character.id, index]))
+  // Keep tie-break randomization stable within one ranking run.
+  const tieBreakerRandom = new Map(characters.map((character) => [character.id, Math.random()]))
 
   return [...characters]
     .map((character) => {
@@ -460,6 +466,13 @@ export function rankCharactersByProfile({
 
       const leftOrder = sheetOrder.get(left.character.id) ?? Number.MAX_SAFE_INTEGER
       const rightOrder = sheetOrder.get(right.character.id) ?? Number.MAX_SAFE_INTEGER
+      const leftRandom = tieBreakerRandom.get(left.character.id) ?? 0
+      const rightRandom = tieBreakerRandom.get(right.character.id) ?? 0
+      const randomDelta = rightRandom - leftRandom
+      if (Math.abs(randomDelta) > Number.EPSILON) {
+        return randomDelta
+      }
+
       return leftOrder - rightOrder
     })
 }
@@ -533,7 +546,8 @@ export function scoreArchetypeRelative(archetypeId: ArchetypeId, archetypeRaw: A
   if (span <= 1e-9) {
     return 0.5
   }
-  return (archetypeRaw[archetypeId] - min) / span
+  const linear = (archetypeRaw[archetypeId] - min) / span
+  return Math.pow(linear, ARCHETYPE_RELATIVE_GAMMA)
 }
 
 function scoreArchetype(archetypeId: ArchetypeId, archetypeRaw: ArchetypeAccumulator) {

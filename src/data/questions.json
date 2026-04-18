@@ -24,7 +24,7 @@
     "sign": -1,
     "weights": {
       "hero": -1,
-      "strategist": 2,
+      "strategist": 1,
       "guardian": 1,
       "lonewolf": 2,
       "healer": 0,
@@ -58,7 +58,7 @@
     "sign": -1,
     "weights": {
       "hero": -1,
-      "strategist": 2,
+      "strategist": 1,
       "guardian": 1,
       "lonewolf": 2,
       "healer": 0,
@@ -92,7 +92,7 @@
     "sign": -1,
     "weights": {
       "hero": -1,
-      "strategist": 2,
+      "strategist": 1,
       "guardian": 1,
       "lonewolf": 2,
       "healer": 0,
@@ -126,7 +126,7 @@
     "sign": -1,
     "weights": {
       "hero": -1,
-      "strategist": 2,
+      "strategist": 1,
       "guardian": 1,
       "lonewolf": 2,
       "healer": 0,
