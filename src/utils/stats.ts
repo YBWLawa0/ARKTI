@@ -1,28 +1,5 @@
 import type { QuizResult } from '../types/quiz'
 
-export interface StatsSummaryRow {
-  key: string
-  label: string
-  count: number
-  percentage: number
-}
-
-export interface StatsRegionRow {
-  region: string
-  count: number
-}
-
-export interface StatsSummary {
-  total: number
-  filters: {
-    region: string
-  }
-  regions: StatsRegionRow[]
-  characters: StatsSummaryRow[]
-  mbti: StatsSummaryRow[]
-  archetypes: StatsSummaryRow[]
-}
-
 function getStatsSessionId() {
   const key = 'arkti:stats:session-id'
 
@@ -67,18 +44,4 @@ export async function submitResultStats(result: QuizResult, locale: string) {
   } catch {
     // Stats must never block the result flow.
   }
-}
-
-export async function fetchStatsSummary(region = ''): Promise<StatsSummary> {
-  const params = new URLSearchParams()
-  if (region) {
-    params.set('region', region)
-  }
-
-  const response = await fetch(`/api/stats${params.size ? `?${params.toString()}` : ''}`)
-  if (!response.ok) {
-    throw new Error(`Failed to load stats: ${response.status}`)
-  }
-
-  return response.json() as Promise<StatsSummary>
 }
