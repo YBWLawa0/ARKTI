@@ -1,8 +1,0 @@
-name = "arkti"
-pages_build_output_dir = "dist"
-compatibility_date = "2026-04-18"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "arkti-stats"
-database_id = "replace-with-your-d1-database-id"
