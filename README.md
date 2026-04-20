@@ -52,6 +52,7 @@
 当前项目仍处于早期阶段，题目数量和角色库都还不够丰富。如果你有好的情境题目想法或想补充更多作品的角色，非常期待你的参与：
 
 - 补充新角色 → 编辑 `src/data/characters.json`
+- 补充角色的对话 → 编辑 `src/data/characters.json`中的 `quote`字段，如果没有请创建
 - 添加新题目 → 编辑 `src/data/questions.json`
 - 修复 Bug / 改进 UI → 直接提 PR
 

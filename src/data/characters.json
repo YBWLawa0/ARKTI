@@ -1715,7 +1715,29 @@
         "order": 2,
         "agency": 3
       }
-    }
+    },
+    "quotes": [
+      [
+        {
+          "speaker": "Mon3tr",
+          "line": "真羡慕你，被我挂在爪子上，还可以有工夫去注意细节！"
+        },
+        {
+          "speaker": "Mon3tr",
+          "line": "幸好你的动态视力够好——"
+        },
+        {
+          "speaker": "Mon3tr",
+          "line": "糟糕，他们快追上来了！顾不上了，忍住——"
+        }
+      ],
+      [
+        {
+          "speaker": "Mon3tr",
+          "line": "博士..."
+        }
+      ]
+    ]
   },
   {
     "id": "typhon",
