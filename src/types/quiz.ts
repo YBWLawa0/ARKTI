@@ -93,6 +93,7 @@ export interface CharacterMatch {
       weight?: number
     }>
   }
+  quotes?: Array<Array<{ speaker: string; line: string }>>
 }
 
 export interface DimensionScore {

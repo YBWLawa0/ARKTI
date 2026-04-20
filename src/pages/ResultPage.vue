@@ -8,7 +8,7 @@ import { useShare } from '../composables/useShare'
 import { useQuiz } from '../composables/useQuiz'
 import characterVisualsData from '../data/characterVisuals.json'
 import { useI18n } from '../i18n'
-import { getLocalizedCharacterName, getLocalizedCharacterNote, getLocalizedCharacterTags } from '../i18n/characters'
+import { getLocalizedCharacterName, getLocalizedCharacterNote, getLocalizedCharacterQuotes, getLocalizedCharacterTags } from '../i18n/characters'
 import { resolvePublicAsset } from '../utils/characterVisuals'
 import { normalizeMbtiCode } from '../utils/quizEngine'
 
@@ -738,6 +738,38 @@ watch(
           </article>
         </section>
 
+        <section
+          v-if="primaryCharacter && getLocalizedCharacterQuotes(primaryCharacter, locale) !== null"
+          class="quotes-block"
+          v-reveal
+        >
+          <h3>
+            <AppIcon name="quote" />
+            {{ t('result.quotes', { name: getLocalizedCharacterName(primaryCharacter, locale) }) }}
+          </h3>
+          <template v-if="getLocalizedCharacterQuotes(primaryCharacter, locale)!.length > 0">
+            <div class="dialogue-groups">
+              <div
+                v-for="(group, gi) in getLocalizedCharacterQuotes(primaryCharacter, locale)"
+                :key="gi"
+                class="dialogue-block"
+              >
+                <div
+                  v-for="(entry, li) in group"
+                  :key="li"
+                  class="dialogue-line"
+                >
+                  <span class="dialogue-speaker">{{ entry.speaker }}</span>
+                  <span class="dialogue-text">{{ entry.line }}</span>
+                </div>
+              </div>
+            </div>
+          </template>
+          <div v-else class="quote-placeholder">
+            {{ t('result.quotesPlaceholder') }}
+          </div>
+        </section>
+
         <section v-if="primaryCharacter" class="tags-block" v-reveal>
           <h3>
             <AppIcon name="character" />
@@ -1410,6 +1442,66 @@ watch(
   color: #596671;
 }
 
+.quotes-block {
+  margin-top: 24px;
+  background: linear-gradient(180deg, #ffffff, #fbfdfb);
+  border: 1px solid #e8ecef;
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.quotes-block h3 {
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+}
+
+.dialogue-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dialogue-block {
+  background: #000000;
+  border-radius: 6px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: 'Noto Sans SC', 'Noto Sans', sans-serif;
+}
+
+.dialogue-line {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 14px;
+  align-items: baseline;
+}
+
+.dialogue-speaker {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.dialogue-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+.quote-placeholder {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #9aa5ae;
+  font-style: italic;
+  text-align: center;
+}
+
 .tags-block {
   margin-top: 24px;
   background: linear-gradient(180deg, #ffffff, #fbfdfb);
@@ -1756,6 +1848,7 @@ watch(
 
   .traits-section,
   .analysis-grid,
+  .quotes-block,
   .tags-block,
   .result-sidebar {
     margin-left: 2px;
@@ -1785,9 +1878,18 @@ watch(
   .traits-list,
   .traits-highlight,
   .analysis-card,
+  .quotes-block,
   .tags-block,
   .sidebar-card {
     padding: 14px;
+  }
+
+  .quotes-block h3 {
+    font-size: 18px;
+  }
+
+  .dialogue-block {
+    padding: 12px 14px;
   }
 
   .trait-row {
@@ -1916,6 +2018,7 @@ watch(
   .analysis-card,
   .traits-list,
   .traits-highlight,
+  .quotes-block,
   .tags-block,
   .match-breakdown-block {
     border-radius: 14px;

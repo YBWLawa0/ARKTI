@@ -57,3 +57,6 @@ venv/
 *.tar
 *.gz
 repomix-output.xml
+
+# potential claude processing
+CLAUDE.md

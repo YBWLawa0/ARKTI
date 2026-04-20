@@ -1023,3 +1023,17 @@ export function getLocalizedCharacterNote(
 ) {
   return resolveCharacterDetail(character, locale).note
 }
+
+export function getLocalizedCharacterQuotes(
+  character: Pick<CharacterMatch, 'id' | 'quotes'>,
+  locale: AppLocale,
+): Array<Array<{ speaker: string; line: string }>> | null {
+  if (locale !== 'zh-CN' && locale !== 'zh-TW') return null
+  const groups = character.quotes ?? []
+  if (locale === 'zh-TW') {
+    return groups.map(g =>
+      g.map(({ speaker, line }) => ({ speaker: toTraditionalText(speaker), line: toTraditionalText(line) })),
+    )
+  }
+  return groups
+}
