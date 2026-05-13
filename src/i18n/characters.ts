@@ -96,7 +96,7 @@ const characterNameI18n: Record<string, LocalizedText> = {
     ja: 'マドロック',
   },
   muelsyse: {
-    'zh-CN': '缪尔赛斯',
+    'zh-CN': '缪尔赛思',
     'zh-TW': '繆爾賽思',
     en: 'Muelsyse',
     ja: 'ミュルジス',
