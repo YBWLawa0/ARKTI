@@ -189,7 +189,7 @@ git push origin v0.1.0
 <a href="https://star-history.com/#YBWLawa0/ARKTI&Date">
   <img
     alt="Star History Chart"
-    src="https://api.star-history.com/svg?repos=ybwlawa0/arkti&type=Date"
+    src="./assets/star-history.svg"
   />
 </a>
 

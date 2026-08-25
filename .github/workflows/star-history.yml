@@ -41,8 +41,12 @@ jobs:
             exit 1
           fi
 
-          if ! grep -q '<svg' "$TEMP_SVG"; then
-            echo "::error::Star History returned an invalid SVG response."
+          if ! grep -q '<svg' "$TEMP_SVG" || grep -qiE 'restricted access to star data|stargazer-api-restriction' "$TEMP_SVG"; then
+            if [ -s assets/star-history.svg ] && ! grep -qiE 'restricted access to star data|stargazer-api-restriction' assets/star-history.svg; then
+              echo "::warning::Star History returned an error placeholder; keeping the existing chart."
+              exit 0
+            fi
+            echo "::error::Star History returned an invalid SVG or error placeholder."
             exit 1
           fi
 
