@@ -12,26 +12,41 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    # 减轻 actions/* 在 Node 20 上的弃用提示（runner 默认将迁移到 Node 24）
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     permissions:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # Star History 后端在 Cloudflare 后；机房出口 + curl 默认 UA 易触发 403，需显式 UA 并规范仓库名为小写（与 API 301 一致）
       - name: Fetch Star History SVG
         run: |
           mkdir -p assets
           CACHEBUST=$(date +%Y%m%d%H%M)
-          curl -fsSL \
-            --retry 3 --retry-delay 8 \
+          TEMP_SVG=$(mktemp)
+          trap 'rm -f "$TEMP_SVG"' EXIT
+
+          if ! curl -fsSL \
+            --retry 5 --retry-delay 8 --retry-all-errors \
+            --connect-timeout 15 --max-time 120 \
             -A 'Mozilla/5.0 (compatible; ARKTI-StarHistory-Fetch/1.0; +https://github.com/YBWLawa0/ARKTI)' \
             -H 'Accept: image/svg+xml,*/*' \
             "https://api.star-history.com/svg?repos=ybwlawa0/arkti&type=Date&t=${CACHEBUST}" \
-            -o assets/star-history.svg
+            -o "$TEMP_SVG"; then
+            if [ -s assets/star-history.svg ]; then
+              echo "::warning::Star History service is temporarily unavailable; keeping the existing chart."
+              exit 0
+            fi
+            echo "::error::Star History download failed and no existing chart is available."
+            exit 1
+          fi
+
+          if ! grep -q '<svg' "$TEMP_SVG"; then
+            echo "::error::Star History returned an invalid SVG response."
+            exit 1
+          fi
+
+          mv "$TEMP_SVG" assets/star-history.svg
 
       - name: Commit if changed
         run: |
